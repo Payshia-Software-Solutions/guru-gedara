@@ -26,7 +26,6 @@ export function LmsSidebar() {
   const { t } = useLanguage();
   const { setOpenMobile } = useSidebar();
 
-
   const navItems = [
     { href: '/lms/dashboard', labelKey: 'lms.sidebar.dashboard', icon: Icons.LayoutDashboard },
     { href: '/lms/courses', labelKey: 'lms.sidebar.myCourses', icon: Icons.BookMarked },
@@ -39,8 +38,8 @@ export function LmsSidebar() {
 
   const handleLogout = () => {
     console.log("User logged out (simulated from LMS sidebar)");
-    setOpenMobile(false); // Close mobile sidebar if open
-    router.push('/'); 
+    setOpenMobile(false); 
+    router.push('/');
   };
 
   return (
@@ -61,7 +60,12 @@ export function LmsSidebar() {
                 asChild
                 isActive={isActive(item.href)}
                 tooltip={t(item.labelKey)}
-                onClick={() => setOpenMobile(false)}
+                onClick={() => {
+                  // For mobile, ensure sidebar closes. Navigation is handled by Link.
+                  if (useSidebar().isMobile) {
+                    setOpenMobile(false);
+                  }
+                }}
               >
                 <Link href={item.href}>
                   <item.icon />
@@ -92,7 +96,10 @@ export function LmsSidebar() {
         <Button
             variant="outline"
             className="w-full mt-2 group-data-[collapsible=icon]:hidden"
-            onClick={() => router.push('/')}
+            onClick={() => {
+              setOpenMobile(false); 
+              router.push('/');
+            }}
         >
             <Icons.ArrowLeft className="mr-2"/>
             {t('lms.sidebar.backToSite', 'Back to Main Site')}

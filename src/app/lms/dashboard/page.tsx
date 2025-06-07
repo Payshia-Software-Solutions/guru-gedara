@@ -4,7 +4,7 @@
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle, CardFooter } from '@/components/ui/card';
 import Icons from '@/components/icons';
 import { useLanguage } from '@/contexts/language-context';
 import { Badge } from '@/components/ui/badge';
@@ -45,8 +45,10 @@ export default function LmsDashboardPage() {
   };
 
   const getCourseName = (titleKey: string) => {
-    const id = titleKey.split('.')[2]; // Extract subject id from key like 'courses.subjects.science.name'
-    const fallbackName = t(titleKey); // Calculate fallback translation once
+    const fallbackName = t(titleKey); 
+    const idParts = titleKey.split('.');
+    if (idParts.length < 3) return fallbackName; // Safety check for key structure
+    const id = idParts[2]; 
 
     if (language === 'si') {
       const sinhalaNameKey = 'courses.subjects.' + id + '.sinhalaName';
@@ -60,9 +62,9 @@ export default function LmsDashboardPage() {
   }
 
   return (
-    <div className="space-y-8 md:space-y-12 p-4 md:p-6"> {/* Reduced top-level spacing as it's now within a layout */}
+    <div className="space-y-8 md:space-y-12">
       <AnimatedSection>
-        <div className="text-left pb-8 md:pb-12 border-b"> {/* Simplified header for dashboard page */}
+        <div className="text-left pb-8 md:pb-12 border-b">
           <h1 className="font-headline text-3xl md:text-4xl font-bold text-primary mb-2">
             {getPageTitle()}
           </h1>
@@ -99,7 +101,7 @@ export default function LmsDashboardPage() {
                       </CardContent>
                       <CardFooter>
                         <Button asChild variant="outline" className="w-full">
-                          <Link href={`/courses/${course.id}`}> {/* This link might need to change to /lms/courses/[id] eventually */}
+                          <Link href={`/courses/${course.id}`}>
                             <Icons.ArrowRight className="mr-2 h-4 w-4" />
                             {t('dashboard.goToCourse', 'Go to Course')}
                           </Link>

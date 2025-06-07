@@ -1,9 +1,17 @@
 
+"use client"; // Added
+
 import { Facebook, Twitter, Instagram, Youtube, Send, MapPin, Phone } from 'lucide-react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation'; // Added
 
 export function Footer() {
+  const pathname = usePathname(); // Added
   const currentYear = new Date().getFullYear();
+
+  if (pathname?.startsWith('/lms')) { // Added condition
+    return null;
+  }
 
   return (
     <footer className="bg-secondary text-secondary-foreground py-12 mt-16">

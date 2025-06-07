@@ -2,11 +2,8 @@
 import type { ReactNode } from 'react';
 import { SidebarProvider, SidebarInset, SidebarTrigger } from '@/components/ui/sidebar';
 import { LmsSidebar } from '@/components/layout/lms-sidebar';
-import { Button } from '@/components/ui/button';
-import Icons from '@/components/icons';
 import Link from 'next/link';
 import { BookOpenText } from 'lucide-react';
-
 
 export default function LmsLayout({
   children,
@@ -26,7 +23,6 @@ export default function LmsLayout({
               </Link>
             </div>
           <SidebarTrigger className="md:hidden" /> {/* Hamburger for mobile sidebar */}
-          {/* You could add breadcrumbs or user profile dropdown here if needed */}
         </header>
         <main className="flex-1 p-4 md:p-6 lg:p-8">
           {children}

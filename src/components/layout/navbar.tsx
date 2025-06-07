@@ -3,7 +3,8 @@
 
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
-import { Menu, X, BookOpenText } from 'lucide-react'; // Using BookOpenText for logo
+import { usePathname } from 'next/navigation'; // Added
+import { Menu, X, BookOpenText } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { ThemeToggleButton } from '@/components/theme-toggle-button';
@@ -16,17 +17,22 @@ const navItemKeys = [
   { href: '/courses', labelKey: 'nav.courses' },
   { href: '/timetable', labelKey: 'nav.timetable' },
   { href: '/contact', labelKey: 'nav.contact' },
-  { href: '/login', labelKey: 'nav.login' }, // Added Login link
+  { href: '/login', labelKey: 'nav.login' },
 ];
 
 export function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
   const { t } = useLanguage();
+  const pathname = usePathname(); // Added
 
   useEffect(() => {
     setIsMounted(true);
   }, []);
+
+  if (pathname?.startsWith('/lms')) { // Added condition
+    return null;
+  }
 
   const NavLinks = ({ onItemClick, inSheet = false }: { onItemClick?: () => void, inSheet?: boolean }) => (
     <>
