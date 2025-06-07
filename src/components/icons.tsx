@@ -25,7 +25,12 @@ import {
   Sparkles,
   Sun,
   Moon,
-  Globe, // Added Globe icon
+  Globe, 
+  ArrowLeft, // Added ArrowLeft
+  FileText, // For Overview
+  ListChecks, // For Syllabus
+  UserCircle, // For Instructor
+  Edit3, // For Enroll button
 } from 'lucide-react';
 
 // Re-exporting icons for easier access and potential future customization/swapping
@@ -55,7 +60,12 @@ export const Icons = {
   Sparkles,
   Sun,
   Moon,
-  Globe, // Added Globe icon
+  Globe,
+  ArrowLeft, // Added ArrowLeft
+  FileText,
+  ListChecks,
+  UserCircle,
+  Edit3,
 };
 
 // Example of a custom SVG icon if needed:
@@ -79,3 +89,5 @@ Icons.CustomPi = CustomPiIcon;
 */
 
 export default Icons;
+
+    

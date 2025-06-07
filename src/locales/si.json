@@ -27,25 +27,25 @@
       "science": {
         "name": "විද්‍යාව",
         "sinhalaName": "විද්‍යාව",
-        "tamilName": "විද්‍යාව (දෙමළ සඳහා)",
+        "tamilName": "[SI: விஞ்ஞானம்]",
         "description": "භෞතික හා ස්වාභාවික ලෝකයේ අරුමපුදුම දේ ගවේෂණය කරන්න."
       },
       "mathematics": {
         "name": "ගණිතය",
         "sinhalaName": "ගණිතය",
-        "tamilName": "ගණිතය (දෙමළ සඳහා)",
+        "tamilName": "[SI: கணிதம்]",
         "description": "තාර්කික තර්කනය සහ ගැටළු විසඳීමේ කුසලතා ප්‍රගුණ කරන්න."
       },
       "english": {
         "name": "ඉංග්‍රීසි",
         "sinhalaName": "ඉංග්‍රීසි",
-        "tamilName": "ඉංග්‍රීසි (දෙමළ සඳහා)",
+        "tamilName": "[SI: ஆங்கிலம்]",
         "description": "ඔබගේ සන්නිවේදන සහ භාෂා ප්‍රවීණතාවය වැඩි දියුණු කරගන්න."
       },
       "ict": {
         "name": "තොරතුරු හා සන්නිවේදන තාක්ෂණය",
         "sinhalaName": "ICT",
-        "tamilName": "ICT (දෙමළ සඳහා)",
+        "tamilName": "[SI: தகவல் தொடர்பாடல் தொழில்நுட்பம்]",
         "description": "අත්‍යවශ්‍ය තාක්ෂණික කුසලතා සමඟ ඩිජිටල් ලෝකය සැරිසරන්න."
       },
       "learnMoreButton": "වැඩිදුර ඉගෙන ගන්න"
@@ -70,12 +70,12 @@
   "about": {
     "title": "අප ගැන",
     "titleSinhala": "අප ගැන",
-    "titleTamil": "අප ගැන (දෙමළ සඳහා)",
+    "titleTamil": "[SI: எங்களைப் பற்றி]",
     "subtitle": "ගුරු ගෙදර E-School පිළිබඳව",
     "mission": {
       "title": "අපගේ මෙහෙවර",
       "titleSinhala": "අපගේ මෙහෙවර",
-      "titleTamil": "අපගේ මෙහෙවර (දෙමළ සඳහා)",
+      "titleTamil": "[SI: எமது நோக்கம்]",
       "p1": "ගුරු ගෙදර E-School හි අපගේ මෙහෙවර වන්නේ ශ්‍රී ලංකාව පුරා සිටින අ.පො.ස. සාමාන්‍ය පෙළ සිසුන් සඳහා උසස් තත්ත්වයේ, ප්‍රවේශ විය හැකි සහ දැරිය හැකි ඔන්ලයින් අධ්‍යාපනයක් ලබා දීමයි. විභාගවලින් විශිෂ්ට වීමට සහ ඔවුන්ගේ අනාගත අධ්‍යයන හා වෘත්තීය කටයුතු සඳහා ශක්තිමත් පදනමක් ගොඩනැගීමට අවශ්‍ය දැනුම හා කුසලතා වලින් සිසුන් සවිබල ගැන්වීම අපගේ අරමුණයි.",
       "p2": "තනි තනි ශිෂ්‍ය අවශ්‍යතා සපුරාලන, ඉගෙනීම අන්තර්ක්‍රියාකාරී සහ ඵලදායී කිරීමට තාක්‍ෂණය උපයෝගී කරගනිමින්, සහායක සහ සිත් ඇදගන්නා සුළු ඉගෙනුම් පරිසරයක් පෝෂණය කිරීමට අපි විශ්වාස කරමු. අධ්‍යාපනික හිඩැස් පියවා අපගේ වේදිකාවට සම්බන්ධ වන සෑම සිසුවෙකුගේම අධ්‍යයන සාර්ථකත්වයට දායක වීම අපගේ කැපවීමයි.",
       "image1Alt": "[SI: Online class in session]",
@@ -84,7 +84,7 @@
     "educators": {
       "title": "අපගේ ගුරු මණ්ඩලය",
       "titleSinhala": "අපගේ ගුරු මණ්ඩලය",
-      "titleTamil": "අපගේ ගුරු මණ්ඩලය (දෙමළ සඳහා)",
+      "titleTamil": "[SI: எமது கல்வியாளர்கள்]",
       "p1": "ගුරු ගෙදර E-School හි අපගේ අධ්‍යාපනඥයින් කණ්ඩායම, තම විෂයයන් කෙරෙහි දැඩි උනන්දුවක් දක්වන සහ ශිෂ්‍ය සාර්ථකත්වය සඳහා කැපවූ පළපුරුදු සහ කැපවූ ගුරුවරුන්ගෙන් සමන්විත වේ. ඔවුන් ඔන්ලයින් පන්ති කාමරයට ඉගැන්වීමේ අත්දැකීම් සම්භාරයක්, අ.පො.ස. සා/පෙළ විෂය නිර්දේශය පිළිබඳ ගැඹුරු අවබෝධයක් සහ නව්‍ය ඉගැන්වීම් ක්‍රමවේදයන් රැගෙන එයි.",
       "p2": "සෑම ගුරුවරයෙකුම ඔවුන්ගේ විශේෂඥභාවය, ඔන්ලයින් පසුබිමක සිසුන් සම්බන්ධ කර ගැනීමේ හැකියාව සහ පුද්ගලාරෝපිත සහාය ලබා දීම සඳහා ඔවුන්ගේ කැපවීම මත ප්‍රවේශමෙන් තෝරා ගනු ලැබේ. දැනුම ලබා දෙනවා පමණක් නොව, සිසුන්ගේ පූර්ණ හැකියාවන් සාක්ෂාත් කර ගැනීම සඳහා ඔවුන්ව දිරිමත් කරන සහ අභිප්‍රේරණය කරන කණ්ඩායමක් සිටීම ගැන අපි ආඩම්බර වෙමු.",
       "teacher1Role": "ආරම්භක සහ ගණිත අංශ ප්‍රධානී",
@@ -100,37 +100,40 @@
   "courses": {
     "title": "අපගේ පාඨමාලා",
     "titleSinhala": "අපගේ පාඨමාලා",
-    "titleTamil": "අපගේ පාඨමාලා (දෙමළ සඳහා)",
+    "titleTamil": "[SI: எமது பாடநெறிகள்]",
     "subtitle": "ගුරු ගෙදර E-School හි අ.පො.ස. සා/පෙළ සිසුන් සඳහා පිරිනමන විෂයයන් ගවේෂණය කරන්න.",
     "enrollButton": "ලියාපදිංචි වන්න",
     "enrollButtonAdditionSinhala": "ලියාපදිංචි වන්න",
-    "enrollButtonAdditionTamil": "ලියාපදිංචි වන්න (දෙමළ සඳහා)",
+    "enrollButtonAdditionTamil": "[SI: இப்போது பதிவு செய்க]",
+    "viewDetailsButton": "විස්තර බලන්න",
+    "viewDetailsButtonAdditionSinhala": "විස්තර බලන්න",
+    "viewDetailsButtonAdditionTamil": "[SI: விவரங்களைக் காண்க]",
     "subjects": {
       "science": {
         "name": "විද්‍යාව",
         "sinhalaName": "විද්‍යාව",
-        "tamilName": "විද්‍යාව (දෙමළ සඳහා)",
+        "tamilName": "[SI: விஞ்ஞானம்]",
         "description": "භෞතික විද්‍යාව, රසායන විද්‍යාව සහ ජීව විද්‍යාව යන මූලධර්ම ගැඹුරින් හදාරන්න. අපගේ විද්‍යා පාඨමාලාව ශක්තිමත් සංකල්පීය අවබෝධයක් ගොඩනැගීමට සහ ප්‍රායෝගික යෙදුම් සඳහා සිසුන් සූදානම් කිරීමට සැලසුම් කර ඇත.",
         "imageAlt": "[SI: Science illustration]"
       },
       "mathematics": {
         "name": "ගණිතය",
         "sinhalaName": "ගණිතය",
-        "tamilName": "ගණිතය (දෙමළ සඳහා)",
+        "tamilName": "[SI: கணிதம்]",
         "description": "අපගේ පුළුල් ගණිත විෂය මාලාව සමඟ විවේචනාත්මක චින්තනය සහ ගැටළු විසඳීමේ හැකියාවන් වර්ධනය කරගන්න. පැහැදිලි පැහැදිලි කිරීම් සහ අභ්‍යාස සමඟ සියලුම සා/පෙළ මාතෘකා ආවරණය කරයි.",
         "imageAlt": "[SI: Mathematics illustration]"
       },
       "english": {
         "name": "ඉංග්‍රීසි භාෂාව",
         "sinhalaName": "ඉංග්‍රීසි භාෂාව",
-        "tamilName": "ඉංග්‍රීසි භාෂාව (දෙමළ සඳහා)",
+        "tamilName": "[SI: ஆங்கில மொழி]",
         "description": "ඔබගේ ව්‍යාකරණ, වචන මාලාව, කියවීම සහ ලිවීමේ කුසලතා වැඩි දියුණු කරගන්න. අපගේ ඉංග්‍රීසි පාඨමාලාව ඵලදායී සන්නිවේදනය සහ සා/පෙළ විභාග සාර්ථකත්වය කෙරෙහි අවධානය යොමු කරයි.",
         "imageAlt": "[SI: English Language illustration]"
       },
       "ict": {
         "name": "තොරතුරු හා සන්නිවේදන තාක්ෂණය",
         "sinhalaName": "තොරතුරු හා සන්නිවේදන තාක්ෂණය",
-        "tamilName": "තොරතුරු හා සන්නිවේදන තාක්ෂණය (දෙමළ සඳහා)",
+        "tamilName": "[SI: தகவல் மற்றும் தொடர்பாடல் தொழில்நுட்பம்]",
         "description": "අත්‍යවශ්‍ය ඩිජිටල් සාක්ෂරතාවය සහ තොරතුරු හා සන්නිවේදන තාක්ෂණ කුසලතා ලබා ගන්න. මෙම පාඨමාලාව සා/පෙළ විෂය නිර්දේශයට සහ නවීන ලෝකයට අදාළ න්‍යායාත්මක සංකල්ප සහ ප්‍රායෝගික යෙදුම් ආවරණය කරයි.",
         "imageAlt": "[SI: ICT illustration]"
       }
@@ -139,7 +142,7 @@
   "timetable": {
     "title": "පන්ති කාලසටහන",
     "titleSinhala": "පන්ති කාලසටහන",
-    "titleTamil": "පන්ති කාලසටහන (දෙමළ සඳහා)",
+    "titleTamil": "[SI: வகுப்பு கால அட்டவணை]",
     "subtitle": "අපගේ සතිපතා පන්ති කාලසටහන. පන්ති වේලාවන් සමඟ යාවත්කාලීනව සිටින්න.",
     "card": {
       "title": "සතිපතා කාලසටහන",
@@ -150,56 +153,56 @@
     "table": {
       "headerDay": "දිනය",
       "headerDayAdditionSinhala": "දිනය",
-      "headerDayAdditionTamil": "දිනය (දෙමළ සඳහා)",
+      "headerDayAdditionTamil": "[SI: நாள்]",
       "headerTime": "වේලාව",
       "headerTimeAdditionSinhala": "වේලාව",
-      "headerTimeAdditionTamil": "වේලාව (දෙමළ සඳහා)",
+      "headerTimeAdditionTamil": "[SI: நேரம்]",
       "headerSubject": "විෂය",
       "headerSubjectAdditionSinhala": "විෂය",
-      "headerSubjectAdditionTamil": "විෂය (දෙමළ සඳහා)",
+      "headerSubjectAdditionTamil": "[SI: பாடம்]",
       "headerTeacher": "ගුරුතුමා/ගුරුතුමිය",
       "headerTeacherAdditionSinhala": "ගුරුතුමා/ගුරුතුමිය",
-      "headerTeacherAdditionTamil": "ගුරුතුමා/ගුරුතුමිය (දෙමළ සඳහා)"
+      "headerTeacherAdditionTamil": "[SI: ஆசிரியர்]"
     },
     "subjects": {
       "mathematics": "ගණිතය",
       "mathematicsSinhala": "ගණිතය",
-      "mathematicsTamil": "ගණිතය (දෙමළ සඳහා)",
+      "mathematicsTamil": "[SI: கணிதம்]",
       "science": "විද්‍යාව",
       "scienceSinhala": "විද්‍යාව",
-      "scienceTamil": "විද්‍යාව (දෙමළ සඳහා)",
+      "scienceTamil": "[SI: விஞ்ஞானம்]",
       "english": "ඉංග්‍රීසි",
       "englishSinhala": "ඉංග්‍රීසි",
-      "englishTamil": "ඉංග්‍රීසි (දෙමළ සඳහා)",
+      "englishTamil": "[SI: ஆங்கிலம்]",
       "ict": "තොරතුරු තාක්ෂණය",
       "ictSinhala": "තොරතුරු තාක්ෂණය",
-      "ictTamil": "තොරතුරු තාක්ෂණය (දෙමළ සඳහා)",
+      "ictTamil": "[SI: தகவல் தொடர்பாடல் தொழில்நுட்பம்]",
       "mathematicsRevision": "ගණිතය - පුනරීක්ෂණ",
       "mathematicsRevisionSinhala": "ගණිතය - පුනරීක්ෂණ",
-      "mathematicsRevisionTamil": "ගණිතය - පුනරීක්ෂණ (දෙමළ සඳහා)",
+      "mathematicsRevisionTamil": "[SI: கணிதம் - மீளாய்வு]",
       "scienceRevision": "විද්‍යාව - ප්‍රායෝගික/පුනරීක්ෂණ",
       "scienceRevisionSinhala": "විද්‍යාව - ප්‍රායෝගික/පුනරීක්ෂණ",
-      "scienceRevisionTamil": "විද්‍යාව - ප්‍රායෝගික/පුනරීක්ෂණ (දෙමළ සඳහා)",
+      "scienceRevisionTamil": "[SI: விஞ்ஞானம் - செய்முறை/மீளாய்வு]",
       "englishPaperClass": "ඉංග්‍රීසි - ප්‍රශ්න පත්‍ර පන්තිය",
       "englishPaperClassSinhala": "ඉංග්‍රීසි - ප්‍රශ්න පත්‍ර පන්තිය",
-      "englishPaperClassTamil": "ඉංග්‍රීසි - ප්‍රශ්න පත්‍ර පන්තිය (දෙමළ සඳහා)"
+      "englishPaperClassTamil": "[SI: ஆங்கிலம் - வினாத்தாள் வகுப்பு]"
     }
   },
   "contact": {
     "title": "අප අමතන්න",
     "titleSinhala": "අප අමතන්න",
-    "titleTamil": "අප අමතන්න (දෙමළ සඳහා)",
+    "titleTamil": "[SI: எங்களை தொடர்பு கொள்ள]",
     "subtitle": "ඔබට ඇති ඕනෑම ප්‍රශ්නයකට උදවු කිරීමට අපි මෙහි සිටිමු.",
     "form": {
       "title": "පණිවිඩයක් එවන්න",
       "titleAdditionSinhala": "පණිවිඩයක් එවන්න",
-      "titleAdditionTamil": "පණිවිඩයක් එවන්න (දෙමළ සඳහා)",
+      "titleAdditionTamil": "[SI: எங்களுக்கு ஒரு செய்தியை அனுப்பவும்]",
       "description": "පහත පෝරමය පුරවන්න, අපි හැකි ඉක්මනින් ඔබ හා සම්බන්ධ වන්නෙමු."
     },
     "otherWays": {
       "title": "අප හා සම්බන්ධ වීමට වෙනත් මාර්ග",
       "titleAdditionSinhala": "වෙනත් මාර්ග",
-      "titleAdditionTamil": "වෙනත් මාර්ග (දෙමළ සඳහා)",
+      "titleAdditionTamil": "[SI: எங்களை அடைய மற்ற வழிகள்]",
       "description": "ඔබට මෙම නාලිකා හරහා ද සෘජුවම අප හා සම්බන්ධ විය හැක.",
       "phone": {
         "title": "WhatsApp / දුරකථන",
@@ -209,13 +212,13 @@
       "email": {
         "title": "විද්‍යුත් තැපෑල",
         "titleAdditionSinhala": "විද්‍යුත් තැපෑල",
-        "titleAdditionTamil": "විද්‍යුත් තැපෑල (දෙමළ සඳහා)",
+        "titleAdditionTamil": "[SI: மின்னஞ்சல் முகவரி]",
         "address": "info@gurugedara.lk (ආදර්ශ)"
       },
       "location": {
         "title": "අපගේ ස්ථානය",
         "titleAdditionSinhala": "ස්ථානය",
-        "titleAdditionTamil": "ස්ථානය (දෙමළ සඳහා)",
+        "titleAdditionTamil": "[SI: எங்கள் இடம்]",
         "address": "අංක 123, ප්‍රධාන වීදිය, කොළඹ, ශ්‍රී ලංකාව (ඔන්ලයින් මෙහෙයුම් මධ්‍යස්ථානය - ආදර්ශ)"
       }
     },
@@ -225,36 +228,36 @@
     "name": {
       "label": "ඔබගේ නම",
       "labelAdditionSinhala": "ඔබගේ නම",
-      "labelAdditionTamil": "ඔබගේ නම (දෙමළ සඳහා)",
+      "labelAdditionTamil": "[SI: உங்கள் பெயர்]",
       "placeholder": "උදා: සුනිල් පෙරේරා"
     },
     "email": {
       "label": "විද්‍යුත් තැපෑල",
       "labelAdditionSinhala": "විද්‍යුත් තැපෑල",
-      "labelAdditionTamil": "විද්‍යුත් තැපෑල (දෙමළ සඳහා)",
+      "labelAdditionTamil": "[SI: மின்னஞ்சல் முகவரி]",
       "placeholder": "උදා: sunil@example.com"
     },
     "subject": {
       "label": "විෂය",
       "labelAdditionSinhala": "විෂය",
-      "labelAdditionTamil": "විෂය (දෙමළ සඳහා)",
+      "labelAdditionTamil": "[SI: பொருள்]",
       "placeholder": "උදා: විද්‍යා පන්තිය පිළිබඳ විමසීම"
     },
     "message": {
       "label": "පණිවිඩය",
       "labelAdditionSinhala": "පණිවිඩය",
-      "labelAdditionTamil": "පණිවිඩය (දෙමළ සඳහා)",
+      "labelAdditionTamil": "[SI: செய்தி]",
       "placeholder": "ඔබගේ පණිවිඩය මෙහි ටයිප් කරන්න..."
     },
     "submitButton": "යවන්න",
     "submitButtonAdditionSinhala": "යවන්න",
-    "submitButtonAdditionTamil": "යවන්න (දෙමළ සඳහා)",
+    "submitButtonAdditionTamil": "[SI: செய்தியை அனுப்பு]",
     "submittingButton": "යවමින්...",
     "toast": {
       "success": {
         "title": "අදහස් යැව්වා!",
         "titleAdditionSinhala": "අදහස් යැව්වා!",
-        "titleAdditionTamil": "අදහස් යැව්වා! (දෙමළ සඳහා)",
+        "titleAdditionTamil": "[SI: செய்தி அனுப்பப்பட்டது!]",
         "description": "අප හා සම්බන්ධ වීම ගැන ඔබට ස්තුතියි. අපි හැකි ඉක්මනින් ඔබ හා සම්බන්ධ වන්නෙමු."
       }
     },
@@ -265,5 +268,72 @@
       "messageMin": "පණිවිඩය අවම වශයෙන් අක්ෂර 10ක් විය යුතුය.",
       "messageMax": "පණිවිඩය අක්ෂර 500 නොඉක්මවිය යුතුය."
     }
+  },
+  "courseDetails": {
+    "backToCourses": "පාඨමාලා වෙත ආපසු යන්න",
+    "courseNotFound": {
+      "title": "පාඨමාලාව හමු නොවීය",
+      "message": "ඔබ සොයන පාඨමාලාව නොපවතී හෝ එය ගෙන ගොස් තිබිය හැක."
+    },
+    "heroImageAlt": "[SI: Hero image for {courseName}]",
+    "overviewTitle": "පාඨමාලා දළ විශ්ලේෂණය",
+    "whatYouWillLearnTitle": "ඔබ ඉගෙන ගන්නේ කුමක්ද?",
+    "syllabusTitle": "විෂය නිර්දේශ දළ සටහන",
+    "syllabusNote": "[SI: Note: This is a general outline. The full syllabus will be covered comprehensively during the course.]",
+    "instructorTitle": "ඔබේ උපදේශක හමුවන්න",
+    "instructorImageAlt": "[SI: Instructor for {courseName}]",
+    "enrollNow": "මෙම පාඨමාලාව සඳහා ලියාපදිංචි වන්න",
+    "subjects": {
+      "science": {
+        "detailedDescription": "[SI: Dive deeper into the world of Science. This comprehensive course covers advanced topics in Physics, Chemistry, and Biology, preparing you for higher studies and practical applications. Interactive labs and projects included.]",
+        "learningOutcome1": "[SI: Understand advanced scientific principles.]",
+        "learningOutcome2": "[SI: Develop strong analytical and experimental skills.]",
+        "learningOutcome3": "[SI: Apply scientific knowledge to real-world problems.]",
+        "syllabusHighlight1": "[SI: Advanced Mechanics & Thermodynamics (Physics)]",
+        "syllabusHighlight2": "[SI: Organic Chemistry & Chemical Kinetics (Chemistry)]",
+        "syllabusHighlight3": "[SI: Genetics & Ecology (Biology)]",
+        "instructorName": "[SI: Ms. B. Silva]",
+        "instructorBio": "[SI: A renowned educator with 10+ years of experience in teaching Science, Ms. Silva has a passion for making complex topics understandable and engaging for all students.]",
+        "instructorExperience": "[SI: 10+ Years Experience]"
+      },
+      "mathematics": {
+        "detailedDescription": "[SI: This Mathematics course offers a thorough exploration of all G.C.E. O/L topics. It focuses on building strong problem-solving skills, logical reasoning, and a deep understanding of mathematical concepts through clear explanations and extensive practice.]",
+        "learningOutcome1": "[SI: Master core mathematical concepts for O/L.]",
+        "learningOutcome2": "[SI: Enhance problem-solving and analytical abilities.]",
+        "learningOutcome3": "[SI: Develop confidence in tackling complex mathematical challenges.]",
+        "syllabusHighlight1": "[SI: Algebra & Number Theory]",
+        "syllabusHighlight2": "[SI: Geometry & Trigonometry]",
+        "syllabusHighlight3": "[SI: Statistics & Probability]",
+        "instructorName": "[SI: Mr. A. B. C. Perera]",
+        "instructorBio": "[SI: With over 15 years dedicated to teaching Mathematics, Mr. Perera is known for his clear teaching style and ability to simplify complex theories, helping students achieve excellent results.]",
+        "instructorExperience": "[SI: 15+ Years Experience]"
+      },
+      "english": {
+        "detailedDescription": "[SI: Our English Language course is designed to significantly improve your grammar, vocabulary, reading comprehension, and writing skills. We focus on effective communication strategies and thorough preparation for all aspects of the O/L English exam.]",
+        "learningOutcome1": "[SI: Achieve proficiency in English grammar and usage.]",
+        "learningOutcome2": "[SI: Expand vocabulary and improve comprehension skills.]",
+        "learningOutcome3": "[SI: Develop strong writing skills for various contexts.]",
+        "syllabusHighlight1": "[SI: Advanced Grammar & Composition]",
+        "syllabusHighlight2": "[SI: Literature Analysis & Appreciation]",
+        "syllabusHighlight3": "[SI: Oral Communication & Presentation Skills]",
+        "instructorName": "[SI: Ms. F. G. H. Fonseka]",
+        "instructorBio": "[SI: Ms. Fonseka is an experienced English language instructor with a Masters in English Literature. She is passionate about helping students develop a love for the language and excel in communication.]",
+        "instructorExperience": "[SI: 12+ Years Experience]"
+      },
+      "ict": {
+        "detailedDescription": "[SI: This Information & Communication Technology (ICT) course provides essential digital literacy and technical skills. It covers theoretical concepts, practical applications relevant to the O/L syllabus, and prepares students for the digital demands of the modern world.]",
+        "learningOutcome1": "[SI: Gain a solid understanding of ICT fundamentals.]",
+        "learningOutcome2": "[SI: Develop practical skills in common software applications.]",
+        "learningOutcome3": "[SI: Understand the basics of programming and web development.]",
+        "syllabusHighlight1": "[SI: Computer Hardware & Software Systems]",
+        "syllabusHighlight2": "[SI: Database Management & Spreadsheets]",
+        "syllabusHighlight3": "[SI: Introduction to Programming & Web Design]",
+        "instructorName": "[SI: Mr. I. J. K. Dias]",
+        "instructorBio": "[SI: Mr. Dias is a certified ICT professional and educator with a focus on practical, hands-on learning. He aims to equip students with the digital skills necessary for future success.]",
+        "instructorExperience": "[SI: 8+ Years Experience]"
+      }
+    }
   }
 }
+
+    

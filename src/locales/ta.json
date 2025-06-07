@@ -27,25 +27,25 @@
       "science": {
         "name": "[TA: Science]",
         "sinhalaName": "[TA: විද්‍යාව]",
-        "tamilName": "[TA: விஞ்ஞானம்]",
+        "tamilName": "விஞ்ஞானம்",
         "description": "[TA: Explore the wonders of the physical and natural world.]"
       },
       "mathematics": {
         "name": "[TA: Mathematics]",
         "sinhalaName": "[TA: ගණිතය]",
-        "tamilName": "[TA: கணிதம்]",
+        "tamilName": "கணிதம்",
         "description": "[TA: Master logical reasoning and problem-solving skills.]"
       },
       "english": {
         "name": "[TA: English]",
         "sinhalaName": "[TA: ඉංග්‍රීසි]",
-        "tamilName": "[TA: ஆங்கிலம்]",
+        "tamilName": "ஆங்கிலம்",
         "description": "[TA: Enhance your communication and language proficiency.]"
       },
       "ict": {
         "name": "[TA: ICT]",
         "sinhalaName": "[TA: ICT]",
-        "tamilName": "[TA: தகவல் தொடர்பாடல் தொழில்நுட்பம்]",
+        "tamilName": "தகவல் தொடர்பாடல் தொழில்நுட்பம்",
         "description": "[TA: Navigate the digital world with essential tech skills.]"
       },
       "learnMoreButton": "[TA: Learn More]"
@@ -70,12 +70,12 @@
   "about": {
     "title": "[TA: About Us]",
     "titleSinhala": "[TA: අප ගැන]",
-    "titleTamil": "[TA: எங்களைப் பற்றி]",
+    "titleTamil": "எங்களைப் பற்றி",
     "subtitle": "[TA: About ගුරු ගෙදර E-School]",
     "mission": {
       "title": "[TA: Our Mission]",
       "titleSinhala": "[TA: අපගේ මෙහෙවර]",
-      "titleTamil": "[TA: எமது நோக்கம்]",
+      "titleTamil": "எமது நோக்கம்",
       "p1": "[TA: At ගුරු ගෙදර E-School, our mission is to provide high-quality, accessible, and affordable online education to G.C.E. Ordinary Level students across Sri Lanka. We aim to empower students with the knowledge and skills necessary to excel in their examinations and build a strong foundation for their future academic and professional pursuits.]",
       "p2": "[TA: We believe in fostering a supportive and engaging learning environment that caters to individual student needs, leveraging technology to make learning interactive and effective. Our commitment is to bridge educational gaps and contribute to the academic success of every student who joins our platform.]",
       "image1Alt": "[TA: Online class in session]",
@@ -84,7 +84,7 @@
     "educators": {
       "title": "[TA: Our Educators]",
       "titleSinhala": "[TA: අපගේ ගුරු මණ්ඩලය]",
-      "titleTamil": "[TA: எமது கல்வியாளர்கள்]",
+      "titleTamil": "எமது கல்வியாளர்கள்",
       "p1": "[TA: Our team of educators at ගුරු ගෙදර E-School comprises experienced and dedicated teachers who are passionate about their subjects and committed to student success. They bring a wealth of teaching experience, a deep understanding of the G.C.E. O/L curriculum, and innovative teaching methodologies to the online classroom.]",
       "p2": "[TA: Each teacher is carefully selected for their expertise, ability to engage students in an online setting, and their dedication to providing personalized support. We are proud to have a team that not only imparts knowledge but also inspires and motivates students to achieve their full potential.]",
       "teacher1Role": "[TA: Founder & Mathematics Lead]",
@@ -100,37 +100,40 @@
   "courses": {
     "title": "[TA: Our Courses]",
     "titleSinhala": "[TA: අපගේ පාඨමාලා]",
-    "titleTamil": "[TA: எமது பாடநெறிகள்]",
+    "titleTamil": "எமது பாடநெறிகள்",
     "subtitle": "[TA: Explore the subjects offered at ගුරු ගෙදර E-School for G.C.E. O/L students.]",
     "enrollButton": "[TA: Enroll Now]",
     "enrollButtonAdditionSinhala": "[TA: ලියාපදිංචි වන්න]",
-    "enrollButtonAdditionTamil": "[TA: இப்போது பதிவு செய்க]",
+    "enrollButtonAdditionTamil": "இப்போது பதிவு செய்க",
+    "viewDetailsButton": "[TA: View Details]",
+    "viewDetailsButtonAdditionSinhala": "[TA: විස්තර බලන්න]",
+    "viewDetailsButtonAdditionTamil": "விவரங்களைக் காண்க",
     "subjects": {
       "science": {
         "name": "[TA: Science]",
         "sinhalaName": "[TA: විද්‍යාව]",
-        "tamilName": "[TA: விஞ்ஞானம்]",
+        "tamilName": "விஞ்ஞானம்",
         "description": "[TA: Delve into the principles of Physics, Chemistry, and Biology. Our Science course is designed to build a strong conceptual understanding and prepare students for practical applications.]",
         "imageAlt": "[TA: Science illustration]"
       },
       "mathematics": {
         "name": "[TA: Mathematics]",
         "sinhalaName": "[TA: ගණිතය]",
-        "tamilName": "[TA: கணிதம்]",
+        "tamilName": "கணிதம்",
         "description": "[TA: Develop critical thinking and problem-solving abilities with our comprehensive Mathematics curriculum. Covers all O/L topics with clear explanations and practice.]",
         "imageAlt": "[TA: Mathematics illustration]"
       },
       "english": {
         "name": "[TA: English Language]",
         "sinhalaName": "[TA: ඉංග්‍රීසි භාෂාව]",
-        "tamilName": "[TA: ஆங்கில மொழி]",
+        "tamilName": "ஆங்கில மொழி",
         "description": "[TA: Improve your grammar, vocabulary, reading, and writing skills. Our English course focuses on effective communication and O/L exam success.]",
         "imageAlt": "[TA: English Language illustration]"
       },
       "ict": {
         "name": "[TA: Information & Communication Technology]",
         "sinhalaName": "[TA: තොරතුරු හා සන්නිවේදන තාක්ෂණය]",
-        "tamilName": "[TA: தகவல் மற்றும் தொடர்பாடல் தொழில்நுட்பம்]",
+        "tamilName": "தகவல் மற்றும் தொடர்பாடல் தொழில்நுட்பம்",
         "description": "[TA: Gain essential digital literacy and ICT skills. This course covers theoretical concepts and practical applications relevant to the O/L syllabus and modern world.]",
         "imageAlt": "[TA: ICT illustration]"
       }
@@ -139,7 +142,7 @@
   "timetable": {
     "title": "[TA: Class Timetable]",
     "titleSinhala": "[TA: පන්ති කාලසටහන]",
-    "titleTamil": "[TA: வகுப்பு கால அட்டவணை]",
+    "titleTamil": "வகுப்பு கால அட்டவணை",
     "subtitle": "[TA: Our Weekly Class Schedule. Stay updated with class timings.]",
     "card": {
       "title": "[TA: Weekly Timetable]",
@@ -150,56 +153,56 @@
     "table": {
       "headerDay": "[TA: Day]",
       "headerDayAdditionSinhala": "[TA: දිනය]",
-      "headerDayAdditionTamil": "[TA: நாள்]",
+      "headerDayAdditionTamil": "நாள்",
       "headerTime": "[TA: Time]",
       "headerTimeAdditionSinhala": "[TA: වේලාව]",
-      "headerTimeAdditionTamil": "[TA: நேரம்]",
+      "headerTimeAdditionTamil": "நேரம்",
       "headerSubject": "[TA: Subject]",
       "headerSubjectAdditionSinhala": "[TA: විෂය]",
-      "headerSubjectAdditionTamil": "[TA: பாடம்]",
+      "headerSubjectAdditionTamil": "பாடம்",
       "headerTeacher": "[TA: Teacher]",
       "headerTeacherAdditionSinhala": "[TA: ගුරුතුමා/ගුරුතුමිය]",
-      "headerTeacherAdditionTamil": "[TA: ஆசிரியர்]"
+      "headerTeacherAdditionTamil": "ஆசிரியர்"
     },
     "subjects": {
       "mathematics": "[TA: Mathematics]",
       "mathematicsSinhala": "[TA: ගණිතය]",
-      "mathematicsTamil": "[TA: கணிதம்]",
+      "mathematicsTamil": "கணிதம்",
       "science": "[TA: Science]",
       "scienceSinhala": "[TA: විද්‍යාව]",
-      "scienceTamil": "[TA: விஞ்ஞானம்]",
+      "scienceTamil": "விஞ்ஞானம்",
       "english": "[TA: English]",
       "englishSinhala": "[TA: ඉංග්‍රීසි]",
-      "englishTamil": "[TA: ஆங்கிலம்]",
+      "englishTamil": "ஆங்கிலம்",
       "ict": "[TA: ICT]",
       "ictSinhala": "[TA: තොරතුරු තාක්ෂණය]",
-      "ictTamil": "[TA: தகவல் தொடர்பாடல் தொழில்நுட்பம்]",
+      "ictTamil": "தகவல் தொடர்பாடல் தொழில்நுட்பம்",
       "mathematicsRevision": "[TA: Mathematics - Revision]",
       "mathematicsRevisionSinhala": "[TA: ගණිතය - පුනරීක්ෂණ]",
-      "mathematicsRevisionTamil": "[TA: கணிதம் - மீளாய்வு]",
+      "mathematicsRevisionTamil": "கணிதம் - மீளாய்வு",
       "scienceRevision": "[TA: Science - Practicals/Revision]",
       "scienceRevisionSinhala": "[TA: විද්‍යාව - ප්‍රායෝගික/පුනරීක්ෂණ]",
-      "scienceRevisionTamil": "[TA: விஞ்ஞானம் - செய்முறை/மீளாய்வு]",
+      "scienceRevisionTamil": "விஞ்ஞானம் - செய்முறை/மீளாய்வு",
       "englishPaperClass": "[TA: English - Paper Class]",
       "englishPaperClassSinhala": "[TA: ඉංග්‍රීසි - ප්‍රශ්න පත්‍ර පන්තිය]",
-      "englishPaperClassTamil": "[TA: ஆங்கிலம் - வினாத்தாள் வகுப்பு]"
+      "englishPaperClassTamil": "ஆங்கிலம் - வினாத்தாள் வகுப்பு"
     }
   },
   "contact": {
     "title": "[TA: Contact Us]",
     "titleSinhala": "[TA: අප අමතන්න]",
-    "titleTamil": "[TA: எங்களை தொடர்பு கொள்ள]",
+    "titleTamil": "எங்களை தொடர்பு கொள்ள",
     "subtitle": "[TA: We're here to help with any questions you may have.]",
     "form": {
       "title": "[TA: Send us a Message]",
       "titleAdditionSinhala": "[TA: පණිවිඩයක් එවන්න]",
-      "titleAdditionTamil": "[TA: எங்களுக்கு ஒரு செய்தியை அனுப்பவும்]",
+      "titleAdditionTamil": "எங்களுக்கு ஒரு செய்தியை அனுப்பவும்",
       "description": "[TA: Fill out the form below and we'll get back to you as soon as possible.]"
     },
     "otherWays": {
       "title": "[TA: Other Ways to Reach Us]",
       "titleAdditionSinhala": "[TA: වෙනත් මාර්ග]",
-      "titleAdditionTamil": "[TA: எங்களை அடைய மற்ற வழிகள்]",
+      "titleAdditionTamil": "எங்களை அடைய மற்ற வழிகள்",
       "description": "[TA: You can also contact us directly through these channels.]",
       "phone": {
         "title": "[TA: WhatsApp / Phone]",
@@ -209,13 +212,13 @@
       "email": {
         "title": "[TA: Email Address]",
         "titleAdditionSinhala": "[TA: විද්‍යුත් තැපෑල]",
-        "titleAdditionTamil": "[TA: மின்னஞ்சல் முகவரி]",
+        "titleAdditionTamil": "மின்னஞ்சல் முகவரி",
         "address": "[TA: info@gurugedara.lk (Placeholder)]"
       },
       "location": {
         "title": "[TA: Our Location]",
         "titleAdditionSinhala": "[TA: ස්ථානය]",
-        "titleAdditionTamil": "[TA: எங்கள் இடம்]",
+        "titleAdditionTamil": "எங்கள் இடம்",
         "address": "[TA: No. 123, Main Street, Colombo, Sri Lanka (Online Operations Hub - Placeholder)]"
       }
     },
@@ -225,36 +228,36 @@
     "name": {
       "label": "[TA: Your Name]",
       "labelAdditionSinhala": "[TA: ඔබගේ නම]",
-      "labelAdditionTamil": "[TA: உங்கள் பெயர்]",
+      "labelAdditionTamil": "உங்கள் பெயர்",
       "placeholder": "[TA: e.g., Sunil Perera]"
     },
     "email": {
       "label": "[TA: Email Address]",
       "labelAdditionSinhala": "[TA: විද්‍යුත් තැපෑල]",
-      "labelAdditionTamil": "[TA: மின்னஞ்சல் முகவரி]",
+      "labelAdditionTamil": "மின்னஞ்சல் முகவரி",
       "placeholder": "[TA: e.g., sunil@example.com]"
     },
     "subject": {
       "label": "[TA: Subject]",
       "labelAdditionSinhala": "[TA: විෂය]",
-      "labelAdditionTamil": "[TA: பொருள்]",
+      "labelAdditionTamil": "பொருள்",
       "placeholder": "[TA: e.g., Inquiry about Science class]"
     },
     "message": {
       "label": "[TA: Message]",
       "labelAdditionSinhala": "[TA: පණිවිඩය]",
-      "labelAdditionTamil": "[TA: செய்தி]",
+      "labelAdditionTamil": "செய்தி",
       "placeholder": "[TA: Type your message here...]"
     },
     "submitButton": "[TA: Send Message]",
     "submitButtonAdditionSinhala": "[TA: යවන්න]",
-    "submitButtonAdditionTamil": "[TA: செய்தியை அனுப்பு]",
+    "submitButtonAdditionTamil": "செய்தியை அனுப்பு",
     "submittingButton": "[TA: Sending...]",
     "toast": {
       "success": {
         "title": "[TA: Message Sent!]",
         "titleAdditionSinhala": "[TA: අදහස් යැව්වා!]",
-        "titleAdditionTamil": "[TA: செய்தி அனுப்பப்பட்டது!]",
+        "titleAdditionTamil": "செய்தி அனுப்பப்பட்டது!",
         "description": "[TA: Thank you for contacting us. We will get back to you soon.]"
       }
     },
@@ -265,5 +268,72 @@
       "messageMin": "[TA: Message must be at least 10 characters.]",
       "messageMax": "[TA: Message must not exceed 500 characters.]"
     }
+  },
+  "courseDetails": {
+    "backToCourses": "[TA: Back to Courses]",
+    "courseNotFound": {
+      "title": "[TA: Course Not Found]",
+      "message": "[TA: The course you are looking for does not exist or may have been moved.]"
+    },
+    "heroImageAlt": "[TA: Hero image for {courseName}]",
+    "overviewTitle": "[TA: Course Overview]",
+    "whatYouWillLearnTitle": "[TA: What You Will Learn]",
+    "syllabusTitle": "[TA: Syllabus Outline]",
+    "syllabusNote": "[TA: Note: This is a general outline. The full syllabus will be covered comprehensively during the course.]",
+    "instructorTitle": "[TA: Meet Your Instructor]",
+    "instructorImageAlt": "[TA: Instructor for {courseName}]",
+    "enrollNow": "[TA: Enroll in this Course]",
+    "subjects": {
+      "science": {
+        "detailedDescription": "[TA: Dive deeper into the world of Science. This comprehensive course covers advanced topics in Physics, Chemistry, and Biology, preparing you for higher studies and practical applications. Interactive labs and projects included.]",
+        "learningOutcome1": "[TA: Understand advanced scientific principles.]",
+        "learningOutcome2": "[TA: Develop strong analytical and experimental skills.]",
+        "learningOutcome3": "[TA: Apply scientific knowledge to real-world problems.]",
+        "syllabusHighlight1": "[TA: Advanced Mechanics & Thermodynamics (Physics)]",
+        "syllabusHighlight2": "[TA: Organic Chemistry & Chemical Kinetics (Chemistry)]",
+        "syllabusHighlight3": "[TA: Genetics & Ecology (Biology)]",
+        "instructorName": "[TA: Ms. B. Silva]",
+        "instructorBio": "[TA: A renowned educator with 10+ years of experience in teaching Science, Ms. Silva has a passion for making complex topics understandable and engaging for all students.]",
+        "instructorExperience": "[TA: 10+ Years Experience]"
+      },
+      "mathematics": {
+        "detailedDescription": "[TA: This Mathematics course offers a thorough exploration of all G.C.E. O/L topics. It focuses on building strong problem-solving skills, logical reasoning, and a deep understanding of mathematical concepts through clear explanations and extensive practice.]",
+        "learningOutcome1": "[TA: Master core mathematical concepts for O/L.]",
+        "learningOutcome2": "[TA: Enhance problem-solving and analytical abilities.]",
+        "learningOutcome3": "[TA: Develop confidence in tackling complex mathematical challenges.]",
+        "syllabusHighlight1": "[TA: Algebra & Number Theory]",
+        "syllabusHighlight2": "[TA: Geometry & Trigonometry]",
+        "syllabusHighlight3": "[TA: Statistics & Probability]",
+        "instructorName": "[TA: Mr. A. B. C. Perera]",
+        "instructorBio": "[TA: With over 15 years dedicated to teaching Mathematics, Mr. Perera is known for his clear teaching style and ability to simplify complex theories, helping students achieve excellent results.]",
+        "instructorExperience": "[TA: 15+ Years Experience]"
+      },
+      "english": {
+        "detailedDescription": "[TA: Our English Language course is designed to significantly improve your grammar, vocabulary, reading comprehension, and writing skills. We focus on effective communication strategies and thorough preparation for all aspects of the O/L English exam.]",
+        "learningOutcome1": "[TA: Achieve proficiency in English grammar and usage.]",
+        "learningOutcome2": "[TA: Expand vocabulary and improve comprehension skills.]",
+        "learningOutcome3": "[TA: Develop strong writing skills for various contexts.]",
+        "syllabusHighlight1": "[TA: Advanced Grammar & Composition]",
+        "syllabusHighlight2": "[TA: Literature Analysis & Appreciation]",
+        "syllabusHighlight3": "[TA: Oral Communication & Presentation Skills]",
+        "instructorName": "[TA: Ms. F. G. H. Fonseka]",
+        "instructorBio": "[TA: Ms. Fonseka is an experienced English language instructor with a Masters in English Literature. She is passionate about helping students develop a love for the language and excel in communication.]",
+        "instructorExperience": "[TA: 12+ Years Experience]"
+      },
+      "ict": {
+        "detailedDescription": "[TA: This Information & Communication Technology (ICT) course provides essential digital literacy and technical skills. It covers theoretical concepts, practical applications relevant to the O/L syllabus, and prepares students for the digital demands of the modern world.]",
+        "learningOutcome1": "[TA: Gain a solid understanding of ICT fundamentals.]",
+        "learningOutcome2": "[TA: Develop practical skills in common software applications.]",
+        "learningOutcome3": "[TA: Understand the basics of programming and web development.]",
+        "syllabusHighlight1": "[TA: Computer Hardware & Software Systems]",
+        "syllabusHighlight2": "[TA: Database Management & Spreadsheets]",
+        "syllabusHighlight3": "[TA: Introduction to Programming & Web Design]",
+        "instructorName": "[TA: Mr. I. J. K. Dias]",
+        "instructorBio": "[TA: Mr. Dias is a certified ICT professional and educator with a focus on practical, hands-on learning. He aims to equip students with the digital skills necessary for future success.]",
+        "instructorExperience": "[TA: 8+ Years Experience]"
+      }
+    }
   }
 }
+
+    

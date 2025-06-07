@@ -1,6 +1,7 @@
 
 "use client";
 import Image from 'next/image';
+import Link from 'next/link'; // Import Link
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import Icons from '@/components/icons';
@@ -45,10 +46,10 @@ export default function CoursesPage() {
     return t(`courses.subjects.${id}.name`);
   };
   
-  const getEnrollButtonText = () => {
-    let text = t('courses.enrollButton');
-    if (language === 'si') text += ` (${t('courses.enrollButtonAdditionSinhala')})`;
-    if (language === 'ta') text += ` (${t('courses.enrollButtonAdditionTamil')})`;
+  const getViewDetailsButtonText = () => {
+    let text = t('courses.viewDetailsButton', 'View Details'); // Default to 'View Details'
+    if (language === 'si') text = t('courses.viewDetailsButtonAdditionSinhala', text);
+    if (language === 'ta') text = t('courses.viewDetailsButtonAdditionTamil', text);
     return text;
   };
 
@@ -91,8 +92,10 @@ export default function CoursesPage() {
               <p>{t(`courses.subjects.${courseDef.id}.description`)}</p>
             </CardContent>
             <CardFooter>
-              <Button className="w-full bg-accent hover:bg-accent/90 text-accent-foreground">
-                {getEnrollButtonText()}
+              <Button asChild className="w-full bg-accent hover:bg-accent/90 text-accent-foreground">
+                <Link href={`/courses/${courseDef.id}`}>
+                  {getViewDetailsButtonText()}
+                </Link>
               </Button>
             </CardFooter>
           </Card>
@@ -101,3 +104,5 @@ export default function CoursesPage() {
     </div>
   );
 }
+
+    
