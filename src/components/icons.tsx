@@ -48,10 +48,15 @@ import {
   Megaphone,
   FolderOpen,
   Settings,
-  PlayCircle, // Added PlayCircle
-  Download,   // Added Download
-  Video,      // Added Video
-  Play,       // Added Play
+  PlayCircle,
+  Download,
+  Video,
+  Play,
+  Lock,
+  UploadCloud,
+  CreditCard,
+  ShieldCheck,
+  Info,
 } from 'lucide-react';
 
 // Re-exporting icons for easier access
@@ -108,6 +113,11 @@ export const Icons = {
   Download,
   Video,
   Play,
+  Lock,
+  UploadCloud,
+  CreditCard,
+  ShieldCheck,
+  Info,
 };
 
 export default Icons;

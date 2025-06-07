@@ -515,7 +515,33 @@
         "nowPlaying": "Now Playing: {{videoTitle}}",
         "browserNotSupported": "Your browser does not support the video tag.",
         "closeButton": "Close",
-        "loading": "Loading player..."
+        "loading": "Loading player...",
+        "errorTitle": "Video Playback Error",
+        "errorDescription": "There was an error playing this video. Please try again later.",
+        "notAvailableTitle": "Video Not Available",
+        "notAvailableDescription": "The video for this lesson is currently not available."
+      },
+      "payment": {
+        "accessDeniedTitle": "Access Denied",
+        "accessDeniedMessage": "Payment for the current month's content is required to proceed.",
+        "importantNoteTitle": "Important Note",
+        "importantNoteMessage": "Access to previous months' content (if applicable and paid for) remains available. This restriction applies to the current month's new materials.",
+        "uploadSlipTitle": "Upload Bank Slip",
+        "uploadSlipDescription": "If you've already paid via bank transfer, upload your slip for verification.",
+        "selectedFile": "Selected: {{fileName}}",
+        "submitSlipButton": "Submit Slip",
+        "submittingButton": "Submitting...",
+        "noFileTitle": "No File Selected",
+        "noFileDescription": "Please select a bank slip image to upload.",
+        "slipSubmittedTitle": "Slip Submitted (Simulated)",
+        "slipSubmittedDescription": "Your bank slip has been submitted for review. Access will be granted upon verification.",
+        "payOnlineTitle": "Pay Online",
+        "payOnlineDescription": "Complete your payment securely online to get instant access.",
+        "payNowButton": "Pay Now (Simulate)",
+        "payNowInitiatedTitle": "Payment Process Started (Simulated)",
+        "payNowInitiatedDescription": "Redirecting to payment gateway...",
+        "payNowSuccessTitle": "Payment Successful (Simulated)",
+        "payNowSuccessDescription": "You now have access to the course content."
       }
     }
   },

@@ -515,7 +515,33 @@
         "nowPlaying": "දැන් වාදනය වන්නේ: {{videoTitle}}",
         "browserNotSupported": "ඔබගේ බ්‍රවුසරය වීඩියෝ ටැගයට සහාය නොදක්වයි.",
         "closeButton": "වසන්න",
-        "loading": "ධාවකය පූරණය වෙමින්..."
+        "loading": "ධාවකය පූරණය වෙමින්...",
+        "errorTitle": "වීඩියෝ ධාවනයේ දෝෂයකි",
+        "errorDescription": "මෙම වීඩියෝව ධාවනය කිරීමේදී දෝෂයක් ඇතිවිය. කරුණාකර පසුව නැවත උත්සාහ කරන්න.",
+        "notAvailableTitle": "වීඩියෝව නොමැත",
+        "notAvailableDescription": "මෙම පාඩම සඳහා වීඩියෝව දැනට නොමැත."
+      },
+      "payment": {
+        "accessDeniedTitle": "ප්‍රවේශය ප්‍රතික්ෂේප විය",
+        "accessDeniedMessage": "වත්මන් මාසයේ අන්තර්ගතය සඳහා ගෙවීමක් අවශ්‍ය වේ.",
+        "importantNoteTitle": "වැදගත් සටහන",
+        "importantNoteMessage": "පෙර මාසවල අන්තර්ගතයට (අදාළ නම් සහ ගෙවා ඇත්නම්) ප්‍රවේශය තවමත් පවතී. මෙම සීමාව වත්මන් මාසයේ නව ද්‍රව්‍ය සඳහා අදාළ වේ.",
+        "uploadSlipTitle": "බැංකු ස්ලිප්පුව උඩුගත කරන්න",
+        "uploadSlipDescription": "ඔබ දැනටමත් බැංකු මාරුවක් හරහා ගෙවා ඇත්නම්, සත්‍යාපනය සඳහා ඔබේ ස්ලිප්පුව උඩුගත කරන්න.",
+        "selectedFile": "තෝරාගත් ගොනුව: {{fileName}}",
+        "submitSlipButton": "ස්ලිප්පුව ඉදිරිපත් කරන්න",
+        "submittingButton": "ඉදිරිපත් කරමින්...",
+        "noFileTitle": "ගොනුවක් තෝරා නොමැත",
+        "noFileDescription": "කරුණාකර උඩුගත කිරීමට බැංකු ස්ලිප් රූපයක් තෝරන්න.",
+        "slipSubmittedTitle": "ස්ලිප්පුව ඉදිරිපත් කරන ලදී (ආදර්ශනය)",
+        "slipSubmittedDescription": "ඔබගේ බැංකු ස්ලිප්පුව සමාලෝචනය සඳහා ඉදිරිපත් කර ඇත. සත්‍යාපනයෙන් පසු ප්‍රවේශය ලබා දෙනු ඇත.",
+        "payOnlineTitle": "මාර්ගගතව ගෙවන්න",
+        "payOnlineDescription": "ක්ෂණික ප්‍රවේශය ලබා ගැනීමට ඔබගේ ගෙවීම ආරක්ෂිතව මාර්ගගතව සම්පූර්ණ කරන්න.",
+        "payNowButton": "දැන් ගෙවන්න (ආදර්ශනය)",
+        "payNowInitiatedTitle": "ගෙවීම් ක්‍රියාවලිය ආරම්භ විය (ආදර්ශනය)",
+        "payNowInitiatedDescription": "ගෙවීම් දොරටුව වෙත යොමු කරමින්...",
+        "payNowSuccessTitle": "ගෙවීම සාර්ථකයි (ආදර්ශනය)",
+        "payNowSuccessDescription": "ඔබට දැන් පාඨමාලා අන්තර්ගතයට ප්‍රවේශය ඇත."
       }
     }
   },
