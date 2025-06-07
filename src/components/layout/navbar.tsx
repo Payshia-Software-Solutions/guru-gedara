@@ -6,6 +6,7 @@ import { useState, useEffect } from 'react';
 import { Menu, X, BookOpenText } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import { ThemeToggleButton } from '@/components/theme-toggle-button';
 
 const navItems = [
   { href: '/', label: 'Home' },
@@ -48,6 +49,7 @@ export function Navbar() {
              <div className="animate-pulse h-8 w-20 bg-muted rounded md:block hidden"></div>
              <div className="animate-pulse h-8 w-20 bg-muted rounded md:block hidden"></div>
              <div className="animate-pulse h-8 w-20 bg-muted rounded md:block hidden"></div>
+             <div className="animate-pulse h-9 w-9 bg-muted rounded-md"></div> {/* Placeholder for theme toggle */}
              <div className="animate-pulse h-8 w-8 bg-muted rounded md:hidden"></div>
            </div>
         </div>
@@ -63,36 +65,38 @@ export function Navbar() {
           <span className="font-headline text-2xl font-bold text-primary">ගුරු ගෙදර E-School</span>
         </Link>
 
-        <nav className="hidden md:flex space-x-2 items-center">
-          <NavLinks />
-        </nav>
-
-        <div className="md:hidden">
-          <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
-            <SheetTrigger asChild>
-              <Button variant="ghost" size="icon">
-                <Menu className="h-6 w-6" />
-                <span className="sr-only">Open menu</span>
-              </Button>
-            </SheetTrigger>
-            <SheetContent side="right" className="w-[250px] bg-background">
-              <div className="p-4">
-                <div className="flex justify-between items-center mb-6">
-                   <Link href="/" className="flex items-center space-x-2" onClick={() => setIsMobileMenuOpen(false)}>
-                      <BookOpenText className="h-7 w-7 text-primary" />
-                      <span className="font-headline text-xl font-bold text-primary">ගුරු ගෙදර</span>
-                    </Link>
-                  <Button variant="ghost" size="icon" onClick={() => setIsMobileMenuOpen(false)}>
-                    <X className="h-6 w-6" />
-                    <span className="sr-only">Close menu</span>
-                  </Button>
+        <div className="flex items-center space-x-2">
+          <nav className="hidden md:flex space-x-1 items-center">
+            <NavLinks />
+          </nav>
+          <ThemeToggleButton />
+          <div className="md:hidden">
+            <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
+              <SheetTrigger asChild>
+                <Button variant="ghost" size="icon">
+                  <Menu className="h-6 w-6" />
+                  <span className="sr-only">Open menu</span>
+                </Button>
+              </SheetTrigger>
+              <SheetContent side="right" className="w-[250px] bg-background">
+                <div className="p-4">
+                  <div className="flex justify-between items-center mb-6">
+                     <Link href="/" className="flex items-center space-x-2" onClick={() => setIsMobileMenuOpen(false)}>
+                        <BookOpenText className="h-7 w-7 text-primary" />
+                        <span className="font-headline text-xl font-bold text-primary">ගුරු ගෙදර</span>
+                      </Link>
+                    <Button variant="ghost" size="icon" onClick={() => setIsMobileMenuOpen(false)}>
+                      <X className="h-6 w-6" />
+                      <span className="sr-only">Close menu</span>
+                    </Button>
+                  </div>
+                  <nav className="flex flex-col space-y-3">
+                    <NavLinks onItemClick={() => setIsMobileMenuOpen(false)} />
+                  </nav>
                 </div>
-                <nav className="flex flex-col space-y-3">
-                  <NavLinks onItemClick={() => setIsMobileMenuOpen(false)} />
-                </nav>
-              </div>
-            </SheetContent>
-          </Sheet>
+              </SheetContent>
+            </Sheet>
+          </div>
         </div>
       </div>
     </header>

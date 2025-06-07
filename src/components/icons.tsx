@@ -21,7 +21,9 @@ import {
   TrendingUp,
   Lightbulb,
   CheckCircle2,
-  Sparkles
+  Sparkles,
+  Sun,
+  Moon,
 } from 'lucide-react';
 
 // Re-exporting icons for easier access and potential future customization/swapping
@@ -49,6 +51,8 @@ export const Icons = {
   Lightbulb,
   CheckCircle2,
   Sparkles,
+  Sun,
+  Moon,
 };
 
 // Example of a custom SVG icon if needed:
