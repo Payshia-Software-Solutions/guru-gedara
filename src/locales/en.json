@@ -501,6 +501,20 @@
         "video1": { "title": "Algebra Fundamentals Part 1", "description": "Introduction to algebraic expressions and equations." },
         "video2": { "title": "Geometry: Triangles and Quadrilaterals", "description": "Properties and theorems related to basic shapes." },
         "note1": { "title": "Algebra Formulas Cheat Sheet" }
+      },
+      "english": {
+        "video1": { "title": "English Grammar: Tenses Explained", "description": "A comprehensive guide to understanding English tenses." },
+        "note1": { "title": "Vocabulary List - Unit 1" },
+        "recording1": { "title": "Spoken English Practice Session" }
+      },
+      "ict": {
+        "video1": { "title": "Introduction to HTML & CSS", "description": "Learn the basics of web development with HTML and CSS." },
+        "note1": { "title": "ICT Glossary of Terms" }
+      },
+      "videoPlayer": {
+        "nowPlaying": "Now Playing: {{videoTitle}}",
+        "browserNotSupported": "Your browser does not support the video tag.",
+        "closeButton": "Close"
       }
     }
   },
@@ -508,3 +522,5 @@
       "pageTitleSuffix": "ගුරු ගෙදර E-School"
   }
 }
+
+    

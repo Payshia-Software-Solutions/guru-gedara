@@ -501,6 +501,20 @@
         "video1": { "title": "[TA: Algebra Fundamentals Part 1]", "description": "[TA: Introduction to algebraic expressions and equations.]" },
         "video2": { "title": "[TA: Geometry: Triangles and Quadrilaterals]", "description": "[TA: Properties and theorems related to basic shapes.]" },
         "note1": { "title": "[TA: Algebra Formulas Cheat Sheet]" }
+      },
+      "english": {
+        "video1": { "title": "[TA: English Grammar: Tenses Explained]", "description": "[TA: A comprehensive guide to understanding English tenses.]" },
+        "note1": { "title": "[TA: Vocabulary List - Unit 1]" },
+        "recording1": { "title": "[TA: Spoken English Practice Session]" }
+      },
+      "ict": {
+        "video1": { "title": "[TA: Introduction to HTML & CSS]", "description": "[TA: Learn the basics of web development with HTML and CSS.]" },
+        "note1": { "title": "[TA: ICT Glossary of Terms]" }
+      },
+      "videoPlayer": {
+        "nowPlaying": "இப்போது ஒலிக்கிறது: {{videoTitle}}",
+        "browserNotSupported": "உங்கள் உலாவி வீடியோ குறிச்சொல்லை ஆதரிக்கவில்லை.",
+        "closeButton": "மூடு"
       }
     }
   },
@@ -508,3 +522,5 @@
       "pageTitleSuffix": "[TA: ගුරු ගෙදර E-School]"
   }
 }
+
+    

@@ -8,13 +8,12 @@ import { useParams } from 'next/navigation';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogFooter, DialogClose } from "@/components/ui/dialog";
 import Icons from '@/components/icons';
 import { useLanguage } from '@/contexts/language-context';
 import { Badge } from '@/components/ui/badge';
-import type { CourseDefinition } from '@/types'; // Assuming CourseDefinition is relevant
+import type { CourseDefinition } from '@/types';
 
-// Extended CourseDefinition to potentially hold more specific data
-// In a real app, this data would come from an API based on courseId
 const coursesData: CourseDefinition[] = [
   { id: 'science', Icon: Icons.Microscope, imageHint: 'science classroom details' },
   { id: 'mathematics', Icon: Icons.Calculator, imageHint: 'math textbook details' },
@@ -22,38 +21,50 @@ const coursesData: CourseDefinition[] = [
   { id: 'ict', Icon: Icons.Laptop2, imageHint: 'coding screen details' },
 ];
 
-// Placeholder content structure
+const placeholderVideoUrl = "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4";
+
 const courseContentPlaceholder = {
   science: {
     videoLessons: [
-      { id: 'vid1', titleKey: 'lms.courseContent.science.video1.title', duration: '10:32', descriptionKey: 'lms.courseContent.science.video1.description' },
-      { id: 'vid2', titleKey: 'lms.courseContent.science.video2.title', duration: '15:05', descriptionKey: 'lms.courseContent.science.video2.description' },
+      { id: 'vid1', titleKey: 'lms.courseContent.science.video1.title', duration: '10:32', descriptionKey: 'lms.courseContent.science.video1.description', videoUrl: placeholderVideoUrl },
+      { id: 'vid2', titleKey: 'lms.courseContent.science.video2.title', duration: '15:05', descriptionKey: 'lms.courseContent.science.video2.description', videoUrl: placeholderVideoUrl },
     ],
     pdfNotes: [
       { id: 'note1', titleKey: 'lms.courseContent.science.note1.title', fileSize: '2.5MB', link: '#' },
       { id: 'note2', titleKey: 'lms.courseContent.science.note2.title', fileSize: '1.8MB', link: '#' },
     ],
     recordings: [
-      { id: 'rec1', titleKey: 'lms.courseContent.science.recording1.title', date: '2024-08-01', duration: '01:45:20', link: '#' },
+      { id: 'rec1', titleKey: 'lms.courseContent.science.recording1.title', date: '2024-08-01', duration: '01:45:20', link: '#', videoUrl: placeholderVideoUrl },
     ]
   },
   mathematics: {
     videoLessons: [
-      { id: 'vid1', titleKey: 'lms.courseContent.mathematics.video1.title', duration: '12:15', descriptionKey: 'lms.courseContent.mathematics.video1.description' },
-      { id: 'vid2', titleKey: 'lms.courseContent.mathematics.video2.title', duration: '18:40', descriptionKey: 'lms.courseContent.mathematics.video2.description' },
+      { id: 'vid1', titleKey: 'lms.courseContent.mathematics.video1.title', duration: '12:15', descriptionKey: 'lms.courseContent.mathematics.video1.description', videoUrl: placeholderVideoUrl },
+      { id: 'vid2', titleKey: 'lms.courseContent.mathematics.video2.title', duration: '18:40', descriptionKey: 'lms.courseContent.mathematics.video2.description', videoUrl: placeholderVideoUrl },
     ],
     pdfNotes: [
       { id: 'note1', titleKey: 'lms.courseContent.mathematics.note1.title', fileSize: '3.1MB', link: '#' },
     ],
     recordings: []
   },
-  // Add similar structures for english and ict if needed
-  english: { videoLessons: [], pdfNotes: [], recordings: [] },
-  ict: { videoLessons: [], pdfNotes: [], recordings: [] },
+  english: { 
+    videoLessons: [{ id: 'vid-en-1', titleKey: 'lms.courseContent.english.video1.title', duration: '08:50', descriptionKey: 'lms.courseContent.english.video1.description', videoUrl: placeholderVideoUrl }], 
+    pdfNotes: [{ id: 'note-en-1', titleKey: 'lms.courseContent.english.note1.title', fileSize: '1.2MB', link: '#' }], 
+    recordings: [{ id: 'rec-en-1', titleKey: 'lms.courseContent.english.recording1.title', date: '2024-08-05', duration: '01:15:00', link: '#', videoUrl: placeholderVideoUrl }] 
+  },
+  ict: { 
+    videoLessons: [{ id: 'vid-ict-1', titleKey: 'lms.courseContent.ict.video1.title', duration: '22:30', descriptionKey: 'lms.courseContent.ict.video1.description', videoUrl: placeholderVideoUrl }], 
+    pdfNotes: [{ id: 'note-ict-1', titleKey: 'lms.courseContent.ict.note1.title', fileSize: '4.0MB', link: '#' }], 
+    recordings: [] 
+  },
 };
 
 type CourseContentKey = keyof typeof courseContentPlaceholder;
 
+interface VideoToPlay {
+  title: string;
+  url: string;
+}
 
 const AnimatedSection: React.FC<{children: React.ReactNode, className?: string, delay?: number}> = ({ children, className, delay = 0 }) => {
   const [isVisible, setIsVisible] = useState(false);
@@ -76,8 +87,21 @@ export default function CourseContentPage() {
   const params = useParams();
   const courseId = params.courseId as CourseContentKey;
 
+  const [isVideoPlayerOpen, setIsVideoPlayerOpen] = useState(false);
+  const [currentVideo, setCurrentVideo] = useState<VideoToPlay | null>(null);
+
   const courseDetails = coursesData.find(c => c.id === courseId);
   const content = courseContentPlaceholder[courseId] || { videoLessons: [], pdfNotes: [], recordings: [] };
+
+  const handleWatchVideo = (titleKey: string, videoUrl?: string) => {
+    if (videoUrl) {
+      setCurrentVideo({ title: t(titleKey), url: videoUrl });
+      setIsVideoPlayerOpen(true);
+    } else {
+      console.warn("No video URL provided for:", titleKey);
+      // Optionally, show a toast message that video is not available
+    }
+  };
 
   if (!courseDetails) {
     return (
@@ -130,7 +154,6 @@ export default function CourseContentPage() {
       </AnimatedSection>
 
       <Accordion type="multiple" defaultValue={['videos', 'notes', 'recordings']} className="w-full space-y-6">
-        {/* Video Lessons Section */}
         <AnimatedSection delay={200}>
           <Card className="shadow-lg border-none bg-card overflow-hidden">
             <AccordionItem value="videos" className="border-b-0">
@@ -152,7 +175,7 @@ export default function CourseContentPage() {
                           </div>
                           <div className="flex items-center space-x-3 mt-3 sm:mt-0">
                             <Badge variant="outline" className="text-xs">{video.duration}</Badge>
-                            <Button size="sm" variant="ghost" className="text-primary hover:bg-primary/10">
+                            <Button size="sm" variant="ghost" className="text-primary hover:bg-primary/10" onClick={() => handleWatchVideo(video.titleKey, video.videoUrl)}>
                               <Icons.Play className="mr-2 h-4 w-4" /> {t('lms.courseContent.watchButton', "Watch")}
                             </Button>
                           </div>
@@ -168,7 +191,6 @@ export default function CourseContentPage() {
           </Card>
         </AnimatedSection>
 
-        {/* PDF Notes Section */}
         <AnimatedSection delay={400}>
             <Card className="shadow-lg border-none bg-card overflow-hidden">
             <AccordionItem value="notes" className="border-b-0">
@@ -205,7 +227,6 @@ export default function CourseContentPage() {
           </Card>
         </AnimatedSection>
 
-        {/* Class Recordings Section */}
         <AnimatedSection delay={600}>
           <Card className="shadow-lg border-none bg-card overflow-hidden">
             <AccordionItem value="recordings" className="border-b-0">
@@ -225,10 +246,8 @@ export default function CourseContentPage() {
                             <h3 className="text-lg font-semibold text-foreground">{t(recording.titleKey)}</h3>
                             <p className="text-xs text-muted-foreground">{t('lms.courseContent.recordedOn', "Recorded on:")} {recording.date} &bull; {t('lms.courseContent.duration', "Duration:")} {recording.duration}</p>
                           </div>
-                           <Button size="sm" variant="ghost" asChild className="mt-3 sm:mt-0 text-primary hover:bg-primary/10">
-                              <a href={recording.link} target="_blank" rel="noopener noreferrer">
-                                <Icons.Play className="mr-2 h-4 w-4" /> {t('lms.courseContent.watchButton', "Watch")}
-                              </a>
+                           <Button size="sm" variant="ghost" className="mt-3 sm:mt-0 text-primary hover:bg-primary/10" onClick={() => handleWatchVideo(recording.titleKey, recording.videoUrl)}>
+                              <Icons.Play className="mr-2 h-4 w-4" /> {t('lms.courseContent.watchButton', "Watch")}
                             </Button>
                         </div>
                       </li>
@@ -243,7 +262,6 @@ export default function CourseContentPage() {
         </AnimatedSection>
       </Accordion>
 
-       {/* Placeholder for Quizzes/Assignments */}
         <AnimatedSection delay={800}>
             <Card className="shadow-lg border-none bg-card">
                 <CardHeader className="p-6">
@@ -259,15 +277,42 @@ export default function CourseContentPage() {
                 </CardHeader>
                 <CardContent className="p-6 pt-0">
                      <p className="text-muted-foreground text-center py-4">{t('lms.courseContent.sections.quizzes.empty', "Quizzes and assignments will appear here. (Coming Soon)")}</p>
-                     {/* Example quiz link placeholder */}
-                     {/* <Button variant="outline" className="mt-4 w-full sm:w-auto">
-                        <Icons.Edit3 className="mr-2 h-4 w-4" /> 
-                        {t('lms.courseContent.sections.quizzes.sampleQuizButton', "Take Chapter 1 Quiz")}
-                     </Button> */}
                 </CardContent>
             </Card>
         </AnimatedSection>
 
+        {currentVideo && (
+          <Dialog open={isVideoPlayerOpen} onOpenChange={setIsVideoPlayerOpen}>
+            <DialogContent className="sm:max-w-[800px] p-0">
+              <DialogHeader className="p-4 pb-0">
+                <DialogTitle>{t('lms.courseContent.videoPlayer.nowPlaying', "Now Playing: {{videoTitle}}", { videoTitle: currentVideo.title })}</DialogTitle>
+              </DialogHeader>
+              <div className="p-4 aspect-video">
+                <video
+                  key={currentVideo.url} // Add key to force re-render if URL changes
+                  width="100%"
+                  height="100%"
+                  controls
+                  autoPlay
+                  preload="metadata"
+                  className="rounded-md"
+                >
+                  <source src={currentVideo.url} type="video/mp4" />
+                  {t('lms.courseContent.videoPlayer.browserNotSupported', "Your browser does not support the video tag.")}
+                </video>
+              </div>
+              <DialogFooter className="p-4 pt-0">
+                <DialogClose asChild>
+                  <Button type="button" variant="secondary">
+                    {t('lms.courseContent.videoPlayer.closeButton', "Close")}
+                  </Button>
+                </DialogClose>
+              </DialogFooter>
+            </DialogContent>
+          </Dialog>
+        )}
     </div>
   );
 }
+
+    

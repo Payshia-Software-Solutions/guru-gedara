@@ -501,6 +501,20 @@
         "video1": { "title": "[SI: Algebra Fundamentals Part 1]", "description": "[SI: Introduction to algebraic expressions and equations.]" },
         "video2": { "title": "[SI: Geometry: Triangles and Quadrilaterals]", "description": "[SI: Properties and theorems related to basic shapes.]" },
         "note1": { "title": "[SI: Algebra Formulas Cheat Sheet]" }
+      },
+      "english": {
+        "video1": { "title": "[SI: English Grammar: Tenses Explained]", "description": "[SI: A comprehensive guide to understanding English tenses.]" },
+        "note1": { "title": "[SI: Vocabulary List - Unit 1]" },
+        "recording1": { "title": "[SI: Spoken English Practice Session]" }
+      },
+      "ict": {
+        "video1": { "title": "[SI: Introduction to HTML & CSS]", "description": "[SI: Learn the basics of web development with HTML and CSS.]" },
+        "note1": { "title": "[SI: ICT Glossary of Terms]" }
+      },
+      "videoPlayer": {
+        "nowPlaying": "දැන් වාදනය වන්නේ: {{videoTitle}}",
+        "browserNotSupported": "ඔබගේ බ්‍රවුසරය වීඩියෝ ටැගයට සහාය නොදක්වයි.",
+        "closeButton": "වසන්න"
       }
     }
   },
@@ -508,3 +522,5 @@
     "pageTitleSuffix": "ගුරු ගෙදර E-School"
   }
 }
+
+    
