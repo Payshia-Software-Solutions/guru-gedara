@@ -1,3 +1,4 @@
+
 import {
   BookOpenText,
   Calculator,
@@ -24,6 +25,7 @@ import {
   Sparkles,
   Sun,
   Moon,
+  Globe, // Added Globe icon
 } from 'lucide-react';
 
 // Re-exporting icons for easier access and potential future customization/swapping
@@ -53,6 +55,7 @@ export const Icons = {
   Sparkles,
   Sun,
   Moon,
+  Globe, // Added Globe icon
 };
 
 // Example of a custom SVG icon if needed:

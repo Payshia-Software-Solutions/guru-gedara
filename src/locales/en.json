@@ -1,0 +1,17 @@
+
+{
+  "nav": {
+    "home": "Home",
+    "about": "About Us",
+    "courses": "Courses",
+    "timetable": "Timetable",
+    "contact": "Contact Us"
+  },
+  "languageSwitcher": {
+    "label": "Language",
+    "selected": "Selected language: {{lang}}",
+    "en": "English",
+    "si": "Sinhala",
+    "ta": "Tamil"
+  }
+}

@@ -7,34 +7,36 @@ import { Menu, X, BookOpenText } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { ThemeToggleButton } from '@/components/theme-toggle-button';
+import { LanguageSwitcher } from '@/components/language-switcher'; // Added LanguageSwitcher
+import { useLanguage } from '@/contexts/language-context'; // Added useLanguage
 
-const navItems = [
-  { href: '/', label: 'Home' },
-  { href: '/about', label: 'About Us' },
-  { href: '/courses', label: 'Courses' },
-  { href: '/timetable', label: 'Timetable' },
-  { href: '/contact', label: 'Contact Us' },
+const navItemKeys = [
+  { href: '/', labelKey: 'nav.home' },
+  { href: '/about', labelKey: 'nav.about' },
+  { href: '/courses', labelKey: 'nav.courses' },
+  { href: '/timetable', labelKey: 'nav.timetable' },
+  { href: '/contact', labelKey: 'nav.contact' },
 ];
 
 export function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
+  const { t } = useLanguage(); // Added useLanguage hook
 
   useEffect(() => {
     setIsMounted(true);
   }, []);
 
-
   const NavLinks = ({ onItemClick }: { onItemClick?: () => void }) => (
     <>
-      {navItems.map((item) => (
+      {navItemKeys.map((item) => (
         <Link
-          key={item.label}
+          key={item.labelKey}
           href={item.href}
           onClick={onItemClick}
           className="text-foreground hover:text-primary transition-colors duration-300 ease-in-out px-3 py-2 rounded-md text-sm font-medium"
         >
-          {item.label}
+          {t(item.labelKey, item.labelKey.split('.')[1])} {/* Use t() for translation */}
         </Link>
       ))}
     </>
@@ -50,6 +52,7 @@ export function Navbar() {
              <div className="animate-pulse h-8 w-20 bg-muted rounded md:block hidden"></div>
              <div className="animate-pulse h-8 w-20 bg-muted rounded md:block hidden"></div>
              <div className="animate-pulse h-9 w-9 bg-muted rounded-md"></div> {/* Placeholder for theme toggle */}
+             <div className="animate-pulse h-9 w-9 bg-muted rounded-md"></div> {/* Placeholder for lang switch */}
              <div className="animate-pulse h-8 w-8 bg-muted rounded md:hidden"></div>
            </div>
         </div>
@@ -70,6 +73,7 @@ export function Navbar() {
             <NavLinks />
           </nav>
           <ThemeToggleButton />
+          <LanguageSwitcher /> {/* Added LanguageSwitcher */}
           <div className="md:hidden">
             <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
               <SheetTrigger asChild>
