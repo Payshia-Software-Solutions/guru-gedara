@@ -32,13 +32,14 @@ import {
   ListChecks,
   UserCircle,
   Edit3,
-  Quote, 
-  Target, 
-  Send, 
-  Briefcase, 
-  Watch, 
+  Quote,
+  Target,
+  Send,
+  Briefcase,
+  Watch,
   AlertTriangle,
-  ChevronRight, // Added ChevronRight
+  ChevronRight,
+  Loader2, // Added Loader2
 } from 'lucide-react';
 
 // Re-exporting icons for easier access
@@ -54,13 +55,13 @@ export const Icons = {
   MonitorSmartphone,
   Phone,
   Sigma,
-  Users, 
+  Users,
   Youtube,
   Facebook,
   Twitter,
   Instagram,
   Award,
-  Clock, 
+  Clock,
   CalendarDays,
   TrendingUp,
   Lightbulb,
@@ -81,7 +82,8 @@ export const Icons = {
   Briefcase,
   Watch,
   AlertTriangle,
-  ChevronRight, // Added ChevronRight
+  ChevronRight,
+  Loader2, // Added Loader2
 };
 
 export default Icons;

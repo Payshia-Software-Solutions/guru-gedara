@@ -6,6 +6,7 @@ import { Footer } from '@/components/layout/footer';
 import { Toaster } from "@/components/ui/toaster";
 import { ThemeProvider } from "@/components/theme-provider";
 import { LanguageProvider } from '@/contexts/language-context';
+import { PageTransitionManager } from '@/components/layout/page-transition-manager'; // Added import
 
 export const metadata: Metadata = {
   title: 'ගුරු ගෙදර E-School | Modern Online Learning Platform',
@@ -33,14 +34,16 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <LanguageProvider>
-            <div className="flex flex-col min-h-screen">
-              <Navbar />
-              <main className="flex-grow container mx-auto px-4 py-8 md:py-12">
-                {children}
-              </main>
-              <Footer />
-            </div>
-            <Toaster />
+            <PageTransitionManager> {/* Added PageTransitionManager wrapper */}
+              <div className="flex flex-col min-h-screen">
+                <Navbar />
+                <main className="flex-grow container mx-auto px-4 py-8 md:py-12">
+                  {children}
+                </main>
+                <Footer />
+              </div>
+              <Toaster />
+            </PageTransitionManager>
           </LanguageProvider>
         </ThemeProvider>
       </body>
