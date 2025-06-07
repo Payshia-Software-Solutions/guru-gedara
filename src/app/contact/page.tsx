@@ -9,11 +9,46 @@ import { useLanguage } from '@/contexts/language-context';
 export default function ContactPage() {
   const { t, language } = useLanguage();
 
+  const getPageTitle = () => {
+    if (language === 'si') return t('contact.titleSinhala');
+    if (language === 'ta') return t('contact.titleTamil', t('contact.title'));
+    return t('contact.title');
+  };
+
+  const getFormTitle = () => {
+    let title = t('contact.form.title');
+    if (language === 'si') title += ` (${t('contact.form.titleAdditionSinhala')})`;
+    if (language === 'ta') title += ` (${t('contact.form.titleAdditionTamil', t('contact.form.titleAdditionSinhala'))})`; // Fallback to Sinhala addition if Tamil not present for addition
+    return title;
+  };
+
+  const getOtherWaysTitle = () => {
+    let title = t('contact.otherWays.title');
+    if (language === 'si') title += ` (${t('contact.otherWays.titleAdditionSinhala')})`;
+    if (language === 'ta') title += ` (${t('contact.otherWays.titleAdditionTamil', t('contact.otherWays.titleAdditionSinhala'))})`;
+    return title;
+  };
+  
+  const getEmailTitle = () => {
+    let title = t('contact.otherWays.email.title');
+    if (language === 'si') title += ` (${t('contact.otherWays.email.titleAdditionSinhala')})`;
+    if (language === 'ta') title += ` (${t('contact.otherWays.email.titleAdditionTamil', t('contact.otherWays.email.titleAdditionSinhala'))})`;
+    return title;
+  };
+
+  const getLocationTitle = () => {
+    let title = t('contact.otherWays.location.title');
+    if (language === 'si') title += ` (${t('contact.otherWays.location.titleAdditionSinhala')})`;
+    if (language === 'ta') title += ` (${t('contact.otherWays.location.titleAdditionTamil', t('contact.otherWays.location.titleAdditionSinhala'))})`;
+    return title;
+  };
+
+
   return (
     <div className="space-y-12">
       <section className="text-center py-12 bg-primary/10 rounded-xl">
         <h1 className="font-headline text-4xl md:text-5xl font-bold text-primary mb-4">
-          {language === 'si' ? t('contact.titleSinhala') : t('contact.title')}
+          {getPageTitle()}
         </h1>
         <p className="text-xl text-foreground max-w-2xl mx-auto">
           {t('contact.subtitle')}
@@ -26,7 +61,7 @@ export default function ContactPage() {
           <Card className="shadow-lg">
             <CardHeader>
               <CardTitle className="font-headline text-2xl text-primary">
-                {t('contact.form.title')} ({language === 'si' || language === 'ta' ? t('contact.form.titleSinhala') : ''})
+                {getFormTitle()}
               </CardTitle>
               <CardDescription>{t('contact.form.description')}</CardDescription>
             </CardHeader>
@@ -41,7 +76,7 @@ export default function ContactPage() {
           <Card className="shadow-lg">
             <CardHeader>
               <CardTitle className="font-headline text-2xl text-primary">
-                {t('contact.otherWays.title')} ({language === 'si' || language === 'ta' ? t('contact.otherWays.titleSinhala') : ''})
+                {getOtherWaysTitle()}
               </CardTitle>
               <CardDescription>{t('contact.otherWays.description')}</CardDescription>
             </CardHeader>
@@ -61,7 +96,7 @@ export default function ContactPage() {
                 <Icons.Mail className="w-6 h-6 text-accent mt-1 flex-shrink-0" />
                 <div>
                   <h3 className="font-semibold text-foreground">
-                    {t('contact.otherWays.email.title')} ({language === 'si' || language === 'ta' ? t('contact.otherWays.email.titleSinhala') : ''})
+                    {getEmailTitle()}
                   </h3>
                   <a href="mailto:info@gurugedara.lk" className="text-muted-foreground hover:text-primary transition-colors">
                     {t('contact.otherWays.email.address')}
@@ -73,7 +108,7 @@ export default function ContactPage() {
                 <Icons.MapPin className="w-6 h-6 text-accent mt-1 flex-shrink-0" />
                 <div>
                   <h3 className="font-semibold text-foreground">
-                    {t('contact.otherWays.location.title')} ({language === 'si' || language === 'ta' ? t('contact.otherWays.location.titleSinhala') : ''})
+                    {getLocationTitle()}
                   </h3>
                   <p className="text-muted-foreground">
                     {t('contact.otherWays.location.address')}
@@ -98,5 +133,3 @@ export default function ContactPage() {
     </div>
   );
 }
-
-    

@@ -27,21 +27,25 @@
       "science": {
         "name": "[TA: Science]",
         "sinhalaName": "[TA: විද්‍යාව]",
+        "tamilName": "[TA: விஞ்ஞானம்]",
         "description": "[TA: Explore the wonders of the physical and natural world.]"
       },
       "mathematics": {
         "name": "[TA: Mathematics]",
         "sinhalaName": "[TA: ගණිතය]",
+        "tamilName": "[TA: கணிதம்]",
         "description": "[TA: Master logical reasoning and problem-solving skills.]"
       },
       "english": {
         "name": "[TA: English]",
         "sinhalaName": "[TA: ඉංග්‍රීසි]",
+        "tamilName": "[TA: ஆங்கிலம்]",
         "description": "[TA: Enhance your communication and language proficiency.]"
       },
       "ict": {
         "name": "[TA: ICT]",
         "sinhalaName": "[TA: ICT]",
+        "tamilName": "[TA: தகவல் தொடர்பாடல் தொழில்நுட்பம்]",
         "description": "[TA: Navigate the digital world with essential tech skills.]"
       },
       "learnMoreButton": "[TA: Learn More]"
@@ -65,10 +69,13 @@
   },
   "about": {
     "title": "[TA: About Us]",
+    "titleSinhala": "[TA: අප ගැන]",
+    "titleTamil": "[TA: எங்களைப் பற்றி]",
     "subtitle": "[TA: About ගුරු ගෙදර E-School]",
     "mission": {
       "title": "[TA: Our Mission]",
       "titleSinhala": "[TA: අපගේ මෙහෙවර]",
+      "titleTamil": "[TA: எமது நோக்கம்]",
       "p1": "[TA: At ගුරු ගෙදර E-School, our mission is to provide high-quality, accessible, and affordable online education to G.C.E. Ordinary Level students across Sri Lanka. We aim to empower students with the knowledge and skills necessary to excel in their examinations and build a strong foundation for their future academic and professional pursuits.]",
       "p2": "[TA: We believe in fostering a supportive and engaging learning environment that caters to individual student needs, leveraging technology to make learning interactive and effective. Our commitment is to bridge educational gaps and contribute to the academic success of every student who joins our platform.]",
       "image1Alt": "[TA: Online class in session]",
@@ -77,6 +84,7 @@
     "educators": {
       "title": "[TA: Our Educators]",
       "titleSinhala": "[TA: අපගේ ගුරු මණ්ඩලය]",
+      "titleTamil": "[TA: எமது கல்வியாளர்கள்]",
       "p1": "[TA: Our team of educators at ගුරු ගෙදර E-School comprises experienced and dedicated teachers who are passionate about their subjects and committed to student success. They bring a wealth of teaching experience, a deep understanding of the G.C.E. O/L curriculum, and innovative teaching methodologies to the online classroom.]",
       "p2": "[TA: Each teacher is carefully selected for their expertise, ability to engage students in an online setting, and their dedication to providing personalized support. We are proud to have a team that not only imparts knowledge but also inspires and motivates students to achieve their full potential.]",
       "teacher1Role": "[TA: Founder & Mathematics Lead]",
@@ -92,31 +100,37 @@
   "courses": {
     "title": "[TA: Our Courses]",
     "titleSinhala": "[TA: අපගේ පාඨමාලා]",
+    "titleTamil": "[TA: எமது பாடநெறிகள்]",
     "subtitle": "[TA: Explore the subjects offered at ගුරු ගෙදර E-School for G.C.E. O/L students.]",
     "enrollButton": "[TA: Enroll Now]",
-    "enrollButtonSinhala": "[TA: ලියාපදිංචි වන්න]",
+    "enrollButtonAdditionSinhala": "[TA: ලියාපදිංචි වන්න]",
+    "enrollButtonAdditionTamil": "[TA: இப்போது பதிவு செய்க]",
     "subjects": {
       "science": {
         "name": "[TA: Science]",
         "sinhalaName": "[TA: විද්‍යාව]",
+        "tamilName": "[TA: விஞ்ஞானம்]",
         "description": "[TA: Delve into the principles of Physics, Chemistry, and Biology. Our Science course is designed to build a strong conceptual understanding and prepare students for practical applications.]",
         "imageAlt": "[TA: Science illustration]"
       },
       "mathematics": {
         "name": "[TA: Mathematics]",
         "sinhalaName": "[TA: ගණිතය]",
+        "tamilName": "[TA: கணிதம்]",
         "description": "[TA: Develop critical thinking and problem-solving abilities with our comprehensive Mathematics curriculum. Covers all O/L topics with clear explanations and practice.]",
         "imageAlt": "[TA: Mathematics illustration]"
       },
       "english": {
         "name": "[TA: English Language]",
         "sinhalaName": "[TA: ඉංග්‍රීසි භාෂාව]",
+        "tamilName": "[TA: ஆங்கில மொழி]",
         "description": "[TA: Improve your grammar, vocabulary, reading, and writing skills. Our English course focuses on effective communication and O/L exam success.]",
         "imageAlt": "[TA: English Language illustration]"
       },
       "ict": {
         "name": "[TA: Information & Communication Technology]",
         "sinhalaName": "[TA: තොරතුරු හා සන්නිවේදන තාක්ෂණය]",
+        "tamilName": "[TA: தகவல் மற்றும் தொடர்பாடல் தொழில்நுட்பம்]",
         "description": "[TA: Gain essential digital literacy and ICT skills. This course covers theoretical concepts and practical applications relevant to the O/L syllabus and modern world.]",
         "imageAlt": "[TA: ICT illustration]"
       }
@@ -125,6 +139,7 @@
   "timetable": {
     "title": "[TA: Class Timetable]",
     "titleSinhala": "[TA: පන්ති කාලසටහන]",
+    "titleTamil": "[TA: வகுப்பு கால அட்டவணை]",
     "subtitle": "[TA: Our Weekly Class Schedule. Stay updated with class timings.]",
     "card": {
       "title": "[TA: Weekly Timetable]",
@@ -134,43 +149,57 @@
     },
     "table": {
       "headerDay": "[TA: Day]",
-      "headerDaySinhala": "[TA: දිනය]",
+      "headerDayAdditionSinhala": "[TA: දිනය]",
+      "headerDayAdditionTamil": "[TA: நாள்]",
       "headerTime": "[TA: Time]",
-      "headerTimeSinhala": "[TA: වේලාව]",
+      "headerTimeAdditionSinhala": "[TA: වේලාව]",
+      "headerTimeAdditionTamil": "[TA: நேரம்]",
       "headerSubject": "[TA: Subject]",
-      "headerSubjectSinhala": "[TA: විෂය]",
+      "headerSubjectAdditionSinhala": "[TA: විෂය]",
+      "headerSubjectAdditionTamil": "[TA: பாடம்]",
       "headerTeacher": "[TA: Teacher]",
-      "headerTeacherSinhala": "[TA: ගුරුතුමා/ගුරුතුමිය]"
+      "headerTeacherAdditionSinhala": "[TA: ගුරුතුමා/ගුරුතුමිය]",
+      "headerTeacherAdditionTamil": "[TA: ஆசிரியர்]"
     },
     "subjects": {
       "mathematics": "[TA: Mathematics]",
       "mathematicsSinhala": "[TA: ගණිතය]",
+      "mathematicsTamil": "[TA: கணிதம்]",
       "science": "[TA: Science]",
       "scienceSinhala": "[TA: විද්‍යාව]",
+      "scienceTamil": "[TA: விஞ்ஞானம்]",
       "english": "[TA: English]",
       "englishSinhala": "[TA: ඉංග්‍රීසි]",
+      "englishTamil": "[TA: ஆங்கிலம்]",
       "ict": "[TA: ICT]",
       "ictSinhala": "[TA: තොරතුරු තාක්ෂණය]",
+      "ictTamil": "[TA: தகவல் தொடர்பாடல் தொழில்நுட்பம்]",
       "mathematicsRevision": "[TA: Mathematics - Revision]",
       "mathematicsRevisionSinhala": "[TA: ගණිතය - පුනරීක්ෂණ]",
+      "mathematicsRevisionTamil": "[TA: கணிதம் - மீளாய்வு]",
       "scienceRevision": "[TA: Science - Practicals/Revision]",
       "scienceRevisionSinhala": "[TA: විද්‍යාව - ප්‍රායෝගික/පුනරීක්ෂණ]",
+      "scienceRevisionTamil": "[TA: விஞ்ஞானம் - செய்முறை/மீளாய்வு]",
       "englishPaperClass": "[TA: English - Paper Class]",
-      "englishPaperClassSinhala": "[TA: ඉංග්‍රීසි - ප්‍රශ්න පත්‍ර පන්තිය]"
+      "englishPaperClassSinhala": "[TA: ඉංග්‍රීසි - ප්‍රශ්න පත්‍ර පන්තිය]",
+      "englishPaperClassTamil": "[TA: ஆங்கிலம் - வினாத்தாள் வகுப்பு]"
     }
   },
   "contact": {
     "title": "[TA: Contact Us]",
     "titleSinhala": "[TA: අප අමතන්න]",
+    "titleTamil": "[TA: எங்களை தொடர்பு கொள்ள]",
     "subtitle": "[TA: We're here to help with any questions you may have.]",
     "form": {
       "title": "[TA: Send us a Message]",
-      "titleSinhala": "[TA: පණිවිඩයක් එවන්න]",
+      "titleAdditionSinhala": "[TA: පණිවිඩයක් එවන්න]",
+      "titleAdditionTamil": "[TA: எங்களுக்கு ஒரு செய்தியை அனுப்பவும்]",
       "description": "[TA: Fill out the form below and we'll get back to you as soon as possible.]"
     },
     "otherWays": {
       "title": "[TA: Other Ways to Reach Us]",
-      "titleSinhala": "[TA: වෙනත් මාර්ග]",
+      "titleAdditionSinhala": "[TA: වෙනත් මාර්ග]",
+      "titleAdditionTamil": "[TA: எங்களை அடைய மற்ற வழிகள்]",
       "description": "[TA: You can also contact us directly through these channels.]",
       "phone": {
         "title": "[TA: WhatsApp / Phone]",
@@ -179,12 +208,14 @@
       },
       "email": {
         "title": "[TA: Email Address]",
-        "titleSinhala": "[TA: විද්‍යුත් තැපෑල]",
+        "titleAdditionSinhala": "[TA: විද්‍යුත් තැපෑල]",
+        "titleAdditionTamil": "[TA: மின்னஞ்சல் முகவரி]",
         "address": "[TA: info@gurugedara.lk (Placeholder)]"
       },
       "location": {
         "title": "[TA: Our Location]",
-        "titleSinhala": "[TA: ස්ථානය]",
+        "titleAdditionSinhala": "[TA: ස්ථානය]",
+        "titleAdditionTamil": "[TA: எங்கள் இடம்]",
         "address": "[TA: No. 123, Main Street, Colombo, Sri Lanka (Online Operations Hub - Placeholder)]"
       }
     },
@@ -193,31 +224,37 @@
   "contactForm": {
     "name": {
       "label": "[TA: Your Name]",
-      "labelSinhala": "[TA: ඔබගේ නම]",
+      "labelAdditionSinhala": "[TA: ඔබගේ නම]",
+      "labelAdditionTamil": "[TA: உங்கள் பெயர்]",
       "placeholder": "[TA: e.g., Sunil Perera]"
     },
     "email": {
       "label": "[TA: Email Address]",
-      "labelSinhala": "[TA: විද්‍යුත් තැපෑල]",
+      "labelAdditionSinhala": "[TA: විද්‍යුත් තැපෑල]",
+      "labelAdditionTamil": "[TA: மின்னஞ்சல் முகவரி]",
       "placeholder": "[TA: e.g., sunil@example.com]"
     },
     "subject": {
       "label": "[TA: Subject]",
-      "labelSinhala": "[TA: විෂය]",
+      "labelAdditionSinhala": "[TA: විෂය]",
+      "labelAdditionTamil": "[TA: பொருள்]",
       "placeholder": "[TA: e.g., Inquiry about Science class]"
     },
     "message": {
       "label": "[TA: Message]",
-      "labelSinhala": "[TA: පණිවිඩය]",
+      "labelAdditionSinhala": "[TA: පණිවිඩය]",
+      "labelAdditionTamil": "[TA: செய்தி]",
       "placeholder": "[TA: Type your message here...]"
     },
     "submitButton": "[TA: Send Message]",
-    "submitButtonSinhala": "[TA: යවන්න]",
+    "submitButtonAdditionSinhala": "[TA: යවන්න]",
+    "submitButtonAdditionTamil": "[TA: செய்தியை அனுப்பு]",
     "submittingButton": "[TA: Sending...]",
     "toast": {
       "success": {
         "title": "[TA: Message Sent!]",
-        "titleSinhala": "[TA: අදහස් යැව්වා!]",
+        "titleAdditionSinhala": "[TA: අදහස් යැව්වා!]",
+        "titleAdditionTamil": "[TA: செய்தி அனுப்பப்பட்டது!]",
         "description": "[TA: Thank you for contacting us. We will get back to you soon.]"
       }
     },
@@ -230,5 +267,3 @@
     }
   }
 }
-
-    

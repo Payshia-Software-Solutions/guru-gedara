@@ -27,21 +27,25 @@
       "science": {
         "name": "Science",
         "sinhalaName": "විද්‍යාව",
+        "tamilName": "Science",
         "description": "Explore the wonders of the physical and natural world."
       },
       "mathematics": {
         "name": "Mathematics",
         "sinhalaName": "ගණිතය",
+        "tamilName": "Mathematics",
         "description": "Master logical reasoning and problem-solving skills."
       },
       "english": {
         "name": "English",
         "sinhalaName": "ඉංග්‍රීසි",
+        "tamilName": "English",
         "description": "Enhance your communication and language proficiency."
       },
       "ict": {
         "name": "ICT",
         "sinhalaName": "ICT",
+        "tamilName": "ICT",
         "description": "Navigate the digital world with essential tech skills."
       },
       "learnMoreButton": "Learn More"
@@ -65,10 +69,13 @@
   },
   "about": {
     "title": "About Us",
+    "titleSinhala": "අප ගැන",
+    "titleTamil": "About Us",
     "subtitle": "About ගුරු ගෙදර E-School",
     "mission": {
       "title": "Our Mission",
       "titleSinhala": "අපගේ මෙහෙවර",
+      "titleTamil": "Our Mission",
       "p1": "At ගුරු ගෙදර E-School, our mission is to provide high-quality, accessible, and affordable online education to G.C.E. Ordinary Level students across Sri Lanka. We aim to empower students with the knowledge and skills necessary to excel in their examinations and build a strong foundation for their future academic and professional pursuits.",
       "p2": "We believe in fostering a supportive and engaging learning environment that caters to individual student needs, leveraging technology to make learning interactive and effective. Our commitment is to bridge educational gaps and contribute to the academic success of every student who joins our platform.",
       "image1Alt": "Online class in session",
@@ -77,6 +84,7 @@
     "educators": {
       "title": "Our Educators",
       "titleSinhala": "අපගේ ගුරු මණ්ඩලය",
+      "titleTamil": "Our Educators",
       "p1": "Our team of educators at ගුරු ගෙදර E-School comprises experienced and dedicated teachers who are passionate about their subjects and committed to student success. They bring a wealth of teaching experience, a deep understanding of the G.C.E. O/L curriculum, and innovative teaching methodologies to the online classroom.",
       "p2": "Each teacher is carefully selected for their expertise, ability to engage students in an online setting, and their dedication to providing personalized support. We are proud to have a team that not only imparts knowledge but also inspires and motivates students to achieve their full potential.",
       "teacher1Role": "Founder & Mathematics Lead",
@@ -92,31 +100,37 @@
   "courses": {
     "title": "Our Courses",
     "titleSinhala": "අපගේ පාඨමාලා",
+    "titleTamil": "Our Courses",
     "subtitle": "Explore the subjects offered at ගුරු ගෙදර E-School for G.C.E. O/L students.",
     "enrollButton": "Enroll Now",
-    "enrollButtonSinhala": "ලියාපදිංචි වන්න",
+    "enrollButtonAdditionSinhala": "ලියාපදිංචි වන්න",
+    "enrollButtonAdditionTamil": "Enroll Now",
     "subjects": {
       "science": {
         "name": "Science",
         "sinhalaName": "විද්‍යාව",
+        "tamilName": "Science",
         "description": "Delve into the principles of Physics, Chemistry, and Biology. Our Science course is designed to build a strong conceptual understanding and prepare students for practical applications.",
         "imageAlt": "Science illustration"
       },
       "mathematics": {
         "name": "Mathematics",
         "sinhalaName": "ගණිතය",
+        "tamilName": "Mathematics",
         "description": "Develop critical thinking and problem-solving abilities with our comprehensive Mathematics curriculum. Covers all O/L topics with clear explanations and practice.",
         "imageAlt": "Mathematics illustration"
       },
       "english": {
         "name": "English Language",
         "sinhalaName": "ඉංග්‍රීසි භාෂාව",
+        "tamilName": "English Language",
         "description": "Improve your grammar, vocabulary, reading, and writing skills. Our English course focuses on effective communication and O/L exam success.",
         "imageAlt": "English Language illustration"
       },
       "ict": {
         "name": "Information & Communication Technology",
         "sinhalaName": "තොරතුරු හා සන්නිවේදන තාක්ෂණය",
+        "tamilName": "Information & Communication Technology",
         "description": "Gain essential digital literacy and ICT skills. This course covers theoretical concepts and practical applications relevant to the O/L syllabus and modern world.",
         "imageAlt": "ICT illustration"
       }
@@ -125,6 +139,7 @@
   "timetable": {
     "title": "Class Timetable",
     "titleSinhala": "පන්ති කාලසටහන",
+    "titleTamil": "Class Timetable",
     "subtitle": "Our Weekly Class Schedule. Stay updated with class timings.",
     "card": {
       "title": "Weekly Timetable",
@@ -134,43 +149,57 @@
     },
     "table": {
       "headerDay": "Day",
-      "headerDaySinhala": "දිනය",
+      "headerDayAdditionSinhala": "දිනය",
+      "headerDayAdditionTamil": "Day",
       "headerTime": "Time",
-      "headerTimeSinhala": "වේලාව",
+      "headerTimeAdditionSinhala": "වේලාව",
+      "headerTimeAdditionTamil": "Time",
       "headerSubject": "Subject",
-      "headerSubjectSinhala": "විෂය",
+      "headerSubjectAdditionSinhala": "විෂය",
+      "headerSubjectAdditionTamil": "Subject",
       "headerTeacher": "Teacher",
-      "headerTeacherSinhala": "ගුරුතුමා/ගුරුතුමිය"
+      "headerTeacherAdditionSinhala": "ගුරුතුමා/ගුරුතුමිය",
+      "headerTeacherAdditionTamil": "Teacher"
     },
     "subjects": {
       "mathematics": "Mathematics",
       "mathematicsSinhala": "ගණිතය",
+      "mathematicsTamil": "Mathematics",
       "science": "Science",
       "scienceSinhala": "විද්‍යාව",
+      "scienceTamil": "Science",
       "english": "English",
       "englishSinhala": "ඉංග්‍රීසි",
+      "englishTamil": "English",
       "ict": "ICT",
       "ictSinhala": "තොරතුරු තාක්ෂණය",
+      "ictTamil": "ICT",
       "mathematicsRevision": "Mathematics - Revision",
       "mathematicsRevisionSinhala": "ගණිතය - පුනරීක්ෂණ",
+      "mathematicsRevisionTamil": "Mathematics - Revision",
       "scienceRevision": "Science - Practicals/Revision",
       "scienceRevisionSinhala": "විද්‍යාව - ප්‍රායෝගික/පුනරීක්ෂණ",
+      "scienceRevisionTamil": "Science - Practicals/Revision",
       "englishPaperClass": "English - Paper Class",
-      "englishPaperClassSinhala": "ඉංග්‍රීසි - ප්‍රශ්න පත්‍ර පන්තිය"
+      "englishPaperClassSinhala": "ඉංග්‍රීසි - ප්‍රශ්න පත්‍ර පන්තිය",
+      "englishPaperClassTamil": "English - Paper Class"
     }
   },
   "contact": {
     "title": "Contact Us",
     "titleSinhala": "අප අමතන්න",
+    "titleTamil": "Contact Us",
     "subtitle": "We're here to help with any questions you may have.",
     "form": {
       "title": "Send us a Message",
-      "titleSinhala": "පණිවිඩයක් එවන්න",
+      "titleAdditionSinhala": "පණිවිඩයක් එවන්න",
+      "titleAdditionTamil": "Send us a Message",
       "description": "Fill out the form below and we'll get back to you as soon as possible."
     },
     "otherWays": {
       "title": "Other Ways to Reach Us",
-      "titleSinhala": "වෙනත් මාර්ග",
+      "titleAdditionSinhala": "වෙනත් මාර්ග",
+      "titleAdditionTamil": "Other Ways to Reach Us",
       "description": "You can also contact us directly through these channels.",
       "phone": {
         "title": "WhatsApp / Phone",
@@ -179,12 +208,14 @@
       },
       "email": {
         "title": "Email Address",
-        "titleSinhala": "විද්‍යුත් තැපෑල",
+        "titleAdditionSinhala": "විද්‍යුත් තැපෑල",
+        "titleAdditionTamil": "Email Address",
         "address": "info@gurugedara.lk (Placeholder)"
       },
       "location": {
         "title": "Our Location",
-        "titleSinhala": "ස්ථානය",
+        "titleAdditionSinhala": "ස්ථානය",
+        "titleAdditionTamil": "Our Location",
         "address": "No. 123, Main Street, Colombo, Sri Lanka (Online Operations Hub - Placeholder)"
       }
     },
@@ -193,31 +224,37 @@
   "contactForm": {
     "name": {
       "label": "Your Name",
-      "labelSinhala": "ඔබගේ නම",
+      "labelAdditionSinhala": "ඔබගේ නම",
+      "labelAdditionTamil": "Your Name",
       "placeholder": "e.g., Sunil Perera"
     },
     "email": {
       "label": "Email Address",
-      "labelSinhala": "විද්‍යුත් තැපෑල",
+      "labelAdditionSinhala": "විද්‍යුත් තැපෑල",
+      "labelAdditionTamil": "Email Address",
       "placeholder": "e.g., sunil@example.com"
     },
     "subject": {
       "label": "Subject",
-      "labelSinhala": "විෂය",
+      "labelAdditionSinhala": "විෂය",
+      "labelAdditionTamil": "Subject",
       "placeholder": "e.g., Inquiry about Science class"
     },
     "message": {
       "label": "Message",
-      "labelSinhala": "පණිවිඩය",
+      "labelAdditionSinhala": "පණිවිඩය",
+      "labelAdditionTamil": "Message",
       "placeholder": "Type your message here..."
     },
     "submitButton": "Send Message",
-    "submitButtonSinhala": "යවන්න",
+    "submitButtonAdditionSinhala": "යවන්න",
+    "submitButtonAdditionTamil": "Send Message",
     "submittingButton": "Sending...",
     "toast": {
       "success": {
         "title": "Message Sent!",
-        "titleSinhala": "අදහස් යැව්වා!",
+        "titleAdditionSinhala": "අදහස් යැව්වා!",
+        "titleAdditionTamil": "Message Sent!",
         "description": "Thank you for contacting us. We will get back to you soon."
       }
     },
@@ -230,5 +267,3 @@
     }
   }
 }
-
-    

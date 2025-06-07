@@ -13,11 +13,29 @@ const teachersData = [
 export default function AboutPage() {
   const { t, language } = useLanguage();
 
+  const getPageTitle = () => {
+    if (language === 'si') return t('about.titleSinhala', 'අප ගැන');
+    if (language === 'ta') return t('about.titleTamil', t('about.title'));
+    return t('about.title', 'About Us');
+  };
+
+  const getMissionTitle = () => {
+    if (language === 'si') return t('about.mission.titleSinhala');
+    if (language === 'ta') return t('about.mission.titleTamil', t('about.mission.title'));
+    return t('about.mission.title');
+  };
+
+  const getEducatorsTitle = () => {
+    if (language === 'si') return t('about.educators.titleSinhala');
+    if (language === 'ta') return t('about.educators.titleTamil', t('about.educators.title'));
+    return t('about.educators.title');
+  };
+
   return (
     <div className="space-y-12">
       <section className="text-center py-12 bg-primary/10 rounded-xl">
         <h1 className="font-headline text-4xl md:text-5xl font-bold text-primary mb-4">
-          {language === 'si' ? t('nav.about', 'අප ගැන') : t('about.title', 'About Us')}
+          {getPageTitle()}
         </h1>
         <p className="text-xl text-foreground max-w-2xl mx-auto">
           {t('about.subtitle', 'About ගුරු ගෙදර E-School')}
@@ -29,7 +47,7 @@ export default function AboutPage() {
           <CardHeader>
             <CardTitle className="font-headline text-3xl text-primary flex items-center">
               <Icons.Award className="w-8 h-8 mr-3 text-accent" /> 
-              {language === 'si' ? t('about.mission.titleSinhala') : t('about.mission.title')}
+              {getMissionTitle()}
             </CardTitle>
           </CardHeader>
           <CardContent className="space-y-4 text-foreground">
@@ -66,7 +84,7 @@ export default function AboutPage() {
           <CardHeader>
             <CardTitle className="font-headline text-3xl text-primary flex items-center">
               <Icons.Users className="w-8 h-8 mr-3 text-accent" /> 
-              {language === 'si' ? t('about.educators.titleSinhala') : t('about.educators.title')}
+              {getEducatorsTitle()}
             </CardTitle>
           </CardHeader>
           <CardContent className="space-y-4 text-foreground">
@@ -109,5 +127,3 @@ export default function AboutPage() {
     </div>
   );
 }
-
-    

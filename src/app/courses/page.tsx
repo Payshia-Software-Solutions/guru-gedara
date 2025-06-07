@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import Icons from '@/components/icons';
-import type { CourseDefinition } from '@/types'; // Renamed to avoid conflict
+import type { CourseDefinition } from '@/types'; 
 import { useLanguage } from '@/contexts/language-context';
 
 const coursesData: CourseDefinition[] = [
@@ -33,20 +33,30 @@ const coursesData: CourseDefinition[] = [
 export default function CoursesPage() {
   const { t, language } = useLanguage();
 
+  const getPageTitle = () => {
+    if (language === 'si') return t('courses.titleSinhala');
+    if (language === 'ta') return t('courses.titleTamil', t('courses.title'));
+    return t('courses.title');
+  };
+
   const getCourseName = (id: string) => {
-    return language === 'si' ? t(`courses.subjects.${id}.sinhalaName`) : t(`courses.subjects.${id}.name`);
+    if (language === 'si') return t(`courses.subjects.${id}.sinhalaName`);
+    if (language === 'ta') return t(`courses.subjects.${id}.tamilName`, t(`courses.subjects.${id}.name`));
+    return t(`courses.subjects.${id}.name`);
   };
   
-  const getCourseEnglishName = (id: string) => {
-     return t(`courses.subjects.${id}.name`);
-  }
-
+  const getEnrollButtonText = () => {
+    let text = t('courses.enrollButton');
+    if (language === 'si') text += ` (${t('courses.enrollButtonAdditionSinhala')})`;
+    if (language === 'ta') text += ` (${t('courses.enrollButtonAdditionTamil')})`;
+    return text;
+  };
 
   return (
     <div className="space-y-12">
       <section className="text-center py-12 bg-primary/10 rounded-xl">
         <h1 className="font-headline text-4xl md:text-5xl font-bold text-primary mb-4">
-          {language === 'si' ? t('courses.titleSinhala') : t('courses.title')}
+          {getPageTitle()}
         </h1>
         <p className="text-xl text-foreground max-w-2xl mx-auto">
           {t('courses.subtitle')}
@@ -61,9 +71,11 @@ export default function CoursesPage() {
                 <courseDef.Icon className="w-12 h-12 text-accent" />
                 <div>
                   <CardTitle className="font-headline text-2xl text-primary">{getCourseName(courseDef.id)}</CardTitle>
-                  <CardDescription className="text-md text-foreground">
-                    {language === 'si' ? getCourseEnglishName(courseDef.id) : ''}
-                  </CardDescription>
+                  {(language === 'si' || language === 'ta') && (
+                    <CardDescription className="text-md text-foreground">
+                      {t(`courses.subjects.${courseDef.id}.name`)} {/* English name as subtitle for SI/TA */}
+                    </CardDescription>
+                  )}
                 </div>
               </div>
                <Image 
@@ -80,7 +92,7 @@ export default function CoursesPage() {
             </CardContent>
             <CardFooter>
               <Button className="w-full bg-accent hover:bg-accent/90 text-accent-foreground">
-                {t('courses.enrollButton')} ({language === 'si' || language === 'ta' ? t('courses.enrollButtonSinhala') : ''})
+                {getEnrollButtonText()}
               </Button>
             </CardFooter>
           </Card>
@@ -89,5 +101,3 @@ export default function CoursesPage() {
     </div>
   );
 }
-
-    

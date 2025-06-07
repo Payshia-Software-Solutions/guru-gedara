@@ -1,6 +1,7 @@
 
 "use client";
 
+import React from "react"; // Import React
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
@@ -16,12 +17,11 @@ import {
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
-import { useLanguage } from "@/contexts/language-context"; // Import useLanguage
+import { useLanguage } from "@/contexts/language-context"; 
 
 export type ContactFormValues = z.infer<ReturnType<typeof getFormSchema>>;
 
 
-// Function to generate schema with translated messages
 const getFormSchema = (t: (key: string, fallback?: string) => string) => z.object({
   name: z.string().min(2, { message: t('contactForm.validation.nameMin', "Name must be at least 2 characters.") }),
   email: z.string().email({ message: t('contactForm.validation.emailInvalid', "Invalid email address.") }),
@@ -34,9 +34,8 @@ const getFormSchema = (t: (key: string, fallback?: string) => string) => z.objec
 
 export function ContactForm() {
   const { toast } = useToast();
-  const { t, language } = useLanguage(); // Get t and language
+  const { t, language } = useLanguage(); 
 
-  // Memoize the schema to avoid re-creation on every render unless t changes
   const formSchema = React.useMemo(() => getFormSchema(t), [t]);
   
   const form = useForm<ContactFormValues>({
@@ -49,14 +48,30 @@ export function ContactForm() {
     },
   });
   
-  // Effect to update validation messages if language changes
   React.useEffect(() => {
-    // Re-evaluate resolver with the new 't' function if language changes
-    // This is a bit of a trick with react-hook-form. Resetting the form or triggering re-validation might be needed.
-    // For simplicity, we rely on the fact that zodResolver will use the new schema on next validation.
-    // To be more robust, one might need to trigger form.trigger() or reset the resolver.
-    form.reset(form.getValues()); // This re-runs validation with the new schema context
+    form.reset(form.getValues()); 
   }, [t, form]);
+
+  const getLabelWithAddition = (baseKey: string, sinhalaAdditionKey: string, tamilAdditionKey: string) => {
+    let label = t(baseKey);
+    if (language === 'si' && t(sinhalaAdditionKey)) label += ` (${t(sinhalaAdditionKey)})`;
+    if (language === 'ta' && t(tamilAdditionKey)) label += ` (${t(tamilAdditionKey)})`;
+    return label;
+  };
+
+  const getButtonTextWithAddition = (baseKey: string, sinhalaAdditionKey: string, tamilAdditionKey: string) => {
+    let text = t(baseKey);
+    if (language === 'si' && t(sinhalaAdditionKey)) text += ` (${t(sinhalaAdditionKey)})`;
+    if (language === 'ta' && t(tamilAdditionKey)) text += ` (${t(tamilAdditionKey)})`;
+    return text;
+  };
+  
+  const getToastTitleWithAddition = (baseKey: string, sinhalaAdditionKey: string, tamilAdditionKey: string) => {
+    let title = t(baseKey);
+    if (language === 'si' && t(sinhalaAdditionKey)) title += ` (${t(sinhalaAdditionKey)})`;
+    if (language === 'ta' && t(tamilAdditionKey)) title += ` (${t(tamilAdditionKey)})`;
+    return title;
+  };
 
 
   async function onSubmit(values: ContactFormValues) {
@@ -64,7 +79,7 @@ export function ContactForm() {
     await new Promise(resolve => setTimeout(resolve, 1000));
     
     toast({
-      title: t('contactForm.toast.success.title', 'Message Sent!') + (language === 'si' || language === 'ta' ? ` (${t('contactForm.toast.success.titleSinhala')})` : ''),
+      title: getToastTitleWithAddition('contactForm.toast.success.title', 'contactForm.toast.success.titleAdditionSinhala', 'contactForm.toast.success.titleAdditionTamil'),
       description: t('contactForm.toast.success.description', "Thank you for contacting us. We will get back to you soon."),
       variant: "default",
     });
@@ -80,7 +95,7 @@ export function ContactForm() {
           render={({ field }) => (
             <FormItem>
               <FormLabel>
-                {t('contactForm.name.label', 'Your Name')} ({language === 'si' || language === 'ta' ? t('contactForm.name.labelSinhala', 'ඔබගේ නම') : ''})
+                {getLabelWithAddition('contactForm.name.label', 'contactForm.name.labelAdditionSinhala', 'contactForm.name.labelAdditionTamil')}
               </FormLabel>
               <FormControl>
                 <Input placeholder={t('contactForm.name.placeholder', 'e.g., Sunil Perera')} {...field} />
@@ -95,7 +110,7 @@ export function ContactForm() {
           render={({ field }) => (
             <FormItem>
               <FormLabel>
-                {t('contactForm.email.label', 'Email Address')} ({language === 'si' || language === 'ta' ? t('contactForm.email.labelSinhala', 'විද්‍යුත් තැපෑල') : ''})
+                {getLabelWithAddition('contactForm.email.label', 'contactForm.email.labelAdditionSinhala', 'contactForm.email.labelAdditionTamil')}
               </FormLabel>
               <FormControl>
                 <Input type="email" placeholder={t('contactForm.email.placeholder', 'e.g., sunil@example.com')} {...field} />
@@ -110,7 +125,7 @@ export function ContactForm() {
           render={({ field }) => (
             <FormItem>
               <FormLabel>
-                {t('contactForm.subject.label', 'Subject')} ({language === 'si' || language === 'ta' ? t('contactForm.subject.labelSinhala', 'විෂය') : ''})
+                {getLabelWithAddition('contactForm.subject.label', 'contactForm.subject.labelAdditionSinhala', 'contactForm.subject.labelAdditionTamil')}
               </FormLabel>
               <FormControl>
                 <Input placeholder={t('contactForm.subject.placeholder', 'e.g., Inquiry about Science class')} {...field} />
@@ -125,7 +140,7 @@ export function ContactForm() {
           render={({ field }) => (
             <FormItem>
               <FormLabel>
-                {t('contactForm.message.label', 'Message')} ({language === 'si' || language === 'ta' ? t('contactForm.message.labelSinhala', 'පණිවිඩය') : ''})
+                {getLabelWithAddition('contactForm.message.label', 'contactForm.message.labelAdditionSinhala', 'contactForm.message.labelAdditionTamil')}
               </FormLabel>
               <FormControl>
                 <Textarea
@@ -141,11 +156,9 @@ export function ContactForm() {
         <Button type="submit" className="w-full bg-accent hover:bg-accent/90 text-accent-foreground" disabled={form.formState.isSubmitting}>
           {form.formState.isSubmitting 
             ? t('contactForm.submittingButton', 'Sending...') 
-            : `${t('contactForm.submitButton', 'Send Message')} (${language === 'si' || language === 'ta' ? t('contactForm.submitButtonSinhala', 'යවන්න') : ''})`}
+            : getButtonTextWithAddition('contactForm.submitButton', 'contactForm.submitButtonAdditionSinhala', 'contactForm.submitButtonAdditionTamil')}
         </Button>
       </form>
     </Form>
   );
 }
-
-    
