@@ -3,10 +3,12 @@
 
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from '@/components/ui/card';
 import Icons from '@/components/icons';
 import { useLanguage } from '@/contexts/language-context';
+import { Badge } from '@/components/ui/badge';
 
 const AnimatedSection: React.FC<{children: React.ReactNode, className?: string, delay?: number}> = ({ children, className, delay = 0 }) => {
   const [isVisible, setIsVisible] = useState(false);
@@ -23,14 +25,29 @@ const AnimatedSection: React.FC<{children: React.ReactNode, className?: string, 
   );
 };
 
+// Placeholder data
+const enrolledCoursesData = [
+  { id: 'science', titleKey: 'courses.subjects.science.name', progress: 75, imageHint: "science flask" },
+  { id: 'mathematics', titleKey: 'courses.subjects.mathematics.name', progress: 40, imageHint: "math symbols" },
+];
+
+const announcementsData = [
+  { id: 'an1', titleKey: 'dashboard.announcements.item1.title', date: '2024-07-28', contentKey: 'dashboard.announcements.item1.content' },
+  { id: 'an2', titleKey: 'dashboard.announcements.item2.title', date: '2024-07-25', contentKey: 'dashboard.announcements.item2.content' },
+];
+
+const learningMaterialsData = [
+  { id: 'lm1', titleKey: 'dashboard.learningMaterials.item1.title', type: 'PDF', courseKey: 'courses.subjects.science.name' },
+  { id: 'lm2', titleKey: 'dashboard.learningMaterials.item2.title', type: 'Video', courseKey: 'courses.subjects.mathematics.name' },
+];
+
 export default function DashboardPage() {
   const { t, language } = useLanguage();
   const router = useRouter();
 
   const handleLogout = () => {
-    // In a real app, you would clear session/token here
     console.log("User logged out (simulated)");
-    router.push('/'); // Redirect to homepage after logout
+    router.push('/'); 
   };
 
   const getPageTitle = () => {
@@ -38,6 +55,14 @@ export default function DashboardPage() {
     if (language === 'ta') return t('dashboard.titleTamil', t('dashboard.title'));
     return t('dashboard.title');
   };
+  
+  const getCourseName = (titleKey: string) => {
+    const id = titleKey.split('.')[2]; // Extract subject id from key like 'courses.subjects.science.name'
+    if (language === 'si') return t(`courses.subjects.${id}.sinhalaName`, t(titleKey));
+    if (language === 'ta') return t(`courses.subjects.${id}.tamilName`, t(titleKey));
+    return t(titleKey);
+  }
+
 
   return (
     <div className="space-y-24 md:space-y-32">
@@ -52,49 +77,149 @@ export default function DashboardPage() {
         </div>
       </AnimatedSection>
 
-      <AnimatedSection delay={200} className="max-w-3xl mx-auto">
-        <Card className="shadow-xl border-none bg-card p-4 sm:p-6">
-          <CardHeader>
-            <div className="flex items-center space-x-3 mb-3">
-              <Icons.LayoutDashboard className="w-8 h-8 text-primary" />
-              <CardTitle className="font-headline text-2xl md:text-3xl text-primary">
-                {t('dashboard.welcomeTitle', "Welcome Student!")}
-              </CardTitle>
-            </div>
-            <CardDescription className="text-muted-foreground text-base">
-              {t('dashboard.welcomeMessage', "This is your personal dashboard. Here you will find your enrolled courses, progress, assignments, and learning materials. Start your learning journey!")}
-            </CardDescription>
-          </CardHeader>
-          <CardContent className="space-y-6 mt-4">
-            <div>
-              <h3 className="font-semibold text-xl text-primary mb-2">{t('dashboard.myCourses', "My Courses")}</h3>
-              <p className="text-muted-foreground">
-                {t('dashboard.myCoursesPlaceholder', "Your enrolled courses will be listed here. (Placeholder)")}
-              </p>
-              {/* Placeholder for course list */}
-              <div className="mt-4 p-4 border border-dashed rounded-md text-center text-muted-foreground">
-                {t('dashboard.noCoursesYet', "No courses enrolled yet.")}
-              </div>
-            </div>
-            <div>
-              <h3 className="font-semibold text-xl text-primary mb-2">{t('dashboard.myProgress', "My Progress")}</h3>
-              <p className="text-muted-foreground">
-                {t('dashboard.myProgressPlaceholder', "Your learning progress and achievements will be displayed here. (Placeholder)")}
-              </p>
-               {/* Placeholder for progress */}
-              <div className="mt-4 p-4 border border-dashed rounded-md text-center text-muted-foreground">
-                {t('dashboard.progressTrackingComingSoon', "Progress tracking coming soon!")}
-              </div>
-            </div>
-          </CardContent>
-          <CardFooter className="mt-6 pt-6 border-t">
-            <Button onClick={handleLogout} variant="outline" className="w-full md:w-auto">
-              <Icons.LogOut className="mr-2 h-5 w-5" />
-              {t('dashboard.logoutButton', "Logout")}
-            </Button>
-          </CardFooter>
-        </Card>
-      </AnimatedSection>
+      <div className="grid lg:grid-cols-3 gap-10 items-start">
+        {/* Main Content Area (Courses, Announcements) */}
+        <div className="lg:col-span-2 space-y-10">
+          <AnimatedSection delay={200}>
+            <Card className="shadow-xl border-none bg-card">
+              <CardHeader>
+                <div className="flex items-center space-x-3">
+                  <Icons.BookMarked className="w-7 h-7 text-primary" />
+                  <CardTitle className="font-headline text-2xl md:text-3xl text-primary">
+                    {t('dashboard.myCourses', "My Courses")}
+                  </CardTitle>
+                </div>
+              </CardHeader>
+              <CardContent className="space-y-6">
+                {enrolledCoursesData.length > 0 ? (
+                  <div className="grid md:grid-cols-2 gap-6">
+                    {enrolledCoursesData.map(course => (
+                      <Card key={course.id} className="bg-background/50 dark:bg-card/70 hover:shadow-lg transition-shadow">
+                        <CardHeader>
+                          <CardTitle className="text-xl text-primary">{getCourseName(course.titleKey)}</CardTitle>
+                          {/* <CardDescription>{t(`courses.subjects.${course.id}.description`)}</CardDescription> */}
+                        </CardHeader>
+                        <CardContent>
+                          {/* Progress bar could go here eventually */}
+                           <div className="text-sm text-muted-foreground mb-2">{t('dashboard.progressLabel', 'Progress')}: {course.progress}%</div>
+                           {/* Basic progress bar placeholder */}
+                           <div className="w-full bg-muted rounded-full h-2.5">
+                             <div className="bg-accent h-2.5 rounded-full" style={{ width: `${course.progress}%` }}></div>
+                           </div>
+                        </CardContent>
+                        <CardFooter>
+                          <Button asChild variant="outline" className="w-full">
+                            <Link href={`/courses/${course.id}`}>
+                              <Icons.ArrowRight className="mr-2 h-4 w-4" />
+                              {t('dashboard.goToCourse', 'Go to Course')}
+                            </Link>
+                          </Button>
+                        </CardFooter>
+                      </Card>
+                    ))}
+                  </div>
+                ) : (
+                  <div className="mt-4 p-4 border border-dashed rounded-md text-center text-muted-foreground">
+                    {t('dashboard.noCoursesYet', "No courses enrolled yet.")}
+                  </div>
+                )}
+              </CardContent>
+            </Card>
+          </AnimatedSection>
+
+          <AnimatedSection delay={400}>
+            <Card className="shadow-xl border-none bg-card">
+              <CardHeader>
+                 <div className="flex items-center space-x-3">
+                  <Icons.Megaphone className="w-7 h-7 text-primary" />
+                  <CardTitle className="font-headline text-2xl md:text-3xl text-primary">
+                    {t('dashboard.announcements.title', "Announcements")}
+                  </CardTitle>
+                </div>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                {announcementsData.length > 0 ? (
+                  announcementsData.map(announcement => (
+                    <div key={announcement.id} className="p-4 border rounded-lg bg-background/50 dark:bg-card/70">
+                      <div className="flex justify-between items-start">
+                        <h4 className="font-semibold text-lg text-foreground">{t(announcement.titleKey)}</h4>
+                        <Badge variant="secondary" className="text-xs">{announcement.date}</Badge>
+                      </div>
+                      <p className="text-sm text-muted-foreground mt-1">{t(announcement.contentKey)}</p>
+                    </div>
+                  ))
+                ) : (
+                  <p className="text-muted-foreground">{t('dashboard.announcements.noAnnouncements', "No new announcements.")}</p>
+                )}
+              </CardContent>
+            </Card>
+          </AnimatedSection>
+        </div>
+
+        {/* Sidebar Area (Profile, Learning Materials, Logout) */}
+        <div className="lg:col-span-1 space-y-10 lg:sticky lg:top-24">
+          <AnimatedSection delay={600}>
+            <Card className="shadow-xl border-none bg-card p-4 sm:p-6">
+              <CardHeader className="items-center text-center">
+                <Icons.UserCircle className="w-20 h-20 text-primary mx-auto mb-3" />
+                <CardTitle className="font-headline text-xl text-primary">
+                  {t('dashboard.welcomeTitle', "Welcome Student!")} 
+                </CardTitle>
+                <CardDescription className="text-muted-foreground text-sm">
+                  {/* Could add student name here if available */}
+                  {t('dashboard.welcomeMessageShort', "Manage your learning journey.")}
+                </CardDescription>
+              </CardHeader>
+               <CardFooter className="mt-6 pt-6 border-t flex-col space-y-3">
+                <Button variant="outline" className="w-full">
+                  <Icons.Settings className="mr-2 h-5 w-5" />
+                  {t('dashboard.profileSettings', "Profile Settings")}
+                </Button>
+                <Button onClick={handleLogout} variant="destructive" className="w-full">
+                  <Icons.LogOut className="mr-2 h-5 w-5" />
+                  {t('dashboard.logoutButton', "Logout")}
+                </Button>
+              </CardFooter>
+            </Card>
+          </AnimatedSection>
+
+          <AnimatedSection delay={800}>
+             <Card className="shadow-xl border-none bg-card">
+              <CardHeader>
+                <div className="flex items-center space-x-3">
+                  <Icons.FolderOpen className="w-7 h-7 text-primary" />
+                  <CardTitle className="font-headline text-2xl text-primary">
+                    {t('dashboard.learningMaterials.title', "Learning Materials")}
+                  </CardTitle>
+                </div>
+                <CardDescription className="text-sm text-muted-foreground">
+                    {t('dashboard.learningMaterials.subtitle', "Quick access to your resources.")}
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-3">
+                {learningMaterialsData.length > 0 ? (
+                  learningMaterialsData.map(material => (
+                     <Link key={material.id} href="#" className="block p-3 border rounded-lg hover:bg-muted/50 dark:hover:bg-card/90 transition-colors">
+                      <div className="flex items-center justify-between">
+                        <div>
+                          <h5 className="font-medium text-foreground">{t(material.titleKey)}</h5>
+                          <p className="text-xs text-muted-foreground">{t('dashboard.learningMaterials.courseLabel', 'Course')}: {getCourseName(material.courseKey)}</p>
+                        </div>
+                        <Badge variant="outline">{material.type}</Badge>
+                      </div>
+                    </Link>
+                  ))
+                ) : (
+                  <p className="text-muted-foreground">{t('dashboard.learningMaterials.noMaterials', "No materials available yet.")}</p>
+                )}
+                <Button variant="link" className="p-0 h-auto text-primary">
+                  {t('dashboard.learningMaterials.viewAll', "View All Materials")} <Icons.ArrowRight className="ml-1 h-4 w-4" />
+                </Button>
+              </CardContent>
+            </Card>
+          </AnimatedSection>
+        </div>
+      </div>
     </div>
   );
 }

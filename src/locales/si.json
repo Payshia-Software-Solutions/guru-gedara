@@ -391,12 +391,38 @@
     "subtitle": "ඔබගේ පුද්ගලික ඉගෙනුම් අවකාශය.",
     "welcomeTitle": "සාදරයෙන් පිළිගනිමු ශිෂ්‍යයා!",
     "welcomeMessage": "මෙය ඔබගේ පුද්ගලික උපකරණ පුවරුවයි. මෙහි ඔබ ලියාපදිංචි වී ඇති පාඨමාලා, ප්‍රගතිය, පැවරුම් සහ ඉගෙනුම් ද්‍රව්‍ය සොයාගත හැකිය. ඔබේ ඉගෙනුම් ගමන ආරම්භ කරන්න!",
+    "welcomeMessageShort": "[SI: Manage your learning journey.]",
     "myCourses": "මගේ පාඨමාලා",
     "myCoursesPlaceholder": "ඔබ ලියාපදිංචි වූ පාඨමාලා මෙහි ලැයිස්තුගත කෙරේ. (ආදර්ශය)",
     "noCoursesYet": "තවමත් කිසිදු පාඨමාලාවකට ලියාපදිංචි වී නොමැත.",
-    "myProgress": "මගේ ප්‍රගතිය",
-    "myProgressPlaceholder": "ඔබගේ ඉගෙනුම් ප්‍රගතිය සහ ජයග්‍රහණ මෙහි ප්‍රදර්ශනය කෙරේ. (ආදර්ශය)",
-    "progressTrackingComingSoon": "ප්‍රගතිය නිරීක්ෂණය කිරීම ඉක්මනින් පැමිණේ!",
+    "goToCourse": "[SI: Go to Course]",
+    "progressLabel": "[SI: Progress]",
+    "announcements": {
+      "title": "නිවේදන",
+      "noAnnouncements": "[SI: No new announcements.]",
+      "item1": {
+        "title": "[SI: Mid-term Exam Schedule Released]",
+        "content": "[SI: The schedule for the upcoming mid-term exams has been posted. Please check your course pages for details.]"
+      },
+      "item2": {
+        "title": "[SI: New Science Material Uploaded]",
+        "content": "[SI: Additional study material for Chapter 5 of Science is now available in the learning materials section.]"
+      }
+    },
+    "learningMaterials": {
+      "title": "ඉගෙනුම් ද්‍රව්‍ය",
+      "subtitle": "[SI: Quick access to your resources.]",
+      "noMaterials": "[SI: No materials available yet.]",
+      "item1": {
+        "title": "[SI: Chapter 1 Notes - Biology]"
+      },
+      "item2": {
+        "title": "[SI: Algebra Practice Set 1]"
+      },
+      "courseLabel": "[SI: Course]",
+      "viewAll": "[SI: View All Materials]"
+    },
+    "profileSettings": "[SI: Profile Settings]",
     "logoutButton": "ඉවත් වන්න"
   },
   "general": {

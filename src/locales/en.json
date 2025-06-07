@@ -391,12 +391,38 @@
     "subtitle": "Your personal learning space.",
     "welcomeTitle": "Welcome Student!",
     "welcomeMessage": "This is your personal dashboard. Here you will find your enrolled courses, progress, assignments, and learning materials. Start your learning journey!",
+    "welcomeMessageShort": "Manage your learning journey.",
     "myCourses": "My Courses",
     "myCoursesPlaceholder": "Your enrolled courses will be listed here. (Placeholder)",
     "noCoursesYet": "No courses enrolled yet.",
-    "myProgress": "My Progress",
-    "myProgressPlaceholder": "Your learning progress and achievements will be displayed here. (Placeholder)",
-    "progressTrackingComingSoon": "Progress tracking coming soon!",
+    "goToCourse": "Go to Course",
+    "progressLabel": "Progress",
+    "announcements": {
+      "title": "Announcements",
+      "noAnnouncements": "No new announcements.",
+      "item1": {
+        "title": "Mid-term Exam Schedule Released",
+        "content": "The schedule for the upcoming mid-term exams has been posted. Please check your course pages for details."
+      },
+      "item2": {
+        "title": "New Science Material Uploaded",
+        "content": "Additional study material for Chapter 5 of Science is now available in the learning materials section."
+      }
+    },
+    "learningMaterials": {
+      "title": "Learning Materials",
+      "subtitle": "Quick access to your resources.",
+      "noMaterials": "No materials available yet.",
+      "item1": {
+        "title": "Chapter 1 Notes - Biology"
+      },
+      "item2": {
+        "title": "Algebra Practice Set 1"
+      },
+      "courseLabel": "Course",
+      "viewAll": "View All Materials"
+    },
+    "profileSettings": "Profile Settings",
     "logoutButton": "Logout"
   },
   "general": {

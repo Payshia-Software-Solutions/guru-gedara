@@ -27,7 +27,7 @@ import {
   Moon,
   Globe,
   ArrowLeft,
-  ArrowRight, // Ensured ArrowRight is here
+  ArrowRight, 
   FileText,
   ListChecks,
   UserCircle,
@@ -38,12 +38,16 @@ import {
   Briefcase,
   Watch,
   AlertTriangle,
-  ChevronRight, // Ensured ChevronRight is here
+  ChevronRight, 
   Loader2,
   KeyRound, 
   LogIn, 
-  LogOut, // Added LogOut
-  LayoutDashboard, // Added LayoutDashboard
+  LogOut, 
+  LayoutDashboard, 
+  BookMarked, // Added BookMarked
+  Megaphone,  // Added Megaphone
+  FolderOpen, // Added FolderOpen
+  Settings,   // Added Settings
 } from 'lucide-react';
 
 // Re-exporting icons for easier access
@@ -92,6 +96,10 @@ export const Icons = {
   LogIn, 
   LogOut,
   LayoutDashboard,
+  BookMarked,
+  Megaphone,
+  FolderOpen,
+  Settings,
 };
 
 export default Icons;
