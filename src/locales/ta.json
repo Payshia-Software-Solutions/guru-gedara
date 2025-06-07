@@ -5,7 +5,8 @@
     "about": "எங்களைப் பற்றி",
     "courses": "பாடநெறிகள்",
     "timetable": "கால அட்டவணை",
-    "contact": "தொடர்பு எங்களை"
+    "contact": "தொடர்பு எங்களை",
+    "login": "உள்நுழை"
   },
   "languageSwitcher": {
     "label": "மொழி",
@@ -351,6 +352,35 @@
         "instructorBio": "[TA: Mr. Dias is a certified ICT professional and educator with a focus on practical, hands-on learning. He aims to equip students with the digital skills necessary for future success.]",
         "instructorExperience": "[TA: 8+ Years Experience]"
       }
+    }
+  },
+  "login": {
+    "title": "மாணவர் உள்நுழைவு",
+    "titleSinhala": "[TA: ශිෂ්‍ය පිවිසුම]",
+    "titleTamil": "மாணவர் உள்நுழைவு",
+    "subtitle": "உங்கள் மாணவர் டாஷ்போர்டு மற்றும் கற்றல் பொருட்களை அணுகவும்.",
+    "form": {
+      "title": "மாணவர் உள்நுழைவு",
+      "description": "உங்கள் கணக்கை அணுக உங்கள் சான்றுகளை உள்ளிடவும்.",
+      "emailLabel": "மின்னஞ்சல் முகவரி",
+      "emailPlaceholder": "your.email@example.com",
+      "passwordLabel": "கடவுச்சொல்",
+      "passwordPlaceholder": "••••••••",
+      "submitButton": "உங்கள் கணக்கில் உள்நுழைக",
+      "submittingButton": "உள்நுழைகிறது...",
+      "noAccount": "கணக்கு இல்லையா?",
+      "signUpLink": "இங்கே பதிவுபெறுக",
+      "forgotPasswordLink": "கடவுச்சொல் மறந்துவிட்டதா?"
+    },
+    "toast": {
+      "success": {
+        "title": "[TA: Login Attempt]",
+        "description": "[TA: Login functionality is a placeholder. Check console for data.]"
+      }
+    },
+    "validation": {
+      "emailInvalid": "செல்லாத மின்னஞ்சல் முகவரி.",
+      "passwordMin": "கடவுச்சொல் குறைந்தது 6 எழுத்துகள் கொண்டதாக இருக்க வேண்டும்."
     }
   },
   "general": {

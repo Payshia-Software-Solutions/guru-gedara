@@ -39,7 +39,9 @@ import {
   Watch,
   AlertTriangle,
   ChevronRight,
-  Loader2, // Added Loader2
+  Loader2,
+  KeyRound, // Added KeyRound
+  LogIn, // Added LogIn
 } from 'lucide-react';
 
 // Re-exporting icons for easier access
@@ -83,7 +85,9 @@ export const Icons = {
   Watch,
   AlertTriangle,
   ChevronRight,
-  Loader2, // Added Loader2
+  Loader2,
+  KeyRound, // Added KeyRound
+  LogIn, // Added LogIn
 };
 
 export default Icons;

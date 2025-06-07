@@ -16,6 +16,7 @@ const navItemKeys = [
   { href: '/courses', labelKey: 'nav.courses' },
   { href: '/timetable', labelKey: 'nav.timetable' },
   { href: '/contact', labelKey: 'nav.contact' },
+  { href: '/login', labelKey: 'nav.login' }, // Added Login link
 ];
 
 export function Navbar() {

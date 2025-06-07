@@ -5,7 +5,8 @@
     "about": "About Us",
     "courses": "Courses",
     "timetable": "Timetable",
-    "contact": "Contact Us"
+    "contact": "Contact Us",
+    "login": "Login"
   },
   "languageSwitcher": {
     "label": "Language",
@@ -31,25 +32,25 @@
         "name": "Science",
         "sinhalaName": "විද්‍යාව",
         "tamilName": "விஞ்ஞானம்",
-        "description": "Explore the wonders of the physical and natural world."
+        "description": "Delve into the principles of Physics, Chemistry, and Biology. Our Science course is designed to build a strong conceptual understanding and prepare students for practical applications."
       },
       "mathematics": {
         "name": "Mathematics",
         "sinhalaName": "ගණිතය",
         "tamilName": "கணிதம்",
-        "description": "Master logical reasoning and problem-solving skills."
+        "description": "Develop critical thinking and problem-solving abilities with our comprehensive Mathematics curriculum. Covers all O/L topics with clear explanations and practice."
       },
       "english": {
-        "name": "English",
+        "name": "English Language",
         "sinhalaName": "ඉංග්‍රීසි",
         "tamilName": "ஆங்கிலம்",
-        "description": "Enhance your communication and language proficiency."
+        "description": "Improve your grammar, vocabulary, reading, and writing skills. Our English course focuses on effective communication and O/L exam success."
       },
       "ict": {
-        "name": "ICT",
+        "name": "Information & Communication Technology",
         "sinhalaName": "ICT",
         "tamilName": "தகவல் தொடர்பாடல் தொழில்நுட்பம்",
-        "description": "Navigate the digital world with essential tech skills."
+        "description": "Gain essential digital literacy and ICT skills. This course covers theoretical concepts and practical applications relevant to the O/L syllabus and modern world."
       },
       "learnMoreButton": "Learn More"
     },
@@ -351,6 +352,35 @@
         "instructorBio": "Mr. Dias is a certified ICT professional and educator with a focus on practical, hands-on learning. He aims to equip students with the digital skills necessary for future success.",
         "instructorExperience": "8+ Years Experience"
       }
+    }
+  },
+  "login": {
+    "title": "Student Login",
+    "titleSinhala": "ශිෂ්‍ය පිවිසුම",
+    "titleTamil": "மாணவர் உள்நுழைவு",
+    "subtitle": "Access your student dashboard and learning materials.",
+    "form": {
+      "title": "Student Login",
+      "description": "Enter your credentials to access your account.",
+      "emailLabel": "Email Address",
+      "emailPlaceholder": "your.email@example.com",
+      "passwordLabel": "Password",
+      "passwordPlaceholder": "••••••••",
+      "submitButton": "Login to Your Account",
+      "submittingButton": "Logging in...",
+      "noAccount": "Don't have an account?",
+      "signUpLink": "Sign up here",
+      "forgotPasswordLink": "Forgot password?"
+    },
+    "toast": {
+      "success": {
+        "title": "Login Attempt",
+        "description": "Login functionality is a placeholder. Check console for data."
+      }
+    },
+    "validation": {
+      "emailInvalid": "Invalid email address.",
+      "passwordMin": "Password must be at least 6 characters."
     }
   },
   "general": {

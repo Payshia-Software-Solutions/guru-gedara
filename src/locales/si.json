@@ -5,7 +5,8 @@
     "about": "අප ගැන",
     "courses": "පාඨමාලා",
     "timetable": "කාලසටහන",
-    "contact": "සම්බන්ධ වන්න"
+    "contact": "සම්බන්ධ වන්න",
+    "login": "පිවිසෙන්න"
   },
   "languageSwitcher": {
     "label": "භාෂාව",
@@ -351,6 +352,35 @@
         "instructorBio": "[SI: Mr. Dias is a certified ICT professional and educator with a focus on practical, hands-on learning. He aims to equip students with the digital skills necessary for future success.]",
         "instructorExperience": "[SI: 8+ Years Experience]"
       }
+    }
+  },
+  "login": {
+    "title": "ශිෂ්‍ය පිවිසුම",
+    "titleSinhala": "ශිෂ්‍ය පිවිසුම",
+    "titleTamil": "[SI: மாணவர் உள்நுழைவு]",
+    "subtitle": "ඔබගේ ශිෂ්‍ය උපකරණ පුවරුවට සහ ඉගෙනුම් ද්‍රව්‍ය වෙත පිවිසෙන්න.",
+    "form": {
+      "title": "ශිෂ්‍ය පිවිසුම",
+      "description": "ඔබගේ ගිණුමට පිවිසීමට ඔබගේ අක්තපත්‍ර ඇතුළත් කරන්න.",
+      "emailLabel": "විද්‍යුත් තැපෑල",
+      "emailPlaceholder": "your.email@example.com",
+      "passwordLabel": "මුරපදය",
+      "passwordPlaceholder": "••••••••",
+      "submitButton": "ඔබගේ ගිණුමට පිවිසෙන්න",
+      "submittingButton": "පිවිසෙමින්...",
+      "noAccount": "ගිණුමක් නැද්ද?",
+      "signUpLink": "මෙහි ලියාපදිංචි වන්න",
+      "forgotPasswordLink": "මුරපදය අමතක වුණා ද?"
+    },
+    "toast": {
+      "success": {
+        "title": "[SI: Login Attempt]",
+        "description": "[SI: Login functionality is a placeholder. Check console for data.]"
+      }
+    },
+    "validation": {
+      "emailInvalid": "වලංගු නොවන විද්‍යුත් තැපැල් ලිපිනයකි.",
+      "passwordMin": "මුරපදය අවම වශයෙන් අක්ෂර 6ක් විය යුතුය."
     }
   },
   "general": {
