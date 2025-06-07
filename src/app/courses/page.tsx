@@ -8,6 +8,7 @@ import Icons from '@/components/icons';
 import type { CourseDefinition } from '@/types'; 
 import { useLanguage } from '@/contexts/language-context';
 import React, { useEffect, useState } from 'react';
+import { useToast } from '@/hooks/use-toast'; // Added for toast notifications
 
 const coursesData: CourseDefinition[] = [
   { 
@@ -49,6 +50,7 @@ const AnimatedSection: React.FC<{children: React.ReactNode, className?: string, 
 
 export default function CoursesPage() {
   const { t, language } = useLanguage();
+  const { toast } = useToast(); // Added
 
   const getPageTitle = () => {
     if (language === 'si') return t('courses.titleSinhala');
@@ -62,11 +64,31 @@ export default function CoursesPage() {
     return t(`courses.subjects.${id}.name`);
   };
   
-  const getViewDetailsButtonText = () => {
-    let text = t('courses.viewDetailsButton', 'Learn More');
-    if (language === 'si') text = t('courses.viewDetailsButtonAdditionSinhala', text);
-    if (language === 'ta') text = t('courses.viewDetailsButtonAdditionTamil', text);
+  const getEnrollButtonText = () => {
+    let text = t('courses.enrollButton', 'Enroll Now');
+    if (language === 'si') text = t('courses.enrollButtonAdditionSinhala', text);
+    if (language === 'ta') text = t('courses.enrollButtonAdditionTamil', text);
     return text;
+  };
+
+  const handleEnroll = (courseId: string, courseName: string) => {
+    console.log(`Enrollment initiated for course: ${courseName} (ID: ${courseId})`);
+    toast({
+      title: t('courses.toast.enroll.initiatingTitle', "Enrollment Initiated (Simulated)"),
+      description: t('courses.toast.enroll.initiatingDescription', `Preparing enrollment for ${courseName}... Redirecting to payment.`),
+      variant: "default",
+    });
+
+    // Simulate payment process
+    setTimeout(() => {
+      toast({
+        title: t('courses.toast.enroll.successTitle', "Enrollment Successful (Simulated)"),
+        description: t('courses.toast.enroll.successDescription', `You have successfully enrolled in ${courseName}. You can now access its content in 'My Courses'.`),
+        variant: "default", // Or "success" if you define such a variant
+      });
+      console.log(`Simulated successful enrollment for course: ${courseName} (ID: ${courseId})`);
+      // In a real app, you'd redirect to payment, then handle callback, then update user's enrolled courses.
+    }, 2500);
   };
 
   return (
@@ -112,11 +134,17 @@ export default function CoursesPage() {
               <CardContent className="p-0 text-muted-foreground flex-grow mb-6">
                 <p className="text-base leading-relaxed">{t(`courses.subjects.${courseDef.id}.description`)}</p>
               </CardContent>
-              <CardFooter className="p-0 mt-auto">
-                <Button asChild className="w-full bg-accent hover:bg-accent/90 text-accent-foreground py-3 text-base rounded-md transition-transform group-hover:scale-105">
+              <CardFooter className="p-0 mt-auto flex flex-col sm:flex-row gap-2">
+                <Button asChild variant="outline" className="w-full sm:w-auto border-primary text-primary hover:bg-primary/10 hover:text-primary-foreground transition-colors group-hover:bg-primary/5 group-hover:text-primary-foreground">
                   <Link href={`/courses/${courseDef.id}`}>
-                    {getViewDetailsButtonText()} <Icons.ArrowRight className="ml-2 h-5 w-5" />
+                    {t('courses.viewDetailsButton', 'Learn More')}
                   </Link>
+                </Button>
+                <Button 
+                  className="w-full sm:w-auto flex-grow bg-accent hover:bg-accent/90 text-accent-foreground py-3 text-base rounded-md transition-transform group-hover:scale-105"
+                  onClick={() => handleEnroll(courseDef.id, getCourseName(courseDef.id))}
+                >
+                  {getEnrollButtonText()} <Icons.LogIn className="ml-2 h-5 w-5" />
                 </Button>
               </CardFooter>
             </div>

@@ -24,28 +24,29 @@ export function LmsSidebar() {
   const pathname = usePathname();
   const router = useRouter();
   const { t } = useLanguage();
-  const { setOpenMobile } = useSidebar();
+  const { setOpenMobile, isMobile } = useSidebar(); // Added isMobile
 
   const navItems = [
     { href: '/lms/dashboard', labelKey: 'lms.sidebar.dashboard', icon: Icons.LayoutDashboard },
-    { href: '/lms/courses', labelKey: 'lms.sidebar.myCourses', icon: Icons.BookMarked },
+    { href: '/lms/courses', labelKey: 'lms.sidebar.myCourses', icon: Icons.BookMarked }, // Changed from My Courses
     { href: '/lms/announcements', labelKey: 'lms.sidebar.announcements', icon: Icons.Megaphone },
     { href: '/lms/materials', labelKey: 'lms.sidebar.materials', icon: Icons.FolderOpen },
     { href: '/lms/profile', labelKey: 'lms.sidebar.profile', icon: Icons.UserCircle },
   ];
 
-  const isActive = (path: string) => pathname === path;
+  const isActive = (path: string) => pathname === path || (path === '/lms/courses' && pathname.startsWith('/lms/courses'));
+
 
   const handleLogout = () => {
     console.log("User logged out (simulated from LMS sidebar)");
-    setOpenMobile(false); 
+    if (isMobile) setOpenMobile(false); // Ensure mobile sidebar closes
     router.push('/');
   };
 
   return (
     <Sidebar collapsible="icon" className="border-r">
       <SidebarHeader className="p-4">
-        <Link href="/lms/dashboard" className="flex items-center gap-2" onClick={() => setOpenMobile(false)}>
+        <Link href="/lms/dashboard" className="flex items-center gap-2" onClick={() => { if (isMobile) setOpenMobile(false);}}>
           <BookOpenText className="h-7 w-7 text-primary transition-transform group-hover:scale-110" />
           <span className="font-headline text-xl font-bold text-primary group-data-[collapsible=icon]:hidden">
             ගුරු ගෙදර <span className="text-accent">LMS</span>
@@ -61,8 +62,7 @@ export function LmsSidebar() {
                 isActive={isActive(item.href)}
                 tooltip={t(item.labelKey)}
                 onClick={() => {
-                  // For mobile, ensure sidebar closes. Navigation is handled by Link.
-                  if (useSidebar().isMobile) {
+                  if (isMobile) {
                     setOpenMobile(false);
                   }
                 }}
@@ -97,7 +97,7 @@ export function LmsSidebar() {
             variant="outline"
             className="w-full mt-2 group-data-[collapsible=icon]:hidden"
             onClick={() => {
-              setOpenMobile(false); 
+              if (isMobile) setOpenMobile(false); 
               router.push('/');
             }}
         >

@@ -44,10 +44,14 @@ import {
   LogIn, 
   LogOut, 
   LayoutDashboard, 
-  BookMarked, // Added BookMarked
-  Megaphone,  // Added Megaphone
-  FolderOpen, // Added FolderOpen
-  Settings,   // Added Settings
+  BookMarked,
+  Megaphone,
+  FolderOpen,
+  Settings,
+  PlayCircle, // Added PlayCircle
+  Download,   // Added Download
+  Video,      // Added Video
+  Play,       // Added Play
 } from 'lucide-react';
 
 // Re-exporting icons for easier access
@@ -100,6 +104,10 @@ export const Icons = {
   Megaphone,
   FolderOpen,
   Settings,
+  PlayCircle,
+  Download,
+  Video,
+  Play,
 };
 
 export default Icons;

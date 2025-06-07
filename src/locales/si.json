@@ -156,6 +156,14 @@
         "description": "අත්‍යවශ්‍ය ඩිජිටල් සාක්ෂරතාවය සහ තොරතුරු හා සන්නිවේදන තාක්ෂණ කුසලතා ලබා ගන්න. මෙම පාඨමාලාව සා/පෙළ විෂය නිර්දේශයට සහ නවීන ලෝකයට අදාළ න්‍යායාත්මක සංකල්ප සහ ප්‍රායෝගික යෙදුම් ආවරණය කරයි.",
         "imageAlt": "[SI: ICT illustration]"
       }
+    },
+    "toast": {
+      "enroll": {
+        "initiatingTitle": "[SI: Enrollment Initiated (Simulated)]",
+        "initiatingDescription": "[SI: Preparing enrollment for {{courseName}}... Redirecting to payment.]",
+        "successTitle": "[SI: Enrollment Successful (Simulated)]",
+        "successDescription": "[SI: You have successfully enrolled in {{courseName}}. You can now access its content in 'My Courses'.]"
+      }
     }
   },
   "timetable": {
@@ -434,6 +442,66 @@
       "profile": "මගේ පැතිකඩ",
       "logout": "ඉවත් වන්න",
       "backToSite": "[SI: Back to Main Site]"
+    },
+    "myCourses": {
+      "title": "මා ලියාපදිංචි වූ පාඨමාලා",
+      "titleSinhala": "මා ලියාපදිංචි වූ පාඨමාලා",
+      "titleTamil": "[SI: எனது பதிவுசெய்யப்பட்ட பாடநெறிகள்]",
+      "subtitle": "ඔබ ලියාපදිංචි වී ඇති පාඨමාලා වෙත පිවිසෙන්න, අන්තර්ගතය නරඹන්න, සහ ඔබේ ප්‍රගතිය නිරීක්ෂණය කරන්න.",
+      "courseImageAlt": "[SI: Image for {{courseName}}]",
+      "enrolledBadge": "ලියාපදිංචි වී ඇත",
+      "viewContentButton": "පාඨමාලා අන්තර්ගතය නරඹන්න",
+      "placeholder": {
+        "nextUp": "[SI: Next up: Introduction Video]"
+      },
+      "noCourses": {
+        "title": "තවමත් කිසිදු පාඨමාලාවකට ලියාපදිංචි වී නොමැත",
+        "description": "ඔබ තවමත් කිසිදු පාඨමාලාවකට ලියාපදිංචි වී නොමැති බව පෙනේ. අපගේ පවතින පාඨමාලා ගවේෂණය කර ඔබේ ඉගෙනුම් ගමන ආරම්භ කරන්න!",
+        "exploreButton": "පාඨමාලා ගවේෂණය කරන්න"
+      }
+    },
+    "courseContent": {
+      "notFound": {
+        "title": "පාඨමාලා අන්තර්ගතය හමු නොවීය",
+        "message": "මෙම පාඨමාලාව සඳහා අන්තර්ගතය නොමැත හෝ පාඨමාලා ID වැරදිය."
+      },
+      "backToMyCourses": "මගේ පාඨමාලා වෙත ආපසු යන්න",
+      "watchButton": "නරඹන්න",
+      "downloadButton": "බාගත කරන්න",
+      "recordedOn": "පටිගත කළ දිනය:",
+      "duration": "කාලය:",
+      "sections": {
+        "videos": {
+          "title": "වීඩියෝ පාඩම්",
+          "empty": "මෙම පාඨමාලාව සඳහා තවමත් වීඩියෝ පාඩම් නොමැත."
+        },
+        "notes": {
+          "title": "PDF සටහන් සහ ද්‍රව්‍ය",
+          "empty": "මෙම පාඨමාලාව සඳහා තවමත් PDF සටහන් නොමැත."
+        },
+        "recordings": {
+          "title": "පන්ති පටිගත කිරීම්",
+          "empty": "මෙම පාඨමාලාව සඳහා තවමත් පන්ති පටිගත කිරීම් නොමැත."
+        },
+        "quizzes": {
+            "title": "ප්‍රශ්නාවලි සහ පැවරුම්",
+            "description": "ඔබේ දැනුම පරීක්ෂා කර පැවරුම් සම්පූර්ණ කරන්න.",
+            "empty": "ප්‍රශ්නාවලි සහ පැවරුම් මෙහි දිස්වනු ඇත. (ළඟදීම)",
+            "sampleQuizButton": "[SI: Take Chapter 1 Quiz]"
+        }
+      },
+      "science": {
+        "video1": { "title": "[SI: Introduction to Physics]", "description": "[SI: Understanding fundamental concepts of mechanics and motion.]" },
+        "video2": { "title": "[SI: Chemistry Basics: Atoms & Molecules]", "description": "[SI: Exploring the building blocks of matter.]" },
+        "note1": { "title": "[SI: Chapter 1: Mechanics Notes (Physics)]" },
+        "note2": { "title": "[SI: Periodic Table Overview (Chemistry)]" },
+        "recording1": { "title": "[SI: Live Class: Q&A Session on Biology Unit 1]" }
+      },
+      "mathematics": {
+        "video1": { "title": "[SI: Algebra Fundamentals Part 1]", "description": "[SI: Introduction to algebraic expressions and equations.]" },
+        "video2": { "title": "[SI: Geometry: Triangles and Quadrilaterals]", "description": "[SI: Properties and theorems related to basic shapes.]" },
+        "note1": { "title": "[SI: Algebra Formulas Cheat Sheet]" }
+      }
     }
   },
   "general": {

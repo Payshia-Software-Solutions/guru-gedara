@@ -156,6 +156,14 @@
         "description": "[TA: Gain essential digital literacy and ICT skills. This course covers theoretical concepts and practical applications relevant to the O/L syllabus and modern world.]",
         "imageAlt": "[TA: ICT illustration]"
       }
+    },
+    "toast": {
+      "enroll": {
+        "initiatingTitle": "[TA: Enrollment Initiated (Simulated)]",
+        "initiatingDescription": "[TA: Preparing enrollment for {{courseName}}... Redirecting to payment.]",
+        "successTitle": "[TA: Enrollment Successful (Simulated)]",
+        "successDescription": "[TA: You have successfully enrolled in {{courseName}}. You can now access its content in 'My Courses'.]"
+      }
     }
   },
   "timetable": {
@@ -434,6 +442,66 @@
       "profile": "என் சுயவிவரம்",
       "logout": "வெளியேறு",
       "backToSite": "[TA: Back to Main Site]"
+    },
+    "myCourses": {
+      "title": "எனது பதிவுசெய்யப்பட்ட பாடநெறிகள்",
+      "titleSinhala": "[TA: මා ලියාපදිංචි වූ පාඨමාලා]",
+      "titleTamil": "எனது பதிவுசெய்யப்பட்ட பாடநெறிகள்",
+      "subtitle": "நீங்கள் பதிவுசெய்த பாடநெறிகளை அணுகவும், உள்ளடக்கத்தைப் பார்க்கவும் மற்றும் உங்கள் முன்னேற்றத்தைக் கண்காணிக்கவும்.",
+      "courseImageAlt": "[TA: Image for {{courseName}}]",
+      "enrolledBadge": "சேர்ந்துள்ளீர்கள்",
+      "viewContentButton": "பாட உள்ளடக்கத்தைக் காண்க",
+      "placeholder": {
+        "nextUp": "[TA: Next up: Introduction Video]"
+      },
+      "noCourses": {
+        "title": "இன்னும் எந்த பாடநெறிகளிலும் சேரவில்லை",
+        "description": "நீங்கள் இன்னும் எந்த பாடநெறிகளிலும் சேரவில்லை என்று தெரிகிறது. எங்களிடம் உள்ள பாடநெறிகளை ஆராய்ந்து உங்கள் கற்றல் பயணத்தைத் தொடங்குங்கள்!",
+        "exploreButton": "பாடநெறிகளை ஆராயுங்கள்"
+      }
+    },
+    "courseContent": {
+      "notFound": {
+        "title": "பாட உள்ளடக்கம் கிடைக்கவில்லை",
+        "message": "இந்த பாடநெறிக்கான உள்ளடக்கம் கிடைக்கவில்லை அல்லது பாடநெறி ஐடி தவறானது."
+      },
+      "backToMyCourses": "என் பாடநெறிகளுக்குத் திரும்பு",
+      "watchButton": "பார்க்க",
+      "downloadButton": "பதிவிறக்கு",
+      "recordedOn": "பதிவு செய்யப்பட்டது:",
+      "duration": "கால அளவு:",
+      "sections": {
+        "videos": {
+          "title": "காணொளி பாடங்கள்",
+          "empty": "இந்த பாடநெறிக்கு இன்னும் காணொளி பாடங்கள் எதுவும் கிடைக்கவில்லை."
+        },
+        "notes": {
+          "title": "PDF குறிப்புகள் & பொருட்கள்",
+          "empty": "இந்த பாடநெறிக்கு இன்னும் PDF குறிப்புகள் எதுவும் கிடைக்கவில்லை."
+        },
+        "recordings": {
+          "title": "வகுப்பு பதிவுகள்",
+          "empty": "இந்த பாடநெறிக்கு இன்னும் வகுப்பு பதிவுகள் எதுவும் கிடைக்கவில்லை."
+        },
+        "quizzes": {
+            "title": "வினாடி வினாக்கள் & பணிகள்",
+            "description": "உங்கள் அறிவை சோதித்து பணிகளை முடிக்கவும்.",
+            "empty": "வினாடி வினாக்கள் மற்றும் பணிகள் இங்கே தோன்றும். (விரைவில்)",
+            "sampleQuizButton": "[TA: Take Chapter 1 Quiz]"
+        }
+      },
+      "science": {
+        "video1": { "title": "[TA: Introduction to Physics]", "description": "[TA: Understanding fundamental concepts of mechanics and motion.]" },
+        "video2": { "title": "[TA: Chemistry Basics: Atoms & Molecules]", "description": "[TA: Exploring the building blocks of matter.]" },
+        "note1": { "title": "[TA: Chapter 1: Mechanics Notes (Physics)]" },
+        "note2": { "title": "[TA: Periodic Table Overview (Chemistry)]" },
+        "recording1": { "title": "[TA: Live Class: Q&A Session on Biology Unit 1]" }
+      },
+      "mathematics": {
+        "video1": { "title": "[TA: Algebra Fundamentals Part 1]", "description": "[TA: Introduction to algebraic expressions and equations.]" },
+        "video2": { "title": "[TA: Geometry: Triangles and Quadrilaterals]", "description": "[TA: Properties and theorems related to basic shapes.]" },
+        "note1": { "title": "[TA: Algebra Formulas Cheat Sheet]" }
+      }
     }
   },
   "general": {

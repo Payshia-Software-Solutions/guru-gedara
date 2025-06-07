@@ -156,6 +156,14 @@
         "description": "Gain essential digital literacy and ICT skills. This course covers theoretical concepts and practical applications relevant to the O/L syllabus and modern world.",
         "imageAlt": "ICT illustration"
       }
+    },
+    "toast": {
+      "enroll": {
+        "initiatingTitle": "Enrollment Initiated (Simulated)",
+        "initiatingDescription": "Preparing enrollment for {{courseName}}... Redirecting to payment.",
+        "successTitle": "Enrollment Successful (Simulated)",
+        "successDescription": "You have successfully enrolled in {{courseName}}. You can now access its content in 'My Courses'."
+      }
     }
   },
   "timetable": {
@@ -434,6 +442,66 @@
       "profile": "My Profile",
       "logout": "Logout",
       "backToSite": "Back to Main Site"
+    },
+    "myCourses": {
+      "title": "My Enrolled Courses",
+      "titleSinhala": "මා ලියාපදිංචි වූ පාඨමාලා",
+      "titleTamil": "எனது பதிவுசெய்யப்பட்ட பாடநெறிகள்",
+      "subtitle": "Access your enrolled courses, view content, and track your progress.",
+      "courseImageAlt": "Image for {{courseName}}",
+      "enrolledBadge": "Enrolled",
+      "viewContentButton": "View Course Content",
+      "placeholder": {
+        "nextUp": "Next up: Introduction Video"
+      },
+      "noCourses": {
+        "title": "No Courses Enrolled Yet",
+        "description": "It looks like you haven't enrolled in any courses. Explore our available courses and start your learning journey!",
+        "exploreButton": "Explore Courses"
+      }
+    },
+    "courseContent": {
+      "notFound": {
+        "title": "Course Content Not Found",
+        "message": "The content for this course is not available or the course ID is invalid."
+      },
+      "backToMyCourses": "Back to My Courses",
+      "watchButton": "Watch",
+      "downloadButton": "Download",
+      "recordedOn": "Recorded on:",
+      "duration": "Duration:",
+      "sections": {
+        "videos": {
+          "title": "Video Lessons",
+          "empty": "No video lessons available for this course yet."
+        },
+        "notes": {
+          "title": "PDF Notes & Materials",
+          "empty": "No PDF notes available for this course yet."
+        },
+        "recordings": {
+          "title": "Class Recordings",
+          "empty": "No class recordings available for this course yet."
+        },
+        "quizzes": {
+            "title": "Quizzes & Assignments",
+            "description": "Test your knowledge and complete assignments.",
+            "empty": "Quizzes and assignments will appear here. (Coming Soon)",
+            "sampleQuizButton": "Take Chapter 1 Quiz"
+        }
+      },
+      "science": {
+        "video1": { "title": "Introduction to Physics", "description": "Understanding fundamental concepts of mechanics and motion." },
+        "video2": { "title": "Chemistry Basics: Atoms & Molecules", "description": "Exploring the building blocks of matter." },
+        "note1": { "title": "Chapter 1: Mechanics Notes (Physics)" },
+        "note2": { "title": "Periodic Table Overview (Chemistry)" },
+        "recording1": { "title": "Live Class: Q&A Session on Biology Unit 1" }
+      },
+      "mathematics": {
+        "video1": { "title": "Algebra Fundamentals Part 1", "description": "Introduction to algebraic expressions and equations." },
+        "video2": { "title": "Geometry: Triangles and Quadrilaterals", "description": "Properties and theorems related to basic shapes." },
+        "note1": { "title": "Algebra Formulas Cheat Sheet" }
+      }
     }
   },
   "general": {
