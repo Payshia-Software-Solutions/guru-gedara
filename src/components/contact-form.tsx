@@ -1,3 +1,4 @@
+
 "use client";
 
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -15,18 +16,29 @@ import {
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
+import { useLanguage } from "@/contexts/language-context"; // Import useLanguage
 
-const formSchema = z.object({
-  name: z.string().min(2, { message: "Name must be at least 2 characters." }),
-  email: z.string().email({ message: "Invalid email address." }),
-  subject: z.string().min(5, { message: "Subject must be at least 5 characters." }),
-  message: z.string().min(10, { message: "Message must be at least 10 characters." }).max(500, { message: "Message must not exceed 500 characters." }),
+export type ContactFormValues = z.infer<ReturnType<typeof getFormSchema>>;
+
+
+// Function to generate schema with translated messages
+const getFormSchema = (t: (key: string, fallback?: string) => string) => z.object({
+  name: z.string().min(2, { message: t('contactForm.validation.nameMin', "Name must be at least 2 characters.") }),
+  email: z.string().email({ message: t('contactForm.validation.emailInvalid', "Invalid email address.") }),
+  subject: z.string().min(5, { message: t('contactForm.validation.subjectMin', "Subject must be at least 5 characters.") }),
+  message: z.string()
+    .min(10, { message: t('contactForm.validation.messageMin', "Message must be at least 10 characters.") })
+    .max(500, { message: t('contactForm.validation.messageMax', "Message must not exceed 500 characters.") }),
 });
 
-export type ContactFormValues = z.infer<typeof formSchema>;
 
 export function ContactForm() {
   const { toast } = useToast();
+  const { t, language } = useLanguage(); // Get t and language
+
+  // Memoize the schema to avoid re-creation on every render unless t changes
+  const formSchema = React.useMemo(() => getFormSchema(t), [t]);
+  
   const form = useForm<ContactFormValues>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -36,19 +48,27 @@ export function ContactForm() {
       message: "",
     },
   });
+  
+  // Effect to update validation messages if language changes
+  React.useEffect(() => {
+    // Re-evaluate resolver with the new 't' function if language changes
+    // This is a bit of a trick with react-hook-form. Resetting the form or triggering re-validation might be needed.
+    // For simplicity, we rely on the fact that zodResolver will use the new schema on next validation.
+    // To be more robust, one might need to trigger form.trigger() or reset the resolver.
+    form.reset(form.getValues()); // This re-runs validation with the new schema context
+  }, [t, form]);
+
 
   async function onSubmit(values: ContactFormValues) {
-    // Placeholder for actual submission logic
     console.log("Form submitted:", values);
-    // Simulate API call
     await new Promise(resolve => setTimeout(resolve, 1000));
     
     toast({
-      title: "Message Sent! (අදහස් යැව්වා!)",
-      description: "Thank you for contacting us. We will get back to you soon.",
-      variant: "default", // 'default' will use primary theme colors
+      title: t('contactForm.toast.success.title', 'Message Sent!') + (language === 'si' || language === 'ta' ? ` (${t('contactForm.toast.success.titleSinhala')})` : ''),
+      description: t('contactForm.toast.success.description', "Thank you for contacting us. We will get back to you soon."),
+      variant: "default",
     });
-    form.reset(); // Reset form fields
+    form.reset();
   }
 
   return (
@@ -59,9 +79,11 @@ export function ContactForm() {
           name="name"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Your Name (ඔබගේ නම)</FormLabel>
+              <FormLabel>
+                {t('contactForm.name.label', 'Your Name')} ({language === 'si' || language === 'ta' ? t('contactForm.name.labelSinhala', 'ඔබගේ නම') : ''})
+              </FormLabel>
               <FormControl>
-                <Input placeholder="e.g., Sunil Perera" {...field} />
+                <Input placeholder={t('contactForm.name.placeholder', 'e.g., Sunil Perera')} {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -72,9 +94,11 @@ export function ContactForm() {
           name="email"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Email Address (විද්‍යුත් තැපෑල)</FormLabel>
+              <FormLabel>
+                {t('contactForm.email.label', 'Email Address')} ({language === 'si' || language === 'ta' ? t('contactForm.email.labelSinhala', 'විද්‍යුත් තැපෑල') : ''})
+              </FormLabel>
               <FormControl>
-                <Input type="email" placeholder="e.g., sunil@example.com" {...field} />
+                <Input type="email" placeholder={t('contactForm.email.placeholder', 'e.g., sunil@example.com')} {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -85,9 +109,11 @@ export function ContactForm() {
           name="subject"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Subject (විෂය)</FormLabel>
+              <FormLabel>
+                {t('contactForm.subject.label', 'Subject')} ({language === 'si' || language === 'ta' ? t('contactForm.subject.labelSinhala', 'විෂය') : ''})
+              </FormLabel>
               <FormControl>
-                <Input placeholder="e.g., Inquiry about Science class" {...field} />
+                <Input placeholder={t('contactForm.subject.placeholder', 'e.g., Inquiry about Science class')} {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -98,10 +124,12 @@ export function ContactForm() {
           name="message"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Message (පණිවිඩය)</FormLabel>
+              <FormLabel>
+                {t('contactForm.message.label', 'Message')} ({language === 'si' || language === 'ta' ? t('contactForm.message.labelSinhala', 'පණිවිඩය') : ''})
+              </FormLabel>
               <FormControl>
                 <Textarea
-                  placeholder="Type your message here..."
+                  placeholder={t('contactForm.message.placeholder', 'Type your message here...')}
                   className="min-h-[120px]"
                   {...field}
                 />
@@ -111,9 +139,13 @@ export function ContactForm() {
           )}
         />
         <Button type="submit" className="w-full bg-accent hover:bg-accent/90 text-accent-foreground" disabled={form.formState.isSubmitting}>
-          {form.formState.isSubmitting ? "Sending..." : "Send Message (යවන්න)"}
+          {form.formState.isSubmitting 
+            ? t('contactForm.submittingButton', 'Sending...') 
+            : `${t('contactForm.submitButton', 'Send Message')} (${language === 'si' || language === 'ta' ? t('contactForm.submitButtonSinhala', 'යවන්න') : ''})`}
         </Button>
       </form>
     </Form>
   );
 }
+
+    

@@ -13,5 +13,222 @@
     "en": "ஆங்கிலம்",
     "si": "சிங்களம்",
     "ta": "தமிழ்"
+  },
+  "home": {
+    "hero": {
+      "title": "[TA: Welcome to ගුරු ගෙදර E-School!]",
+      "subtitle": "[TA: Empowering the future of Sri Lankan students through quality online education. <br /> ශ්‍රී ලාංකීය දූ දරුවන්ගේ අනාගතය සවිබල ගැන්වීම.]",
+      "joinButton": "[TA: Join Our Classes]",
+      "imageAlt": "[TA: Students learning online]"
+    },
+    "featuredSubjects": {
+      "title": "[TA: Our Subjects]",
+      "subtitle": "[TA: Explore the subjects we offer for G.C.E. O/L students.]",
+      "science": {
+        "name": "[TA: Science]",
+        "sinhalaName": "[TA: විද්‍යාව]",
+        "description": "[TA: Explore the wonders of the physical and natural world.]"
+      },
+      "mathematics": {
+        "name": "[TA: Mathematics]",
+        "sinhalaName": "[TA: ගණිතය]",
+        "description": "[TA: Master logical reasoning and problem-solving skills.]"
+      },
+      "english": {
+        "name": "[TA: English]",
+        "sinhalaName": "[TA: ඉංග්‍රීසි]",
+        "description": "[TA: Enhance your communication and language proficiency.]"
+      },
+      "ict": {
+        "name": "[TA: ICT]",
+        "sinhalaName": "[TA: ICT]",
+        "description": "[TA: Navigate the digital world with essential tech skills.]"
+      },
+      "learnMoreButton": "[TA: Learn More]"
+    },
+    "benefits": {
+      "title": "[TA: Why Choose Us?]",
+      "subtitle": "[TA: Discover the advantages of learning with ගුරු ගෙදර E-School.]",
+      "item1": "[TA: Expert teachers with proven track records]",
+      "item2": "[TA: Interactive and engaging online classes]",
+      "item3": "[TA: Flexible learning from the comfort of your home]",
+      "item4": "[TA: Comprehensive syllabus coverage for O/L exams]",
+      "item5": "[TA: Regular assessments and feedback]",
+      "item6": "[TA: Supportive learning community]"
+    },
+    "testimonials": {
+      "title": "[TA: Student Feedback]",
+      "subtitle": "[TA: Hear what our students and parents have to say.]",
+      "roleStudent": "[TA: Student]",
+      "roleParent": "[TA: Parent]"
+    }
+  },
+  "about": {
+    "title": "[TA: About Us]",
+    "subtitle": "[TA: About ගුරු ගෙදර E-School]",
+    "mission": {
+      "title": "[TA: Our Mission]",
+      "titleSinhala": "[TA: අපගේ මෙහෙවර]",
+      "p1": "[TA: At ගුරු ගෙදර E-School, our mission is to provide high-quality, accessible, and affordable online education to G.C.E. Ordinary Level students across Sri Lanka. We aim to empower students with the knowledge and skills necessary to excel in their examinations and build a strong foundation for their future academic and professional pursuits.]",
+      "p2": "[TA: We believe in fostering a supportive and engaging learning environment that caters to individual student needs, leveraging technology to make learning interactive and effective. Our commitment is to bridge educational gaps and contribute to the academic success of every student who joins our platform.]",
+      "image1Alt": "[TA: Online class in session]",
+      "image2Alt": "[TA: Teacher guiding students]"
+    },
+    "educators": {
+      "title": "[TA: Our Educators]",
+      "titleSinhala": "[TA: අපගේ ගුරු මණ්ඩලය]",
+      "p1": "[TA: Our team of educators at ගුරු ගෙදර E-School comprises experienced and dedicated teachers who are passionate about their subjects and committed to student success. They bring a wealth of teaching experience, a deep understanding of the G.C.E. O/L curriculum, and innovative teaching methodologies to the online classroom.]",
+      "p2": "[TA: Each teacher is carefully selected for their expertise, ability to engage students in an online setting, and their dedication to providing personalized support. We are proud to have a team that not only imparts knowledge but also inspires and motivates students to achieve their full potential.]",
+      "teacher1Role": "[TA: Founder & Mathematics Lead]",
+      "teacher2Role": "[TA: Science Coordinator]",
+      "teacherImageAlt": "[TA: Educator {name}]"
+    },
+    "quote": {
+      "kannada": "ಜ್ಞಾನದ ಹಾದಿಯಲ್ಲಿ ನಿಮ್ಮೊಂದಿಗೆ",
+      "english": "[TA: Accompanying you on the path of knowledge]",
+      "cta": "[TA: Join us to build a successful academic future!]"
+    }
+  },
+  "courses": {
+    "title": "[TA: Our Courses]",
+    "titleSinhala": "[TA: අපගේ පාඨමාලා]",
+    "subtitle": "[TA: Explore the subjects offered at ගුරු ගෙදර E-School for G.C.E. O/L students.]",
+    "enrollButton": "[TA: Enroll Now]",
+    "enrollButtonSinhala": "[TA: ලියාපදිංචි වන්න]",
+    "subjects": {
+      "science": {
+        "name": "[TA: Science]",
+        "sinhalaName": "[TA: විද්‍යාව]",
+        "description": "[TA: Delve into the principles of Physics, Chemistry, and Biology. Our Science course is designed to build a strong conceptual understanding and prepare students for practical applications.]",
+        "imageAlt": "[TA: Science illustration]"
+      },
+      "mathematics": {
+        "name": "[TA: Mathematics]",
+        "sinhalaName": "[TA: ගණිතය]",
+        "description": "[TA: Develop critical thinking and problem-solving abilities with our comprehensive Mathematics curriculum. Covers all O/L topics with clear explanations and practice.]",
+        "imageAlt": "[TA: Mathematics illustration]"
+      },
+      "english": {
+        "name": "[TA: English Language]",
+        "sinhalaName": "[TA: ඉංග්‍රීසි භාෂාව]",
+        "description": "[TA: Improve your grammar, vocabulary, reading, and writing skills. Our English course focuses on effective communication and O/L exam success.]",
+        "imageAlt": "[TA: English Language illustration]"
+      },
+      "ict": {
+        "name": "[TA: Information & Communication Technology]",
+        "sinhalaName": "[TA: තොරතුරු හා සන්නිවේදන තාක්ෂණය]",
+        "description": "[TA: Gain essential digital literacy and ICT skills. This course covers theoretical concepts and practical applications relevant to the O/L syllabus and modern world.]",
+        "imageAlt": "[TA: ICT illustration]"
+      }
+    }
+  },
+  "timetable": {
+    "title": "[TA: Class Timetable]",
+    "titleSinhala": "[TA: පන්ති කාලසටහන]",
+    "subtitle": "[TA: Our Weekly Class Schedule. Stay updated with class timings.]",
+    "card": {
+      "title": "[TA: Weekly Timetable]",
+      "description": "[TA: Find the schedule for all our G.C.E. O/L classes below.]",
+      "note": "[TA: Please note: This is a sample timetable. Actual class times may be subject to change. Registered students will be notified of any updates.]",
+      "footerNote": "[TA: All times are in Sri Lanka Standard Time (SLST - GMT+5:30).]"
+    },
+    "table": {
+      "headerDay": "[TA: Day]",
+      "headerDaySinhala": "[TA: දිනය]",
+      "headerTime": "[TA: Time]",
+      "headerTimeSinhala": "[TA: වේලාව]",
+      "headerSubject": "[TA: Subject]",
+      "headerSubjectSinhala": "[TA: විෂය]",
+      "headerTeacher": "[TA: Teacher]",
+      "headerTeacherSinhala": "[TA: ගුරුතුමා/ගුරුතුමිය]"
+    },
+    "subjects": {
+      "mathematics": "[TA: Mathematics]",
+      "mathematicsSinhala": "[TA: ගණිතය]",
+      "science": "[TA: Science]",
+      "scienceSinhala": "[TA: විද්‍යාව]",
+      "english": "[TA: English]",
+      "englishSinhala": "[TA: ඉංග්‍රීසි]",
+      "ict": "[TA: ICT]",
+      "ictSinhala": "[TA: තොරතුරු තාක්ෂණය]",
+      "mathematicsRevision": "[TA: Mathematics - Revision]",
+      "mathematicsRevisionSinhala": "[TA: ගණිතය - පුනරීක්ෂණ]",
+      "scienceRevision": "[TA: Science - Practicals/Revision]",
+      "scienceRevisionSinhala": "[TA: විද්‍යාව - ප්‍රායෝගික/පුනරීක්ෂණ]",
+      "englishPaperClass": "[TA: English - Paper Class]",
+      "englishPaperClassSinhala": "[TA: ඉංග්‍රීසි - ප්‍රශ්න පත්‍ර පන්තිය]"
+    }
+  },
+  "contact": {
+    "title": "[TA: Contact Us]",
+    "titleSinhala": "[TA: අප අමතන්න]",
+    "subtitle": "[TA: We're here to help with any questions you may have.]",
+    "form": {
+      "title": "[TA: Send us a Message]",
+      "titleSinhala": "[TA: පණිවිඩයක් එවන්න]",
+      "description": "[TA: Fill out the form below and we'll get back to you as soon as possible.]"
+    },
+    "otherWays": {
+      "title": "[TA: Other Ways to Reach Us]",
+      "titleSinhala": "[TA: වෙනත් මාර්ග]",
+      "description": "[TA: You can also contact us directly through these channels.]",
+      "phone": {
+        "title": "[TA: WhatsApp / Phone]",
+        "number": "[TA: +94 77 123 4567 (Placeholder)]",
+        "availability": "[TA: Available 9 AM - 5 PM (Weekdays)]"
+      },
+      "email": {
+        "title": "[TA: Email Address]",
+        "titleSinhala": "[TA: විද්‍යුත් තැපෑල]",
+        "address": "[TA: info@gurugedara.lk (Placeholder)]"
+      },
+      "location": {
+        "title": "[TA: Our Location]",
+        "titleSinhala": "[TA: ස්ථානය]",
+        "address": "[TA: No. 123, Main Street, Colombo, Sri Lanka (Online Operations Hub - Placeholder)]"
+      }
+    },
+    "mapAlt": "[TA: Map placeholder showing Colombo]"
+  },
+  "contactForm": {
+    "name": {
+      "label": "[TA: Your Name]",
+      "labelSinhala": "[TA: ඔබගේ නම]",
+      "placeholder": "[TA: e.g., Sunil Perera]"
+    },
+    "email": {
+      "label": "[TA: Email Address]",
+      "labelSinhala": "[TA: විද්‍යුත් තැපෑල]",
+      "placeholder": "[TA: e.g., sunil@example.com]"
+    },
+    "subject": {
+      "label": "[TA: Subject]",
+      "labelSinhala": "[TA: විෂය]",
+      "placeholder": "[TA: e.g., Inquiry about Science class]"
+    },
+    "message": {
+      "label": "[TA: Message]",
+      "labelSinhala": "[TA: පණිවිඩය]",
+      "placeholder": "[TA: Type your message here...]"
+    },
+    "submitButton": "[TA: Send Message]",
+    "submitButtonSinhala": "[TA: යවන්න]",
+    "submittingButton": "[TA: Sending...]",
+    "toast": {
+      "success": {
+        "title": "[TA: Message Sent!]",
+        "titleSinhala": "[TA: අදහස් යැව්වා!]",
+        "description": "[TA: Thank you for contacting us. We will get back to you soon.]"
+      }
+    },
+    "validation": {
+      "nameMin": "[TA: Name must be at least 2 characters.]",
+      "emailInvalid": "[TA: Invalid email address.]",
+      "subjectMin": "[TA: Subject must be at least 5 characters.]",
+      "messageMin": "[TA: Message must be at least 10 characters.]",
+      "messageMax": "[TA: Message must not exceed 500 characters.]"
+    }
   }
 }
+
+    

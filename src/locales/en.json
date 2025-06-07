@@ -13,5 +13,222 @@
     "en": "English",
     "si": "Sinhala",
     "ta": "Tamil"
+  },
+  "home": {
+    "hero": {
+      "title": "Welcome to ගුරු ගෙදර E-School!",
+      "subtitle": "Empowering the future of Sri Lankan students through quality online education. <br /> ශ්‍රී ලාංකීය දූ දරුවන්ගේ අනාගතය සවිබල ගැන්වීම.",
+      "joinButton": "Join Our Classes",
+      "imageAlt": "Students learning online"
+    },
+    "featuredSubjects": {
+      "title": "Our Subjects",
+      "subtitle": "Explore the subjects we offer for G.C.E. O/L students.",
+      "science": {
+        "name": "Science",
+        "sinhalaName": "විද්‍යාව",
+        "description": "Explore the wonders of the physical and natural world."
+      },
+      "mathematics": {
+        "name": "Mathematics",
+        "sinhalaName": "ගණිතය",
+        "description": "Master logical reasoning and problem-solving skills."
+      },
+      "english": {
+        "name": "English",
+        "sinhalaName": "ඉංග්‍රීසි",
+        "description": "Enhance your communication and language proficiency."
+      },
+      "ict": {
+        "name": "ICT",
+        "sinhalaName": "ICT",
+        "description": "Navigate the digital world with essential tech skills."
+      },
+      "learnMoreButton": "Learn More"
+    },
+    "benefits": {
+      "title": "Why Choose Us?",
+      "subtitle": "Discover the advantages of learning with ගුරු ගෙදර E-School.",
+      "item1": "Expert teachers with proven track records",
+      "item2": "Interactive and engaging online classes",
+      "item3": "Flexible learning from the comfort of your home",
+      "item4": "Comprehensive syllabus coverage for O/L exams",
+      "item5": "Regular assessments and feedback",
+      "item6": "Supportive learning community"
+    },
+    "testimonials": {
+      "title": "Student Feedback",
+      "subtitle": "Hear what our students and parents have to say.",
+      "roleStudent": "Student",
+      "roleParent": "Parent"
+    }
+  },
+  "about": {
+    "title": "About Us",
+    "subtitle": "About ගුරු ගෙදර E-School",
+    "mission": {
+      "title": "Our Mission",
+      "titleSinhala": "අපගේ මෙහෙවර",
+      "p1": "At ගුරු ගෙදර E-School, our mission is to provide high-quality, accessible, and affordable online education to G.C.E. Ordinary Level students across Sri Lanka. We aim to empower students with the knowledge and skills necessary to excel in their examinations and build a strong foundation for their future academic and professional pursuits.",
+      "p2": "We believe in fostering a supportive and engaging learning environment that caters to individual student needs, leveraging technology to make learning interactive and effective. Our commitment is to bridge educational gaps and contribute to the academic success of every student who joins our platform.",
+      "image1Alt": "Online class in session",
+      "image2Alt": "Teacher guiding students"
+    },
+    "educators": {
+      "title": "Our Educators",
+      "titleSinhala": "අපගේ ගුරු මණ්ඩලය",
+      "p1": "Our team of educators at ගුරු ගෙදර E-School comprises experienced and dedicated teachers who are passionate about their subjects and committed to student success. They bring a wealth of teaching experience, a deep understanding of the G.C.E. O/L curriculum, and innovative teaching methodologies to the online classroom.",
+      "p2": "Each teacher is carefully selected for their expertise, ability to engage students in an online setting, and their dedication to providing personalized support. We are proud to have a team that not only imparts knowledge but also inspires and motivates students to achieve their full potential.",
+      "teacher1Role": "Founder & Mathematics Lead",
+      "teacher2Role": "Science Coordinator",
+      "teacherImageAlt": "Educator {name}"
+    },
+    "quote": {
+      "kannada": "ಜ್ಞಾನದ ಹಾದಿಯಲ್ಲಿ ನಿಮ್ಮೊಂದಿಗೆ",
+      "english": "Accompanying you on the path of knowledge",
+      "cta": "Join us to build a successful academic future!"
+    }
+  },
+  "courses": {
+    "title": "Our Courses",
+    "titleSinhala": "අපගේ පාඨමාලා",
+    "subtitle": "Explore the subjects offered at ගුරු ගෙදර E-School for G.C.E. O/L students.",
+    "enrollButton": "Enroll Now",
+    "enrollButtonSinhala": "ලියාපදිංචි වන්න",
+    "subjects": {
+      "science": {
+        "name": "Science",
+        "sinhalaName": "විද්‍යාව",
+        "description": "Delve into the principles of Physics, Chemistry, and Biology. Our Science course is designed to build a strong conceptual understanding and prepare students for practical applications.",
+        "imageAlt": "Science illustration"
+      },
+      "mathematics": {
+        "name": "Mathematics",
+        "sinhalaName": "ගණිතය",
+        "description": "Develop critical thinking and problem-solving abilities with our comprehensive Mathematics curriculum. Covers all O/L topics with clear explanations and practice.",
+        "imageAlt": "Mathematics illustration"
+      },
+      "english": {
+        "name": "English Language",
+        "sinhalaName": "ඉංග්‍රීසි භාෂාව",
+        "description": "Improve your grammar, vocabulary, reading, and writing skills. Our English course focuses on effective communication and O/L exam success.",
+        "imageAlt": "English Language illustration"
+      },
+      "ict": {
+        "name": "Information & Communication Technology",
+        "sinhalaName": "තොරතුරු හා සන්නිවේදන තාක්ෂණය",
+        "description": "Gain essential digital literacy and ICT skills. This course covers theoretical concepts and practical applications relevant to the O/L syllabus and modern world.",
+        "imageAlt": "ICT illustration"
+      }
+    }
+  },
+  "timetable": {
+    "title": "Class Timetable",
+    "titleSinhala": "පන්ති කාලසටහන",
+    "subtitle": "Our Weekly Class Schedule. Stay updated with class timings.",
+    "card": {
+      "title": "Weekly Timetable",
+      "description": "Find the schedule for all our G.C.E. O/L classes below.",
+      "note": "Please note: This is a sample timetable. Actual class times may be subject to change. Registered students will be notified of any updates.",
+      "footerNote": "All times are in Sri Lanka Standard Time (SLST - GMT+5:30)."
+    },
+    "table": {
+      "headerDay": "Day",
+      "headerDaySinhala": "දිනය",
+      "headerTime": "Time",
+      "headerTimeSinhala": "වේලාව",
+      "headerSubject": "Subject",
+      "headerSubjectSinhala": "විෂය",
+      "headerTeacher": "Teacher",
+      "headerTeacherSinhala": "ගුරුතුමා/ගුරුතුමිය"
+    },
+    "subjects": {
+      "mathematics": "Mathematics",
+      "mathematicsSinhala": "ගණිතය",
+      "science": "Science",
+      "scienceSinhala": "විද්‍යාව",
+      "english": "English",
+      "englishSinhala": "ඉංග්‍රීසි",
+      "ict": "ICT",
+      "ictSinhala": "තොරතුරු තාක්ෂණය",
+      "mathematicsRevision": "Mathematics - Revision",
+      "mathematicsRevisionSinhala": "ගණිතය - පුනරීක්ෂණ",
+      "scienceRevision": "Science - Practicals/Revision",
+      "scienceRevisionSinhala": "විද්‍යාව - ප්‍රායෝගික/පුනරීක්ෂණ",
+      "englishPaperClass": "English - Paper Class",
+      "englishPaperClassSinhala": "ඉංග්‍රීසි - ප්‍රශ්න පත්‍ර පන්තිය"
+    }
+  },
+  "contact": {
+    "title": "Contact Us",
+    "titleSinhala": "අප අමතන්න",
+    "subtitle": "We're here to help with any questions you may have.",
+    "form": {
+      "title": "Send us a Message",
+      "titleSinhala": "පණිවිඩයක් එවන්න",
+      "description": "Fill out the form below and we'll get back to you as soon as possible."
+    },
+    "otherWays": {
+      "title": "Other Ways to Reach Us",
+      "titleSinhala": "වෙනත් මාර්ග",
+      "description": "You can also contact us directly through these channels.",
+      "phone": {
+        "title": "WhatsApp / Phone",
+        "number": "+94 77 123 4567 (Placeholder)",
+        "availability": "Available 9 AM - 5 PM (Weekdays)"
+      },
+      "email": {
+        "title": "Email Address",
+        "titleSinhala": "විද්‍යුත් තැපෑල",
+        "address": "info@gurugedara.lk (Placeholder)"
+      },
+      "location": {
+        "title": "Our Location",
+        "titleSinhala": "ස්ථානය",
+        "address": "No. 123, Main Street, Colombo, Sri Lanka (Online Operations Hub - Placeholder)"
+      }
+    },
+    "mapAlt": "Map placeholder showing Colombo"
+  },
+  "contactForm": {
+    "name": {
+      "label": "Your Name",
+      "labelSinhala": "ඔබගේ නම",
+      "placeholder": "e.g., Sunil Perera"
+    },
+    "email": {
+      "label": "Email Address",
+      "labelSinhala": "විද්‍යුත් තැපෑල",
+      "placeholder": "e.g., sunil@example.com"
+    },
+    "subject": {
+      "label": "Subject",
+      "labelSinhala": "විෂය",
+      "placeholder": "e.g., Inquiry about Science class"
+    },
+    "message": {
+      "label": "Message",
+      "labelSinhala": "පණිවිඩය",
+      "placeholder": "Type your message here..."
+    },
+    "submitButton": "Send Message",
+    "submitButtonSinhala": "යවන්න",
+    "submittingButton": "Sending...",
+    "toast": {
+      "success": {
+        "title": "Message Sent!",
+        "titleSinhala": "අදහස් යැව්වා!",
+        "description": "Thank you for contacting us. We will get back to you soon."
+      }
+    },
+    "validation": {
+      "nameMin": "Name must be at least 2 characters.",
+      "emailInvalid": "Invalid email address.",
+      "subjectMin": "Subject must be at least 5 characters.",
+      "messageMin": "Message must be at least 10 characters.",
+      "messageMax": "Message must not exceed 500 characters."
+    }
   }
 }
+
+    
