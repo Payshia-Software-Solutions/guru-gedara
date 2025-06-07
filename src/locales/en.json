@@ -108,7 +108,7 @@
       "p2": "Each teacher is carefully selected for their expertise, ability to engage students in an online setting, and their dedication to providing personalized support. We are proud to have a team that not only imparts knowledge but also inspires and motivates students to achieve their full potential.",
       "teacher1Role": "Founder & Mathematics Lead",
       "teacher2Role": "Science Coordinator",
-      "teacherImageAlt": "Educator {name}"
+      "teacherImageAlt": "Educator {{name}}"
     },
     "quote": {
       "kannada": "ಜ್ಞಾನದ ಹಾದಿಯಲ್ಲಿ ನಿಮ್ಮೊಂದಿಗೆ",
@@ -424,6 +424,17 @@
     },
     "profileSettings": "Profile Settings",
     "logoutButton": "Logout"
+  },
+  "lms": {
+    "sidebar": {
+      "dashboard": "Dashboard",
+      "myCourses": "My Courses",
+      "announcements": "Announcements",
+      "materials": "Learning Materials",
+      "profile": "My Profile",
+      "logout": "Logout",
+      "backToSite": "Back to Main Site"
+    }
   },
   "general": {
       "pageTitleSuffix": "ගුරු ගෙදර E-School"

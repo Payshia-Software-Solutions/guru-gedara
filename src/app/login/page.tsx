@@ -3,7 +3,7 @@
 
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
-import { useRouter } from 'next/navigation'; // Added for redirection
+import { useRouter } from 'next/navigation'; 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
@@ -48,7 +48,7 @@ export type LoginFormValues = z.infer<ReturnType<typeof getLoginFormSchema>>;
 export default function LoginPage() {
   const { t, language } = useLanguage();
   const { toast } = useToast();
-  const router = useRouter(); // Initialize router
+  const router = useRouter(); 
 
   const loginFormSchema = React.useMemo(() => getLoginFormSchema(t), [t]);
 
@@ -77,12 +77,12 @@ export default function LoginPage() {
     
     toast({
       title: t('login.toast.success.title', "Login Attempt"),
-      description: t('login.toast.success.descriptionPlaceholder', "Redirecting to dashboard..."), // Updated description
+      description: t('login.toast.success.descriptionPlaceholder', "Redirecting to dashboard..."), 
       variant: "default",
     });
     
-    // Redirect to dashboard page
-    router.push('/dashboard'); 
+    // Redirect to LMS dashboard page
+    router.push('/lms/dashboard'); 
   }
 
   return (

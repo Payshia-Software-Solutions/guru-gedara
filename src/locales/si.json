@@ -425,6 +425,17 @@
     "profileSettings": "[SI: Profile Settings]",
     "logoutButton": "ඉවත් වන්න"
   },
+  "lms": {
+    "sidebar": {
+      "dashboard": "උපකරණ පුවරුව",
+      "myCourses": "මගේ පාඨමාලා",
+      "announcements": "නිවේදන",
+      "materials": "ඉගෙනුම් ද්‍රව්‍ය",
+      "profile": "මගේ පැතිකඩ",
+      "logout": "ඉවත් වන්න",
+      "backToSite": "[SI: Back to Main Site]"
+    }
+  },
   "general": {
     "pageTitleSuffix": "ගුරු ගෙදර E-School"
   }

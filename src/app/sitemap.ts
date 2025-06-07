@@ -42,9 +42,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.6,
     },
     {
-      url: `${baseUrl}/dashboard`, // Added dashboard page
+      url: `${baseUrl}/lms/dashboard`, // Updated dashboard page to LMS dashboard
       lastModified: new Date(),
-      changeFrequency: 'weekly', // Assuming dashboard content might change
+      changeFrequency: 'weekly', 
       priority: 0.7,
     },
   ]
