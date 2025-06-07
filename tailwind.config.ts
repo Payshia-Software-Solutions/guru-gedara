@@ -1,3 +1,4 @@
+
 import type {Config} from 'tailwindcss';
 
 export default {
@@ -10,8 +11,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        body: ['PT Sans', 'sans-serif'],
-        headline: ['PT Sans', 'sans-serif'],
+        body: ['PT Sans', 'sans-serif'], // Using PT Sans as primary, good sans-serif
+        headline: ['PT Sans', 'sans-serif'], // Logo text "ගුරු ගෙදර E-School" will use this
         code: ['Source Code Pro', 'monospace'],
       },
       colors: {
@@ -88,10 +89,15 @@ export default {
             height: '0',
           },
         },
+        'fadeInUp': {
+          '0%': { opacity: '0', transform: 'translateY(20px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        }
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
+        'fadeInUp': 'fadeInUp 0.5s ease-out forwards',
       },
     },
   },

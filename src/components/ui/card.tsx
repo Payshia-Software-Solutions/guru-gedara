@@ -10,7 +10,7 @@ const Card = React.forwardRef<
   <div
     ref={ref}
     className={cn(
-      "rounded-lg border bg-card text-card-foreground shadow-lg",
+      "rounded-xl border bg-card text-card-foreground shadow-lg", // Changed to shadow-lg and rounded-xl
       className
     )}
     {...props}
@@ -31,13 +31,13 @@ const CardHeader = React.forwardRef<
 CardHeader.displayName = "CardHeader"
 
 const CardTitle = React.forwardRef<
-  HTMLDivElement,
-  React.HTMLAttributes<HTMLDivElement>
+  HTMLDivElement, // Corrected from HTMLParagraphElement to HTMLDivElement
+  React.HTMLAttributes<HTMLHeadingElement> // Corrected props type
 >(({ className, ...props }, ref) => (
-  <div
+  <div // Changed from h3 to div to match ShadCN structure, styling via classes
     ref={ref}
     className={cn(
-      "text-2xl font-semibold leading-none tracking-tight",
+      "text-2xl font-semibold leading-none tracking-tight", // Default ShadCN CardTitle style
       className
     )}
     {...props}
@@ -46,12 +46,12 @@ const CardTitle = React.forwardRef<
 CardTitle.displayName = "CardTitle"
 
 const CardDescription = React.forwardRef<
-  HTMLDivElement,
-  React.HTMLAttributes<HTMLDivElement>
+  HTMLDivElement, // Corrected from HTMLParagraphElement
+  React.HTMLAttributes<HTMLParagraphElement> // Corrected props type
 >(({ className, ...props }, ref) => (
-  <div
+  <div // Changed from p to div
     ref={ref}
-    className={cn("text-sm text-muted-foreground", className)}
+    className={cn("text-sm text-muted-foreground", className)} // Default ShadCN CardDescription style
     {...props}
   />
 ))

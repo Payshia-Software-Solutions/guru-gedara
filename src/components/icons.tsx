@@ -2,15 +2,15 @@
 import {
   BookOpenText,
   Calculator,
-  FlaskConical, // Alternative for Microscope if needed for a broader science icon
+  FlaskConical, 
   Laptop2,
   Mail,
   MapPin,
-  MessageSquare, // Alternative for English
+  MessageSquare, 
   Microscope,
-  MonitorSmartphone, // Alternative for ICT
+  MonitorSmartphone, 
   Phone,
-  Sigma, // Alternative for Math
+  Sigma, 
   Users,
   Youtube,
   Facebook,
@@ -26,14 +26,19 @@ import {
   Sun,
   Moon,
   Globe, 
-  ArrowLeft, // Added ArrowLeft
-  FileText, // For Overview
-  ListChecks, // For Syllabus
-  UserCircle, // For Instructor
-  Edit3, // For Enroll button
+  ArrowLeft, 
+  FileText, 
+  ListChecks, 
+  UserCircle, 
+  Edit3, 
+  Quote, // For testimonials
+  Target, // For "Why Choose Us" - Exam Preparation
+  Send, // For contact icons in footer
+  Briefcase, // Could be used for "Qualified Teachers" if Users isn't distinct enough
+  Watch, // Alternative for Clock/Flexibility
 } from 'lucide-react';
 
-// Re-exporting icons for easier access and potential future customization/swapping
+// Re-exporting icons for easier access
 export const Icons = {
   BookOpenText,
   Calculator,
@@ -46,13 +51,13 @@ export const Icons = {
   MonitorSmartphone,
   Phone,
   Sigma,
-  Users,
+  Users, // Used for "Qualified Teachers"
   Youtube,
   Facebook,
   Twitter,
   Instagram,
   Award,
-  Clock,
+  Clock, // Used for "Online Flexibility"
   CalendarDays,
   TrendingUp,
   Lightbulb,
@@ -61,33 +66,16 @@ export const Icons = {
   Sun,
   Moon,
   Globe,
-  ArrowLeft, // Added ArrowLeft
+  ArrowLeft,
   FileText,
   ListChecks,
   UserCircle,
   Edit3,
+  Quote,
+  Target, // Used for "Exam Preparation"
+  Send,
+  Briefcase,
+  Watch,
 };
 
-// Example of a custom SVG icon if needed:
-/*
-export const CustomPiIcon = (props: React.SVGProps<SVGSVGElement>) => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    {...props}
-  >
-    <path d="M9 4v16M9 4h6a4 4 0 0 1 0 8h-3a4 4 0 0 0 0 8h3" />
-    <line x1="5" y1="12" x2="19" y2="12" />
-  </svg>
-);
-Icons.CustomPi = CustomPiIcon;
-*/
-
 export default Icons;
-
-    

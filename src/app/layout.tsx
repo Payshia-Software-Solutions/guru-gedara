@@ -5,11 +5,11 @@ import { Navbar } from '@/components/layout/navbar';
 import { Footer } from '@/components/layout/footer';
 import { Toaster } from "@/components/ui/toaster";
 import { ThemeProvider } from "@/components/theme-provider";
-import { LanguageProvider } from '@/contexts/language-context'; // Added LanguageProvider
+import { LanguageProvider } from '@/contexts/language-context';
 
 export const metadata: Metadata = {
-  title: 'ගුරු ගෙදර E-School | Guru Gedara Online',
-  description: 'Online education platform for G.C.E. O/L students in Sri Lanka. Offering Science, Mathematics, English, and ICT.',
+  title: 'ගුරු ගෙදර E-School | Modern Online Learning Platform',
+  description: 'Join ගුරු ගෙදර E-School for G.C.E. O/L classes in Science, Mathematics, English, and ICT. Learn smart, learn anywhere with expert Sri Lankan educators.',
 };
 
 export default function RootLayout({
@@ -25,19 +25,21 @@ export default function RootLayout({
         <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..0,900;1,200..1,900&display=swap" rel="stylesheet" />
       </head>
-      <body className="font-body antialiased flex flex-col min-h-screen">
+      <body className="font-body antialiased flex flex-col min-h-screen bg-background text-foreground">
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
           enableSystem
           disableTransitionOnChange
         >
-          <LanguageProvider> {/* Added LanguageProvider wrapper */}
-            <Navbar />
-            <main className="flex-grow container mx-auto px-4 py-8">
-              {children}
-            </main>
-            <Footer />
+          <LanguageProvider>
+            <div className="flex flex-col min-h-screen">
+              <Navbar />
+              <main className="flex-grow container mx-auto px-4 py-8 md:py-12">
+                {children}
+              </main>
+              <Footer />
+            </div>
             <Toaster />
           </LanguageProvider>
         </ThemeProvider>

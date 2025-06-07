@@ -19,7 +19,10 @@
       "title": "[TA: Welcome to ගුරු ගෙදර E-School!]",
       "subtitle": "[TA: Empowering the future of Sri Lankan students through quality online education. <br /> ශ්‍රී ලාංකීය දූ දරුවන්ගේ අනාගතය සවිබල ගැන්වීම.]",
       "joinButton": "[TA: Join Our Classes]",
-      "imageAlt": "[TA: Students learning online]"
+      "imageAlt": "[TA: Students learning online]",
+      "titleNew": "[TA: Learn Smart. Learn Anywhere.]",
+      "subtitleNew": "[TA: Join ගුරු ගෙදර E-School and unlock your potential with our expert-led G.C.E. O/L classes.]",
+      "joinButtonNew": "[TA: Join a Class]"
     },
     "featuredSubjects": {
       "title": "[TA: Our Subjects]",
@@ -50,28 +53,43 @@
       },
       "learnMoreButton": "[TA: Learn More]"
     },
-    "benefits": {
+     "whyChooseUs": {
       "title": "[TA: Why Choose Us?]",
       "subtitle": "[TA: Discover the advantages of learning with ගුරු ගෙදර E-School.]",
-      "item1": "[TA: Expert teachers with proven track records]",
-      "item2": "[TA: Interactive and engaging online classes]",
-      "item3": "[TA: Flexible learning from the comfort of your home]",
-      "item4": "[TA: Comprehensive syllabus coverage for O/L exams]",
-      "item5": "[TA: Regular assessments and feedback]",
-      "item6": "[TA: Supportive learning community]"
+      "item1": {
+        "title": "[TA: Qualified Teachers]",
+        "description": "[TA: Learn from experienced educators passionate about student success and experts in the O/L curriculum.]"
+      },
+      "item2": {
+        "title": "[TA: Online Flexibility]",
+        "description": "[TA: Access quality education from anywhere, at your own pace, fitting learning around your schedule.]"
+      },
+      "item3": {
+        "title": "[TA: Exam Preparation]",
+        "description": "[TA: Comprehensive syllabus coverage, regular assessments, and focused revision for O/L exam success.]"
+      }
+    },
+    "upcomingClasses": {
+      "title": "[TA: Upcoming Classes]",
+      "subtitle": "[TA: Join our live interactive sessions. Don't miss out!]",
+      "taughtBy": "[TA: Taught by:]",
+      "viewTimetable": "[TA: View Full Timetable]"
     },
     "testimonials": {
       "title": "[TA: Student Feedback]",
       "subtitle": "[TA: Hear what our students and parents have to say.]",
       "roleStudent": "[TA: Student]",
-      "roleParent": "[TA: Parent]"
+      "roleParent": "[TA: Parent]",
+      "quote1": "[TA: ගුරු ගෙදර E-School helped me understand difficult concepts easily. The teachers are very supportive!]",
+      "quote2": "[TA: My child's grades have improved significantly after joining these online classes. Highly recommended!]",
+      "quote3": "[TA: The flexible schedule and quality teaching made learning enjoyable and effective for my O/L exams.]"
     }
   },
   "about": {
     "title": "[TA: About Us]",
     "titleSinhala": "[TA: අප ගැන]",
     "titleTamil": "எங்களைப் பற்றி",
-    "subtitle": "[TA: About ගුරු ගෙදර E-School]",
+    "subtitle": "[TA: Learn more about ගුරු ගෙදර E-School, our mission, and our dedicated team.]",
     "mission": {
       "title": "[TA: Our Mission]",
       "titleSinhala": "[TA: අපගේ මෙහෙවර]",
@@ -105,7 +123,7 @@
     "enrollButton": "[TA: Enroll Now]",
     "enrollButtonAdditionSinhala": "[TA: ලියාපදිංචි වන්න]",
     "enrollButtonAdditionTamil": "இப்போது பதிவு செய்க",
-    "viewDetailsButton": "[TA: View Details]",
+    "viewDetailsButton": "[TA: Learn More]",
     "viewDetailsButtonAdditionSinhala": "[TA: විස්තර බලන්න]",
     "viewDetailsButtonAdditionTamil": "விவரங்களைக் காண்க",
     "subjects": {
@@ -143,10 +161,10 @@
     "title": "[TA: Class Timetable]",
     "titleSinhala": "[TA: පන්ති කාලසටහන]",
     "titleTamil": "வகுப்பு கால அட்டவணை",
-    "subtitle": "[TA: Our Weekly Class Schedule. Stay updated with class timings.]",
+    "subtitle": "[TA: Our Weekly Class Schedule. Stay updated with class timings and never miss a session.]",
     "card": {
       "title": "[TA: Weekly Timetable]",
-      "description": "[TA: Find the schedule for all our G.C.E. O/L classes below.]",
+      "description": "[TA: Find the schedule for all our G.C.E. O/L classes below. All classes are conducted online via live interactive sessions.]",
       "note": "[TA: Please note: This is a sample timetable. Actual class times may be subject to change. Registered students will be notified of any updates.]",
       "footerNote": "[TA: All times are in Sri Lanka Standard Time (SLST - GMT+5:30).]"
     },
@@ -192,7 +210,7 @@
     "title": "[TA: Contact Us]",
     "titleSinhala": "[TA: අප අමතන්න]",
     "titleTamil": "எங்களை தொடர்பு கொள்ள",
-    "subtitle": "[TA: We're here to help with any questions you may have.]",
+    "subtitle": "[TA: We're here to help with any questions you may have. Reach out and let's talk.]",
     "form": {
       "title": "[TA: Send us a Message]",
       "titleAdditionSinhala": "[TA: පණිවිඩයක් එවන්න]",
@@ -206,23 +224,24 @@
       "description": "[TA: You can also contact us directly through these channels.]",
       "phone": {
         "title": "[TA: WhatsApp / Phone]",
-        "number": "[TA: +94 77 123 4567 (Placeholder)]",
+        "number": "[TA: +94 77 123 4567]",
         "availability": "[TA: Available 9 AM - 5 PM (Weekdays)]"
       },
       "email": {
         "title": "[TA: Email Address]",
         "titleAdditionSinhala": "[TA: විද්‍යුත් තැපෑල]",
         "titleAdditionTamil": "மின்னஞ்சல் முகவரி",
-        "address": "[TA: info@gurugedara.lk (Placeholder)]"
+        "address": "[TA: info@gurugedara.lk]"
       },
       "location": {
         "title": "[TA: Our Location]",
         "titleAdditionSinhala": "[TA: ස්ථානය]",
         "titleAdditionTamil": "எங்கள் இடம்",
-        "address": "[TA: No. 123, Main Street, Colombo, Sri Lanka (Online Operations Hub - Placeholder)]"
+        "address": "[TA: Online Operations Hub, Colombo, Sri Lanka]"
       }
     },
-    "mapAlt": "[TA: Map placeholder showing Colombo]"
+    "mapAlt": "[TA: Map placeholder showing Colombo]",
+    "whatsappButton": "[TA: Chat on WhatsApp]"
   },
   "contactForm": {
     "name": {
@@ -333,7 +352,8 @@
         "instructorExperience": "[TA: 8+ Years Experience]"
       }
     }
+  },
+  "general": {
+      "pageTitleSuffix": "[TA: ගුරු ගෙදර E-School]"
   }
 }
-
-    
