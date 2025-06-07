@@ -72,7 +72,7 @@ export default function HomePage() {
         <p className="text-center text-muted-foreground mb-10">{t('home.featuredSubjects.subtitle', 'Explore the subjects we offer for G.C.E. O/L students.')}</p>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {featuredCourseKeys.map((courseKey) => (
-            <Card key={courseKey.id} className="shadow-lg hover:shadow-xl transition-shadow duration-300 ease-in-out transform hover:-translate-y-1 flex flex-col">
+            <Card key={courseKey.id} className="hover:shadow-xl transition-shadow duration-300 ease-in-out transform hover:-translate-y-1 flex flex-col">
               <CardHeader className="items-center text-center">
                 <courseKey.Icon className="w-16 h-16 text-accent mb-4" />
                 <CardTitle className="font-headline text-2xl text-primary">{getFeaturedCourseName(courseKey.id)}</CardTitle>
@@ -83,7 +83,7 @@ export default function HomePage() {
               </CardContent>
               <div className="p-6 pt-0">
                 <Button asChild variant="outline" className="w-full border-primary text-primary hover:bg-primary/10">
-                  <Link href="/courses">{t('home.featuredSubjects.learnMoreButton', 'Learn More')}</Link>
+                  <Link href={`/courses/${courseKey.id}`}>{t('home.featuredSubjects.learnMoreButton', 'Learn More')}</Link>
                 </Button>
               </div>
             </Card>
@@ -92,13 +92,13 @@ export default function HomePage() {
       </section>
 
       {/* Benefits of Online Learning Section */}
-      <section className="py-12 bg-secondary/30 rounded-xl">
+      <section className="py-12 bg-background/70 rounded-xl">
         <div className="container mx-auto px-4">
             <h2 className="font-headline text-3xl md:text-4xl font-bold text-center text-primary mb-2">{t('home.benefits.title', 'Why Choose Us?')}</h2>
             <p className="text-center text-muted-foreground mb-10">{t('home.benefits.subtitle', 'Discover the advantages of learning with ගුරු ගෙදර E-School.')}</p>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {learningBenefitKeys.map((benefit, index) => (
-                <Card key={index} className="shadow-lg hover:shadow-xl transition-shadow duration-300 bg-background">
+                <Card key={index} className="hover:shadow-xl transition-shadow duration-300 bg-card">
                   <CardContent className="pt-6 flex items-start space-x-4">
                     <benefit.Icon className="w-8 h-8 text-accent flex-shrink-0 mt-1" />
                     <div>
@@ -118,7 +118,7 @@ export default function HomePage() {
         <p className="text-center text-muted-foreground mb-10">{t('home.testimonials.subtitle', 'Hear what our students and parents have to say.')}</p>
         <div className="grid md:grid-cols-1 lg:grid-cols-3 gap-8">
           {testimonials.map((testimonial) => (
-            <Card key={testimonial.id} className="shadow-lg hover:shadow-xl transition-shadow duration-300 ease-in-out bg-background flex flex-col">
+            <Card key={testimonial.id} className="hover:shadow-xl transition-shadow duration-300 ease-in-out bg-card flex flex-col">
               <CardContent className="pt-6 flex-grow">
                 <Icons.Sparkles className="w-8 h-8 text-accent mb-4" />
                 <p className="text-muted-foreground italic mb-4">"{testimonial.quote}"</p>
@@ -144,5 +144,3 @@ export default function HomePage() {
     </div>
   );
 }
-
-    
