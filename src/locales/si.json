@@ -375,13 +375,29 @@
     "toast": {
       "success": {
         "title": "[SI: Login Attempt]",
-        "description": "[SI: Login functionality is a placeholder. Check console for data.]"
+        "description": "[SI: Login functionality is a placeholder. Check console for data.]",
+        "descriptionPlaceholder": "[SI: Redirecting to dashboard...]"
       }
     },
     "validation": {
       "emailInvalid": "වලංගු නොවන විද්‍යුත් තැපැල් ලිපිනයකි.",
       "passwordMin": "මුරපදය අවම වශයෙන් අක්ෂර 6ක් විය යුතුය."
     }
+  },
+  "dashboard": {
+    "title": "ශිෂ්‍ය උපකරණ පුවරුව",
+    "titleSinhala": "ශිෂ්‍ය උපකරණ පුවරුව",
+    "titleTamil": "[SI: மாணவர் டாஷ்போர்டு]",
+    "subtitle": "ඔබගේ පුද්ගලික ඉගෙනුම් අවකාශය.",
+    "welcomeTitle": "සාදරයෙන් පිළිගනිමු ශිෂ්‍යයා!",
+    "welcomeMessage": "මෙය ඔබගේ පුද්ගලික උපකරණ පුවරුවයි. මෙහි ඔබ ලියාපදිංචි වී ඇති පාඨමාලා, ප්‍රගතිය, පැවරුම් සහ ඉගෙනුම් ද්‍රව්‍ය සොයාගත හැකිය. ඔබේ ඉගෙනුම් ගමන ආරම්භ කරන්න!",
+    "myCourses": "මගේ පාඨමාලා",
+    "myCoursesPlaceholder": "ඔබ ලියාපදිංචි වූ පාඨමාලා මෙහි ලැයිස්තුගත කෙරේ. (ආදර්ශය)",
+    "noCoursesYet": "තවමත් කිසිදු පාඨමාලාවකට ලියාපදිංචි වී නොමැත.",
+    "myProgress": "මගේ ප්‍රගතිය",
+    "myProgressPlaceholder": "ඔබගේ ඉගෙනුම් ප්‍රගතිය සහ ජයග්‍රහණ මෙහි ප්‍රදර්ශනය කෙරේ. (ආදර්ශය)",
+    "progressTrackingComingSoon": "ප්‍රගතිය නිරීක්ෂණය කිරීම ඉක්මනින් පැමිණේ!",
+    "logoutButton": "ඉවත් වන්න"
   },
   "general": {
     "pageTitleSuffix": "ගුරු ගෙදර E-School"

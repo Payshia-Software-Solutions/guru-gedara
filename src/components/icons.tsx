@@ -27,7 +27,7 @@ import {
   Moon,
   Globe,
   ArrowLeft,
-  ArrowRight,
+  ArrowRight, // Ensured ArrowRight is here
   FileText,
   ListChecks,
   UserCircle,
@@ -38,10 +38,12 @@ import {
   Briefcase,
   Watch,
   AlertTriangle,
-  ChevronRight,
+  ChevronRight, // Ensured ChevronRight is here
   Loader2,
-  KeyRound, // Added KeyRound
-  LogIn, // Added LogIn
+  KeyRound, 
+  LogIn, 
+  LogOut, // Added LogOut
+  LayoutDashboard, // Added LayoutDashboard
 } from 'lucide-react';
 
 // Re-exporting icons for easier access
@@ -86,8 +88,10 @@ export const Icons = {
   AlertTriangle,
   ChevronRight,
   Loader2,
-  KeyRound, // Added KeyRound
-  LogIn, // Added LogIn
+  KeyRound, 
+  LogIn, 
+  LogOut,
+  LayoutDashboard,
 };
 
 export default Icons;

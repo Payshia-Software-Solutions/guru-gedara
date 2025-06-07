@@ -36,10 +36,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.5,
     },
     {
-      url: `${baseUrl}/login`, // Added login page
+      url: `${baseUrl}/login`, 
       lastModified: new Date(),
       changeFrequency: 'yearly',
       priority: 0.6,
+    },
+    {
+      url: `${baseUrl}/dashboard`, // Added dashboard page
+      lastModified: new Date(),
+      changeFrequency: 'weekly', // Assuming dashboard content might change
+      priority: 0.7,
     },
   ]
 }

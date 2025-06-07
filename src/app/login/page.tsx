@@ -3,6 +3,7 @@
 
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation'; // Added for redirection
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
@@ -47,6 +48,7 @@ export type LoginFormValues = z.infer<ReturnType<typeof getLoginFormSchema>>;
 export default function LoginPage() {
   const { t, language } = useLanguage();
   const { toast } = useToast();
+  const router = useRouter(); // Initialize router
 
   const loginFormSchema = React.useMemo(() => getLoginFormSchema(t), [t]);
 
@@ -59,7 +61,6 @@ export default function LoginPage() {
   });
   
   React.useEffect(() => {
-    // Re-initialize form with current values if language changes, to re-trigger validation messages in new lang
     form.reset(form.getValues()); 
   }, [t, form]);
 
@@ -74,14 +75,14 @@ export default function LoginPage() {
     // Simulate API call
     await new Promise(resolve => setTimeout(resolve, 1000));
     
-    // In a real app, you would handle authentication here
-    // For now, we'll just show a success toast
     toast({
       title: t('login.toast.success.title', "Login Attempt"),
-      description: t('login.toast.success.description', "Login functionality is a placeholder. Check console for data."),
+      description: t('login.toast.success.descriptionPlaceholder', "Redirecting to dashboard..."), // Updated description
       variant: "default",
     });
-    // form.reset(); // Optionally reset form, or redirect
+    
+    // Redirect to dashboard page
+    router.push('/dashboard'); 
   }
 
   return (

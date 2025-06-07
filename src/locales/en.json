@@ -375,13 +375,29 @@
     "toast": {
       "success": {
         "title": "Login Attempt",
-        "description": "Login functionality is a placeholder. Check console for data."
+        "description": "Login functionality is a placeholder. Check console for data.",
+        "descriptionPlaceholder": "Redirecting to dashboard..."
       }
     },
     "validation": {
       "emailInvalid": "Invalid email address.",
       "passwordMin": "Password must be at least 6 characters."
     }
+  },
+  "dashboard": {
+    "title": "Student Dashboard",
+    "titleSinhala": "ශිෂ්‍ය උපකරණ පුවරුව",
+    "titleTamil": "மாணவர் டாஷ்போர்டு",
+    "subtitle": "Your personal learning space.",
+    "welcomeTitle": "Welcome Student!",
+    "welcomeMessage": "This is your personal dashboard. Here you will find your enrolled courses, progress, assignments, and learning materials. Start your learning journey!",
+    "myCourses": "My Courses",
+    "myCoursesPlaceholder": "Your enrolled courses will be listed here. (Placeholder)",
+    "noCoursesYet": "No courses enrolled yet.",
+    "myProgress": "My Progress",
+    "myProgressPlaceholder": "Your learning progress and achievements will be displayed here. (Placeholder)",
+    "progressTrackingComingSoon": "Progress tracking coming soon!",
+    "logoutButton": "Logout"
   },
   "general": {
       "pageTitleSuffix": "ගුරු ගෙදර E-School"

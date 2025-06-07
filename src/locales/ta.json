@@ -375,13 +375,29 @@
     "toast": {
       "success": {
         "title": "[TA: Login Attempt]",
-        "description": "[TA: Login functionality is a placeholder. Check console for data.]"
+        "description": "[TA: Login functionality is a placeholder. Check console for data.]",
+        "descriptionPlaceholder": "[TA: Redirecting to dashboard...]"
       }
     },
     "validation": {
       "emailInvalid": "செல்லாத மின்னஞ்சல் முகவரி.",
       "passwordMin": "கடவுச்சொல் குறைந்தது 6 எழுத்துகள் கொண்டதாக இருக்க வேண்டும்."
     }
+  },
+  "dashboard": {
+    "title": "மாணவர் டாஷ்போர்டு",
+    "titleSinhala": "[TA: ශිෂ්‍ය උපකරණ පුවරුව]",
+    "titleTamil": "மாணவர் டாஷ்போர்டு",
+    "subtitle": "உங்கள் தனிப்பட்ட கற்றல் இடம்.",
+    "welcomeTitle": "வருக மாணவரே!",
+    "welcomeMessage": "இது உங்கள் தனிப்பட்ட டாஷ்போர்டு. இங்கே உங்கள் பதிவுசெய்யப்பட்ட பாடநெறிகள், முன்னேற்றம், பணிகள் மற்றும் கற்றல் பொருட்களைக் காண்பீர்கள். உங்கள் கற்றல் பயணத்தைத் தொடங்குங்கள்!",
+    "myCourses": "என் பாடநெறிகள்",
+    "myCoursesPlaceholder": "நீங்கள் பதிவுசெய்த பாடநெறிகள் இங்கே பட்டியலிடப்படும். (Placeholder)",
+    "noCoursesYet": "இன்னும் எந்த பாடநெறிகளிலும் சேரவில்லை.",
+    "myProgress": "என் முன்னேற்றம்",
+    "myProgressPlaceholder": "உங்கள் கற்றல் முன்னேற்றம் மற்றும் சாதனைகள் இங்கே காட்டப்படும். (Placeholder)",
+    "progressTrackingComingSoon": "முன்னேற்ற கண்காணிப்பு விரைவில்!",
+    "logoutButton": "வெளியேறு"
   },
   "general": {
       "pageTitleSuffix": "[TA: ගුරු ගෙදර E-School]"
