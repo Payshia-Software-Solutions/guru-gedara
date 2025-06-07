@@ -42,7 +42,7 @@ export default function HomePage() {
   }
   
   return (
-    <div className="space-y-16">
+    <div className="space-y-24">
       {/* Hero Section */}
       <section className="relative text-center py-20 md:py-32 rounded-xl overflow-hidden bg-gradient-to-br from-primary/20 via-background to-background">
         <Image
@@ -57,7 +57,7 @@ export default function HomePage() {
           <h1 className="font-headline text-4xl md:text-6xl font-bold text-primary mb-4"
             dangerouslySetInnerHTML={{ __html: t('home.hero.title', 'Welcome to ගුරු ගෙදර E-School!') }}
           />
-          <p className="text-lg md:text-2xl text-foreground mb-8 max-w-3xl mx-auto"
+          <p className="text-xl md:text-2xl leading-relaxed text-foreground mb-8 max-w-3xl mx-auto"
             dangerouslySetInnerHTML={{ __html: t('home.hero.subtitle', "Empowering the future of Sri Lankan students through quality online education. <br /> ශ්‍රී ලාංකීය දූ දරුවන්ගේ අනාගතය සවිබල ගැන්වීම.") }}
           />
           <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground">
@@ -69,17 +69,17 @@ export default function HomePage() {
       {/* Featured Subjects Section */}
       <section>
         <h2 className="font-headline text-3xl md:text-4xl font-bold text-center text-primary mb-2">{language === 'si' ? t('nav.courses', 'පාඨමාලා') : t('home.featuredSubjects.title', 'Our Subjects')}</h2>
-        <p className="text-center text-muted-foreground mb-10">{t('home.featuredSubjects.subtitle', 'Explore the subjects we offer for G.C.E. O/L students.')}</p>
+        <p className="text-center text-muted-foreground mb-10 text-lg">{t('home.featuredSubjects.subtitle', 'Explore the subjects we offer for G.C.E. O/L students.')}</p>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {featuredCourseKeys.map((courseKey) => (
             <Card key={courseKey.id} className="hover:shadow-xl transition-shadow duration-300 ease-in-out transform hover:-translate-y-1 flex flex-col">
               <CardHeader className="items-center text-center">
                 <courseKey.Icon className="w-16 h-16 text-accent mb-4" />
-                <CardTitle className="font-headline text-2xl text-primary">{getFeaturedCourseName(courseKey.id)}</CardTitle>
+                <CardTitle className="font-headline text-xl font-semibold text-primary">{getFeaturedCourseName(courseKey.id)}</CardTitle>
                 <CardDescription className="text-sm text-foreground">{language !== 'si' ? t(`home.featuredSubjects.${courseKey.id}.name`) : ''}</CardDescription>
               </CardHeader>
               <CardContent className="text-center flex-grow">
-                <p className="text-muted-foreground text-sm">{t(`home.featuredSubjects.${courseKey.id}.description`)}</p>
+                <p className="text-base leading-relaxed text-muted-foreground">{t(`home.featuredSubjects.${courseKey.id}.description`)}</p>
               </CardContent>
               <div className="p-6 pt-0">
                 <Button asChild variant="outline" className="w-full border-primary text-primary hover:bg-primary/10">
@@ -95,14 +95,14 @@ export default function HomePage() {
       <section className="py-12 bg-background/70 rounded-xl">
         <div className="container mx-auto px-4">
             <h2 className="font-headline text-3xl md:text-4xl font-bold text-center text-primary mb-2">{t('home.benefits.title', 'Why Choose Us?')}</h2>
-            <p className="text-center text-muted-foreground mb-10">{t('home.benefits.subtitle', 'Discover the advantages of learning with ගුරු ගෙදර E-School.')}</p>
+            <p className="text-center text-muted-foreground mb-10 text-lg">{t('home.benefits.subtitle', 'Discover the advantages of learning with ගුරු ගෙදර E-School.')}</p>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {learningBenefitKeys.map((benefit, index) => (
                 <Card key={index} className="hover:shadow-xl transition-shadow duration-300 bg-card">
                   <CardContent className="pt-6 flex items-start space-x-4">
                     <benefit.Icon className="w-8 h-8 text-accent flex-shrink-0 mt-1" />
                     <div>
-                      <p className="font-semibold text-foreground">{t(benefit.textKey)}</p>
+                      <p className="text-base font-medium text-foreground">{t(benefit.textKey)}</p>
                     </div>
                   </CardContent>
                 </Card>
@@ -115,13 +115,13 @@ export default function HomePage() {
       {/* Testimonials Section */}
       <section>
         <h2 className="font-headline text-3xl md:text-4xl font-bold text-center text-primary mb-2">{language === 'si' ? t('home.testimonials.title', 'Student Feedback') : t('home.testimonials.title', 'Student Feedback')}</h2>
-        <p className="text-center text-muted-foreground mb-10">{t('home.testimonials.subtitle', 'Hear what our students and parents have to say.')}</p>
+        <p className="text-center text-muted-foreground mb-10 text-lg">{t('home.testimonials.subtitle', 'Hear what our students and parents have to say.')}</p>
         <div className="grid md:grid-cols-1 lg:grid-cols-3 gap-8">
           {testimonials.map((testimonial) => (
             <Card key={testimonial.id} className="hover:shadow-xl transition-shadow duration-300 ease-in-out bg-card flex flex-col">
               <CardContent className="pt-6 flex-grow">
                 <Icons.Sparkles className="w-8 h-8 text-accent mb-4" />
-                <p className="text-muted-foreground italic mb-4">"{testimonial.quote}"</p>
+                <p className="text-lg text-muted-foreground italic mb-4 leading-relaxed">"{testimonial.quote}"</p>
                 <div className="flex items-center space-x-3">
                   <Image
                     src={`https://placehold.co/40x40.png?font=pt-sans`}

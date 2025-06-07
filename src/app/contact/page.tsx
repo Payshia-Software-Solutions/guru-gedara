@@ -45,7 +45,7 @@ export default function ContactPage() {
 
 
   return (
-    <div className="space-y-12">
+    <div className="space-y-20">
       <section className="text-center py-12 bg-primary/10 rounded-xl">
         <h1 className="font-headline text-4xl md:text-5xl font-bold text-primary mb-4">
           {getPageTitle()}
@@ -84,7 +84,7 @@ export default function ContactPage() {
               <div className="flex items-start space-x-4">
                 <Icons.Phone className="w-6 h-6 text-accent mt-1 flex-shrink-0" />
                 <div>
-                  <h3 className="font-semibold text-foreground">{t('contact.otherWays.phone.title')}</h3>
+                  <h3 className="font-semibold text-lg text-foreground">{t('contact.otherWays.phone.title')}</h3>
                   <a href="tel:+94771234567" className="text-muted-foreground hover:text-primary transition-colors">
                     {t('contact.otherWays.phone.number')}
                   </a>
@@ -95,7 +95,7 @@ export default function ContactPage() {
               <div className="flex items-start space-x-4">
                 <Icons.Mail className="w-6 h-6 text-accent mt-1 flex-shrink-0" />
                 <div>
-                  <h3 className="font-semibold text-foreground">
+                  <h3 className="font-semibold text-lg text-foreground">
                     {getEmailTitle()}
                   </h3>
                   <a href="mailto:info@gurugedara.lk" className="text-muted-foreground hover:text-primary transition-colors">
@@ -107,7 +107,7 @@ export default function ContactPage() {
               <div className="flex items-start space-x-4">
                 <Icons.MapPin className="w-6 h-6 text-accent mt-1 flex-shrink-0" />
                 <div>
-                  <h3 className="font-semibold text-foreground">
+                  <h3 className="font-semibold text-lg text-foreground">
                     {getLocationTitle()}
                   </h3>
                   <p className="text-muted-foreground">

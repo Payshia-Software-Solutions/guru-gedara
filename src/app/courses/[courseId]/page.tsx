@@ -60,7 +60,7 @@ export default function CourseDetailsPage() {
   ];
 
   return (
-    <div className="space-y-10">
+    <div className="space-y-20">
       <div className="mb-6">
         <Button variant="outline" asChild className="text-sm">
           <Link href="/courses">
@@ -85,7 +85,7 @@ export default function CourseDetailsPage() {
           <h1 className="font-headline text-4xl md:text-5xl font-bold text-primary mb-3">
             {courseName}
           </h1>
-          <p className="text-lg md:text-xl text-foreground max-w-2xl mx-auto">
+          <p className="text-xl md:text-2xl leading-relaxed text-foreground max-w-2xl mx-auto">
             {t(`courses.subjects.${course.id}.description`)}
           </p>
         </div>
@@ -101,7 +101,7 @@ export default function CourseDetailsPage() {
               </CardTitle>
             </CardHeader>
             <CardContent className="text-foreground space-y-3">
-              <p>{t(`courseDetails.subjects.${course.id}.detailedDescription`, `Detailed description for ${courseName}. This course provides an in-depth exploration of key concepts, practical applications, and prepares students thoroughly for their G.C.E. O/L examinations. We focus on building a strong foundation and fostering critical thinking skills.`)}</p>
+              <p className="text-lg leading-relaxed">{t(`courseDetails.subjects.${course.id}.detailedDescription`, `Detailed description for ${courseName}. This course provides an in-depth exploration of key concepts, practical applications, and prepares students thoroughly for their G.C.E. O/L examinations. We focus on building a strong foundation and fostering critical thinking skills.`)}</p>
             </CardContent>
           </Card>
 
@@ -115,7 +115,7 @@ export default function CourseDetailsPage() {
             <CardContent className="text-foreground">
               <ul className="list-disc list-inside space-y-2">
                 {learningOutcomes.map((item, index) => (
-                  <li key={index}>{item}</li>
+                  <li key={index} className="text-lg leading-relaxed">{item}</li>
                 ))}
               </ul>
             </CardContent>
@@ -131,7 +131,7 @@ export default function CourseDetailsPage() {
             <CardContent className="text-foreground">
                <ul className="list-decimal list-inside space-y-2">
                 {syllabusHighlights.map((item, index) => (
-                  <li key={index}>{item}</li>
+                  <li key={index} className="text-lg leading-relaxed">{item}</li>
                 ))}
               </ul>
               <p className="mt-4 text-sm text-muted-foreground">
@@ -159,7 +159,7 @@ export default function CourseDetailsPage() {
             </CardHeader>
             <CardContent className="text-foreground space-y-2">
               <p className="font-semibold">{t(`courseDetails.subjects.${course.id}.instructorName`, `Mr./Ms. Instructor Name for ${course.id}`)}</p>
-              <p className="text-sm">{t(`courseDetails.subjects.${course.id}.instructorBio`, `An experienced and dedicated educator specializing in ${getCourseName(course.id)}, committed to helping students achieve their academic goals with engaging teaching methods.`)}</p>
+              <p className="text-base leading-relaxed">{t(`courseDetails.subjects.${course.id}.instructorBio`, `An experienced and dedicated educator specializing in ${getCourseName(course.id)}, committed to helping students achieve their academic goals with engaging teaching methods.`)}</p>
               <Badge variant="secondary">{t(`courseDetails.subjects.${course.id}.instructorExperience`, `10+ Years Experience`)}</Badge>
             </CardContent>
           </Card>
@@ -172,5 +172,3 @@ export default function CourseDetailsPage() {
     </div>
   );
 }
-
-    

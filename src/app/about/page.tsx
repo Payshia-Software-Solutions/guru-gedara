@@ -32,7 +32,7 @@ export default function AboutPage() {
   };
 
   return (
-    <div className="space-y-12">
+    <div className="space-y-20">
       <section className="text-center py-12 bg-primary/10 rounded-xl">
         <h1 className="font-headline text-4xl md:text-5xl font-bold text-primary mb-4">
           {getPageTitle()}
@@ -51,10 +51,10 @@ export default function AboutPage() {
             </CardTitle>
           </CardHeader>
           <CardContent className="space-y-4 text-foreground">
-            <p>
+            <p className="text-lg leading-relaxed">
               {t('about.mission.p1')}
             </p>
-            <p>
+            <p className="text-lg leading-relaxed">
               {t('about.mission.p2')}
             </p>
             <div className="grid md:grid-cols-2 gap-6 mt-6">
@@ -88,10 +88,10 @@ export default function AboutPage() {
             </CardTitle>
           </CardHeader>
           <CardContent className="space-y-4 text-foreground">
-            <p>
+            <p className="text-lg leading-relaxed">
               {t('about.educators.p1')}
             </p>
-            <p>
+            <p className="text-lg leading-relaxed">
               {t('about.educators.p2')}
             </p>
             <div className="mt-6 grid sm:grid-cols-1 md:grid-cols-2 gap-6">

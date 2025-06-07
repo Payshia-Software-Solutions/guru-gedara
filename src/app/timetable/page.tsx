@@ -39,7 +39,7 @@ export default function TimetablePage() {
   };
   
   return (
-    <div className="space-y-12">
+    <div className="space-y-20">
       <section className="text-center py-12 bg-primary/10 rounded-xl">
         <h1 className="font-headline text-4xl md:text-5xl font-bold text-primary mb-4">
           {getPageTitle()}

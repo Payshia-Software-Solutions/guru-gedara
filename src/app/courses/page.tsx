@@ -54,7 +54,7 @@ export default function CoursesPage() {
   };
 
   return (
-    <div className="space-y-12">
+    <div className="space-y-20">
       <section className="text-center py-12 bg-primary/10 rounded-xl">
         <h1 className="font-headline text-4xl md:text-5xl font-bold text-primary mb-4">
           {getPageTitle()}
@@ -71,7 +71,7 @@ export default function CoursesPage() {
               <div className="flex items-center space-x-4 mb-4">
                 <courseDef.Icon className="w-12 h-12 text-accent" />
                 <div>
-                  <CardTitle className="font-headline text-2xl text-primary">{getCourseName(courseDef.id)}</CardTitle>
+                  <CardTitle className="font-headline text-xl font-semibold text-primary">{getCourseName(courseDef.id)}</CardTitle>
                   {(language === 'si' || language === 'ta') && (
                     <CardDescription className="text-md text-foreground">
                       {t(`courses.subjects.${courseDef.id}.name`)} {/* English name as subtitle for SI/TA */}
@@ -89,7 +89,7 @@ export default function CoursesPage() {
                 />
             </CardHeader>
             <CardContent className="text-muted-foreground flex-grow">
-              <p>{t(`courses.subjects.${courseDef.id}.description`)}</p>
+              <p className="text-base leading-relaxed">{t(`courses.subjects.${courseDef.id}.description`)}</p>
             </CardContent>
             <CardFooter>
               <Button asChild className="w-full bg-accent hover:bg-accent/90 text-accent-foreground">
@@ -104,5 +104,3 @@ export default function CoursesPage() {
     </div>
   );
 }
-
-    
