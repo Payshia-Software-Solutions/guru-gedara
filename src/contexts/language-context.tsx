@@ -4,6 +4,11 @@
 import type { ReactNode } from 'react';
 import React, { createContext, useContext, useState, useEffect, useCallback } from 'react';
 
+// Import JSON files statically
+import enTranslationsData from '@/locales/en.json';
+import siTranslationsData from '@/locales/si.json';
+import taTranslationsData from '@/locales/ta.json';
+
 // Define available languages
 export const languages = [
   { code: 'en', name: 'English', nativeName: 'English' },
@@ -17,36 +22,39 @@ interface LanguageContextType {
   language: LanguageCode;
   setLanguage: (language: LanguageCode) => void;
   t: (key: string, fallback?: string) => string;
-  translations: Record<string, string>;
+  translations: Record<string, any>; // Changed to any to simplify handling of imported JSON
 }
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
 // Helper to get nested values from translation object
-// e.g., t('nav.home')
 const getNestedValue = (obj: any, path: string, fallback?: string): string => {
   const value = path.split('.').reduce((acc, part) => acc && acc[part], obj);
   return value || fallback || path;
 };
 
+// Map language codes to their statically imported data
+const allTranslations: Record<LanguageCode, Record<string, any>> = {
+  en: enTranslationsData,
+  si: siTranslationsData,
+  ta: taTranslationsData,
+};
+
 export const LanguageProvider = ({ children }: { children: ReactNode }) => {
   const [language, setLanguageState] = useState<LanguageCode>('en');
-  const [translations, setTranslations] = useState<Record<string, string>>({});
+  const [translations, setTranslations] = useState<Record<string, any>>(allTranslations.en);
   const [isLoading, setIsLoading] = useState(true);
 
-  const fetchTranslations = useCallback(async (lang: LanguageCode) => {
+  const loadTranslationsForLanguage = useCallback((lang: LanguageCode) => {
     setIsLoading(true);
-    try {
-      const mod = await import(`@/locales/${lang}.json`);
-      setTranslations(mod.default || mod);
-    } catch (error) {
-      console.error(`Could not load translations for ${lang}:`, error);
-      if (lang !== 'en') { // Fallback to English if selected lang fails
-        const enMod = await import(`@/locales/en.json`);
-        setTranslations(enMod.default || enMod);
-      } else {
-        setTranslations({}); // No translations if English itself fails
-      }
+    const selectedTranslations = allTranslations[lang];
+
+    if (selectedTranslations) {
+      setTranslations(selectedTranslations);
+    } else {
+      console.error(`Could not load translations for ${lang}: No static import found.`);
+      // Fallback to English if selected lang fails
+      setTranslations(allTranslations.en);
     }
     setIsLoading(false);
   }, []);
@@ -55,21 +63,35 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
     const storedLang = localStorage.getItem('app-language') as LanguageCode | null;
     const initialLang = storedLang && languages.some(l => l.code === storedLang) ? storedLang : 'en';
     setLanguageState(initialLang);
-    fetchTranslations(initialLang);
-  }, [fetchTranslations]);
+    // Initial load of translations will be triggered by the effect below
+  }, []);
+
+  useEffect(() => {
+    loadTranslationsForLanguage(language);
+  }, [language, loadTranslationsForLanguage]);
 
   const setLanguage = (lang: LanguageCode) => {
     if (languages.some(l => l.code === lang)) {
       setLanguageState(lang);
       localStorage.setItem('app-language', lang);
-      fetchTranslations(lang);
+      // The useEffect watching `language` will call loadTranslationsForLanguage
     }
   };
 
   const t = useCallback((key: string, fallback?: string) => {
-    if (isLoading) return fallback || key; // Return fallback or key if still loading
+    if (isLoading && Object.keys(translations).length === 0) { // Only return fallback if translations truly haven't loaded
+        return fallback || key; 
+    }
     return getNestedValue(translations, key, fallback);
   }, [translations, isLoading]);
+
+  // Set initial loading to false once the first batch of translations is available
+  useEffect(() => {
+    if (Object.keys(translations).length > 0) {
+        setIsLoading(false);
+    }
+  }, [translations]);
+
 
   return (
     <LanguageContext.Provider value={{ language, setLanguage, t, translations }}>
