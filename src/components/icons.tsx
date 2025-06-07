@@ -2,15 +2,15 @@
 import {
   BookOpenText,
   Calculator,
-  FlaskConical, 
+  FlaskConical,
   Laptop2,
   Mail,
   MapPin,
-  MessageSquare, 
+  MessageSquare,
   Microscope,
-  MonitorSmartphone, 
+  MonitorSmartphone,
   Phone,
-  Sigma, 
+  Sigma,
   Users,
   Youtube,
   Facebook,
@@ -25,17 +25,19 @@ import {
   Sparkles,
   Sun,
   Moon,
-  Globe, 
-  ArrowLeft, 
-  FileText, 
-  ListChecks, 
-  UserCircle, 
-  Edit3, 
+  Globe,
+  ArrowLeft,
+  ArrowRight, // Added ArrowRight
+  FileText,
+  ListChecks,
+  UserCircle,
+  Edit3,
   Quote, // For testimonials
   Target, // For "Why Choose Us" - Exam Preparation
   Send, // For contact icons in footer
   Briefcase, // Could be used for "Qualified Teachers" if Users isn't distinct enough
   Watch, // Alternative for Clock/Flexibility
+  AlertTriangle, // For error/not found pages
 } from 'lucide-react';
 
 // Re-exporting icons for easier access
@@ -67,6 +69,7 @@ export const Icons = {
   Moon,
   Globe,
   ArrowLeft,
+  ArrowRight, // Added ArrowRight
   FileText,
   ListChecks,
   UserCircle,
@@ -76,6 +79,7 @@ export const Icons = {
   Send,
   Briefcase,
   Watch,
+  AlertTriangle,
 };
 
 export default Icons;
