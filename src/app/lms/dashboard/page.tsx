@@ -2,7 +2,6 @@
 "use client";
 
 import React, { useEffect, useState } from 'react';
-import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from '@/components/ui/card';
@@ -44,12 +43,20 @@ export default function LmsDashboardPage() {
     if (language === 'ta') return t('dashboard.titleTamil', t('dashboard.title'));
     return t('dashboard.title');
   };
-  
+
   const getCourseName = (titleKey: string) => {
     const id = titleKey.split('.')[2]; // Extract subject id from key like 'courses.subjects.science.name'
-    if (language === 'si') return t(`courses.subjects.${id}.sinhalaName`, t(titleKey));
-    if (language === 'ta') return t(`courses.subjects.${id}.tamilName`, t(titleKey));
-    return t(titleKey);
+    const fallbackName = t(titleKey); // Calculate fallback translation once
+
+    if (language === 'si') {
+      const sinhalaNameKey = 'courses.subjects.' + id + '.sinhalaName';
+      return t(sinhalaNameKey, fallbackName);
+    }
+    if (language === 'ta') {
+      const tamilNameKey = 'courses.subjects.' + id + '.tamilName';
+      return t(tamilNameKey, fallbackName);
+    }
+    return fallbackName;
   }
 
   return (

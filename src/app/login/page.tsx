@@ -3,7 +3,7 @@
 
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
-import { useRouter } from 'next/navigation'; 
+import { useRouter } from 'next/navigation';
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
@@ -48,7 +48,7 @@ export type LoginFormValues = z.infer<ReturnType<typeof getLoginFormSchema>>;
 export default function LoginPage() {
   const { t, language } = useLanguage();
   const { toast } = useToast();
-  const router = useRouter(); 
+  const router = useRouter();
 
   const loginFormSchema = React.useMemo(() => getLoginFormSchema(t), [t]);
 
@@ -59,9 +59,9 @@ export default function LoginPage() {
       password: "",
     },
   });
-  
+
   React.useEffect(() => {
-    form.reset(form.getValues()); 
+    form.reset(form.getValues());
   }, [t, form]);
 
   const getPageTitle = () => {
@@ -74,15 +74,15 @@ export default function LoginPage() {
     console.log("Login form submitted:", values);
     // Simulate API call
     await new Promise(resolve => setTimeout(resolve, 1000));
-    
+
     toast({
       title: t('login.toast.success.title', "Login Attempt"),
-      description: t('login.toast.success.descriptionPlaceholder', "Redirecting to dashboard..."), 
+      description: t('login.toast.success.descriptionPlaceholder', "Redirecting to dashboard..."),
       variant: "default",
     });
-    
+
     // Redirect to LMS dashboard page
-    router.push('/lms/dashboard'); 
+    router.push('/lms/dashboard');
   }
 
   return (
@@ -124,10 +124,10 @@ export default function LoginPage() {
                         {t('login.form.emailLabel', "Email Address")}
                       </FormLabel>
                       <FormControl>
-                        <Input 
-                          type="email" 
-                          placeholder={t('login.form.emailPlaceholder', 'your.email@example.com')} 
-                          {...field} 
+                        <Input
+                          type="email"
+                          placeholder={t('login.form.emailPlaceholder', 'your.email@example.com')}
+                          {...field}
                           className="text-base"
                         />
                       </FormControl>
@@ -145,10 +145,10 @@ export default function LoginPage() {
                         {t('login.form.passwordLabel', "Password")}
                       </FormLabel>
                       <FormControl>
-                        <Input 
-                          type="password" 
-                          placeholder={t('login.form.passwordPlaceholder', '••••••••')} 
-                          {...field} 
+                        <Input
+                          type="password"
+                          placeholder={t('login.form.passwordPlaceholder', '••••••••')}
+                          {...field}
                           className="text-base"
                         />
                       </FormControl>
@@ -157,7 +157,7 @@ export default function LoginPage() {
                   )}
                 />
                 <Button type="submit" className="w-full bg-primary hover:bg-primary/90 text-primary-foreground py-3 text-lg" disabled={form.formState.isSubmitting}>
-                  {form.formState.isSubmitting 
+                  {form.formState.isSubmitting
                     ? (<><Icons.Loader2 className="mr-2 h-5 w-5 animate-spin" /> {t('login.form.submittingButton', 'Logging in...')}</>)
                     : t('login.form.submitButton', 'Login to Your Account')}
                 </Button>
