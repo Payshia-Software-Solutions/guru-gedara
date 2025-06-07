@@ -8,7 +8,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/com
 import Icons from '@/components/icons';
 import type { CourseDefinition, Testimonial, TimetableEntryDefinition } from '@/types';
 import { useLanguage } from '@/contexts/language-context';
-import { Badge } from '@/components/ui/badge'; // Added for upcoming classes
+import { Badge } from '@/components/ui/badge'; 
 
 const featuredCourseKeys: CourseDefinition[] = [
   { id: 'science', Icon: Icons.Microscope, imageHint: 'science laboratory' },
@@ -18,9 +18,9 @@ const featuredCourseKeys: CourseDefinition[] = [
 ];
 
 const testimonialsData: Testimonial[] = [
-  { id: 't1', quoteKey: 'home.testimonials.quote1', name: 'Nimal Perera', roleKey: 'home.testimonials.roleStudent', avatarHint: 'smiling student' },
-  { id: 't2', quoteKey: 'home.testimonials.quote2', name: 'Kamala Silva', roleKey: 'home.testimonials.roleParent', avatarHint: 'happy parent' },
-  { id: 't3', quoteKey: 'home.testimonials.quote3', name: 'Aisha Mohamed', roleKey: 'home.testimonials.roleStudent', avatarHint: 'focused student' },
+  { id: 't1', quoteKey: 'home.testimonials.quote1', name: 'Nimal Perera', roleKey: 'home.testimonials.roleStudent', avatarHint: 'smiling student', avatarUrl: 'https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxzbWlsaW5nJTIwc3R1ZGVudHxlbnwwfHx8fDE3NDkzMjczMzh8MA&ixlib=rb-4.1.0&q=80&w=1080' },
+  { id: 't2', quoteKey: 'home.testimonials.quote2', name: 'Kamala Silva', roleKey: 'home.testimonials.roleParent', avatarHint: 'happy parent', avatarUrl: 'https://images.unsplash.com/photo-1486704155675-e4c07f8ad160?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxoYXBweSUyMHBhcmVudHxlbnwwfHx8fDE3NDkzMjczMzd8MA&ixlib=rb-4.1.0&q=80&w=1080' },
+  { id: 't3', quoteKey: 'home.testimonials.quote3', name: 'Aisha Mohamed', roleKey: 'home.testimonials.roleStudent', avatarHint: 'focused student', avatarUrl: 'https://images.unsplash.com/photo-1699215395165-f5171c7f9556?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxmb2N1c2VkJTIwc3R1ZGVudHxlbnwwfHx8fDE3NDkzMjczMzd8MA&ixlib=rb-4.1.0&q=80&w=1080' },
 ];
 
 const whyChooseUsData = [
@@ -29,7 +29,6 @@ const whyChooseUsData = [
   { id: 'wc3', titleKey: 'home.whyChooseUs.item3.title', descriptionKey: 'home.whyChooseUs.item3.description', Icon: Icons.Target },
 ];
 
-// Simplified upcoming classes data for homepage
 const upcomingClassesData: Partial<TimetableEntryDefinition>[] = [
   { id: 'uc1', day: 'Monday', time: '4:00 PM - 6:00 PM', subjectKey: 'mathematics', teacher: 'Mr. A. Perera' },
   { id: 'uc2', day: 'Tuesday', time: '5:00 PM - 7:00 PM', subjectKey: 'science', teacher: 'Ms. B. Silva' },
@@ -173,11 +172,11 @@ export default function HomePage() {
                   <p className="text-lg text-foreground italic mb-6 leading-relaxed flex-grow">"{t(testimonial.quoteKey)}"</p>
                   <div className="flex items-center space-x-4 mt-auto pt-4 border-t border-border">
                     <Image
-                      src={`https://placehold.co/50x50.png`}
+                      src={testimonial.avatarUrl}
                       alt={testimonial.name}
                       width={50}
                       height={50}
-                      className="rounded-full"
+                      className="rounded-full object-cover"
                       data-ai-hint={testimonial.avatarHint}
                     />
                     <div>
@@ -194,3 +193,4 @@ export default function HomePage() {
     </div>
   );
 }
+

@@ -13,6 +13,7 @@ export interface Testimonial {
   name: string;
   roleKey: string; 
   avatarHint: string;
+  avatarUrl: string; // Added for specific avatar URLs
 }
 
 export interface TimetableEntryDefinition {
@@ -22,3 +23,4 @@ export interface TimetableEntryDefinition {
   subjectKey: string; 
   teacher: string;
 }
+
