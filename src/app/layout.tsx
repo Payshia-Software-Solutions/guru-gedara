@@ -6,7 +6,7 @@ import { Footer } from '@/components/layout/footer';
 import { Toaster } from "@/components/ui/toaster";
 import { ThemeProvider } from "@/components/theme-provider";
 import { LanguageProvider } from '@/contexts/language-context';
-import { PageTransitionManager } from '@/components/layout/page-transition-manager'; // Added import
+import { PageTransitionManager } from '@/components/layout/page-transition-manager';
 
 export const metadata: Metadata = {
   title: 'ගුරු ගෙදර E-School | Modern Online Learning Platform',
@@ -26,7 +26,7 @@ export default function RootLayout({
         <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..0,900;1,200..1,900&display=swap" rel="stylesheet" />
       </head>
-      <body className="font-body antialiased flex flex-col min-h-screen bg-background text-foreground">
+      <body className="font-body antialiased flex flex-col min-h-screen bg-background text-foreground" suppressHydrationWarning>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
@@ -34,7 +34,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <LanguageProvider>
-            <PageTransitionManager> {/* Added PageTransitionManager wrapper */}
+            <PageTransitionManager>
               <div className="flex flex-col min-h-screen">
                 <Navbar />
                 <main className="flex-grow container mx-auto px-4 py-8 md:py-12">
