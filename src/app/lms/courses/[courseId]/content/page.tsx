@@ -13,6 +13,7 @@ import Icons from '@/components/icons';
 import { useLanguage } from '@/contexts/language-context';
 import { Badge } from '@/components/ui/badge';
 import type { CourseDefinition } from '@/types';
+import ReactPlayer from 'react-player/lazy';
 
 const coursesData: CourseDefinition[] = [
   { id: 'science', Icon: Icons.Microscope, imageHint: 'science classroom details' },
@@ -89,6 +90,12 @@ export default function CourseContentPage() {
 
   const [isVideoPlayerOpen, setIsVideoPlayerOpen] = useState(false);
   const [currentVideo, setCurrentVideo] = useState<VideoToPlay | null>(null);
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
 
   const courseDetails = coursesData.find(c => c.id === courseId);
   const content = courseContentPlaceholder[courseId] || { videoLessons: [], pdfNotes: [], recordings: [] };
@@ -99,7 +106,6 @@ export default function CourseContentPage() {
       setIsVideoPlayerOpen(true);
     } else {
       console.warn("No video URL provided for:", titleKey);
-      // Optionally, show a toast message that video is not available
     }
   };
 
@@ -283,28 +289,37 @@ export default function CourseContentPage() {
 
         {currentVideo && (
           <Dialog open={isVideoPlayerOpen} onOpenChange={setIsVideoPlayerOpen}>
-            <DialogContent className="sm:max-w-[800px] p-0">
-              <DialogHeader className="p-4 pb-0">
-                <DialogTitle>{t('lms.courseContent.videoPlayer.nowPlaying', "Now Playing: {{videoTitle}}", { videoTitle: currentVideo.title })}</DialogTitle>
+            <DialogContent className="sm:max-w-[800px] p-0 aspect-video bg-black rounded-lg overflow-hidden">
+              <DialogHeader className="absolute top-0 left-0 right-0 z-10 p-3 bg-gradient-to-b from-black/70 to-transparent">
+                <DialogTitle className="text-white text-lg truncate">{t('lms.courseContent.videoPlayer.nowPlaying', "Now Playing: {{videoTitle}}", { videoTitle: currentVideo.title })}</DialogTitle>
               </DialogHeader>
-              <div className="p-4 aspect-video bg-black rounded-b-md">
-                <video
-                  key={currentVideo.url} 
-                  width="100%"
-                  height="100%"
-                  controls
-                  autoPlay
-                  playsInline 
-                  preload="metadata"
-                  className="rounded-md"
-                >
-                  <source src={currentVideo.url} type="video/mp4" />
-                  {t('lms.courseContent.videoPlayer.browserNotSupported', "Your browser does not support the video tag.")}
-                </video>
+              <div className="w-full h-full flex items-center justify-center">
+                {isClient && currentVideo.url && (
+                  <ReactPlayer
+                    url={currentVideo.url}
+                    playing={true}
+                    controls={true}
+                    width="100%"
+                    height="100%"
+                    config={{
+                      file: {
+                        attributes: {
+                          playsInline: true,
+                          preload: 'metadata'
+                        }
+                      }
+                    }}
+                  />
+                )}
+                 {!isClient && (
+                   <div className="w-full h-full flex items-center justify-center bg-black text-white">
+                     {t('lms.courseContent.videoPlayer.loading', "Loading player...")}
+                   </div>
+                 )}
               </div>
-              <DialogFooter className="p-4 pt-2 border-t"> {/* Adjusted padding and added border */}
+              <DialogFooter className="absolute bottom-0 left-0 right-0 z-10 p-3 bg-gradient-to-t from-black/70 to-transparent">
                 <DialogClose asChild>
-                  <Button type="button" variant="secondary">
+                  <Button type="button" variant="secondary" size="sm" className="opacity-80 hover:opacity-100">
                     {t('lms.courseContent.videoPlayer.closeButton', "Close")}
                   </Button>
                 </DialogClose>
@@ -315,5 +330,3 @@ export default function CourseContentPage() {
     </div>
   );
 }
-
-    

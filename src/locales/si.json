@@ -514,7 +514,8 @@
       "videoPlayer": {
         "nowPlaying": "දැන් වාදනය වන්නේ: {{videoTitle}}",
         "browserNotSupported": "ඔබගේ බ්‍රවුසරය වීඩියෝ ටැගයට සහාය නොදක්වයි.",
-        "closeButton": "වසන්න"
+        "closeButton": "වසන්න",
+        "loading": "ධාවකය පූරණය වෙමින්..."
       }
     }
   },
@@ -522,5 +523,3 @@
     "pageTitleSuffix": "ගුරු ගෙදර E-School"
   }
 }
-
-    

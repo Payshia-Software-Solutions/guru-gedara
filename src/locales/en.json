@@ -514,7 +514,8 @@
       "videoPlayer": {
         "nowPlaying": "Now Playing: {{videoTitle}}",
         "browserNotSupported": "Your browser does not support the video tag.",
-        "closeButton": "Close"
+        "closeButton": "Close",
+        "loading": "Loading player..."
       }
     }
   },
@@ -522,5 +523,3 @@
       "pageTitleSuffix": "ගුරු ගෙදර E-School"
   }
 }
-
-    

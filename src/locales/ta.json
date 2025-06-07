@@ -514,7 +514,8 @@
       "videoPlayer": {
         "nowPlaying": "இப்போது ஒலிக்கிறது: {{videoTitle}}",
         "browserNotSupported": "உங்கள் உலாவி வீடியோ குறிச்சொல்லை ஆதரிக்கவில்லை.",
-        "closeButton": "மூடு"
+        "closeButton": "மூடு",
+        "loading": "பிளேயர் ஏற்றப்படுகிறது..."
       }
     }
   },
@@ -522,5 +523,3 @@
       "pageTitleSuffix": "[TA: ගුරු ගෙදර E-School]"
   }
 }
-
-    
