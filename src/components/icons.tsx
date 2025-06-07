@@ -27,17 +27,18 @@ import {
   Moon,
   Globe,
   ArrowLeft,
-  ArrowRight, // Added ArrowRight
+  ArrowRight,
   FileText,
   ListChecks,
   UserCircle,
   Edit3,
-  Quote, // For testimonials
-  Target, // For "Why Choose Us" - Exam Preparation
-  Send, // For contact icons in footer
-  Briefcase, // Could be used for "Qualified Teachers" if Users isn't distinct enough
-  Watch, // Alternative for Clock/Flexibility
-  AlertTriangle, // For error/not found pages
+  Quote, 
+  Target, 
+  Send, 
+  Briefcase, 
+  Watch, 
+  AlertTriangle,
+  ChevronRight, // Added ChevronRight
 } from 'lucide-react';
 
 // Re-exporting icons for easier access
@@ -53,13 +54,13 @@ export const Icons = {
   MonitorSmartphone,
   Phone,
   Sigma,
-  Users, // Used for "Qualified Teachers"
+  Users, 
   Youtube,
   Facebook,
   Twitter,
   Instagram,
   Award,
-  Clock, // Used for "Online Flexibility"
+  Clock, 
   CalendarDays,
   TrendingUp,
   Lightbulb,
@@ -69,17 +70,18 @@ export const Icons = {
   Moon,
   Globe,
   ArrowLeft,
-  ArrowRight, // Added ArrowRight
+  ArrowRight,
   FileText,
   ListChecks,
   UserCircle,
   Edit3,
   Quote,
-  Target, // Used for "Exam Preparation"
+  Target,
   Send,
   Briefcase,
   Watch,
   AlertTriangle,
+  ChevronRight, // Added ChevronRight
 };
 
 export default Icons;
