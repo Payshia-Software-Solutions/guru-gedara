@@ -287,13 +287,14 @@ export default function CourseContentPage() {
               <DialogHeader className="p-4 pb-0">
                 <DialogTitle>{t('lms.courseContent.videoPlayer.nowPlaying', "Now Playing: {{videoTitle}}", { videoTitle: currentVideo.title })}</DialogTitle>
               </DialogHeader>
-              <div className="p-4 aspect-video">
+              <div className="p-4 aspect-video bg-black rounded-b-md">
                 <video
-                  key={currentVideo.url} // Add key to force re-render if URL changes
+                  key={currentVideo.url} 
                   width="100%"
                   height="100%"
                   controls
                   autoPlay
+                  playsInline 
                   preload="metadata"
                   className="rounded-md"
                 >
@@ -301,7 +302,7 @@ export default function CourseContentPage() {
                   {t('lms.courseContent.videoPlayer.browserNotSupported', "Your browser does not support the video tag.")}
                 </video>
               </div>
-              <DialogFooter className="p-4 pt-0">
+              <DialogFooter className="p-4 pt-2 border-t"> {/* Adjusted padding and added border */}
                 <DialogClose asChild>
                   <Button type="button" variant="secondary">
                     {t('lms.courseContent.videoPlayer.closeButton', "Close")}
