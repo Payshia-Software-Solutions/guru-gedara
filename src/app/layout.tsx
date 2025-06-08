@@ -9,6 +9,8 @@ import { LanguageProvider } from '@/contexts/language-context';
 import { PageTransitionManager } from '@/components/layout/page-transition-manager';
 import { MainContentWrapper } from '@/components/layout/main-content-wrapper';
 import { PreferencesModalManager } from '@/components/layout/preferences-modal-manager';
+import { Suspense } from 'react';
+import { Preloader } from '@/components/preloader';
 
 export const metadata: Metadata = {
   title: 'ගුරු ගෙදර E-School | Modern Online Learning Platform',
@@ -37,14 +39,16 @@ export default function RootLayout({
         >
           <LanguageProvider>
             <PreferencesModalManager>
-              <PageTransitionManager>
-                <div className="flex flex-col min-h-screen">
-                  <Navbar />
-                  <MainContentWrapper>{children}</MainContentWrapper>
-                  <Footer />
-                </div>
-                <Toaster />
-              </PageTransitionManager>
+              <Suspense fallback={<Preloader />}>
+                <PageTransitionManager>
+                  <div className="flex flex-col min-h-screen">
+                    <Navbar />
+                    <MainContentWrapper>{children}</MainContentWrapper>
+                    <Footer />
+                  </div>
+                  <Toaster />
+                </PageTransitionManager>
+              </Suspense>
             </PreferencesModalManager>
           </LanguageProvider>
         </ThemeProvider>
