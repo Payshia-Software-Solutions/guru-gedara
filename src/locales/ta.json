@@ -714,9 +714,32 @@
       "backToContent": "பாட உள்ளடக்கத்திற்குத் திரும்பு",
       "backToContentShort": "{{courseName}}க்குத் திரும்பு",
       "loadingQuiz": "வினாடி வினா ஏற்றப்படுகிறது..."
+    },
+    "assignmentPage": {
+      "notFoundTitle": "[TA: Assignment Not Found]",
+      "notFoundMessage": "[TA: The assignment you are looking for could not be found or is unavailable for this course.]",
+      "backToContent": "[TA: Back to Course Content]",
+      "backToContentShort": "[TA: Back to {{courseName}} Content]",
+      "dueDateLabel": "[TA: Due Date:]",
+      "descriptionTitle": "[TA: Assignment Description]",
+      "externalLinkTitle": "[TA: External Resources]",
+      "externalLinkDescription": "[TA: This assignment may require external resources. You can access them here:]",
+      "openLink": "[TA: Open Link]",
+      "submissionTitle": "[TA: Submit Your Assignment]",
+      "submissionDescription": "[TA: Upload your completed assignment file here. Ensure it meets all requirements.]",
+      "selectedFileLabel": "[TA: Selected file:]",
+      "allowedFileTypes": "[TA: Allowed file types: PDF, DOC, DOCX, TXT, ZIP. Max size: 5MB (simulated).]",
+      "submitButton": "[TA: Submit Assignment]",
+      "submittingButton": "[TA: Submitting...]",
+      "noFileTitle": "[TA: No File Selected]",
+      "noFileDescription": "[TA: Please select a file to submit for your assignment.]",
+      "submissionSuccessTitle": "[TA: Assignment Submitted (Simulated)]",
+      "submissionSuccessDescription": "[TA: Your assignment '{{assignmentTitle}}' has been successfully submitted.]"
     }
   },
   "general": {
       "pageTitleSuffix": "[TA: ගුරු ගෙදර E-School]"
   }
 }
+
+    

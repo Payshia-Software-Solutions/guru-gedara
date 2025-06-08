@@ -303,7 +303,7 @@ export default function CourseContentPage() {
                  <Alert variant="default" className="bg-accent/10 border-accent/30">
                     <Icons.Info className="h-5 w-5 text-accent" />
                     <AlertTitle className="text-accent">{t('lms.courseContent.payment.importantNoteTitle', "Important Note")}</AlertTitle>
-                    <AlertDescription className="text-accent/90">
+                    <AlertDescription className="text-accent/90 text-base md:text-lg">
                       {t('lms.courseContent.payment.importantNoteMessage', "Access to previous months' content (if applicable and paid for) remains available. This restriction applies to the current month's new materials.")}
                     </AlertDescription>
                 </Alert>
@@ -482,9 +482,9 @@ export default function CourseContentPage() {
                                         {assignment.dueDate && <p className="text-xs text-destructive mt-1">{t('lms.courseContent.sections.assignments.dueDate', "Due:")} {assignment.dueDate}</p>}
                                         </div>
                                         <Button size="sm" variant="outline" asChild className="mt-3 sm:mt-0 text-xs md:text-sm">
-                                        <a href={assignment.link || '#'} target="_blank" rel="noopener noreferrer">
+                                          <Link href={`/lms/courses/${courseId}/assignment/${assignment.id}`}>
                                             {t('lms.courseContent.sections.assignments.viewAssignmentButton', "View Assignment")} <Icons.ExternalLink className="ml-1 md:ml-2 h-3 md:h-4 w-3 md:w-4" />
-                                        </a>
+                                          </Link>
                                         </Button>
                                     </div>
                                     </li>
@@ -538,7 +538,7 @@ export default function CourseContentPage() {
         {currentVideo && (
           <Dialog open={isVideoPlayerOpen} onOpenChange={setIsVideoPlayerOpen}>
             <DialogContent className="sm:max-w-[800px] p-0 aspect-video bg-black rounded-lg overflow-hidden">
-              <DialogHeader className="absolute top-0 left-0 right-0 z-10 p-3 bg-gradient-to-b from-black/70 to-transparent">
+              <DialogHeader className="sr-only absolute top-0 left-0 right-0 z-10 p-3 bg-gradient-to-b from-black/70 to-transparent">
                 <DialogTitle className="text-white text-base md:text-lg truncate">{t('lms.courseContent.videoPlayer.nowPlaying', "Now Playing: {{videoTitle}}", { videoTitle: currentVideo.title })}</DialogTitle>
               </DialogHeader>
               <div className="w-full h-full flex items-center justify-center">
@@ -571,3 +571,5 @@ export default function CourseContentPage() {
     </div>
   );
 }
+
+    

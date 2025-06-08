@@ -714,9 +714,32 @@
       "backToContent": "Back to Course Content",
       "backToContentShort": "Back to {{courseName}}",
       "loadingQuiz": "Loading quiz..."
+    },
+    "assignmentPage": {
+      "notFoundTitle": "Assignment Not Found",
+      "notFoundMessage": "The assignment you are looking for could not be found or is unavailable for this course.",
+      "backToContent": "Back to Course Content",
+      "backToContentShort": "Back to {{courseName}} Content",
+      "dueDateLabel": "Due Date:",
+      "descriptionTitle": "Assignment Description",
+      "externalLinkTitle": "External Resources",
+      "externalLinkDescription": "This assignment may require external resources. You can access them here:",
+      "openLink": "Open Link",
+      "submissionTitle": "Submit Your Assignment",
+      "submissionDescription": "Upload your completed assignment file here. Ensure it meets all requirements.",
+      "selectedFileLabel": "Selected file:",
+      "allowedFileTypes": "Allowed file types: PDF, DOC, DOCX, TXT, ZIP. Max size: 5MB (simulated).",
+      "submitButton": "Submit Assignment",
+      "submittingButton": "Submitting...",
+      "noFileTitle": "No File Selected",
+      "noFileDescription": "Please select a file to submit for your assignment.",
+      "submissionSuccessTitle": "Assignment Submitted (Simulated)",
+      "submissionSuccessDescription": "Your assignment '{{assignmentTitle}}' has been successfully submitted."
     }
   },
   "general": {
       "pageTitleSuffix": "ගුරු ගෙදර E-School"
   }
 }
+
+    

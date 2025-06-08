@@ -714,9 +714,32 @@
       "backToContent": "පාඨමාලා අන්තර්ගතය වෙත ආපසු යන්න",
       "backToContentShort": "{{courseName}} වෙත ආපසු යන්න",
       "loadingQuiz": "ප්‍රශ්නාවලිය පූරණය වෙමින්..."
+    },
+    "assignmentPage": {
+      "notFoundTitle": "[SI: Assignment Not Found]",
+      "notFoundMessage": "[SI: The assignment you are looking for could not be found or is unavailable for this course.]",
+      "backToContent": "[SI: Back to Course Content]",
+      "backToContentShort": "[SI: Back to {{courseName}} Content]",
+      "dueDateLabel": "[SI: Due Date:]",
+      "descriptionTitle": "[SI: Assignment Description]",
+      "externalLinkTitle": "[SI: External Resources]",
+      "externalLinkDescription": "[SI: This assignment may require external resources. You can access them here:]",
+      "openLink": "[SI: Open Link]",
+      "submissionTitle": "[SI: Submit Your Assignment]",
+      "submissionDescription": "[SI: Upload your completed assignment file here. Ensure it meets all requirements.]",
+      "selectedFileLabel": "[SI: Selected file:]",
+      "allowedFileTypes": "[SI: Allowed file types: PDF, DOC, DOCX, TXT, ZIP. Max size: 5MB (simulated).]",
+      "submitButton": "[SI: Submit Assignment]",
+      "submittingButton": "[SI: Submitting...]",
+      "noFileTitle": "[SI: No File Selected]",
+      "noFileDescription": "[SI: Please select a file to submit for your assignment.]",
+      "submissionSuccessTitle": "[SI: Assignment Submitted (Simulated)]",
+      "submissionSuccessDescription": "[SI: Your assignment '{{assignmentTitle}}' has been successfully submitted.]"
     }
   },
   "general": {
     "pageTitleSuffix": "ගුරු ගෙදර E-School"
   }
 }
+
+    
