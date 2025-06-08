@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 
 export default function AdminLmsContentPage() {
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 p-6 md:p-8"> {/* Added padding here */}
       <div className="flex items-center justify-between">
         <h1 className="font-headline text-3xl font-bold text-primary">LMS Content Management</h1>
          <Button>

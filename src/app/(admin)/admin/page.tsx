@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 
 export default function AdminDashboardPage() {
   return (
-    <div className="space-y-8">
+    <div className="space-y-8 p-6 md:p-8"> {/* Added padding here */}
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
         <div>
             <h1 className="font-headline text-3xl md:text-4xl font-bold text-primary">Admin Dashboard</h1>

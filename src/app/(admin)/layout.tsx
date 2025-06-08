@@ -1,9 +1,7 @@
 
 import type { ReactNode } from 'react';
 import Link from 'next/link';
-import { Home, Users, BookOpen, Settings, ShieldAlert } from 'lucide-react'; // Added ShieldAlert for Admin
-import { Navbar } from '@/components/layout/navbar'; // Keep main navbar for branding if desired or remove if admin is totally separate
-import { Footer } from '@/components/layout/footer';   // Keep main footer or remove
+import { Home, Users, BookOpen, Settings, ShieldAlert } from 'lucide-react';
 import { ThemeProvider } from "@/components/theme-provider";
 import { LanguageProvider } from '@/contexts/language-context';
 import { PageTransitionManager } from '@/components/layout/page-transition-manager';
@@ -81,7 +79,7 @@ export default function AdminLayout({
                 {/* <Navbar /> */}
                 <div className="flex flex-1">
                     <AdminSidebar />
-                    <main className="flex-grow p-6 md:p-8 bg-muted/40">
+                    <main className="flex-grow bg-muted/40 overflow-y-auto"> {/* Removed padding, added overflow-y-auto */}
                         <PageTransitionManager> {/* Optional: for transitions within admin */}
                             {children}
                         </PageTransitionManager>
