@@ -716,25 +716,25 @@
       "loadingQuiz": "Loading quiz..."
     },
     "assignmentPage": {
-      "notFoundTitle": "Assignment Not Found",
-      "notFoundMessage": "The assignment you are looking for could not be found or is unavailable for this course.",
-      "backToContent": "Back to Course Content",
-      "backToContentShort": "Back to {{courseName}} Content",
-      "dueDateLabel": "Due Date:",
-      "descriptionTitle": "Assignment Description",
-      "externalLinkTitle": "External Resources",
-      "externalLinkDescription": "This assignment may require external resources. You can access them here:",
-      "openLink": "Open Link",
-      "submissionTitle": "Submit Your Assignment",
-      "submissionDescription": "Upload your completed assignment file here. Ensure it meets all requirements.",
-      "selectedFileLabel": "Selected file:",
-      "allowedFileTypes": "Allowed file types: PDF, DOC, DOCX, TXT, ZIP. Max size: 5MB (simulated).",
-      "submitButton": "Submit Assignment",
-      "submittingButton": "Submitting...",
-      "noFileTitle": "No File Selected",
-      "noFileDescription": "Please select a file to submit for your assignment.",
-      "submissionSuccessTitle": "Assignment Submitted (Simulated)",
-      "submissionSuccessDescription": "Your assignment '{{assignmentTitle}}' has been successfully submitted."
+      "notFoundTitle": "[TA: Assignment Not Found]",
+      "notFoundMessage": "[TA: The assignment you are looking for could not be found or is unavailable for this course.]",
+      "backToContent": "[TA: Back to Course Content]",
+      "backToContentShort": "[TA: Back to {{courseName}} Content]",
+      "dueDateLabel": "[TA: Due Date:]",
+      "descriptionTitle": "[TA: Assignment Description]",
+      "externalLinkTitle": "[TA: External Resources]",
+      "externalLinkDescription": "[TA: This assignment may require external resources. You can access them here:]",
+      "openLink": "[TA: Open Link]",
+      "submissionTitle": "[TA: Submit Your Assignment]",
+      "submissionDescription": "[TA: Upload your completed assignment file here. Ensure it meets all requirements.]",
+      "selectedFileLabel": "[TA: Selected file:]",
+      "allowedFileTypes": "[TA: Allowed file types: PDF, DOC, DOCX, TXT, ZIP. Max size: 5MB (simulated).]",
+      "submitButton": "[TA: Submit Assignment]",
+      "submittingButton": "[TA: Submitting...]",
+      "noFileTitle": "[TA: No File Selected]",
+      "noFileDescription": "[TA: Please select a file to submit for your assignment.]",
+      "submissionSuccessTitle": "[TA: Assignment Submitted (Simulated)]",
+      "submissionSuccessDescription": "[TA: Your assignment '{{assignmentTitle}}' has been successfully submitted.]"
     }
   },
   "preferencesModal": {
@@ -745,7 +745,8 @@
     "themeLight": "Light",
     "themeDark": "Dark",
     "themeSystem": "System",
-    "saveButton": "Save Preferences"
+    "saveButton": "Save Preferences",
+    "settingsButtonLabel": "Preferences"
   },
   "general": {
       "pageTitleSuffix": "ගුරු ගෙදර E-School"

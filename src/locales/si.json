@@ -745,7 +745,8 @@
     "themeLight": "ආලෝකය",
     "themeDark": "අඳුරු",
     "themeSystem": "පද්ධතිය",
-    "saveButton": "මනාප සුරකින්න"
+    "saveButton": "මනාප සුරකින්න",
+    "settingsButtonLabel": "සැකසුම්"
   },
   "general": {
     "pageTitleSuffix": "ගුරු ගෙදර E-School"

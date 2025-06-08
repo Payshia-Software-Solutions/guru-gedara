@@ -12,6 +12,8 @@ import { LanguageSwitcher } from '@/components/language-switcher';
 import { useLanguage } from '@/contexts/language-context';
 import Icons from '@/components/icons'; // Import Icons
 
+const OPEN_PREFERENCES_MODAL_EVENT = 'openGuruGedaraPreferencesModal';
+
 const navItemKeys = [
   { href: '/', labelKey: 'nav.home', icon: Icons.Home },
   { href: '/about', labelKey: 'nav.about', icon: Icons.Info },
@@ -35,6 +37,10 @@ export function Navbar() {
   if (pathname?.startsWith('/admin') || pathname?.startsWith('/lms')) { 
     return null;
   }
+
+  const dispatchOpenPreferencesModalEvent = () => {
+    window.dispatchEvent(new CustomEvent(OPEN_PREFERENCES_MODAL_EVENT));
+  };
 
   const NavLinks = ({ onItemClick, inSheet = false }: { onItemClick?: () => void, inSheet?: boolean }) => (
     <>
@@ -88,6 +94,15 @@ export function Navbar() {
           </nav>
           <ThemeToggleButton />
           <LanguageSwitcher />
+          <Button
+            variant="ghost"
+            size="icon"
+            className="h-9 w-9"
+            onClick={dispatchOpenPreferencesModalEvent}
+            aria-label={t('preferencesModal.settingsButtonLabel', 'Open Preferences')}
+          >
+            <Icons.Settings className="h-5 w-5" />
+          </Button>
           <div className="md:hidden">
             <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
               <SheetTrigger asChild>
@@ -111,6 +126,19 @@ export function Navbar() {
                   <nav className="flex flex-col space-y-2">
                     <NavLinks onItemClick={() => setIsMobileMenuOpen(false)} inSheet={true} />
                   </nav>
+                  <div className="mt-6 pt-4 border-t">
+                     <Button
+                        variant="outline"
+                        className="w-full justify-start text-lg py-3"
+                        onClick={() => {
+                          dispatchOpenPreferencesModalEvent();
+                          setIsMobileMenuOpen(false);
+                        }}
+                      >
+                        <Icons.Settings className="mr-2 h-5 w-5" />
+                        {t('preferencesModal.settingsButtonLabel', 'Preferences')}
+                      </Button>
+                  </div>
                 </div>
               </SheetContent>
             </Sheet>
