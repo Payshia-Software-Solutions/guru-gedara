@@ -118,30 +118,30 @@ export default function CourseDetailsPage() {
         <div className="md:col-span-2 space-y-10">
           <AnimatedSection delay={200}>
             <Card className="shadow-xl border-none bg-card">
-              <CardHeader className="p-6">
+              <CardHeader className="p-4 md:p-6">
                 <CardTitle className="font-headline text-2xl md:text-3xl text-primary flex items-center">
                   <Icons.FileText className="w-7 h-7 mr-3 text-accent" />
                   {t('courseDetails.overviewTitle', 'Course Overview')}
                 </CardTitle>
               </CardHeader>
-              <CardContent className="p-6 pt-0 text-foreground/90">
-                <p className="text-lg leading-relaxed">{t(`courseDetails.subjects.${course.id}.detailedDescription`, `Detailed description for ${courseName}. This course provides an in-depth exploration of key concepts, practical applications, and prepares students thoroughly for their G.C.E. O/L examinations. We focus on building a strong foundation and fostering critical thinking skills.`)}</p>
+              <CardContent className="p-4 md:p-6 pt-0 text-foreground/90">
+                <p className="text-base md:text-lg leading-relaxed">{t(`courseDetails.subjects.${course.id}.detailedDescription`, `Detailed description for ${courseName}. This course provides an in-depth exploration of key concepts, practical applications, and prepares students thoroughly for their G.C.E. O/L examinations. We focus on building a strong foundation and fostering critical thinking skills.`)}</p>
               </CardContent>
             </Card>
           </AnimatedSection>
 
           <AnimatedSection delay={400}>
             <Card className="shadow-xl border-none bg-card">
-              <CardHeader className="p-6">
+              <CardHeader className="p-4 md:p-6">
                 <CardTitle className="font-headline text-2xl md:text-3xl text-primary flex items-center">
                   <Icons.Sparkles className="w-7 h-7 mr-3 text-accent" />
                   {t('courseDetails.whatYouWillLearnTitle', 'What You Will Learn')}
                 </CardTitle>
               </CardHeader>
-              <CardContent className="p-6 pt-0 text-foreground/90">
+              <CardContent className="p-4 md:p-6 pt-0 text-foreground/90">
                 <ul className="space-y-3">
                   {learningOutcomes.map((item, index) => (
-                    <li key={index} className="text-lg leading-relaxed flex items-start">
+                    <li key={index} className="text-base md:text-lg leading-relaxed flex items-start">
                        <Icons.CheckCircle2 className="w-5 h-5 text-green-500 mr-3 mt-1 flex-shrink-0" />
                       <span>{item}</span>
                     </li>
@@ -153,16 +153,16 @@ export default function CourseDetailsPage() {
 
           <AnimatedSection delay={600}>
             <Card className="shadow-xl border-none bg-card">
-              <CardHeader className="p-6">
+              <CardHeader className="p-4 md:p-6">
                 <CardTitle className="font-headline text-2xl md:text-3xl text-primary flex items-center">
                   <Icons.ListChecks className="w-7 h-7 mr-3 text-accent" />
                   {t('courseDetails.syllabusTitle', 'Syllabus Outline')}
                 </CardTitle>
               </CardHeader>
-              <CardContent className="p-6 pt-0 text-foreground/90">
+              <CardContent className="p-4 md:p-6 pt-0 text-foreground/90">
                  <ul className="space-y-3">
                   {syllabusHighlights.map((item, index) => (
-                    <li key={index} className="text-lg leading-relaxed flex items-start">
+                    <li key={index} className="text-base md:text-lg leading-relaxed flex items-start">
                       <Icons.ChevronRight className="w-5 h-5 text-accent mr-2 mt-1 flex-shrink-0" />
                       <span>{item}</span>
                     </li>
@@ -178,7 +178,7 @@ export default function CourseDetailsPage() {
 
         <AnimatedSection delay={800} className="space-y-8 md:sticky md:top-24">
           <Card className="shadow-xl border-none bg-card">
-            <CardHeader className="p-6">
+            <CardHeader className="p-4 md:p-6">
                 <Image
                     src={`https://placehold.co/600x400.png`}
                     alt={t('courseDetails.instructorImageAlt', `Instructor for ${courseName}`, { courseName })}
@@ -192,8 +192,8 @@ export default function CourseDetailsPage() {
                 {t('courseDetails.instructorTitle', 'Meet Your Instructor')}
               </CardTitle>
             </CardHeader>
-            <CardContent className="p-6 pt-0 text-foreground/90 space-y-2">
-              <p className="font-semibold text-lg">{t(`courseDetails.subjects.${course.id}.instructorName`, `Mr./Ms. Instructor Name for ${course.id}`)}</p>
+            <CardContent className="p-4 md:p-6 pt-0 text-foreground/90 space-y-2">
+              <p className="font-semibold text-base md:text-lg">{t(`courseDetails.subjects.${course.id}.instructorName`, `Mr./Ms. Instructor Name for ${course.id}`)}</p>
               <p className="text-base leading-relaxed">{t(`courseDetails.subjects.${course.id}.instructorBio`, `An experienced and dedicated educator specializing in ${getCourseName(course.id)}, committed to helping students achieve their academic goals with engaging teaching methods.`)}</p>
               <Badge variant="secondary" className="bg-accent/10 text-accent-foreground dark:text-accent text-sm py-1 px-3">{t(`courseDetails.subjects.${course.id}.instructorExperience`, `10+ Years Experience`)}</Badge>
             </CardContent>
