@@ -15,96 +15,96 @@ body {
   :root {
     /* New Palette - Light Mode */
     --background: 0 0% 100%; /* #FFFFFF */
-    --foreground: 0 0% 20%; /* #333333 */
+    --foreground: 0 0% 14%; /* #242424 */
 
     --card: 0 0% 100%; /* #FFFFFF */
-    --card-foreground: 0 0% 20%; /* #333333 */
+    --card-foreground: 0 0% 14%; /* #242424 */
 
     --popover: 0 0% 100%; /* #FFFFFF */
-    --popover-foreground: 0 0% 20%; /* #333333 */
+    --popover-foreground: 0 0% 14%; /* #242424 */
 
-    --primary: 217 70% 52%; /* #2D6CDF - Royal Blue */
-    --primary-foreground: 0 0% 100%; /* White for contrast */
+    --primary: 199 49% 23%; /* #1f4959 - Dark Desaturated Blue */
+    --primary-foreground: 0 0% 100%; /* White for contrast on #1f4959 */
 
-    --secondary: 210 40% 96%; /* Light gray for subtle backgrounds */
-    --secondary-foreground: 0 0% 25%; /* Darker gray for secondary text */
+    --secondary: 202 19% 96%; /* Very light shade of #5c7c89 */
+    --secondary-foreground: 0 0% 14%; /* #242424 for text on light secondary */
 
-    --muted: 210 40% 92%; /* Lighter gray for muted elements */
-    --muted-foreground: 0 0% 40%; /* Medium gray for muted text */
+    --muted: 202 19% 90%; /* Light shade of #5c7c89 */
+    --muted-foreground: 202 19% 45%; /* #5c7c89 itself for text on muted */
 
-    --accent: 43 94% 48%; /* #F6B800 - Golden Yellow */
-    --accent-foreground: 0 0% 10%; /* Dark text for contrast on yellow */
+    --accent: 202 19% 45%; /* #5c7c89 - Desaturated Blue-Gray */
+    --accent-foreground: 0 0% 100%; /* White for contrast on #5c7c89 */
 
-    --destructive: 0 75% 55%; 
+    --destructive: 0 75% 55%; /* Kept existing red */
     --destructive-foreground: 0 0% 100%;
 
-    --border: 210 20% 88%; 
-    --input: 210 30% 94%; 
-    --ring: 217 70% 55%; /* Primary color for focus rings */
+    --border: 202 19% 85%; /* Light shade derived from #5c7c89 */
+    --input: 202 19% 94%; /* Background of input fields, very light shade from #5c7c89 */
+    --ring: 199 49% 23%; /* #1f4959 - Primary color for focus rings */
 
-    --chart-1: 217 70% 52%; 
-    --chart-2: 43 94% 55%;  /* Brighter accent for charts */
-    --chart-3: 150 60% 45%; 
-    --chart-4: 260 60% 60%; 
-    --chart-5: 340 75% 60%;   
+    --chart-1: 199 49% 23%; /* New Primary */
+    --chart-2: 202 19% 45%; /* New Accent */
+    --chart-3: 150 60% 45%; /* Kept existing green */
+    --chart-4: 260 60% 60%; /* Kept existing purple */
+    --chart-5: 340 75% 60%; /* Kept existing pink/red */
     --radius: 0.5rem;
 
-    /* Sidebar colors (Derived from new palette) */
-    --sidebar-background: 210 30% 97%; /* Very light gray-blue */
-    --sidebar-foreground: 0 0% 20%; 
-    --sidebar-primary: 217 70% 52%; 
-    --sidebar-primary-foreground: 0 0% 100%; 
-    --sidebar-accent: 43 94% 48%; 
-    --sidebar-accent-foreground: 0 0% 10%; 
-    --sidebar-border: 210 20% 85%; 
-    --sidebar-ring: 217 70% 55%; 
+    /* Sidebar colors (Light Mode) */
+    --sidebar-background: 0 0% 100%; /* Matches page background */
+    --sidebar-foreground: 0 0% 14%; /* Matches page foreground */
+    --sidebar-primary: 199 49% 23%; /* Matches page primary */
+    --sidebar-primary-foreground: 0 0% 100%; /* Matches page primary-foreground */
+    --sidebar-accent: 202 19% 45%; /* Matches page accent */
+    --sidebar-accent-foreground: 0 0% 100%; /* Matches page accent-foreground */
+    --sidebar-border: 202 19% 85%; /* Matches page border */
+    --sidebar-ring: 199 49% 23%; /* Matches page ring */
   }
 
   .dark {
     /* New Palette - Dark Mode */
-    --background: 0 0% 7%; /* #121212 - Very Dark Gray */
-    --foreground: 0 0% 88%; /* #E0E0E0 - Light Gray */
+    --background: 211 96% 8%; /* #011425 - Very Dark Blue */
+    --foreground: 0 0% 90%; /* Off-white for softer text */
 
-    --card: 0 0% 10%; /* #1A1A1A - Darker card background */
-    --card-foreground: 0 0% 88%; 
+    --card: 0 0% 14%; /* #242424 - Almost Black */
+    --card-foreground: 0 0% 90%; /* Off-white */
 
-    --popover: 0 0% 10%; 
-    --popover-foreground: 0 0% 88%;
+    --popover: 0 0% 14%; /* #242424 */
+    --popover-foreground: 0 0% 90%;
 
-    --primary: 217 70% 62%; /* #5D8FDE - Lighter Royal Blue */
-    --primary-foreground: 0 0% 100%; /* White */
+    --primary: 199 49% 40%; /* Lighter version of #1f4959 */
+    --primary-foreground: 0 0% 95%; /* Off-white for contrast */
 
-    --secondary: 0 0% 15%; /* Dark gray for subtle backgrounds */
-    --secondary-foreground: 0 0% 80%; /* Lighter gray for secondary text */
+    --secondary: 211 60% 12%; /* Slightly lighter/desaturated than #011425 bg */
+    --secondary-foreground: 202 19% 75%; /* Lighter version of #5c7c89 */
 
-    --muted: 0 0% 20%; /* Darker gray for muted elements */
-    --muted-foreground: 0 0% 60%; /* Medium-light gray for muted text */
+    --muted: 211 50% 15%; /* Slightly lighter than dark secondary */
+    --muted-foreground: 202 19% 55%; /* Mid-light version of #5c7c89 */
 
-    --accent: 43 93% 63%; /* #F7C648 - Slightly desaturated Golden Yellow */
-    --accent-foreground: 0 0% 7%; /* Very dark text for contrast */
+    --accent: 202 19% 50%; /* Mid-light version of #5c7c89 */
+    --accent-foreground: 211 96% 8%; /* #011425 for text on dark accent */
 
-    --destructive: 0 65% 50%; 
-    --destructive-foreground: 0 0% 100%; 
+    --destructive: 0 65% 50%; /* Kept existing red */
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 0 0% 25%; /* Darker border */
-    --input: 0 0% 18%; /* Darker input */
-    --ring: 217 70% 65%; /* Lighter primary for focus rings */
+    --border: 211 50% 20%; /* Darker border */
+    --input: 211 50% 16%; /* Background of input fields in dark mode */
+    --ring: 199 49% 40%; /* Lighter primary for focus rings */
 
-    --chart-1: 217 70% 62%; 
-    --chart-2: 43 93% 68%;  
-    --chart-3: 150 60% 55%; 
-    --chart-4: 260 60% 70%; 
-    --chart-5: 340 75% 70%;   
-    
+    --chart-1: 199 49% 40%; /* New Dark Primary */
+    --chart-2: 202 19% 50%; /* New Dark Accent */
+    --chart-3: 150 60% 55%; /* Kept existing lighter green */
+    --chart-4: 260 60% 70%; /* Kept existing lighter purple */
+    --chart-5: 340 75% 70%; /* Kept existing lighter pink/red */
+
     /* Dark Sidebar colors */
-    --sidebar-background: 0 0% 5%; /* Even darker */
-    --sidebar-foreground: 0 0% 88%; 
-    --sidebar-primary: 217 70% 62%; 
-    --sidebar-primary-foreground: 0 0% 100%; 
-    --sidebar-accent: 43 93% 63%; 
-    --sidebar-accent-foreground: 0 0% 7%; 
-    --sidebar-border: 0 0% 20%; 
-    --sidebar-ring: 217 70% 65%; 
+    --sidebar-background: 0 0% 10%; /* Neutral dark gray, slightly lighter than main bg */
+    --sidebar-foreground: 0 0% 90%; /* Off-white */
+    --sidebar-primary: 199 49% 40%; /* Matches dark page primary */
+    --sidebar-primary-foreground: 0 0% 95%; /* Matches dark page primary-foreground */
+    --sidebar-accent: 202 19% 50%; /* Matches dark page accent */
+    --sidebar-accent-foreground: 211 96% 8%; /* Matches dark page accent-foreground */
+    --sidebar-border: 0 0% 18%; /* Dark border for sidebar */
+    --sidebar-ring: 199 49% 40%; /* Matches dark page ring */
   }
 }
 
