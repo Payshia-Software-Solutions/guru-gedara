@@ -625,9 +625,44 @@
         "preferencesSavedTitle": "Preferences Saved",
         "preferencesSavedDescription": "Your preferences have been updated."
       }
+    },
+    "materials": {
+      "title": "Learning Materials",
+      "titleSinhala": "ඉගෙනුම් ද්‍රව්‍ය",
+      "titleTamil": "கற்றல் உபகரணங்கள்",
+      "subtitle": "Find all your course notes, videos, and additional resources here.",
+      "buttons": {
+        "downloadPdf": "Download PDF",
+        "watchVideo": "Watch Video",
+        "openLink": "Open Link",
+        "viewPresentation": "View Presentation",
+        "accessMaterial": "Access Material"
+      },
+      "item1": {
+        "title": "Science Chapter 1 Notes",
+        "description": "Comprehensive notes for the first chapter of the Science syllabus, covering key concepts and diagrams."
+      },
+      "item2": {
+        "title": "Algebra Problem Solving Techniques (Video)",
+        "description": "A video tutorial explaining various techniques for solving algebraic problems effectively."
+      },
+      "item3": {
+        "title": "Recommended English Grammar Guide (External Link)",
+        "description": "An external website with excellent resources for improving English grammar and vocabulary."
+      },
+      "item4": {
+        "title": "ICT Basics: Presentation Slides",
+        "description": "Slides from the introductory lecture on fundamentals of Information and Communication Technology."
+      },
+      "noMaterials": {
+        "title": "No Learning Materials Available",
+        "description": "There are no learning materials uploaded yet. Please check back later or contact your instructor."
+      }
     }
   },
   "general": {
       "pageTitleSuffix": "ගුරු ගෙදර E-School"
   }
 }
+
+    
