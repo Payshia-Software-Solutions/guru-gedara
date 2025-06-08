@@ -737,9 +737,17 @@
       "submissionSuccessDescription": "[SI: Your assignment '{{assignmentTitle}}' has been successfully submitted.]"
     }
   },
+  "preferencesModal": {
+    "title": "ඔබේ මනාප තෝරන්න",
+    "description": "හොඳම අත්දැකීම සඳහා ඔබ කැමති භාෂාව සහ තේමාව තෝරන්න.",
+    "languageTitle": "භාෂාව",
+    "themeTitle": "තේමාව",
+    "themeLight": "ආලෝකය",
+    "themeDark": "අඳුරු",
+    "themeSystem": "පද්ධතිය",
+    "saveButton": "මනාප සුරකින්න"
+  },
   "general": {
     "pageTitleSuffix": "ගුරු ගෙදර E-School"
   }
 }
-
-    

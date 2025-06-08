@@ -737,9 +737,17 @@
       "submissionSuccessDescription": "[TA: Your assignment '{{assignmentTitle}}' has been successfully submitted.]"
     }
   },
+  "preferencesModal": {
+    "title": "உங்கள் விருப்பங்களைத் தேர்வுசெய்க",
+    "description": "சிறந்த அனுபவத்திற்காக உங்களுக்கு விருப்பமான மொழி மற்றும் தீம் தேர்ந்தெடுக்கவும்.",
+    "languageTitle": "மொழி",
+    "themeTitle": "தீம்",
+    "themeLight": "ஒளி",
+    "themeDark": "இருண்ட",
+    "themeSystem": "கணினி",
+    "saveButton": "விருப்பங்களைச் சேமி"
+  },
   "general": {
       "pageTitleSuffix": "[TA: ගුරු ගෙදර E-School]"
   }
 }
-
-    

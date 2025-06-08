@@ -7,7 +7,8 @@ import { Toaster } from "@/components/ui/toaster";
 import { ThemeProvider } from "@/components/theme-provider";
 import { LanguageProvider } from '@/contexts/language-context';
 import { PageTransitionManager } from '@/components/layout/page-transition-manager';
-import { MainContentWrapper } from '@/components/layout/main-content-wrapper'; // Import the wrapper
+import { MainContentWrapper } from '@/components/layout/main-content-wrapper';
+import { PreferencesModalManager } from '@/components/layout/preferences-modal-manager';
 
 export const metadata: Metadata = {
   title: 'ගුරු ගෙදර E-School | Modern Online Learning Platform',
@@ -35,14 +36,16 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <LanguageProvider>
-            <PageTransitionManager>
-              <div className="flex flex-col min-h-screen"> {/* This outer div helps manage overall page structure (e.g., footer at bottom) */}
-                <Navbar />
-                <MainContentWrapper>{children}</MainContentWrapper> {/* Use the conditional wrapper */}
-                <Footer />
-              </div>
-              <Toaster />
-            </PageTransitionManager>
+            <PreferencesModalManager>
+              <PageTransitionManager>
+                <div className="flex flex-col min-h-screen">
+                  <Navbar />
+                  <MainContentWrapper>{children}</MainContentWrapper>
+                  <Footer />
+                </div>
+                <Toaster />
+              </PageTransitionManager>
+            </PreferencesModalManager>
           </LanguageProvider>
         </ThemeProvider>
       </body>
