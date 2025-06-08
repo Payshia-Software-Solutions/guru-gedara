@@ -490,26 +490,42 @@
             "sampleQuizButton": "Take Chapter 1 Quiz"
         }
       },
+      "month": {
+        "selectMonthTitle": "Select Month",
+        "selectMonthDescription": "Choose a month to view its content or manage payment.",
+        "noMonthsAvailable": "No months available for this course yet.",
+        "status": {
+            "paid": "Paid",
+            "paymentDue": "Payment Due",
+            "notAvailableYet": "Not Yet Available",
+            "unknown": "Unknown"
+        },
+        "contentNotReadyTitle": "Content Not Yet Available",
+        "contentNotReadyMessage": "Content for {{month}} is currently being prepared and will be available soon.",
+        "pleaseSelectMonthTitle": "Select a Month",
+        "pleaseSelectMonthMessage": "Please select a month from the list above to view its content or payment status.",
+        "noContentForMonthTitle": "No Content Yet for {{month}}",
+        "noContentForMonthMessage": "It seems there's no specific content uploaded for {{month}} for this course yet, or the content is not marked as available in the data."
+      },
       "science": {
-        "video1": { "title": "Introduction to Physics", "description": "Understanding fundamental concepts of mechanics and motion." },
-        "video2": { "title": "Chemistry Basics: Atoms & Molecules", "description": "Exploring the building blocks of matter." },
-        "note1": { "title": "Chapter 1: Mechanics Notes (Physics)" },
-        "note2": { "title": "Periodic Table Overview (Chemistry)" },
-        "recording1": { "title": "Live Class: Q&A Session on Biology Unit 1" }
+        "aug": {
+          "video1": { "title": "Science - August: Intro to Physics", "description": "Understanding fundamental concepts of mechanics and motion for August." },
+          "note1": { "title": "Science - August: Chapter 1 Notes" }
+        },
+        "sep": {
+          "video1": { "title": "Science - September: Chemistry Basics", "description": "Exploring the building blocks of matter for September." },
+          "recording1": { "title": "Science - September: Live Q&A Unit 1" }
+        }
       },
       "mathematics": {
-        "video1": { "title": "Algebra Fundamentals Part 1", "description": "Introduction to algebraic expressions and equations." },
-        "video2": { "title": "Geometry: Triangles and Quadrilaterals", "description": "Properties and theorems related to basic shapes." },
-        "note1": { "title": "Algebra Formulas Cheat Sheet" }
+         "aug": { "video1": { "title": "Math - August: Algebra Part 1", "description": "Introduction to algebraic expressions for August." } },
+         "sep": { "note1": { "title": "Math - September: Geometry Formulas" } }
       },
       "english": {
-        "video1": { "title": "English Grammar: Tenses Explained", "description": "A comprehensive guide to understanding English tenses." },
-        "note1": { "title": "Vocabulary List - Unit 1" },
-        "recording1": { "title": "Spoken English Practice Session" }
+         "aug": { "video1": { "title": "English - August: Tenses Explained", "description": "Comprehensive guide to English tenses for August." } }
       },
       "ict": {
-        "video1": { "title": "Introduction to HTML & CSS", "description": "Learn the basics of web development with HTML and CSS." },
-        "note1": { "title": "ICT Glossary of Terms" }
+         "aug": { "video1": { "title": "ICT - August: HTML & CSS Basics", "description": "Learn web development basics for August." } }
       },
       "videoPlayer": {
         "nowPlaying": "Now Playing: {{videoTitle}}",
@@ -524,6 +540,8 @@
       "payment": {
         "accessDeniedTitle": "Access Denied",
         "accessDeniedMessage": "Payment for the current month's content is required to proceed.",
+        "accessDeniedSpecificMonthTitle": "Access Denied for {{month}}",
+        "accessDeniedSpecificMonthMessage": "Payment for {{month}}'s content is required to proceed.",
         "importantNoteTitle": "Important Note",
         "importantNoteMessage": "Access to previous months' content (if applicable and paid for) remains available. This restriction applies to the current month's new materials.",
         "uploadSlipTitle": "Upload Bank Slip",
@@ -535,13 +553,15 @@
         "noFileDescription": "Please select a bank slip image to upload.",
         "slipSubmittedTitle": "Slip Submitted (Simulated)",
         "slipSubmittedDescription": "Your bank slip has been submitted for review. Access will be granted upon verification.",
+        "slipSubmittedSpecificMonthDescription": "Your bank slip for {{month}} has been submitted for review. Access will be granted upon verification.",
         "payOnlineTitle": "Pay Online",
         "payOnlineDescription": "Complete your payment securely online to get instant access.",
         "payNowButton": "Pay Now (Simulate)",
         "payNowInitiatedTitle": "Payment Process Started (Simulated)",
         "payNowInitiatedDescription": "Redirecting to payment gateway...",
         "payNowSuccessTitle": "Payment Successful (Simulated)",
-        "payNowSuccessDescription": "You now have access to the course content."
+        "payNowSuccessDescription": "You now have access to the course content.",
+        "payNowSuccessSpecificMonthDescription": "You now have access to the content for {{month}}."
       }
     }
   },
@@ -549,3 +569,5 @@
       "pageTitleSuffix": "ගුරු ගෙදර E-School"
   }
 }
+
+    

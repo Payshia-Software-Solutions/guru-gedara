@@ -490,26 +490,42 @@
             "sampleQuizButton": "[SI: Take Chapter 1 Quiz]"
         }
       },
+      "month": {
+        "selectMonthTitle": "මාසය තෝරන්න",
+        "selectMonthDescription": "අන්තර්ගතය බැලීමට හෝ ගෙවීම් කළමනාකරණය කිරීමට මාසයක් තෝරන්න.",
+        "noMonthsAvailable": "මෙම පාඨමාලාව සඳහා තවමත් මාස නොමැත.",
+        "status": {
+            "paid": "ගෙවා ඇත",
+            "paymentDue": "ගෙවීම අවශ්‍යයි",
+            "notAvailableYet": "තවම නොමැත",
+            "unknown": "නොදනී"
+        },
+        "contentNotReadyTitle": "අන්තර්ගතය තවම සූදානම් නැත",
+        "contentNotReadyMessage": "{{month}} සඳහා අන්තර්ගතය දැනට සකස් කරමින් පවතින අතර ඉක්මනින් ලබා ගත හැකි වනු ඇත.",
+        "pleaseSelectMonthTitle": "මාසයක් තෝරන්න",
+        "pleaseSelectMonthMessage": "එහි අන්තර්ගතය හෝ ගෙවීම් තත්ත්වය බැලීමට කරුණාකර ඉහත ලැයිස්තුවෙන් මාසයක් තෝරන්න.",
+        "noContentForMonthTitle": "{{month}} සඳහා තවම අන්තර්ගතයක් නොමැත",
+        "noContentForMonthMessage": "මෙම පාඨමාලාව සඳහා {{month}} සඳහා විශේෂිත අන්තර්ගතයක් තවම උඩුගත කර නොමැති බව පෙනේ, නැතහොත් දත්තවල අන්තර්ගතය ලබා ගත හැකි ලෙස සලකුණු කර නොමැත."
+      },
       "science": {
-        "video1": { "title": "[SI: Introduction to Physics]", "description": "[SI: Understanding fundamental concepts of mechanics and motion.]" },
-        "video2": { "title": "[SI: Chemistry Basics: Atoms & Molecules]", "description": "[SI: Exploring the building blocks of matter.]" },
-        "note1": { "title": "[SI: Chapter 1: Mechanics Notes (Physics)]" },
-        "note2": { "title": "[SI: Periodic Table Overview (Chemistry)]" },
-        "recording1": { "title": "[SI: Live Class: Q&A Session on Biology Unit 1]" }
+        "aug": {
+            "video1": { "title": "[SI: Science - August: Intro to Physics]", "description": "[SI: Understanding fundamental concepts of mechanics and motion for August.]" },
+            "note1": { "title": "[SI: Science - August: Chapter 1 Notes]" }
+        },
+        "sep": {
+            "video1": { "title": "[SI: Science - September: Chemistry Basics]", "description": "[SI: Exploring the building blocks of matter for September.]" },
+            "recording1": { "title": "[SI: Science - September: Live Q&A Unit 1]" }
+        }
       },
       "mathematics": {
-        "video1": { "title": "[SI: Algebra Fundamentals Part 1]", "description": "[SI: Introduction to algebraic expressions and equations.]" },
-        "video2": { "title": "[SI: Geometry: Triangles and Quadrilaterals]", "description": "[SI: Properties and theorems related to basic shapes.]" },
-        "note1": { "title": "[SI: Algebra Formulas Cheat Sheet]" }
+        "aug": { "video1": { "title": "[SI: Math - August: Algebra Part 1]", "description": "[SI: Introduction to algebraic expressions for August.]" } },
+        "sep": { "note1": { "title": "[SI: Math - September: Geometry Formulas]" } }
       },
       "english": {
-        "video1": { "title": "[SI: English Grammar: Tenses Explained]", "description": "[SI: A comprehensive guide to understanding English tenses.]" },
-        "note1": { "title": "[SI: Vocabulary List - Unit 1]" },
-        "recording1": { "title": "[SI: Spoken English Practice Session]" }
+        "aug": { "video1": { "title": "[SI: English - August: Tenses Explained]", "description": "[SI: Comprehensive guide to English tenses for August.]" } }
       },
       "ict": {
-        "video1": { "title": "[SI: Introduction to HTML & CSS]", "description": "[SI: Learn the basics of web development with HTML and CSS.]" },
-        "note1": { "title": "[SI: ICT Glossary of Terms]" }
+        "aug": { "video1": { "title": "[SI: ICT - August: HTML & CSS Basics]", "description": "[SI: Learn web development basics for August.]" } }
       },
       "videoPlayer": {
         "nowPlaying": "දැන් වාදනය වන්නේ: {{videoTitle}}",
@@ -524,6 +540,8 @@
       "payment": {
         "accessDeniedTitle": "ප්‍රවේශය ප්‍රතික්ෂේප විය",
         "accessDeniedMessage": "වත්මන් මාසයේ අන්තර්ගතය සඳහා ගෙවීමක් අවශ්‍ය වේ.",
+        "accessDeniedSpecificMonthTitle": "{{month}} සඳහා ප්‍රවේශය ප්‍රතික්ෂේප විය",
+        "accessDeniedSpecificMonthMessage": "{{month}} හි අන්තර්ගතය සඳහා ගෙවීමක් අවශ්‍ය වේ.",
         "importantNoteTitle": "වැදගත් සටහන",
         "importantNoteMessage": "පෙර මාසවල අන්තර්ගතයට (අදාළ නම් සහ ගෙවා ඇත්නම්) ප්‍රවේශය තවමත් පවතී. මෙම සීමාව වත්මන් මාසයේ නව ද්‍රව්‍ය සඳහා අදාළ වේ.",
         "uploadSlipTitle": "බැංකු ස්ලිප්පුව උඩුගත කරන්න",
@@ -535,13 +553,15 @@
         "noFileDescription": "කරුණාකර උඩුගත කිරීමට බැංකු ස්ලිප් රූපයක් තෝරන්න.",
         "slipSubmittedTitle": "ස්ලිප්පුව ඉදිරිපත් කරන ලදී (ආදර්ශනය)",
         "slipSubmittedDescription": "ඔබගේ බැංකු ස්ලිප්පුව සමාලෝචනය සඳහා ඉදිරිපත් කර ඇත. සත්‍යාපනයෙන් පසු ප්‍රවේශය ලබා දෙනු ඇත.",
+        "slipSubmittedSpecificMonthDescription": "{{month}} සඳහා ඔබගේ බැංකු ස්ලිප්පුව සමාලෝචනය සඳහා ඉදිරිපත් කර ඇත. සත්‍යාපනයෙන් පසු ප්‍රවේශය ලබා දෙනු ඇත.",
         "payOnlineTitle": "මාර්ගගතව ගෙවන්න",
         "payOnlineDescription": "ක්ෂණික ප්‍රවේශය ලබා ගැනීමට ඔබගේ ගෙවීම ආරක්ෂිතව මාර්ගගතව සම්පූර්ණ කරන්න.",
         "payNowButton": "දැන් ගෙවන්න (ආදර්ශනය)",
         "payNowInitiatedTitle": "ගෙවීම් ක්‍රියාවලිය ආරම්භ විය (ආදර්ශනය)",
         "payNowInitiatedDescription": "ගෙවීම් දොරටුව වෙත යොමු කරමින්...",
         "payNowSuccessTitle": "ගෙවීම සාර්ථකයි (ආදර්ශනය)",
-        "payNowSuccessDescription": "ඔබට දැන් පාඨමාලා අන්තර්ගතයට ප්‍රවේශය ඇත."
+        "payNowSuccessDescription": "ඔබට දැන් පාඨමාලා අන්තර්ගතයට ප්‍රවේශය ඇත.",
+        "payNowSuccessSpecificMonthDescription": "{{month}} සඳහා වන අන්තර්ගතයට ඔබට දැන් ප්‍රවේශය ඇත."
       }
     }
   },
@@ -549,3 +569,5 @@
     "pageTitleSuffix": "ගුරු ගෙදර E-School"
   }
 }
+
+    

@@ -490,26 +490,42 @@
             "sampleQuizButton": "[TA: Take Chapter 1 Quiz]"
         }
       },
+      "month": {
+        "selectMonthTitle": "மாதத்தைத் தேர்ந்தெடுக்கவும்",
+        "selectMonthDescription": "அதன் உள்ளடக்கத்தைப் பார்க்க அல்லது கட்டணத்தை நிர்வகிக்க ஒரு மாதத்தைத் தேர்ந்தெடுக்கவும்.",
+        "noMonthsAvailable": "இந்த பாடநெறிக்கு இன்னும் மாதங்கள் எதுவும் கிடைக்கவில்லை.",
+        "status": {
+            "paid": "பணம் செலுத்தப்பட்டது",
+            "paymentDue": "பணம் செலுத்த வேண்டும்",
+            "notAvailableYet": "இன்னும் கிடைக்கவில்லை",
+            "unknown": "தெரியவில்லை"
+        },
+        "contentNotReadyTitle": "உள்ளடக்கம் இன்னும் தயாராகவில்லை",
+        "contentNotReadyMessage": "{{month}} மாதத்திற்கான உள்ளடக்கம் தற்போது தயாரிக்கப்பட்டு வருகிறது, விரைவில் கிடைக்கும்.",
+        "pleaseSelectMonthTitle": "ஒரு மாதத்தைத் தேர்ந்தெடுக்கவும்",
+        "pleaseSelectMonthMessage": "அதன் உள்ளடக்கம் அல்லது கட்டண நிலையைப் பார்க்க மேலே உள்ள பட்டியலிலிருந்து ஒரு மாதத்தைத் தேர்ந்தெடுக்கவும்.",
+        "noContentForMonthTitle": "{{month}} மாதத்திற்கு இன்னும் உள்ளடக்கம் இல்லை",
+        "noContentForMonthMessage": "இந்த பாடநெறிக்காக {{month}} மாதத்திற்கு குறிப்பிட்ட உள்ளடக்கம் எதுவும் இன்னும் பதிவேற்றப்படவில்லை அல்லது தரவுகளில் உள்ளடக்கம் கிடைக்கக்கூடியதாக குறிக்கப்படவில்லை என்று தெரிகிறது."
+      },
       "science": {
-        "video1": { "title": "[TA: Introduction to Physics]", "description": "[TA: Understanding fundamental concepts of mechanics and motion.]" },
-        "video2": { "title": "[TA: Chemistry Basics: Atoms & Molecules]", "description": "[TA: Exploring the building blocks of matter.]" },
-        "note1": { "title": "[TA: Chapter 1: Mechanics Notes (Physics)]" },
-        "note2": { "title": "[TA: Periodic Table Overview (Chemistry)]" },
-        "recording1": { "title": "[TA: Live Class: Q&A Session on Biology Unit 1]" }
+        "aug": {
+            "video1": { "title": "[TA: Science - August: Intro to Physics]", "description": "[TA: Understanding fundamental concepts of mechanics and motion for August.]" },
+            "note1": { "title": "[TA: Science - August: Chapter 1 Notes]" }
+        },
+        "sep": {
+            "video1": { "title": "[TA: Science - September: Chemistry Basics]", "description": "[TA: Exploring the building blocks of matter for September.]" },
+            "recording1": { "title": "[TA: Science - September: Live Q&A Unit 1]" }
+        }
       },
       "mathematics": {
-        "video1": { "title": "[TA: Algebra Fundamentals Part 1]", "description": "[TA: Introduction to algebraic expressions and equations.]" },
-        "video2": { "title": "[TA: Geometry: Triangles and Quadrilaterals]", "description": "[TA: Properties and theorems related to basic shapes.]" },
-        "note1": { "title": "[TA: Algebra Formulas Cheat Sheet]" }
+        "aug": { "video1": { "title": "[TA: Math - August: Algebra Part 1]", "description": "[TA: Introduction to algebraic expressions for August.]" } },
+        "sep": { "note1": { "title": "[TA: Math - September: Geometry Formulas]" } }
       },
       "english": {
-        "video1": { "title": "[TA: English Grammar: Tenses Explained]", "description": "[TA: A comprehensive guide to understanding English tenses.]" },
-        "note1": { "title": "[TA: Vocabulary List - Unit 1]" },
-        "recording1": { "title": "[TA: Spoken English Practice Session]" }
+        "aug": { "video1": { "title": "[TA: English - August: Tenses Explained]", "description": "[TA: Comprehensive guide to English tenses for August.]" } }
       },
       "ict": {
-        "video1": { "title": "[TA: Introduction to HTML & CSS]", "description": "[TA: Learn the basics of web development with HTML and CSS.]" },
-        "note1": { "title": "[TA: ICT Glossary of Terms]" }
+        "aug": { "video1": { "title": "[TA: ICT - August: HTML & CSS Basics]", "description": "[TA: Learn web development basics for August.]" } }
       },
       "videoPlayer": {
         "nowPlaying": "இப்போது ஒலிக்கிறது: {{videoTitle}}",
@@ -524,6 +540,8 @@
       "payment": {
         "accessDeniedTitle": "அணுகல் மறுக்கப்பட்டது",
         "accessDeniedMessage": "நடப்பு மாத உள்ளடக்கத்திற்கு பணம் செலுத்துவது அவசியம்.",
+        "accessDeniedSpecificMonthTitle": "{{month}} மாதத்திற்கான அணுகல் மறுக்கப்பட்டது",
+        "accessDeniedSpecificMonthMessage": "{{month}} மாத உள்ளடக்கத்திற்கு பணம் செலுத்துவது அவசியம்.",
         "importantNoteTitle": "முக்கிய குறிப்பு",
         "importantNoteMessage": "முந்தைய மாதங்களின் உள்ளடக்கத்திற்கான அணுகல் (பொருந்தினால் மற்றும் பணம் செலுத்தப்பட்டிருந்தால்) இன்னும் உள்ளது. இந்த கட்டுப்பாடு நடப்பு மாதத்தின் புதிய பொருட்களுக்கு பொருந்தும்.",
         "uploadSlipTitle": "வங்கி பரிமாற்ற சீட்டை பதிவேற்றவும்",
@@ -535,13 +553,15 @@
         "noFileDescription": "பதிவேற்றுவதற்கு வங்கி சீட்டு படத்தை தேர்ந்தெடுக்கவும்.",
         "slipSubmittedTitle": "சீட்டு சமர்ப்பிக்கப்பட்டது (போலி)",
         "slipSubmittedDescription": "உங்கள் வங்கி சீட்டு மதிப்பாய்வுக்காக சமர்ப்பிக்கப்பட்டுள்ளது. சரிபார்ப்புக்குப் பிறகு அணுகல் வழங்கப்படும்.",
+        "slipSubmittedSpecificMonthDescription": "{{month}} மாதத்திற்கான உங்கள் வங்கி சீட்டு மதிப்பாய்வுக்காக சமர்ப்பிக்கப்பட்டுள்ளது. சரிபார்ப்புக்குப் பிறகு அணுகல் வழங்கப்படும்.",
         "payOnlineTitle": "ஆன்லைனில் பணம் செலுத்துங்கள்",
         "payOnlineDescription": "உடனடி அணுகலைப் பெற உங்கள் கட்டணத்தை ஆன்லைனில் பாதுகாப்பாக முடிக்கவும்.",
         "payNowButton": "இப்போது செலுத்து (போலி)",
         "payNowInitiatedTitle": "பணம் செலுத்தும் செயல்முறை தொடங்கியது (போலி)",
         "payNowInitiatedDescription": "பணம் செலுத்தும் நுழைவாயிலுக்கு திருப்பிவிடப்படுகிறது...",
         "payNowSuccessTitle": "பணம் செலுத்துதல் வெற்றி (போலி)",
-        "payNowSuccessDescription": "உங்களுக்கு இப்போது பாட உள்ளடக்கத்திற்கான அணுகல் உள்ளது."
+        "payNowSuccessDescription": "உங்களுக்கு இப்போது பாட உள்ளடக்கத்திற்கான அணுகல் உள்ளது.",
+        "payNowSuccessSpecificMonthDescription": "{{month}} மாதத்திற்கான உள்ளடக்கத்திற்கு உங்களுக்கு இப்போது அணுகல் உள்ளது."
       }
     }
   },
@@ -549,3 +569,5 @@
       "pageTitleSuffix": "[TA: ගුරු ගෙදර E-School]"
   }
 }
+
+    

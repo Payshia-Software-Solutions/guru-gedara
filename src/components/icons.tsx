@@ -57,6 +57,7 @@ import {
   CreditCard,
   ShieldCheck,
   Info,
+  CalendarCheck2, // Added
 } from 'lucide-react';
 
 // Re-exporting icons for easier access
@@ -118,6 +119,10 @@ export const Icons = {
   CreditCard,
   ShieldCheck,
   Info,
+  CalendarCheck2, // Added
 };
 
 export default Icons;
+
+
+    
