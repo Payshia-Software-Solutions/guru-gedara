@@ -3,7 +3,7 @@
 
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
-import React from 'react'; 
+import React from 'react';
 import {
   Sidebar,
   SidebarHeader,
@@ -14,7 +14,7 @@ import {
   SidebarMenuSub,
   SidebarMenuSubButton,
   SidebarFooter,
-  useSidebar, // Import useSidebar
+  useSidebar,
 } from '@/components/ui/sidebar';
 import { Button } from '@/components/ui/button';
 import Icons from '@/components/icons';
@@ -50,7 +50,7 @@ const navItems: NavItem[] = [
     icon: Icons.BookCopy,
     isCollapsible: true,
     subItems: [
-      { href: '/admin/lms-content', label: 'Courses', icon: Icons.BookOpenText }, // Kept as /admin/lms-content
+      { href: '/admin/lms-content', label: 'Courses', icon: Icons.BookOpenText },
       { href: '/admin/course-management/assignments', label: 'Assignments', icon: Icons.ClipboardList },
       { href: '/admin/course-management/quizzes', label: 'Quizzes', icon: Icons.HelpCircle },
       { href: '/admin/course-management/exams', label: 'Exams', icon: Icons.FileCheck2 },
@@ -71,7 +71,7 @@ export function AdminSidebar() {
   const pathname = usePathname();
   const router = useRouter();
   const { t } = useLanguage();
-  const { open: mainSidebarOpen, setOpen: setMainSidebarOpen, isMobile, setOpenMobile } = useSidebar(); // Get main sidebar state
+  const { open: mainSidebarOpen, setOpen: setMainSidebarOpen, isMobile, setOpenMobile } = useSidebar();
 
   const [openSections, setOpenSections] = React.useState<Set<string>>(() => {
     const activeParentSection = navItems.find(item =>
@@ -81,7 +81,6 @@ export function AdminSidebar() {
   });
 
   React.useEffect(() => {
-    // If navigating to a sub-item, ensure its parent section is open
     const activeParentSection = navItems.find(item =>
         item.isCollapsible && item.subItems?.some(sub => sub.href && pathname.startsWith(sub.href))
     );
@@ -94,11 +93,8 @@ export function AdminSidebar() {
     }
   }, [pathname, openSections]);
 
-  // Effect to close open sections when the main sidebar collapses on desktop
   React.useEffect(() => {
     if (!mainSidebarOpen && !isMobile) {
-      // If the main sidebar is collapsed to icon-only on desktop,
-      // reset the open sections so they appear closed when it's re-expanded.
       setOpenSections(new Set());
     }
   }, [mainSidebarOpen, isMobile]);
@@ -110,8 +106,8 @@ export function AdminSidebar() {
     }
     return path && (pathname === path || pathname.startsWith(path + '/'));
   };
-  
-  const handleLinkClick = (isSubItem: boolean = false) => { 
+
+  const handleLinkClick = (isSubItem: boolean = false) => {
     if (isMobile) {
       setOpenMobile(false);
     }
@@ -136,7 +132,7 @@ export function AdminSidebar() {
       <SidebarContent className="p-2">
         <SidebarMenu>
           {navItems.map((item) => (
-            <SidebarMenuItem 
+            <SidebarMenuItem
               key={item.label}
               data-state={item.isCollapsible && openSections.has(item.label) ? 'expanded' : 'closed'}
             >
@@ -156,8 +152,8 @@ export function AdminSidebar() {
                         }
                         return newOpenSections;
                       });
-                      if (!isMobile && !mainSidebarOpen) { 
-                        setMainSidebarOpen(true);        
+                      if (!isMobile && !mainSidebarOpen) {
+                        setMainSidebarOpen(true);
                       }
                     }}
                   >
