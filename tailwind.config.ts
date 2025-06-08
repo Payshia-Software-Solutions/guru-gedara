@@ -11,9 +11,9 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        body: ['PT Sans', 'sans-serif'], // Using PT Sans as primary, good sans-serif
-        headline: ['PT Sans', 'sans-serif'], // Logo text "ගුරු ගෙදර E-School" will use this
-        code: ['Source Code Pro', 'monospace'],
+        body: ['var(--font-pt-sans)', 'sans-serif'], 
+        headline: ['var(--font-pt-sans)', 'sans-serif'], 
+        code: ['var(--font-source-code-pro)', 'monospace'],
       },
       colors: {
         background: 'hsl(var(--background))',
