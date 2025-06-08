@@ -14,7 +14,7 @@ import {
   SidebarMenuSub,
   SidebarMenuSubButton,
   SidebarFooter,
-  useSidebar,
+  useSidebar, // Import useSidebar
 } from '@/components/ui/sidebar';
 import { Button } from '@/components/ui/button';
 import Icons from '@/components/icons';
@@ -50,7 +50,7 @@ const navItems: NavItem[] = [
     icon: Icons.BookCopy,
     isCollapsible: true,
     subItems: [
-      { href: '/admin/lms-content', label: 'Courses', icon: Icons.BookOpenText },
+      { href: '/admin/lms-content', label: 'Courses', icon: Icons.BookOpenText }, // Kept as /admin/lms-content
       { href: '/admin/course-management/assignments', label: 'Assignments', icon: Icons.ClipboardList },
       { href: '/admin/course-management/quizzes', label: 'Quizzes', icon: Icons.HelpCircle },
       { href: '/admin/course-management/exams', label: 'Exams', icon: Icons.FileCheck2 },
@@ -71,7 +71,7 @@ export function AdminSidebar() {
   const pathname = usePathname();
   const router = useRouter();
   const { t } = useLanguage();
-  const { setOpenMobile, isMobile, open, setOpen } = useSidebar();
+  const { open: mainSidebarOpen, setOpen: setMainSidebarOpen, isMobile, setOpenMobile } = useSidebar(); // Get main sidebar state
 
   const [openSections, setOpenSections] = React.useState<Set<string>>(() => {
     const activeParentSection = navItems.find(item =>
@@ -93,6 +93,15 @@ export function AdminSidebar() {
         });
     }
   }, [pathname, openSections]);
+
+  // Effect to close open sections when the main sidebar collapses on desktop
+  React.useEffect(() => {
+    if (!mainSidebarOpen && !isMobile) {
+      // If the main sidebar is collapsed to icon-only on desktop,
+      // reset the open sections so they appear closed when it's re-expanded.
+      setOpenSections(new Set());
+    }
+  }, [mainSidebarOpen, isMobile]);
 
 
   const isActive = (path: string, isParent = false, subItems?: NavItem[]) => {
@@ -147,13 +156,13 @@ export function AdminSidebar() {
                         }
                         return newOpenSections;
                       });
-                      if (!isMobile && !open) { 
-                        setOpen(true);        
+                      if (!isMobile && !mainSidebarOpen) { 
+                        setMainSidebarOpen(true);        
                       }
                     }}
                   >
                     <item.icon />
-                    <span>{item.label}</span>
+                    <span className="group-data-[collapsible=icon]:hidden">{item.label}</span>
                     <Icons.ChevronDown
                       className={cn(
                         'ml-auto h-4 w-4 transition-transform duration-200 group-data-[collapsible=icon]:hidden',
@@ -187,7 +196,7 @@ export function AdminSidebar() {
                 >
                   <Link href={item.href!}>
                     <item.icon />
-                    <span>{item.label}</span>
+                    <span className="group-data-[collapsible=icon]:hidden">{item.label}</span>
                   </Link>
                 </SidebarMenuButton>
               )}
