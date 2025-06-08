@@ -61,11 +61,11 @@ body {
   }
 
   .dark {
-    /* New Palette - Dark Mode */
-    --background: 211 96% 8%; /* #011425 - Very Dark Blue */
+    /* New Palette - Dark Mode (Revised #011425) */
+    --background: 220 25% 10%; /* #0F131A - Very Dark Desaturated Blue-Gray */
     --foreground: 0 0% 90%; /* Off-white for softer text */
 
-    --card: 0 0% 14%; /* #242424 - Almost Black */
+    --card: 0 0% 14%; /* #242424 - Almost Black (Neutral, slightly lighter than new BG) */
     --card-foreground: 0 0% 90%; /* Off-white */
 
     --popover: 0 0% 14%; /* #242424 */
@@ -74,20 +74,20 @@ body {
     --primary: 199 49% 40%; /* Lighter version of #1f4959 */
     --primary-foreground: 0 0% 95%; /* Off-white for contrast */
 
-    --secondary: 211 60% 12%; /* Slightly lighter/desaturated than #011425 bg */
+    --secondary: 220 20% 14%; /* #181C24 - Derived from new background, slightly lighter */
     --secondary-foreground: 202 19% 75%; /* Lighter version of #5c7c89 */
 
-    --muted: 211 50% 15%; /* Slightly lighter than dark secondary */
+    --muted: 220 18% 18%; /* #232730 - Derived from new background, lighter than secondary */
     --muted-foreground: 202 19% 55%; /* Mid-light version of #5c7c89 */
 
     --accent: 202 19% 50%; /* Mid-light version of #5c7c89 */
-    --accent-foreground: 211 96% 8%; /* #011425 for text on dark accent */
+    --accent-foreground: 220 25% 10%; /* #0F131A - New dark background color for text on dark accent */
 
     --destructive: 0 65% 50%; /* Kept existing red */
     --destructive-foreground: 0 0% 100%;
 
-    --border: 211 50% 20%; /* Darker border */
-    --input: 211 50% 16%; /* Background of input fields in dark mode */
+    --border: 220 15% 22%; /* #2D323B - Derived from new background */
+    --input: 220 22% 12%; /* #12161F - Background of input fields in dark mode, derived from new BG */
     --ring: 199 49% 40%; /* Lighter primary for focus rings */
 
     --chart-1: 199 49% 40%; /* New Dark Primary */
@@ -97,13 +97,13 @@ body {
     --chart-5: 340 75% 70%; /* Kept existing lighter pink/red */
 
     /* Dark Sidebar colors */
-    --sidebar-background: 0 0% 10%; /* Neutral dark gray, slightly lighter than main bg */
+    --sidebar-background: 0 0% 10%; /* #1A1A1A - Neutral dark gray, slightly lighter than new main bg */
     --sidebar-foreground: 0 0% 90%; /* Off-white */
     --sidebar-primary: 199 49% 40%; /* Matches dark page primary */
     --sidebar-primary-foreground: 0 0% 95%; /* Matches dark page primary-foreground */
     --sidebar-accent: 202 19% 50%; /* Matches dark page accent */
-    --sidebar-accent-foreground: 211 96% 8%; /* Matches dark page accent-foreground */
-    --sidebar-border: 0 0% 18%; /* Dark border for sidebar */
+    --sidebar-accent-foreground: 220 25% 10%; /* #0F131A - Matches new dark page accent-foreground */
+    --sidebar-border: 0 0% 18%; /* #2E2E2E - Dark border for sidebar */
     --sidebar-ring: 199 49% 40%; /* Matches dark page ring */
   }
 }
