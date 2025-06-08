@@ -251,8 +251,8 @@ export default function CourseContentPage() {
     // This is where you'd typically send results to a backend
     console.log("Quiz completed!", { score, totalPoints, results });
     setIsQuizRunnerOpen(false);
-    setRunningQuiz(null);
-    if (runningQuiz) { // Ensure runningQuiz is not null
+    // setRunningQuiz(null); // Keep runningQuiz set to display its title in results message
+    if (runningQuiz) { 
       setLastQuizResults({score, totalPoints, titleKey: runningQuiz.titleKey});
     }
     toast({
@@ -417,7 +417,7 @@ export default function CourseContentPage() {
               {t('lms.courseContent.month.backToMonthNavigator', "Back to Month Selection")}
             </Button>
           </div>
-           {lastQuizResults && (
+           {lastQuizResults && runningQuiz && (
             <AnimatedSection delay={50} className="mb-8">
                 <Alert variant="default" className="bg-green-50 dark:bg-green-900/30 border-green-300 dark:border-green-700">
                     <Icons.CheckCircle2 className="h-5 w-5 text-green-600 dark:text-green-400" />
@@ -728,6 +728,9 @@ export default function CourseContentPage() {
                 }
             }}>
                 <DialogContent className="p-0 m-0 max-w-none sm:max-w-none w-full h-full sm:h-auto sm:max-h-[95vh] sm:w-[95vw] md:max-w-3xl overflow-y-auto bg-transparent border-0 shadow-none">
+                    <DialogHeader className="sr-only">
+                        <DialogTitle>{t(runningQuiz.titleKey, runningQuiz.titleKey)}</DialogTitle>
+                    </DialogHeader>
                     <QuizRunner quiz={runningQuiz} onClose={() => { setIsQuizRunnerOpen(false); setRunningQuiz(null); }} onQuizComplete={handleQuizCompletion} />
                 </DialogContent>
             </Dialog>
