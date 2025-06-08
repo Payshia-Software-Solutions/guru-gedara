@@ -505,7 +505,8 @@
         "pleaseSelectMonthTitle": "Select a Month",
         "pleaseSelectMonthMessage": "Please select a month from the list above to view its content or payment status.",
         "noContentForMonthTitle": "No Content Yet for {{month}}",
-        "noContentForMonthMessage": "It seems there's no specific content uploaded for {{month}} for this course yet, or the content is not marked as available in the data."
+        "noContentForMonthMessage": "It seems there's no specific content uploaded for {{month}} for this course yet, or the content is not marked as available in the data.",
+        "backToMonthNavigator": "Back to Month Selection"
       },
       "science": {
         "aug": {
@@ -569,5 +570,3 @@
       "pageTitleSuffix": "ගුරු ගෙදර E-School"
   }
 }
-
-    

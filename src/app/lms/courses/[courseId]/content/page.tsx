@@ -19,21 +19,20 @@ import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 
 const placeholderVideoUrl = "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4";
 
-// --- New Data Structures for Monthly Content & Payments ---
 interface MonthlyPaymentStatus {
   paid: boolean;
-  available: boolean; // Is content for this month even released/available?
+  available: boolean;
 }
 
 interface MonthlyContentItem {
   id: string;
   titleKey: string;
-  descriptionKey?: string; // Optional for PDFs, etc.
+  descriptionKey?: string;
   videoUrl?: string;
-  duration?: string; // For videos/recordings
-  fileSize?: string; // For PDFs
-  link?: string; // For PDFs
-  date?: string; // For recordings
+  duration?: string;
+  fileSize?: string;
+  link?: string;
+  date?: string;
 }
 
 interface MonthlyContent {
@@ -43,14 +42,12 @@ interface MonthlyContent {
 }
 
 interface CourseUIDefinitionExtended extends ExternalCourseDefinition {
-  monthlyPayments: Record<string, MonthlyPaymentStatus>; // Key: "Month Year" string e.g., "August 2024"
-  // Add a list of month keys in order, if necessary for display
+  monthlyPayments: Record<string, MonthlyPaymentStatus>;
   monthOrder?: string[];
 }
 
-type AllCourseContentData = Record<string, Record<string, MonthlyContent>>; // { courseId: { "Month Year": MonthlyContent } }
+type AllCourseContentData = Record<string, Record<string, MonthlyContent>>;
 
-// --- Updated Placeholder Data ---
 const coursesDataLocal: CourseUIDefinitionExtended[] = [
   {
     id: 'science', Icon: Icons.Microscope, imageHint: 'science classroom details',
@@ -58,7 +55,7 @@ const coursesDataLocal: CourseUIDefinitionExtended[] = [
     monthlyPayments: {
       'August 2024': { paid: true, available: true },
       'September 2024': { paid: false, available: true },
-      'October 2024': { paid: false, available: false }, // Content not yet available
+      'October 2024': { paid: false, available: false },
     }
   },
   {
@@ -102,7 +99,7 @@ const allCourseContentDataLocal: AllCourseContentData = {
       pdfNotes: [],
       recordings: [ { id: 'sci-sep-rec1', titleKey: 'lms.courseContent.science.sep.recording1.title', date: '2024-09-05', duration: '01:30:00', link: '#', videoUrl: placeholderVideoUrl } ],
     },
-    'October 2024': { // Content not available yet as per monthlyPayments
+    'October 2024': {
       videoLessons: [], pdfNotes: [], recordings: [],
     }
   },
@@ -129,8 +126,6 @@ const allCourseContentDataLocal: AllCourseContentData = {
      'September 2024': { videoLessons: [], pdfNotes: [], recordings: [] }
   }
 };
-// --- End of New Data Structures ---
-
 
 interface VideoToPlay {
   title: string;
@@ -160,12 +155,14 @@ export default function CourseContentPage() {
   const [isVideoPlayerOpen, setIsVideoPlayerOpen] = useState(false);
   const [currentVideo, setCurrentVideo] = useState<VideoToPlay | null>(null);
   const [isClient, setIsClient] = useState(false);
-  
+
   const [selectedMonth, setSelectedMonth] = useState<string | null>(null);
   const [courseMonthlyPayments, setCourseMonthlyPayments] = useState<Record<string, MonthlyPaymentStatus> | null>(null);
-  
+
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
   const [isSubmittingSlip, setIsSubmittingSlip] = useState(false);
+
+  const [viewState, setViewState] = useState<'selectingMonth' | 'viewingMonthContent'>('selectingMonth');
 
   const courseDetails = useMemo(() => coursesDataLocal.find(c => c.id === courseId), [courseId]);
   const courseContentForCourse = useMemo(() => allCourseContentDataLocal[courseId] || {}, [courseId]);
@@ -174,17 +171,19 @@ export default function CourseContentPage() {
     setIsClient(true);
     if (courseDetails) {
       setCourseMonthlyPayments(courseDetails.monthlyPayments);
-      // Auto-select the first available month if none is selected
-      if (!selectedMonth && courseDetails.monthOrder && courseDetails.monthOrder.length > 0) {
+      if (viewState === 'selectingMonth' && !selectedMonth && courseDetails.monthOrder && courseDetails.monthOrder.length > 0) {
          const firstAvailableMonth = courseDetails.monthOrder.find(month => courseDetails.monthlyPayments[month]?.available);
-         if (firstAvailableMonth) setSelectedMonth(firstAvailableMonth);
-         else if (courseDetails.monthOrder.length > 0) setSelectedMonth(courseDetails.monthOrder[0]); // fallback to first month even if not available
+         if (firstAvailableMonth) {
+            setSelectedMonth(firstAvailableMonth);
+         } else if (courseDetails.monthOrder.length > 0) {
+            setSelectedMonth(courseDetails.monthOrder[0]);
+         }
       }
     } else {
       setCourseMonthlyPayments(null);
       setSelectedMonth(null);
     }
-  }, [courseId, courseDetails, selectedMonth]);
+  }, [courseId, courseDetails, selectedMonth, viewState]);
 
 
   const hasAccessForSelectedMonth = useMemo(() => {
@@ -202,6 +201,14 @@ export default function CourseContentPage() {
     return courseContentForCourse[selectedMonth] || { videoLessons: [], pdfNotes: [], recordings: [] };
   }, [selectedMonth, courseContentForCourse]);
 
+  const handleMonthSelect = (month: string) => {
+    setSelectedMonth(month);
+    setViewState('viewingMonthContent');
+  };
+
+  const handleBackToMonthNavigator = () => {
+    setViewState('selectingMonth');
+  };
 
   const handleWatchVideo = (titleKey: string, videoUrl?: string) => {
     if (videoUrl) {
@@ -252,19 +259,19 @@ export default function CourseContentPage() {
       variant: "default",
     });
     await new Promise(resolve => setTimeout(resolve, 2500));
-    
+
     setCourseMonthlyPayments(prev => {
       if (!prev || !selectedMonth) return prev;
       return {
         ...prev,
-        [selectedMonth]: { ...prev[selectedMonth], paid: true, available: true } // Mark as paid and ensure available
+        [selectedMonth]: { ...(prev[selectedMonth] || { paid: false, available: true }), paid: true, available: true }
       };
     });
 
     toast({
       title: t('lms.courseContent.payment.payNowSuccessTitle', "Payment Successful (Simulated)"),
       description: t('lms.courseContent.payment.payNowSuccessSpecificMonthDescription', "You now have access to the content for {{month}}.", {month: selectedMonth}),
-      variant: "default", 
+      variant: "default",
     });
   };
 
@@ -328,43 +335,50 @@ export default function CourseContentPage() {
         </div>
       </AnimatedSection>
 
-      {/* Month Selection Section */}
-      <AnimatedSection delay={100}>
-        <Card className="shadow-lg border-none bg-card">
-          <CardHeader>
-            <CardTitle className="font-headline text-xl md:text-2xl text-primary flex items-center">
-              <Icons.CalendarDays className="w-6 h-6 mr-3 text-accent"/>
-              {t('lms.courseContent.month.selectMonthTitle', "Select Month")}
-            </CardTitle>
-            <CardDescription>{t('lms.courseContent.month.selectMonthDescription', "Choose a month to view its content or manage payment.")}</CardDescription>
-          </CardHeader>
-          <CardContent className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 p-4 md:p-6">
-            {(courseDetails.monthOrder && courseDetails.monthOrder.length > 0) ? courseDetails.monthOrder.map(month => (
-              <Button
-                key={month}
-                variant={selectedMonth === month ? "default" : "outline"}
-                className={`flex flex-col items-start justify-between p-3 h-auto text-left transition-all duration-200 ease-in-out transform hover:scale-105
-                  ${selectedMonth === month ? 'ring-2 ring-primary shadow-lg' : 'hover:bg-muted/20'}`}
-                onClick={() => setSelectedMonth(month)}
-              >
-                <span className="font-semibold text-base mb-1">{month}</span>
-                <Badge 
-                  variant={courseMonthlyPayments?.[month]?.paid && courseMonthlyPayments?.[month]?.available ? "default" : 
-                           (!courseMonthlyPayments?.[month]?.available ? "secondary" : "destructive")}
-                  className="text-xs py-0.5 px-1.5"
+      {viewState === 'selectingMonth' && (
+        <AnimatedSection delay={100}>
+          <Card className="shadow-lg border-none bg-card">
+            <CardHeader>
+              <CardTitle className="font-headline text-xl md:text-2xl text-primary flex items-center">
+                <Icons.CalendarDays className="w-6 h-6 mr-3 text-accent"/>
+                {t('lms.courseContent.month.selectMonthTitle', "Select Month")}
+              </CardTitle>
+              <CardDescription>{t('lms.courseContent.month.selectMonthDescription', "Choose a month to view its content or manage payment.")}</CardDescription>
+            </CardHeader>
+            <CardContent className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 p-4 md:p-6">
+              {(courseDetails.monthOrder && courseDetails.monthOrder.length > 0) ? courseDetails.monthOrder.map(month => (
+                <Button
+                  key={month}
+                  variant={selectedMonth === month ? "default" : "outline"}
+                  className={`flex flex-col items-start justify-between p-3 h-auto text-left transition-all duration-200 ease-in-out transform hover:scale-105
+                    ${selectedMonth === month ? 'ring-2 ring-primary shadow-lg' : 'hover:bg-muted/20'}`}
+                  onClick={() => handleMonthSelect(month)}
                 >
-                  {getMonthPaymentStatusText(month)}
-                </Badge>
-              </Button>
-            )) : <p className="col-span-full text-center text-muted-foreground p-4">{t('lms.courseContent.month.noMonthsAvailable', "No months available for this course yet.")}</p>}
-          </CardContent>
-        </Card>
-      </AnimatedSection>
+                  <span className="font-semibold text-base mb-1">{month}</span>
+                  <Badge
+                    variant={courseMonthlyPayments?.[month]?.paid && courseMonthlyPayments?.[month]?.available ? "default" :
+                             (!courseMonthlyPayments?.[month]?.available ? "secondary" : "destructive")}
+                    className="text-xs py-0.5 px-1.5"
+                  >
+                    {getMonthPaymentStatusText(month)}
+                  </Badge>
+                </Button>
+              )) : <p className="col-span-full text-center text-muted-foreground p-4">{t('lms.courseContent.month.noMonthsAvailable', "No months available for this course yet.")}</p>}
+            </CardContent>
+          </Card>
+        </AnimatedSection>
+      )}
 
-      {/* Content or Payment Prompt Section */}
-      {selectedMonth ? (
-        !isContentAvailableForSelectedMonth ? (
-          <AnimatedSection delay={200}>
+      {viewState === 'viewingMonthContent' && selectedMonth && (
+        <AnimatedSection delay={100}>
+          <div className="mb-6">
+            <Button variant="outline" onClick={handleBackToMonthNavigator} className="text-sm hover:bg-accent/10 transition-colors">
+              <Icons.ArrowLeft className="mr-2 h-4 w-4" />
+              {t('lms.courseContent.month.backToMonthNavigator', "Back to Month Selection")}
+            </Button>
+          </div>
+
+          {!isContentAvailableForSelectedMonth ? (
             <Card className="shadow-xl border-none bg-card p-6 md:p-8 text-center">
               <Icons.Info className="w-12 h-12 text-accent mx-auto mb-4" />
               <CardTitle className="font-headline text-2xl md:text-3xl text-accent">
@@ -374,9 +388,7 @@ export default function CourseContentPage() {
                 {t('lms.courseContent.month.contentNotReadyMessage', "Content for {{month}} is currently being prepared and will be available soon.", { month: selectedMonth })}
               </CardDescription>
             </Card>
-          </AnimatedSection>
-        ) : !hasAccessForSelectedMonth ? (
-          <AnimatedSection delay={200}>
+          ) : !hasAccessForSelectedMonth ? (
             <Card className="shadow-xl border-none bg-card p-6 md:p-8">
               <CardHeader className="p-0 mb-6 text-center">
                 <Icons.Lock className="w-12 h-12 text-destructive mx-auto mb-4" />
@@ -398,7 +410,7 @@ export default function CourseContentPage() {
                 <div className="grid md:grid-cols-2 gap-6">
                   <Card className="bg-background/50 dark:bg-card/70 p-6">
                     <CardTitle className="text-xl text-primary mb-3 flex items-center">
-                      <Icons.UploadCloud className="mr-2 h-6 w-6 text-primary" /> 
+                      <Icons.UploadCloud className="mr-2 h-6 w-6 text-primary" />
                       {t('lms.courseContent.payment.uploadSlipTitle', "Upload Bank Slip")}
                     </CardTitle>
                     <CardDescription className="text-muted-foreground mb-4">
@@ -411,7 +423,7 @@ export default function CourseContentPage() {
                     </Button>
                   </Card>
                   <Card className="bg-background/50 dark:bg-card/70 p-6 flex flex-col justify-center items-center text-center">
-                    <Icons.CreditCard className="mr-2 h-8 w-8 text-primary mb-3" /> 
+                    <Icons.CreditCard className="mr-2 h-8 w-8 text-primary mb-3" />
                     <CardTitle className="text-xl text-primary mb-3">{t('lms.courseContent.payment.payOnlineTitle', "Pay Online")}</CardTitle>
                     <CardDescription className="text-muted-foreground mb-4">{t('lms.courseContent.payment.payOnlineDescription', "Complete your payment securely online to get instant access.")}</CardDescription>
                     <Button onClick={handlePayNow} className="w-full bg-green-600 hover:bg-green-700 text-white">
@@ -421,149 +433,154 @@ export default function CourseContentPage() {
                 </div>
               </CardContent>
             </Card>
-          </AnimatedSection>
-        ) : contentForSelectedMonth ? (
-          <>
-            <Accordion type="multiple" defaultValue={['videos', 'notes', 'recordings']} className="w-full space-y-6">
-              {contentForSelectedMonth.videoLessons.length > 0 && (
-                <AnimatedSection delay={200}>
-                  <Card className="shadow-lg border-none bg-card overflow-hidden">
-                    <AccordionItem value="videos" className="border-b-0">
-                      <AccordionTrigger className="px-6 py-4 hover:bg-muted/10">
-                        <div className="flex items-center space-x-3">
-                          <Icons.PlayCircle className="w-7 h-7 text-accent" />
-                          <h2 className="font-headline text-xl md:text-2xl text-primary">{t('lms.courseContent.sections.videos.title', "Video Lessons")}</h2>
-                        </div>
-                      </AccordionTrigger>
-                      <AccordionContent className="px-6 pb-6 pt-2">
-                        <ul className="space-y-4">
-                          {contentForSelectedMonth.videoLessons.map(video => (
-                            <li key={video.id} className="p-4 border rounded-lg bg-background/50 dark:bg-card/70 hover:shadow-md transition-shadow">
-                              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
-                                <div>
-                                  <h3 className="text-lg font-semibold text-foreground">{t(video.titleKey, video.titleKey)}</h3>
-                                  {video.descriptionKey && <p className="text-sm text-muted-foreground line-clamp-2">{t(video.descriptionKey, video.descriptionKey)}</p>}
-                                </div>
-                                <div className="flex items-center space-x-3 mt-3 sm:mt-0">
-                                  {video.duration && <Badge variant="outline" className="text-xs">{video.duration}</Badge>}
-                                  <Button size="sm" variant="ghost" className="text-primary hover:bg-primary/10" onClick={() => handleWatchVideo(video.titleKey, video.videoUrl)}>
-                                    <Icons.Play className="mr-2 h-4 w-4" /> {t('lms.courseContent.watchButton', "Watch")}
-                                  </Button>
-                                </div>
-                              </div>
-                            </li>
-                          ))}
-                        </ul>
-                      </AccordionContent>
-                    </AccordionItem>
-                  </Card>
-                </AnimatedSection>
-              )}
-              {contentForSelectedMonth.pdfNotes.length > 0 && (
-                <AnimatedSection delay={300}>
+          ) : contentForSelectedMonth ? (
+            <>
+              <Accordion type="multiple" defaultValue={['videos', 'notes', 'recordings']} className="w-full space-y-6">
+                {contentForSelectedMonth.videoLessons.length > 0 && (
+                  <AnimatedSection delay={0}>
                     <Card className="shadow-lg border-none bg-card overflow-hidden">
-                    <AccordionItem value="notes" className="border-b-0">
-                      <AccordionTrigger className="px-6 py-4 hover:bg-muted/10">
-                        <div className="flex items-center space-x-3">
-                          <Icons.FileText className="w-7 h-7 text-accent" />
-                          <h2 className="font-headline text-xl md:text-2xl text-primary">{t('lms.courseContent.sections.notes.title', "PDF Notes & Materials")}</h2>
-                        </div>
-                      </AccordionTrigger>
-                      <AccordionContent className="px-6 pb-6 pt-2">
-                        <ul className="space-y-4">
-                          {contentForSelectedMonth.pdfNotes.map(note => (
-                            <li key={note.id} className="p-4 border rounded-lg bg-background/50 dark:bg-card/70 hover:shadow-md transition-shadow">
-                              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
-                                <h3 className="text-lg font-semibold text-foreground">{t(note.titleKey, note.titleKey)}</h3>
-                                <div className="flex items-center space-x-3 mt-3 sm:mt-0">
-                                  {note.fileSize && <Badge variant="outline" className="text-xs">{note.fileSize}</Badge>}
-                                  <Button size="sm" variant="ghost" asChild className="text-primary hover:bg-primary/10">
-                                    <a href={note.link || '#'} target="_blank" rel="noopener noreferrer">
-                                      <Icons.Download className="mr-2 h-4 w-4" /> {t('lms.courseContent.downloadButton', "Download")}
-                                    </a>
-                                  </Button>
+                      <AccordionItem value="videos" className="border-b-0">
+                        <AccordionTrigger className="px-6 py-4 hover:bg-muted/10">
+                          <div className="flex items-center space-x-3">
+                            <Icons.PlayCircle className="w-7 h-7 text-accent" />
+                            <h2 className="font-headline text-xl md:text-2xl text-primary">{t('lms.courseContent.sections.videos.title', "Video Lessons")}</h2>
+                          </div>
+                        </AccordionTrigger>
+                        <AccordionContent className="px-6 pb-6 pt-2">
+                          <ul className="space-y-4">
+                            {contentForSelectedMonth.videoLessons.map(video => (
+                              <li key={video.id} className="p-4 border rounded-lg bg-background/50 dark:bg-card/70 hover:shadow-md transition-shadow">
+                                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
+                                  <div>
+                                    <h3 className="text-lg font-semibold text-foreground">{t(video.titleKey, video.titleKey)}</h3>
+                                    {video.descriptionKey && <p className="text-sm text-muted-foreground line-clamp-2">{t(video.descriptionKey, video.descriptionKey)}</p>}
+                                  </div>
+                                  <div className="flex items-center space-x-3 mt-3 sm:mt-0">
+                                    {video.duration && <Badge variant="outline" className="text-xs">{video.duration}</Badge>}
+                                    <Button size="sm" variant="ghost" className="text-primary hover:bg-primary/10" onClick={() => handleWatchVideo(video.titleKey, video.videoUrl)}>
+                                      <Icons.Play className="mr-2 h-4 w-4" /> {t('lms.courseContent.watchButton', "Watch")}
+                                    </Button>
+                                  </div>
                                 </div>
-                              </div>
-                            </li>
-                          ))}
-                        </ul>
-                      </AccordionContent>
-                    </AccordionItem>
-                  </Card>
-                </AnimatedSection>
-              )}
-              {contentForSelectedMonth.recordings.length > 0 && (
-                <AnimatedSection delay={400}>
-                  <Card className="shadow-lg border-none bg-card overflow-hidden">
-                    <AccordionItem value="recordings" className="border-b-0">
-                      <AccordionTrigger className="px-6 py-4 hover:bg-muted/10">
-                        <div className="flex items-center space-x-3">
-                          <Icons.Video className="w-7 h-7 text-accent" />
-                          <h2 className="font-headline text-xl md:text-2xl text-primary">{t('lms.courseContent.sections.recordings.title', "Class Recordings")}</h2>
-                        </div>
-                      </AccordionTrigger>
-                      <AccordionContent className="px-6 pb-6 pt-2">
-                        <ul className="space-y-4">
-                          {contentForSelectedMonth.recordings.map(recording => (
-                            <li key={recording.id} className="p-4 border rounded-lg bg-background/50 dark:bg-card/70 hover:shadow-md transition-shadow">
-                              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
-                                <div>
-                                  <h3 className="text-lg font-semibold text-foreground">{t(recording.titleKey, recording.titleKey)}</h3>
-                                  {recording.date && recording.duration && <p className="text-xs text-muted-foreground">{t('lms.courseContent.recordedOn', "Recorded on:")} {recording.date} &bull; {t('lms.courseContent.duration', "Duration:")} {recording.duration}</p>}
+                              </li>
+                            ))}
+                          </ul>
+                        </AccordionContent>
+                      </AccordionItem>
+                    </Card>
+                  </AnimatedSection>
+                )}
+                {contentForSelectedMonth.pdfNotes.length > 0 && (
+                  <AnimatedSection delay={50}>
+                      <Card className="shadow-lg border-none bg-card overflow-hidden">
+                      <AccordionItem value="notes" className="border-b-0">
+                        <AccordionTrigger className="px-6 py-4 hover:bg-muted/10">
+                          <div className="flex items-center space-x-3">
+                            <Icons.FileText className="w-7 h-7 text-accent" />
+                            <h2 className="font-headline text-xl md:text-2xl text-primary">{t('lms.courseContent.sections.notes.title', "PDF Notes & Materials")}</h2>
+                          </div>
+                        </AccordionTrigger>
+                        <AccordionContent className="px-6 pb-6 pt-2">
+                          <ul className="space-y-4">
+                            {contentForSelectedMonth.pdfNotes.map(note => (
+                              <li key={note.id} className="p-4 border rounded-lg bg-background/50 dark:bg-card/70 hover:shadow-md transition-shadow">
+                                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
+                                  <h3 className="text-lg font-semibold text-foreground">{t(note.titleKey, note.titleKey)}</h3>
+                                  <div className="flex items-center space-x-3 mt-3 sm:mt-0">
+                                    {note.fileSize && <Badge variant="outline" className="text-xs">{note.fileSize}</Badge>}
+                                    <Button size="sm" variant="ghost" asChild className="text-primary hover:bg-primary/10">
+                                      <a href={note.link || '#'} target="_blank" rel="noopener noreferrer">
+                                        <Icons.Download className="mr-2 h-4 w-4" /> {t('lms.courseContent.downloadButton', "Download")}
+                                      </a>
+                                    </Button>
+                                  </div>
                                 </div>
-                                 <Button size="sm" variant="ghost" className="mt-3 sm:mt-0 text-primary hover:bg-primary/10" onClick={() => handleWatchVideo(recording.titleKey, recording.videoUrl)}>
-                                    <Icons.Play className="mr-2 h-4 w-4" /> {t('lms.courseContent.watchButton', "Watch")}
-                                  </Button>
-                              </div>
-                            </li>
-                          ))}
-                        </ul>
-                      </AccordionContent>
-                    </AccordionItem>
+                              </li>
+                            ))}
+                          </ul>
+                        </AccordionContent>
+                      </AccordionItem>
+                    </Card>
+                  </AnimatedSection>
+                )}
+                {contentForSelectedMonth.recordings.length > 0 && (
+                  <AnimatedSection delay={100}>
+                    <Card className="shadow-lg border-none bg-card overflow-hidden">
+                      <AccordionItem value="recordings" className="border-b-0">
+                        <AccordionTrigger className="px-6 py-4 hover:bg-muted/10">
+                          <div className="flex items-center space-x-3">
+                            <Icons.Video className="w-7 h-7 text-accent" />
+                            <h2 className="font-headline text-xl md:text-2xl text-primary">{t('lms.courseContent.sections.recordings.title', "Class Recordings")}</h2>
+                          </div>
+                        </AccordionTrigger>
+                        <AccordionContent className="px-6 pb-6 pt-2">
+                          <ul className="space-y-4">
+                            {contentForSelectedMonth.recordings.map(recording => (
+                              <li key={recording.id} className="p-4 border rounded-lg bg-background/50 dark:bg-card/70 hover:shadow-md transition-shadow">
+                                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
+                                  <div>
+                                    <h3 className="text-lg font-semibold text-foreground">{t(recording.titleKey, recording.titleKey)}</h3>
+                                    {recording.date && recording.duration && <p className="text-xs text-muted-foreground">{t('lms.courseContent.recordedOn', "Recorded on:")} {recording.date} &bull; {t('lms.courseContent.duration', "Duration:")} {recording.duration}</p>}
+                                  </div>
+                                   <Button size="sm" variant="ghost" className="mt-3 sm:mt-0 text-primary hover:bg-primary/10" onClick={() => handleWatchVideo(recording.titleKey, recording.videoUrl)}>
+                                      <Icons.Play className="mr-2 h-4 w-4" /> {t('lms.courseContent.watchButton', "Watch")}
+                                    </Button>
+                                </div>
+                              </li>
+                            ))}
+                          </ul>
+                        </AccordionContent>
+                      </AccordionItem>
+                    </Card>
+                  </AnimatedSection>
+                )}
+                 <AnimatedSection delay={150}>
+                  <Card className="shadow-lg border-none bg-card">
+                      <CardHeader className="p-6">
+                          <div className="flex items-center space-x-3"> <Icons.ListChecks className="w-7 h-7 text-accent" />
+                              <CardTitle className="font-headline text-xl md:text-2xl text-primary">{t('lms.courseContent.sections.quizzes.title', "Quizzes & Assignments")}</CardTitle>
+                          </div>
+                           <CardDescription className="text-muted-foreground pt-1">{t('lms.courseContent.sections.quizzes.description', "Test your knowledge and complete assignments.")}</CardDescription>
+                      </CardHeader>
+                      <CardContent className="p-6 pt-0">
+                           <p className="text-muted-foreground text-center py-4">{t('lms.courseContent.sections.quizzes.empty', "Quizzes and assignments will appear here. (Coming Soon)")}</p>
+                      </CardContent>
                   </Card>
-                </AnimatedSection>
-              )}
-               <AnimatedSection delay={500}>
-                <Card className="shadow-lg border-none bg-card">
-                    <CardHeader className="p-6">
-                        <div className="flex items-center space-x-3"> <Icons.ListChecks className="w-7 h-7 text-accent" />
-                            <CardTitle className="font-headline text-xl md:text-2xl text-primary">{t('lms.courseContent.sections.quizzes.title', "Quizzes & Assignments")}</CardTitle>
-                        </div>
-                         <CardDescription className="text-muted-foreground pt-1">{t('lms.courseContent.sections.quizzes.description', "Test your knowledge and complete assignments.")}</CardDescription>
-                    </CardHeader>
-                    <CardContent className="p-6 pt-0">
-                         <p className="text-muted-foreground text-center py-4">{t('lms.courseContent.sections.quizzes.empty', "Quizzes and assignments will appear here. (Coming Soon)")}</p>
-                    </CardContent>
-                </Card>
-               </AnimatedSection>
-            </Accordion>
-          </>
-        ) : (
-          <AnimatedSection delay={200}>
-            <Card className="shadow-xl border-none bg-card p-6 md:p-8 text-center">
-              <Icons.Info className="w-12 h-12 text-accent mx-auto mb-4" />
-              <CardTitle className="font-headline text-2xl md:text-3xl text-accent">
-                {t('lms.courseContent.month.noContentForMonthTitle', "No Content Yet for {{month}}", {month: selectedMonth})}
-              </CardTitle>
-              <CardDescription className="text-muted-foreground text-lg">
-                {t('lms.courseContent.month.noContentForMonthMessage', "It seems there's no specific content uploaded for {{month}} for this course yet, or the content is not marked as available in the data.", {month: selectedMonth})}
-              </CardDescription>
-            </Card>
-          </AnimatedSection>
-        )
-      ) : (
-        <AnimatedSection delay={200}>
+                 </AnimatedSection>
+              </Accordion>
+            </>
+          ) : (
+            <AnimatedSection delay={0}>
+              <Card className="shadow-xl border-none bg-card p-6 md:p-8 text-center">
+                <Icons.Info className="w-12 h-12 text-accent mx-auto mb-4" />
+                <CardTitle className="font-headline text-2xl md:text-3xl text-accent">
+                  {t('lms.courseContent.month.noContentForMonthTitle', "No Content Yet for {{month}}", {month: selectedMonth})}
+                </CardTitle>
+                <CardDescription className="text-muted-foreground text-lg">
+                  {t('lms.courseContent.month.noContentForMonthMessage', "It seems there's no specific content uploaded for {{month}} for this course yet, or the content is not marked as available in the data.", {month: selectedMonth})}
+                </CardDescription>
+              </Card>
+            </AnimatedSection>
+          )
+        )}
+
+      {viewState === 'viewingMonthContent' && !selectedMonth && (
+         <AnimatedSection delay={100}>
             <Card className="shadow-xl border-none bg-card p-6 md:p-8 text-center">
               <Icons.CalendarCheck2 className="w-12 h-12 text-primary mx-auto mb-4" />
               <CardTitle className="font-headline text-2xl md:text-3xl text-primary">
                 {t('lms.courseContent.month.pleaseSelectMonthTitle', "Select a Month")}
               </CardTitle>
               <CardDescription className="text-muted-foreground text-lg">
-                {t('lms.courseContent.month.pleaseSelectMonthMessage', "Please select a month from the list above to view its content or payment status.")}
+                {t('lms.courseContent.month.pleaseSelectMonthMessage', "Something went wrong. Please go back and select a month.")}
               </CardDescription>
+              <Button onClick={handleBackToMonthNavigator} className="mt-6">
+                {t('lms.courseContent.month.backToMonthNavigator', "Back to Month Selection")}
+              </Button>
             </Card>
           </AnimatedSection>
       )}
+
 
         {currentVideo && (
           <Dialog open={isVideoPlayerOpen} onOpenChange={setIsVideoPlayerOpen}>
@@ -601,6 +618,5 @@ export default function CourseContentPage() {
     </div>
   );
 }
-
 
     
