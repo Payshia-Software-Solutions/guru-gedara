@@ -29,7 +29,7 @@ import {
   ArrowLeft,
   ArrowRight,
   FileText,
-  ListChecks, // Added ListChecks
+  ListChecks, 
   UserCircle,
   Edit3,
   Quote,
@@ -54,7 +54,7 @@ import {
   Play,
   Lock,
   UploadCloud,
-  CreditCard,
+  CreditCard, // Already exists, will be used for Student Payments
   ShieldCheck,
   Info,
   CalendarCheck2,
@@ -62,11 +62,18 @@ import {
   ExternalLink,
   X,
   ShieldAlert,
-  UserCheck, // Added UserCheck
+  UserCheck, 
   PlusCircle,
   Trash2,
   Eye,
-  MoreHorizontal
+  MoreHorizontal,
+  BookCopy, // For Course Management -> Courses
+  ClipboardList, // For Course Management -> Assignments
+  HelpCircle, // For Course Management -> Quizzes
+  FileCheck2, // For Course Management -> Exams
+  BarChart3, // For Reports
+  FileSignature, // For Student Reports
+  Banknote // For Payment Reports
 } from 'lucide-react';
 
 // Re-exporting icons for easier access
@@ -100,7 +107,7 @@ export const Icons = {
   ArrowLeft,
   ArrowRight,
   FileText,
-  ListChecks, // Added ListChecks
+  ListChecks, 
   UserCircle,
   Edit3,
   Quote,
@@ -133,11 +140,18 @@ export const Icons = {
   ExternalLink,
   X,
   ShieldAlert,
-  UserCheck, // Added UserCheck
-  PlusCircle, // Added for Add button
-  Trash2, // Added for Delete button
-  Eye, // Added for View button
-  MoreHorizontal, // Added for actions dropdown
+  UserCheck,
+  PlusCircle,
+  Trash2,
+  Eye,
+  MoreHorizontal,
+  BookCopy,
+  ClipboardList,
+  HelpCircle,
+  FileCheck2,
+  BarChart3,
+  FileSignature,
+  Banknote,
 };
 
 export default Icons;
