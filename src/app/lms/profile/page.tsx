@@ -128,7 +128,7 @@ export default function MyProfilePage() {
         {/* Profile Details Card */}
         <AnimatedSection delay={200} className="lg:col-span-2">
           <Card className="shadow-xl border-none bg-card">
-            <CardHeader className="flex flex-row justify-between items-center">
+            <CardHeader className="flex flex-row justify-between items-center p-4 sm:p-6">
               <div className="flex items-center space-x-3">
                 <Icons.UserCircle className="w-8 h-8 text-primary" />
                 <CardTitle className="font-headline text-2xl md:text-3xl text-primary">
@@ -139,7 +139,7 @@ export default function MyProfilePage() {
                 {isEditingProfile ? <><Icons.CheckCircle2 className="mr-2 h-4 w-4"/>{t('lms.profile.buttons.save', "Save")}</> : <><Icons.Edit3 className="mr-2 h-4 w-4"/>{t('lms.profile.buttons.edit', "Edit")}</>}
               </Button>
             </CardHeader>
-            <CardContent className="space-y-6 p-6">
+            <CardContent className="space-y-6 p-4 sm:p-6">
               <div className="flex flex-col sm:flex-row items-center gap-6">
                 <Image
                   src={`https://placehold.co/120x120.png`}
@@ -193,7 +193,7 @@ export default function MyProfilePage() {
         {/* Preferences Card */}
         <AnimatedSection delay={400} className="lg:col-span-1">
           <Card className="shadow-xl border-none bg-card">
-            <CardHeader className="flex flex-row justify-between items-center">
+            <CardHeader className="flex flex-row justify-between items-center p-4 sm:p-6">
                <div className="flex items-center space-x-3">
                 <Icons.Settings className="w-7 h-7 text-primary" />
                 <CardTitle className="font-headline text-xl md:text-2xl text-primary">
@@ -204,7 +204,7 @@ export default function MyProfilePage() {
                 {isEditingPreferences ? <><Icons.CheckCircle2 className="mr-2 h-4 w-4"/>{t('lms.profile.buttons.save', "Save")}</> : <><Icons.Edit3 className="mr-2 h-4 w-4"/>{t('lms.profile.buttons.edit', "Edit")}</>}
               </Button>
             </CardHeader>
-            <CardContent className="space-y-6 p-6">
+            <CardContent className="space-y-6 p-4 sm:p-6">
               <div className="space-y-4">
                 <div className="flex items-center justify-between">
                   <Label htmlFor="emailNotifications" className="flex-grow">{t('lms.profile.preferences.emailNotificationsLabel', "Email Notifications")}</Label>
@@ -256,3 +256,5 @@ export default function MyProfilePage() {
     </div>
   );
 }
+
+    
