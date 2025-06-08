@@ -561,8 +561,9 @@ export default function CourseContentPage() {
                 </CardDescription>
               </Card>
             </AnimatedSection>
-          )
-        )}
+          )}
+        </AnimatedSection>
+      )}
 
       {viewState === 'viewingMonthContent' && !selectedMonth && (
          <AnimatedSection delay={100}>
