@@ -2,12 +2,9 @@
 import type { ReactNode } from 'react';
 import Link from 'next/link';
 import { Home, Users, BookOpen, Settings, ShieldAlert } from 'lucide-react';
-import { ThemeProvider } from "@/components/theme-provider";
-import { LanguageProvider } from '@/contexts/language-context';
 import { PageTransitionManager } from '@/components/layout/page-transition-manager';
-import { Toaster } from '@/components/ui/toaster';
 
-// Simple Admin Sidebar component
+// AdminSidebar component remains the same as provided in context
 const AdminSidebar = () => {
   const navItems = [
     { href: '/admin', label: 'Admin Dashboard', icon: Home },
@@ -58,40 +55,16 @@ export default function AdminLayout({
 }: {
   children: ReactNode;
 }) {
+  // This layout is nested within RootLayout.
+  // It should not redefine <html>, <body>, ThemeProvider, LanguageProvider, or Toaster.
   return (
-    <html lang="en" suppressHydrationWarning>
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet" />
-        <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..0,900;1,200..1,900&display=swap" rel="stylesheet" />
-      </head>
-      <body className="font-body antialiased flex min-h-screen bg-background text-foreground" suppressHydrationWarning>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <LanguageProvider> {/* Assuming admin might also need language context */}
-            <div className="flex flex-col min-h-screen w-full">
-                {/* Admin specific header can go here, or remove Navbar if not needed */}
-                {/* <Navbar /> */}
-                <div className="flex flex-1">
-                    <AdminSidebar />
-                    <main className="flex-grow bg-muted/40 overflow-y-auto"> {/* Removed padding, added overflow-y-auto */}
-                        <PageTransitionManager> {/* Optional: for transitions within admin */}
-                            {children}
-                        </PageTransitionManager>
-                    </main>
-                </div>
-                {/* Admin specific footer or remove Footer if not needed */}
-                {/* <Footer /> */}
-            </div>
-            <Toaster />
-          </LanguageProvider>
-        </ThemeProvider>
-      </body>
-    </html>
+    <div className="flex flex-1 w-full"> {/* This div takes up space within RootLayout's structure */}
+      <AdminSidebar />
+      <main className="flex-1 bg-muted/40 overflow-y-auto"> {/* Changed flex-grow to flex-1 */}
+        <PageTransitionManager>
+          {children}
+        </PageTransitionManager>
+      </main>
+    </div>
   );
 }

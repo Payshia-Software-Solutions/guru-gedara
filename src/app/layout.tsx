@@ -7,6 +7,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { ThemeProvider } from "@/components/theme-provider";
 import { LanguageProvider } from '@/contexts/language-context';
 import { PageTransitionManager } from '@/components/layout/page-transition-manager';
+import { MainContentWrapper } from '@/components/layout/main-content-wrapper'; // Import the wrapper
 
 export const metadata: Metadata = {
   title: 'ගුරු ගෙදර E-School | Modern Online Learning Platform',
@@ -35,11 +36,9 @@ export default function RootLayout({
         >
           <LanguageProvider>
             <PageTransitionManager>
-              <div className="flex flex-col min-h-screen">
+              <div className="flex flex-col min-h-screen"> {/* This outer div helps manage overall page structure (e.g., footer at bottom) */}
                 <Navbar />
-                <main className="flex-grow container mx-auto px-4 py-8 md:py-12">
-                  {children}
-                </main>
+                <MainContentWrapper>{children}</MainContentWrapper> {/* Use the conditional wrapper */}
                 <Footer />
               </div>
               <Toaster />
