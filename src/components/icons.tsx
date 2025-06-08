@@ -60,7 +60,8 @@ import {
   CalendarCheck2,
   Link,
   ExternalLink,
-  X // Added X here
+  X,
+  ShieldAlert // Added ShieldAlert here
 } from 'lucide-react';
 
 // Re-exporting icons for easier access
@@ -125,7 +126,8 @@ export const Icons = {
   CalendarCheck2,
   Link,
   ExternalLink,
-  X, // Added X here
+  X,
+  ShieldAlert, // Added ShieldAlert here
 };
 
 export default Icons;
