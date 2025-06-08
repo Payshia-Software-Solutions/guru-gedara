@@ -1,3 +1,4 @@
+
 "use client"
 
 // Inspired by react-hot-toast library
@@ -18,7 +19,7 @@ type ToasterToast = ToastProps & {
   action?: ToastActionElement
 }
 
-const actionTypes = {
+const internalActionTypes = {
   ADD_TOAST: "ADD_TOAST",
   UPDATE_TOAST: "UPDATE_TOAST",
   DISMISS_TOAST: "DISMISS_TOAST",
@@ -32,23 +33,23 @@ function genId() {
   return count.toString()
 }
 
-type ActionType = typeof actionTypes
+type InternalActionType = typeof internalActionTypes
 
 type Action =
   | {
-      type: ActionType["ADD_TOAST"]
+      type: InternalActionType["ADD_TOAST"]
       toast: ToasterToast
     }
   | {
-      type: ActionType["UPDATE_TOAST"]
+      type: InternalActionType["UPDATE_TOAST"]
       toast: Partial<ToasterToast>
     }
   | {
-      type: ActionType["DISMISS_TOAST"]
+      type: InternalActionType["DISMISS_TOAST"]
       toastId?: ToasterToast["id"]
     }
   | {
-      type: ActionType["REMOVE_TOAST"]
+      type: InternalActionType["REMOVE_TOAST"]
       toastId?: ToasterToast["id"]
     }
 
@@ -192,3 +193,4 @@ function useToast() {
 }
 
 export { useToast, toast }
+

@@ -169,7 +169,7 @@ export default function HomePage() {
               <Card key={testimonial.id} className="bg-card shadow-lg hover:shadow-xl transition-shadow duration-300 ease-in-out flex flex-col">
                 <CardContent className="pt-8 p-6 flex-grow flex flex-col">
                   <Icons.Quote className="w-10 h-10 text-accent mb-5 transform rotate-180" />
-                  <p className="text-lg text-foreground italic mb-6 leading-relaxed flex-grow">"{t(testimonial.quoteKey)}"</p>
+                  <p className="text-lg text-foreground italic mb-6 leading-relaxed flex-grow">&quot;{t(testimonial.quoteKey)}&quot;</p>
                   <div className="flex items-center space-x-4 mt-auto pt-4 border-t border-border">
                     <Image
                       src={testimonial.avatarUrl}
@@ -193,4 +193,5 @@ export default function HomePage() {
     </div>
   );
 }
+
 

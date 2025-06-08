@@ -28,7 +28,7 @@ export function LanguageSwitcher() {
     return <Button variant="ghost" size="icon" disabled className="h-9 w-9 animate-pulse bg-muted rounded-md"></Button>;
   }
 
-  const currentLanguage = languages.find(l => l.code === language) || languages[0];
+  
 
   return (
     <DropdownMenu>
@@ -51,3 +51,4 @@ export function LanguageSwitcher() {
     </DropdownMenu>
   );
 }
+

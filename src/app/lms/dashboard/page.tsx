@@ -7,7 +7,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from '@/components/ui/card';
 import Icons from '@/components/icons';
 import { useLanguage } from '@/contexts/language-context';
-import { Badge } from '@/components/ui/badge';
+
 import { Progress } from '@/components/ui/progress'; // Import Progress component
 
 const AnimatedSection: React.FC<{children: React.ReactNode, className?: string, delay?: number}> = ({ children, className, delay = 0 }) => {
@@ -188,3 +188,4 @@ export default function LmsDashboardPage() {
     </div>
   );
 }
+

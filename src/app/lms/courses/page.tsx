@@ -64,7 +64,7 @@ export default function MyCoursesPage() {
 
       {enrolledCoursesData.length > 0 ? (
         <AnimatedSection delay={200} className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-          {enrolledCoursesData.map((course, index) => (
+          {enrolledCoursesData.map((course) => (
             <Card key={course.id} className="bg-card shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out transform hover:-translate-y-1 flex flex-col group">
               <CardHeader className="p-0 relative">
                 <Image 
@@ -128,3 +128,4 @@ export default function MyCoursesPage() {
     </div>
   );
 }
+

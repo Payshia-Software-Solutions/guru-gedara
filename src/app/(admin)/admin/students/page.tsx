@@ -3,7 +3,7 @@
 
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import Icons from '@/components/icons';
-import Link from "next/link";
+
 import { Button } from "@/components/ui/button";
 
 export default function AdminStudentsPage() {
@@ -39,3 +39,4 @@ export default function AdminStudentsPage() {
     </div>
   );
 }
+

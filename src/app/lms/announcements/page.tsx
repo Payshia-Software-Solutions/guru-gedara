@@ -87,7 +87,7 @@ export default function AnnouncementsPage() {
 
       {currentAnnouncements.length > 0 ? (
         <AnimatedSection delay={200} className="space-y-6">
-          {currentAnnouncements.map((announcement, index) => (
+          {currentAnnouncements.map((announcement) => (
             <Card 
               key={announcement.id} 
               className={`bg-card shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out ${!announcement.read ? 'border-primary border-2' : 'border-border'}`}
@@ -134,3 +134,4 @@ export default function AnnouncementsPage() {
     </div>
   );
 }
+

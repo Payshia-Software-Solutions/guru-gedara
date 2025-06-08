@@ -18,31 +18,38 @@ export const languages = [
 
 export type LanguageCode = typeof languages[number]['code'];
 
+type TranslationValue = string | { [key: string]: TranslationValue };
+type Translations = Record<string, TranslationValue>;
+
+
 interface LanguageContextType {
   language: LanguageCode;
   setLanguage: (language: LanguageCode) => void;
   t: (key: string, fallback?: string) => string;
-  translations: Record<string, any>; // Changed to any to simplify handling of imported JSON
+  translations: Translations; 
 }
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
 // Helper to get nested values from translation object
-const getNestedValue = (obj: any, path: string, fallback?: string): string => {
-  const value = path.split('.').reduce((acc, part) => acc && acc[part], obj);
-  return value || fallback || path;
+const getNestedValue = (obj: Translations, path: string, fallback?: string): string => {
+  const value = path.split('.').reduce((acc, part) => acc && typeof acc === 'object' && acc[part], obj);
+  if (typeof value === 'string') {
+    return value;
+  }
+  return fallback || path;
 };
 
 // Map language codes to their statically imported data
-const allTranslations: Record<LanguageCode, Record<string, any>> = {
-  en: enTranslationsData,
-  si: siTranslationsData,
-  ta: taTranslationsData,
+const allTranslations: Record<LanguageCode, Translations> = {
+  en: enTranslationsData as Translations,
+  si: siTranslationsData as Translations,
+  ta: taTranslationsData as Translations,
 };
 
 export const LanguageProvider = ({ children }: { children: ReactNode }) => {
   const [language, setLanguageState] = useState<LanguageCode>('en');
-  const [translations, setTranslations] = useState<Record<string, any>>(allTranslations.en);
+  const [translations, setTranslations] = useState<Translations>(allTranslations.en);
   const [isLoading, setIsLoading] = useState(true);
 
   const loadTranslationsForLanguage = useCallback((lang: LanguageCode) => {
@@ -107,3 +114,4 @@ export const useLanguage = (): LanguageContextType => {
   }
   return context;
 };
+

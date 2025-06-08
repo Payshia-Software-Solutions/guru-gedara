@@ -5,7 +5,7 @@ import React, { useEffect, useState, useMemo } from 'react';
 import Link from 'next/link';
 import { useParams } from 'next/navigation';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogFooter, DialogClose } from "@/components/ui/dialog";
 import Icons from '@/components/icons';
@@ -19,12 +19,11 @@ import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 import { 
   coursesDataLocal, 
   allCourseContentDataLocal,
-  placeholderVideoUrl,
+  
   type MonthlyPaymentStatus,
-  type MonthlyContent,
-  type CourseUIDefinitionExtended
+  type MonthlyContent
 } from '@/lib/lms-data';
-import type { QuizQuestion } from '@/types'; // QuizQuestion is still in global types
+
 
 interface VideoToPlay {
   title: string;

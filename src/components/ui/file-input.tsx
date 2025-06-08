@@ -5,7 +5,7 @@ import * as React from "react";
 import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
 
-interface FileInputProps extends React.InputHTMLAttributes<HTMLInputElement> {}
+type FileInputProps = React.InputHTMLAttributes<HTMLInputElement>;
 
 const FileInput = React.forwardRef<HTMLInputElement, FileInputProps>(
   ({ className, ...props }, ref) => {
@@ -26,3 +26,4 @@ const FileInput = React.forwardRef<HTMLInputElement, FileInputProps>(
 FileInput.displayName = "FileInput";
 
 export { FileInput };
+

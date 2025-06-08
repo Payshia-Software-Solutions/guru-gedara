@@ -5,7 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useParams } from 'next/navigation';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import Icons from '@/components/icons';
 import type { CourseDefinition } from '@/types';
 import { useLanguage } from '@/contexts/language-context';
@@ -207,3 +207,4 @@ export default function CourseDetailsPage() {
     </div>
   );
 }
+

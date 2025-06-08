@@ -1,8 +1,8 @@
 
 "use client";
 
-import React, { useEffect, useState, useMemo } from 'react';
-import { useParams, useRouter } from 'next/navigation';
+import React, { useEffect, useState } from 'react';
+import { useParams } from 'next/navigation';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from '@/components/ui/card';
@@ -28,7 +28,6 @@ const AnimatedSection: React.FC<{children: React.ReactNode, className?: string, 
 };
 
 export default function AssignmentDetailsPage() {
-  const router = useRouter();
   const params = useParams();
   const { t, language } = useLanguage();
   const { toast } = useToast();

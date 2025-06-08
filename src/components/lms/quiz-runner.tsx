@@ -2,7 +2,7 @@
 "use client";
 
 import React, { useState, useEffect, useCallback } from 'react';
-import type { Quiz, QuizQuestion, QuizOption } from '@/types';
+import type { Quiz, QuizQuestion } from '@/types';
 import { Button } from '@/components/ui/button';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { Label } from '@/components/ui/label';
@@ -41,6 +41,32 @@ export const QuizRunner: React.FC<QuizRunnerProps> = ({ quiz, onClose, onQuizCom
   const [finalResults, setFinalResults] = useState<QuizQuestion[]>([]);
 
 
+  const handleSubmitQuiz = useCallback(() => {
+    if (!shuffledQuestions || shuffledQuestions.length === 0) return;
+    let currentScore = 0;
+    let currentTotalPoints = 0;
+    const results: QuizQuestion[] = shuffledQuestions.map(q => {
+      currentTotalPoints += q.points;
+      let isCorrect = false;
+      if (q.type === 'mcq' && q.options) {
+        const correctAnswer = q.options.find(opt => opt.isCorrect)?.id;
+        isCorrect = userAnswers[q.id] === correctAnswer;
+      } else if (q.type === 'tf') {
+        isCorrect = userAnswers[q.id] === q.correctAnswer;
+      }
+      if (isCorrect) {
+        currentScore += q.points;
+      }
+      return { ...q, userAnswer: userAnswers[q.id], isUserCorrect: isCorrect };
+    });
+
+    setScore(currentScore);
+    setTotalPoints(currentTotalPoints);
+    setFinalResults(results);
+    setQuizFinished(true);
+    onQuizComplete(currentScore, currentTotalPoints, results);
+  }, [shuffledQuestions, userAnswers, onQuizComplete]);
+
   useEffect(() => {
     // Shuffle questions only once when the component mounts or quiz changes
     setShuffledQuestions(shuffleArray(quiz.questions || []));
@@ -68,37 +94,12 @@ export const QuizRunner: React.FC<QuizRunnerProps> = ({ quiz, onClose, onQuizCom
     }, 1000);
 
     return () => clearInterval(timer);
-  }, [timeLeft, quizFinished, shuffledQuestions.length]);
+  }, [timeLeft, quizFinished, shuffledQuestions.length, handleSubmitQuiz]);
+
 
   const handleAnswerSelect = (questionId: string, answer: string | boolean) => {
     setUserAnswers((prev) => ({ ...prev, [questionId]: answer }));
   };
-
-  const handleSubmitQuiz = useCallback(() => {
-    if (!shuffledQuestions || shuffledQuestions.length === 0) return;
-    let currentScore = 0;
-    let currentTotalPoints = 0;
-    const results: QuizQuestion[] = shuffledQuestions.map(q => {
-      currentTotalPoints += q.points;
-      let isCorrect = false;
-      if (q.type === 'mcq' && q.options) {
-        const correctAnswer = q.options.find(opt => opt.isCorrect)?.id;
-        isCorrect = userAnswers[q.id] === correctAnswer;
-      } else if (q.type === 'tf') {
-        isCorrect = userAnswers[q.id] === q.correctAnswer;
-      }
-      if (isCorrect) {
-        currentScore += q.points;
-      }
-      return { ...q, userAnswer: userAnswers[q.id], isUserCorrect: isCorrect };
-    });
-
-    setScore(currentScore);
-    setTotalPoints(currentTotalPoints);
-    setFinalResults(results);
-    setQuizFinished(true);
-    onQuizComplete(currentScore, currentTotalPoints, results);
-  }, [shuffledQuestions, userAnswers, onQuizComplete]);
 
   const handleNextQuestion = () => {
     if (currentQuestionIndex < shuffledQuestions.length - 1) {
@@ -243,3 +244,4 @@ export const QuizRunner: React.FC<QuizRunnerProps> = ({ quiz, onClose, onQuizCom
     </Card>
   );
 };
+

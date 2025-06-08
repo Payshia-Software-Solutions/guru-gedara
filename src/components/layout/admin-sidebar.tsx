@@ -18,7 +18,7 @@ import {
 } from '@/components/ui/sidebar';
 import { Button } from '@/components/ui/button';
 import Icons from '@/components/icons';
-import { useLanguage } from '@/contexts/language-context';
+
 import { ThemeToggleButton } from '@/components/theme-toggle-button';
 import { LanguageSwitcher } from '@/components/language-switcher';
 import { cn } from '@/lib/utils';
@@ -70,7 +70,7 @@ const navItems: NavItem[] = [
 export function AdminSidebar() {
   const pathname = usePathname();
   const router = useRouter();
-  const { t } = useLanguage();
+  
   const { open: mainSidebarOpen, setOpen: setMainSidebarOpen, isMobile, setOpenMobile } = useSidebar();
 
   const [openSections, setOpenSections] = React.useState<Set<string>>(new Set());
@@ -91,7 +91,7 @@ export function AdminSidebar() {
     return path && pathname === path;
   };
 
-  const handleLinkClick = (isSubItem: boolean = false) => {
+  const handleLinkClick = () => {
     if (isMobile) {
       setOpenMobile(false);
     }
@@ -157,7 +157,7 @@ export function AdminSidebar() {
                           <SidebarMenuSubButton
                             asChild
                             isActive={isActive(subItem.href!, false)}
-                            onClick={() => handleLinkClick(true)}
+                            onClick={() => handleLinkClick()}
                           >
                             <Link href={subItem.href!}>
                               <subItem.icon className="mr-2 h-4 w-4 group-data-[collapsible=icon]:hidden" />
@@ -221,3 +221,4 @@ export function AdminSidebar() {
     </Sidebar>
   );
 }
+

@@ -1,7 +1,7 @@
 
 "use client";
 
-import React, { useEffect, useState, useMemo } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams, useRouter } from 'next/navigation';
 import { QuizRunner } from '@/components/lms/quiz-runner';
 import { allCourseContentDataLocal, coursesDataLocal, type CourseUIDefinitionExtended, type Quiz } from '@/lib/lms-data';
@@ -10,7 +10,7 @@ import { useLanguage } from '@/contexts/language-context';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { Preloader } from '@/components/preloader';
-import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
+import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
 
 export default function QuizPage() {
   const router = useRouter();
@@ -56,7 +56,7 @@ export default function QuizPage() {
     setIsLoading(false);
   }, [courseId, quizId, t]);
 
-  const handleQuizCloseOrComplete = (score?: number, totalPoints?: number) => {
+  const handleQuizCloseOrComplete = () => {
     // On quiz completion or close, redirect back to the course content page
     // For now, just redirect. If score needs to be passed, use query params.
     router.push(`/lms/courses/${courseId}/content`);
@@ -117,10 +117,10 @@ export default function QuizPage() {
             <QuizRunner
                 quiz={currentQuiz}
                 onClose={handleQuizCloseOrComplete}
-                onQuizComplete={(score, totalPoints, results) => {
+                onQuizComplete={(completedScore, completedTotalPoints, results) => {
                 // This callback is for when the quiz logic itself determines completion.
                 // Results are displayed by QuizRunner; handleQuizCloseOrComplete handles navigation.
-                console.log("Quiz completed on separate page!", { score, totalPoints, results, courseId, quizId });
+                console.log("Quiz completed on separate page!", { score: completedScore, totalPoints: completedTotalPoints, results, courseId, quizId });
                 // The QuizRunner will show results, then its "Close" button will call onClose.
                 }}
             />
@@ -128,3 +128,4 @@ export default function QuizPage() {
     </div>
   );
 }
+

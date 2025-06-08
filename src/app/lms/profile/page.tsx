@@ -3,7 +3,7 @@
 
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import Icons from '@/components/icons';
 import { useLanguage } from '@/contexts/language-context';
 import { Button } from '@/components/ui/button';
@@ -85,7 +85,7 @@ export default function MyProfilePage() {
     setProfile(prev => ({ ...prev, [name]: value }));
   };
 
-  const handlePreferenceChange = (key: keyof UserPreferences, value: any) => {
+  const handlePreferenceChange = (key: keyof UserPreferences, value: boolean | string) => {
     setPreferences(prev => ({ ...prev, [key]: value }));
   };
   
@@ -256,3 +256,4 @@ export default function MyProfilePage() {
   );
 }
     
+
