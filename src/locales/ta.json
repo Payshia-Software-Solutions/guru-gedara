@@ -400,21 +400,32 @@
     "welcomeTitle": "வருக மாணவரே!",
     "welcomeMessage": "இது உங்கள் தனிப்பட்ட டாஷ்போர்டு. இங்கே உங்கள் பதிவுசெய்யப்பட்ட பாடநெறிகள், முன்னேற்றம், பணிகள் மற்றும் கற்றல் பொருட்களைக் காண்பீர்கள். உங்கள் கற்றல் பயணத்தைத் தொடங்குங்கள்!",
     "welcomeMessageShort": "[TA: Manage your learning journey.]",
-    "myCourses": "என் பாடநெறிகள்",
-    "myCoursesPlaceholder": "நீங்கள் பதிவுசெய்த பாடநெறிகள் இங்கே பட்டியலிடப்படும். (Placeholder)",
-    "noCoursesYet": "இன்னும் எந்த பாடநெறிகளிலும் சேரவில்லை.",
-    "goToCourse": "[TA: Go to Course]",
-    "progressLabel": "[TA: Progress]",
+    "myCourses": {
+        "title": "என் பாடங்கள்",
+        "subtitle": "உங்கள் கற்றல் பயணத்தைத் தொடரவும்.",
+        "viewContentButton": "உள்ளடக்கத்தைக் காண்க",
+        "nextUpPlaceholder": "அடுத்து: அறிமுக வினாடி வினா",
+        "noCoursesYet": {
+            "title": "இன்னும் பாடங்கள் இல்லை",
+            "description": "கிடைக்கக்கூடிய பாடங்களை ஆராய்ந்து கற்றலைத் தொடங்க பதிவு செய்யவும்.",
+            "exploreButton": "பாடங்களை ஆராயுங்கள்"
+        }
+    },
+    "progressLabel": "முன்னேற்றம்",
+    "recentAnnouncements": {
+        "title": "சமீபத்திய அறிவிப்புகள்",
+        "viewAllButton": "அனைத்து அறிவிப்புகளையும் காண்க"
+    },
     "announcements": {
       "title": "அறிவிப்புகள்",
-      "noAnnouncements": "[TA: No new announcements.]",
+      "noAnnouncements": "புதிய அறிவிப்புகள் இல்லை.",
       "item1": {
-        "title": "[TA: Mid-term Exam Schedule Released]",
-        "content": "[TA: The schedule for the upcoming mid-term exams has been posted. Please check your course pages for details.]"
+        "title": "இடைக்கால தேர்வு அட்டவணை வெளியிடப்பட்டது",
+        "content": "வரவிருக்கும் இடைக்கால தேர்வுகளுக்கான அட்டவணை வெளியிடப்பட்டுள்ளது. விவரங்களுக்கு உங்கள் பாடப் பக்கங்களைப் பார்க்கவும்."
       },
       "item2": {
-        "title": "[TA: New Science Material Uploaded]",
-        "content": "[TA: Additional study material for Chapter 5 of Science is now available in the learning materials section.]"
+        "title": "புதிய விஞ்ஞானப் பொருள் பதிவேற்றப்பட்டது",
+        "content": "விஞ்ஞானத்தின் 5 ஆம் அத்தியாயத்திற்கான கூடுதல் ஆய்வுப் பொருட்கள் இப்போது கற்றல் பொருட்கள் பிரிவில் கிடைக்கின்றன."
       }
     },
     "learningMaterials": {
@@ -430,7 +441,7 @@
       "courseLabel": "[TA: Course]",
       "viewAll": "[TA: View All Materials]"
     },
-    "profileSettings": "[TA: Profile Settings]",
+    "profileSettings": "சுயவிவர அமைப்புகள்",
     "logoutButton": "வெளியேறு"
   },
   "lms": {
@@ -441,7 +452,7 @@
       "materials": "கற்றல் உபகரணங்கள்",
       "profile": "என் சுயவிவரம்",
       "logout": "வெளியேறு",
-      "backToSite": "[TA: Back to Main Site]"
+      "backToSite": "முக்கிய தளத்திற்குத் திரும்பு"
     },
     "myCourses": {
       "title": "எனது பதிவுசெய்யப்பட்ட பாடநெறிகள்",
@@ -452,7 +463,7 @@
       "enrolledBadge": "சேர்ந்துள்ளீர்கள்",
       "viewContentButton": "பாட உள்ளடக்கத்தைக் காண்க",
       "placeholder": {
-        "nextUp": "[TA: Next up: Introduction Video]"
+        "nextUp": "அடுத்து: அறிமுக வீடியோ"
       },
       "noCourses": {
         "title": "இன்னும் எந்த பாடநெறிகளிலும் சேரவில்லை",
@@ -487,7 +498,7 @@
             "title": "வினாடி வினாக்கள் & பணிகள்",
             "description": "உங்கள் அறிவை சோதித்து பணிகளை முடிக்கவும்.",
             "empty": "வினாடி வினாக்கள் மற்றும் பணிகள் இங்கே தோன்றும். (விரைவில்)",
-            "sampleQuizButton": "[TA: Take Chapter 1 Quiz]"
+            "sampleQuizButton": "அத்தியாயம் 1 வினாடி வினாவை எடுக்கவும்"
         }
       },
       "month": {
@@ -503,30 +514,30 @@
         "contentNotReadyTitle": "உள்ளடக்கம் இன்னும் தயாராகவில்லை",
         "contentNotReadyMessage": "{{month}} மாதத்திற்கான உள்ளடக்கம் தற்போது தயாரிக்கப்பட்டு வருகிறது, விரைவில் கிடைக்கும்.",
         "pleaseSelectMonthTitle": "ஒரு மாதத்தைத் தேர்ந்தெடுக்கவும்",
-        "pleaseSelectMonthMessage": "அதன் உள்ளடக்கம் அல்லது கட்டண நிலையைப் பார்க்க மேலே உள்ள பட்டியலிலிருந்து ஒரு மாதத்தைத் தேர்ந்தெடுக்கவும்.",
+        "pleaseSelectMonthMessage": "ஏதோ தவறு நடந்துவிட்டது. தயவுசெய்து திரும்பிச் சென்று ஒரு மாதத்தைத் தேர்ந்தெடுக்கவும்.",
         "noContentForMonthTitle": "{{month}} மாதத்திற்கு இன்னும் உள்ளடக்கம் இல்லை",
         "noContentForMonthMessage": "இந்த பாடநெறிக்காக {{month}} மாதத்திற்கு குறிப்பிட்ட உள்ளடக்கம் எதுவும் இன்னும் பதிவேற்றப்படவில்லை அல்லது தரவுகளில் உள்ளடக்கம் கிடைக்கக்கூடியதாக குறிக்கப்படவில்லை என்று தெரிகிறது.",
         "backToMonthNavigator": "மாதத் தேர்வுக்குத் திரும்பு"
       },
       "science": {
         "aug": {
-            "video1": { "title": "[TA: Science - August: Intro to Physics]", "description": "[TA: Understanding fundamental concepts of mechanics and motion for August.]" },
-            "note1": { "title": "[TA: Science - August: Chapter 1 Notes]" }
+            "video1": { "title": "விஞ்ஞானம் - ஆகஸ்ட்: இயற்பியல் அறிமுகம்", "description": "ஆகஸ்ட் மாதத்திற்கான இயக்கவியல் மற்றும் இயக்கத்தின் அடிப்படைக் கருத்துக்களைப் புரிந்துகொள்வது." },
+            "note1": { "title": "விஞ்ஞானம் - ஆகஸ்ட்: அத்தியாயம் 1 குறிப்புகள்" }
         },
         "sep": {
-            "video1": { "title": "[TA: Science - September: Chemistry Basics]", "description": "[TA: Exploring the building blocks of matter for September.]" },
-            "recording1": { "title": "[TA: Science - September: Live Q&A Unit 1]" }
+            "video1": { "title": "விஞ்ஞானம் - செப்டம்பர்: வேதியியல் அடிப்படைகள்", "description": "செப்டம்பர் மாதத்திற்கான பொருளின் கட்டமைப்பு அலகுகளை ஆராய்தல்." },
+            "recording1": { "title": "விஞ்ஞானம் - செப்டம்பர்: நேரலை கேள்வி பதில் அலகு 1" }
         }
       },
       "mathematics": {
-        "aug": { "video1": { "title": "[TA: Math - August: Algebra Part 1]", "description": "[TA: Introduction to algebraic expressions for August.]" } },
-        "sep": { "note1": { "title": "[TA: Math - September: Geometry Formulas]" } }
+        "aug": { "video1": { "title": "கணிதம் - ஆகஸ்ட்: இயற்கணிதம் பகுதி 1", "description": "ஆகஸ்ட் மாதத்திற்கான இயற்கணித கோவைகளின் அறிமுகம்." } },
+        "sep": { "note1": { "title": "கணிதம் - செப்டம்பர்: வடிவியல் சூத்திரங்கள்" } }
       },
       "english": {
-        "aug": { "video1": { "title": "[TA: English - August: Tenses Explained]", "description": "[TA: Comprehensive guide to English tenses for August.]" } }
+        "aug": { "video1": { "title": "ஆங்கிலம் - ஆகஸ்ட்: காலங்கள் விளக்கம்", "description": "ஆகஸ்ட் மாதத்திற்கான ஆங்கில காலங்கள் குறித்த விரிவான வழிகாட்டி." } }
       },
       "ict": {
-        "aug": { "video1": { "title": "[TA: ICT - August: HTML & CSS Basics]", "description": "[TA: Learn web development basics for August.]" } }
+        "aug": { "video1": { "title": "ICT - ஆகஸ்ட்: HTML & CSS அடிப்படைகள்", "description": "ஆகஸ்ட் மாதத்திற்கான வலை அபிவிருத்தியின் அடிப்படைகளைக் கற்றுக்கொள்ளுங்கள்." } }
       },
       "videoPlayer": {
         "nowPlaying": "இப்போது ஒலிக்கிறது: {{videoTitle}}",
@@ -664,5 +675,3 @@
       "pageTitleSuffix": "[TA: ගුරු ගෙදර E-School]"
   }
 }
-
-    

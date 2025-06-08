@@ -400,21 +400,32 @@
     "welcomeTitle": "සාදරයෙන් පිළිගනිමු ශිෂ්‍යයා!",
     "welcomeMessage": "මෙය ඔබගේ පුද්ගලික උපකරණ පුවරුවයි. මෙහි ඔබ ලියාපදිංචි වී ඇති පාඨමාලා, ප්‍රගතිය, පැවරුම් සහ ඉගෙනුම් ද්‍රව්‍ය සොයාගත හැකිය. ඔබේ ඉගෙනුම් ගමන ආරම්භ කරන්න!",
     "welcomeMessageShort": "[SI: Manage your learning journey.]",
-    "myCourses": "මගේ පාඨමාලා",
-    "myCoursesPlaceholder": "ඔබ ලියාපදිංචි වූ පාඨමාලා මෙහි ලැයිස්තුගත කෙරේ. (ආදර්ශය)",
-    "noCoursesYet": "තවමත් කිසිදු පාඨමාලාවකට ලියාපදිංචි වී නොමැත.",
-    "goToCourse": "[SI: Go to Course]",
-    "progressLabel": "[SI: Progress]",
+     "myCourses": {
+      "title": "මගේ පාඨමාලා",
+      "subtitle": "ඔබේ ඉගෙනුම් ගමන දිගටම කරගෙන යන්න.",
+      "viewContentButton": "අන්තර්ගතය බලන්න",
+      "nextUpPlaceholder": "ඊළඟට: හැඳින්වීමේ ප්‍රශ්නාවලිය",
+      "noCoursesYet": {
+        "title": "තවම පාඨමාලා නොමැත",
+        "description": "පවතින පාඨමාලා ගවේෂණය කර ඉගෙනීම ආරම්භ කිරීමට ලියාපදිංචි වන්න.",
+        "exploreButton": "පාඨමාලා ගවේෂණය කරන්න"
+      }
+    },
+    "progressLabel": "ප්‍රගතිය",
+    "recentAnnouncements": {
+        "title": "මෑත නිවේදන",
+        "viewAllButton": "සියලු නිවේදන බලන්න"
+    },
     "announcements": {
       "title": "නිවේදන",
-      "noAnnouncements": "[SI: No new announcements.]",
+      "noAnnouncements": "නව නිවේදන නොමැත.",
       "item1": {
-        "title": "[SI: Mid-term Exam Schedule Released]",
-        "content": "[SI: The schedule for the upcoming mid-term exams has been posted. Please check your course pages for details.]"
+        "title": "අර්ධ වාර විභාග කාලසටහන නිකුත් කර ඇත",
+        "content": "ඉදිරි අර්ධ වාර විභාග සඳහා කාලසටහන පළ කර ඇත. කරුණාකර විස්තර සඳහා ඔබේ පාඨමාලා පිටු පරීක්ෂා කරන්න."
       },
       "item2": {
-        "title": "[SI: New Science Material Uploaded]",
-        "content": "[SI: Additional study material for Chapter 5 of Science is now available in the learning materials section.]"
+        "title": "නව විද්‍යා ද්‍රව්‍ය උඩුගත කර ඇත",
+        "content": "විද්‍යාවේ 5 වන පරිච්ඡේදය සඳහා අතිරේක අධ්‍යයන ද්‍රව්‍ය දැන් ඉගෙනුම් ද්‍රව්‍ය අංශයෙන් ලබා ගත හැකිය."
       }
     },
     "learningMaterials": {
@@ -430,7 +441,7 @@
       "courseLabel": "[SI: Course]",
       "viewAll": "[SI: View All Materials]"
     },
-    "profileSettings": "[SI: Profile Settings]",
+    "profileSettings": "පැතිකඩ සැකසුම්",
     "logoutButton": "ඉවත් වන්න"
   },
   "lms": {
@@ -441,7 +452,7 @@
       "materials": "ඉගෙනුම් ද්‍රව්‍ය",
       "profile": "මගේ පැතිකඩ",
       "logout": "ඉවත් වන්න",
-      "backToSite": "[SI: Back to Main Site]"
+      "backToSite": "ප්‍රධාන අඩවියට ආපසු යන්න"
     },
     "myCourses": {
       "title": "මා ලියාපදිංචි වූ පාඨමාලා",
@@ -452,7 +463,7 @@
       "enrolledBadge": "ලියාපදිංචි වී ඇත",
       "viewContentButton": "පාඨමාලා අන්තර්ගතය නරඹන්න",
       "placeholder": {
-        "nextUp": "[SI: Next up: Introduction Video]"
+        "nextUp": "ඊළඟට: හැඳින්වීමේ වීඩියෝව"
       },
       "noCourses": {
         "title": "තවමත් කිසිදු පාඨමාලාවකට ලියාපදිංචි වී නොමැත",
@@ -487,7 +498,7 @@
             "title": "ප්‍රශ්නාවලි සහ පැවරුම්",
             "description": "ඔබේ දැනුම පරීක්ෂා කර පැවරුම් සම්පූර්ණ කරන්න.",
             "empty": "ප්‍රශ්නාවලි සහ පැවරුම් මෙහි දිස්වනු ඇත. (ළඟදීම)",
-            "sampleQuizButton": "[SI: Take Chapter 1 Quiz]"
+            "sampleQuizButton": "1 වන පරිච්ඡේදයේ ප්‍රශ්නාවලිය ගන්න"
         }
       },
       "month": {
@@ -503,30 +514,30 @@
         "contentNotReadyTitle": "අන්තර්ගතය තවම සූදානම් නැත",
         "contentNotReadyMessage": "{{month}} සඳහා අන්තර්ගතය දැනට සකස් කරමින් පවතින අතර ඉක්මනින් ලබා ගත හැකි වනු ඇත.",
         "pleaseSelectMonthTitle": "මාසයක් තෝරන්න",
-        "pleaseSelectMonthMessage": "එහි අන්තර්ගතය හෝ ගෙවීම් තත්ත්වය බැලීමට කරුණාකර ඉහත ලැයිස්තුවෙන් මාසයක් තෝරන්න.",
+        "pleaseSelectMonthMessage": "යමක් වැරදී ඇත. කරුණාකර ආපසු ගොස් මාසයක් තෝරන්න.",
         "noContentForMonthTitle": "{{month}} සඳහා තවම අන්තර්ගතයක් නොමැත",
         "noContentForMonthMessage": "මෙම පාඨමාලාව සඳහා {{month}} සඳහා විශේෂිත අන්තර්ගතයක් තවම උඩුගත කර නොමැති බව පෙනේ, නැතහොත් දත්තවල අන්තර්ගතය ලබා ගත හැකි ලෙස සලකුණු කර නොමැත.",
         "backToMonthNavigator": "මාස තේරීමට ආපසු යන්න"
       },
       "science": {
         "aug": {
-            "video1": { "title": "[SI: Science - August: Intro to Physics]", "description": "[SI: Understanding fundamental concepts of mechanics and motion for August.]" },
-            "note1": { "title": "[SI: Science - August: Chapter 1 Notes]" }
+            "video1": { "title": "විද්‍යාව - අගෝස්තු: භෞතික විද්‍යාව හැඳින්වීම", "description": "අගෝස්තු සඳහා යාන්ත්‍ර විද්‍යාවේ සහ චලිතයේ මූලික සංකල්ප අවබෝධ කර ගැනීම." },
+            "note1": { "title": "විද්‍යාව - අගෝස්තු: 1 වන පරිච්ඡේදයේ සටහන්" }
         },
         "sep": {
-            "video1": { "title": "[SI: Science - September: Chemistry Basics]", "description": "[SI: Exploring the building blocks of matter for September.]" },
-            "recording1": { "title": "[SI: Science - September: Live Q&A Unit 1]" }
+            "video1": { "title": "විද්‍යාව - සැප්තැම්බර්: රසායන විද්‍යාවේ මූලික කරුණු", "description": "සැප්තැම්බර් සඳහා පදාර්ථයේ තැනුම් ඒකක ගවේෂණය කිරීම." },
+            "recording1": { "title": "විද්‍යාව - සැප්තැම්බර්: සජීවී ප්‍රශ්නෝත්තර ඒකකය 1" }
         }
       },
       "mathematics": {
-        "aug": { "video1": { "title": "[SI: Math - August: Algebra Part 1]", "description": "[SI: Introduction to algebraic expressions for August.]" } },
-        "sep": { "note1": { "title": "[SI: Math - September: Geometry Formulas]" } }
+        "aug": { "video1": { "title": "ගණිතය - අගෝස්තු: වීජ ගණිතය 1 කොටස", "description": "අගෝස්තු සඳහා වීජීය ප්‍රකාශන හැඳින්වීම." } },
+        "sep": { "note1": { "title": "ගණිතය - සැප්තැම්බර්: ජ්‍යාමිතික සූත්‍ර" } }
       },
       "english": {
-        "aug": { "video1": { "title": "[SI: English - August: Tenses Explained]", "description": "[SI: Comprehensive guide to English tenses for August.]" } }
+        "aug": { "video1": { "title": "ඉංග්‍රීසි - අගෝස්තු: කාල භේද පැහැදිලි කිරීම", "description": "අගෝස්තු සඳහා ඉංග්‍රීසි කාල භේද පිළිබඳ සවිස්තරාත්මක මාර්ගෝපදේශය." } }
       },
       "ict": {
-        "aug": { "video1": { "title": "[SI: ICT - August: HTML & CSS Basics]", "description": "[SI: Learn web development basics for August.]" } }
+        "aug": { "video1": { "title": "ICT - අගෝස්තු: HTML සහ CSS මූලික කරුණු", "description": "අගෝස්තු සඳහා වෙබ් සංවර්ධනයේ මූලික කරුණු ඉගෙන ගන්න." } }
       },
       "videoPlayer": {
         "nowPlaying": "දැන් වාදනය වන්නේ: {{videoTitle}}",
@@ -664,5 +675,3 @@
     "pageTitleSuffix": "ගුරු ගෙදර E-School"
   }
 }
-
-    

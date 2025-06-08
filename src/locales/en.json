@@ -400,11 +400,22 @@
     "welcomeTitle": "Welcome Student!",
     "welcomeMessage": "This is your personal dashboard. Here you will find your enrolled courses, progress, assignments, and learning materials. Start your learning journey!",
     "welcomeMessageShort": "Manage your learning journey.",
-    "myCourses": "My Courses",
-    "myCoursesPlaceholder": "Your enrolled courses will be listed here. (Placeholder)",
-    "noCoursesYet": "No courses enrolled yet.",
-    "goToCourse": "Go to Course",
+    "myCourses": {
+      "title": "My Courses",
+      "subtitle": "Continue your learning journey.",
+      "viewContentButton": "View Content",
+      "nextUpPlaceholder": "Next: Introduction Quiz",
+      "noCoursesYet": {
+        "title": "No Courses Yet",
+        "description": "Explore available courses and enroll to start learning.",
+        "exploreButton": "Explore Courses"
+      }
+    },
     "progressLabel": "Progress",
+    "recentAnnouncements": {
+        "title": "Recent Announcements",
+        "viewAllButton": "View All Announcements"
+    },
     "announcements": {
       "title": "Announcements",
       "noAnnouncements": "No new announcements.",
@@ -503,7 +514,7 @@
         "contentNotReadyTitle": "Content Not Yet Available",
         "contentNotReadyMessage": "Content for {{month}} is currently being prepared and will be available soon.",
         "pleaseSelectMonthTitle": "Select a Month",
-        "pleaseSelectMonthMessage": "Please select a month from the list above to view its content or payment status.",
+        "pleaseSelectMonthMessage": "Something went wrong. Please go back and select a month.",
         "noContentForMonthTitle": "No Content Yet for {{month}}",
         "noContentForMonthMessage": "It seems there's no specific content uploaded for {{month}} for this course yet, or the content is not marked as available in the data.",
         "backToMonthNavigator": "Back to Month Selection"
@@ -664,5 +675,3 @@
       "pageTitleSuffix": "ගුරු ගෙදර E-School"
   }
 }
-
-    
