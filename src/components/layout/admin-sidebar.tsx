@@ -73,26 +73,10 @@ export function AdminSidebar() {
   const { t } = useLanguage();
   const { open: mainSidebarOpen, setOpen: setMainSidebarOpen, isMobile, setOpenMobile } = useSidebar();
 
-  const [openSections, setOpenSections] = React.useState<Set<string>>(() => {
-    const activeParentSection = navItems.find(item =>
-        item.isCollapsible && item.subItems?.some(sub => sub.href && pathname.startsWith(sub.href))
-    );
-    return activeParentSection ? new Set([activeParentSection.label]) : new Set();
-  });
+  // Initialize openSections as an empty set. Submenus start closed.
+  const [openSections, setOpenSections] = React.useState<Set<string>>(new Set());
 
-  React.useEffect(() => {
-    const activeParentSection = navItems.find(item =>
-        item.isCollapsible && item.subItems?.some(sub => sub.href && pathname.startsWith(sub.href))
-    );
-    if (activeParentSection && !openSections.has(activeParentSection.label)) {
-        setOpenSections(prev => {
-            const newSet = new Set(prev);
-            newSet.add(activeParentSection.label);
-            return newSet;
-        });
-    }
-  }, [pathname, openSections]);
-
+  // Effect to close all sections if the main sidebar is collapsed (on desktop)
   React.useEffect(() => {
     if (!mainSidebarOpen && !isMobile) {
       setOpenSections(new Set());
