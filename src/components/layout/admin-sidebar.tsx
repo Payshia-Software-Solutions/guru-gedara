@@ -73,7 +73,6 @@ export function AdminSidebar() {
   const { t } = useLanguage();
   const { open: mainSidebarOpen, setOpen: setMainSidebarOpen, isMobile, setOpenMobile } = useSidebar();
 
-  // Initialize openSections as an empty set. Submenus start closed.
   const [openSections, setOpenSections] = React.useState<Set<string>>(new Set());
 
   // Effect to close all sections if the main sidebar is collapsed (on desktop)
@@ -150,22 +149,24 @@ export function AdminSidebar() {
                       )}
                     />
                   </SidebarMenuButton>
-                  <SidebarMenuSub className="hidden group-data-[state=expanded]:block">
-                    {item.subItems.map((subItem) => (
-                      <SidebarMenuItem key={subItem.label}>
-                        <SidebarMenuSubButton
-                          asChild
-                          isActive={isActive(subItem.href!)}
-                          onClick={() => handleLinkClick(true)}
-                        >
-                          <Link href={subItem.href!}>
-                            <subItem.icon className="mr-2 h-4 w-4 group-data-[collapsible=icon]:hidden" />
-                            <span className="group-data-[collapsible=icon]:hidden">{subItem.label}</span>
-                          </Link>
-                        </SidebarMenuSubButton>
-                      </SidebarMenuItem>
-                    ))}
-                  </SidebarMenuSub>
+                  {openSections.has(item.label) && (
+                    <SidebarMenuSub>
+                      {item.subItems.map((subItem) => (
+                        <SidebarMenuItem key={subItem.label}>
+                          <SidebarMenuSubButton
+                            asChild
+                            isActive={isActive(subItem.href!)}
+                            onClick={() => handleLinkClick(true)}
+                          >
+                            <Link href={subItem.href!}>
+                              <subItem.icon className="mr-2 h-4 w-4 group-data-[collapsible=icon]:hidden" />
+                              <span className="group-data-[collapsible=icon]:hidden">{subItem.label}</span>
+                            </Link>
+                          </SidebarMenuSubButton>
+                        </SidebarMenuItem>
+                      ))}
+                    </SidebarMenuSub>
+                  )}
                 </>
               ) : (
                 <SidebarMenuButton
