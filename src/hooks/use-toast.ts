@@ -19,13 +19,6 @@ type ToasterToast = ToastProps & {
   action?: ToastActionElement
 }
 
-const internalActionTypes = {
-  ADD_TOAST: "ADD_TOAST",
-  UPDATE_TOAST: "UPDATE_TOAST",
-  DISMISS_TOAST: "DISMISS_TOAST",
-  REMOVE_TOAST: "REMOVE_TOAST",
-} as const
-
 let count = 0
 
 function genId() {
@@ -33,23 +26,21 @@ function genId() {
   return count.toString()
 }
 
-type InternalActionType = typeof internalActionTypes
-
 type Action =
   | {
-      type: InternalActionType["ADD_TOAST"]
+      type: "ADD_TOAST"
       toast: ToasterToast
     }
   | {
-      type: InternalActionType["UPDATE_TOAST"]
+      type: "UPDATE_TOAST"
       toast: Partial<ToasterToast>
     }
   | {
-      type: InternalActionType["DISMISS_TOAST"]
+      type: "DISMISS_TOAST"
       toastId?: ToasterToast["id"]
     }
   | {
-      type: InternalActionType["REMOVE_TOAST"]
+      type: "REMOVE_TOAST"
       toastId?: ToasterToast["id"]
     }
 
@@ -193,4 +184,3 @@ function useToast() {
 }
 
 export { useToast, toast }
-
