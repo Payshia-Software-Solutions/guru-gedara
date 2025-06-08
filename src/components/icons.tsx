@@ -39,7 +39,7 @@ import {
   Watch,
   AlertTriangle,
   ChevronRight,
-  ChevronDown, // Added ChevronDown
+  ChevronDown,
   Loader2,
   KeyRound,
   LogIn,
@@ -74,7 +74,8 @@ import {
   FileCheck2,
   BarChart3,
   FileSignature,
-  Banknote
+  Banknote,
+  Home // Added Home icon
 } from 'lucide-react';
 
 // Re-exporting icons for easier access
@@ -118,7 +119,7 @@ export const Icons = {
   Watch,
   AlertTriangle,
   ChevronRight,
-  ChevronDown, // Added ChevronDown
+  ChevronDown, 
   Loader2,
   KeyRound,
   LogIn,
@@ -154,6 +155,7 @@ export const Icons = {
   BarChart3,
   FileSignature,
   Banknote,
+  Home, // Added Home icon
 };
 
 export default Icons;

@@ -10,14 +10,15 @@ import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { ThemeToggleButton } from '@/components/theme-toggle-button';
 import { LanguageSwitcher } from '@/components/language-switcher';
 import { useLanguage } from '@/contexts/language-context';
+import Icons from '@/components/icons'; // Import Icons
 
 const navItemKeys = [
-  { href: '/', labelKey: 'nav.home' },
-  { href: '/about', labelKey: 'nav.about' },
-  { href: '/courses', labelKey: 'nav.courses' },
-  { href: '/timetable', labelKey: 'nav.timetable' },
-  { href: '/contact', labelKey: 'nav.contact' },
-  { href: '/login', labelKey: 'nav.login' },
+  { href: '/', labelKey: 'nav.home', icon: Icons.Home },
+  { href: '/about', labelKey: 'nav.about', icon: Icons.Info },
+  { href: '/courses', labelKey: 'nav.courses', icon: Icons.BookOpenText },
+  { href: '/timetable', labelKey: 'nav.timetable', icon: Icons.CalendarDays },
+  { href: '/contact', labelKey: 'nav.contact', icon: Icons.Mail },
+  { href: '/login', labelKey: 'nav.login', icon: Icons.LogIn },
 ];
 
 export function Navbar() {
@@ -46,7 +47,10 @@ export function Navbar() {
             ${inSheet ? 'block px-3 py-3 text-lg hover:bg-accent/10 rounded-md' : 'px-3 py-2 rounded-md text-sm'}
           `}
         >
-          {t(item.labelKey, item.labelKey.split('.')[1])}
+          <span className="flex items-center gap-2">
+            <item.icon className="h-5 w-5" />
+            {t(item.labelKey, item.labelKey.split('.')[1])}
+          </span>
         </Link>
       ))}
     </>
