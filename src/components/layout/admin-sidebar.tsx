@@ -75,19 +75,20 @@ export function AdminSidebar() {
 
   const [openSections, setOpenSections] = React.useState<Set<string>>(new Set());
 
-  // Effect to close all sections if the main sidebar is collapsed (on desktop)
+  // Effect to close all sub-menus if the main sidebar is collapsed (on desktop)
   React.useEffect(() => {
     if (!mainSidebarOpen && !isMobile) {
       setOpenSections(new Set());
     }
   }, [mainSidebarOpen, isMobile]);
 
-
   const isActive = (path: string, isParent = false, subItems?: NavItem[]) => {
     if (isParent && subItems) {
+      // For parent items, active if any subItem is active (exact match or prefix for sub-item's children)
       return subItems.some(subItem => subItem.href && (pathname === subItem.href || pathname.startsWith(subItem.href + '/')));
     }
-    return path && (pathname === path || pathname.startsWith(path + '/'));
+    // For non-parent items (like Dashboard or specific sub-items), require an exact match.
+    return path && pathname === path;
   };
 
   const handleLinkClick = (isSubItem: boolean = false) => {
@@ -123,7 +124,7 @@ export function AdminSidebar() {
                 <>
                   <SidebarMenuButton
                     tooltip={item.label}
-                    isActive={isActive('', true, item.subItems)}
+                    isActive={isActive(item.href || '', true, item.subItems)}
                     onClick={() => {
                       const sectionLabel = item.label;
                       setOpenSections(prevOpenSections => {
@@ -155,7 +156,7 @@ export function AdminSidebar() {
                         <SidebarMenuItem key={subItem.label}>
                           <SidebarMenuSubButton
                             asChild
-                            isActive={isActive(subItem.href!)}
+                            isActive={isActive(subItem.href!, false)}
                             onClick={() => handleLinkClick(true)}
                           >
                             <Link href={subItem.href!}>
@@ -171,7 +172,7 @@ export function AdminSidebar() {
               ) : (
                 <SidebarMenuButton
                   asChild
-                  isActive={isActive(item.href!)}
+                  isActive={isActive(item.href!, false)}
                   tooltip={item.label}
                   onClick={() => handleLinkClick()}
                 >
@@ -213,7 +214,7 @@ export function AdminSidebar() {
             router.push('/');
           }}
         >
-          <Icons.ArrowLeft className="mr-2" />
+          <Icons.ArrowLeft className="mr-2 h-4 w-4" />
           Back to Main Site
         </Button>
       </SidebarFooter>
