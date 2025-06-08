@@ -11,123 +11,20 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogFooter, DialogC
 import Icons from '@/components/icons';
 import { useLanguage } from '@/contexts/language-context';
 import { Badge } from '@/components/ui/badge';
-import type { CourseDefinition as ExternalCourseDefinition, Quiz, QuizQuestion, MonthlyContentItem as MonthlyContentItemType } from '@/types';
 import ReactPlayer from 'react-player/lazy';
 import { FileInput } from '@/components/ui/file-input';
 import { useToast } from '@/hooks/use-toast';
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
-import { QuizRunner } from '@/components/lms/quiz-runner';
-
-const placeholderVideoUrl = "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4";
-
-interface MonthlyPaymentStatus {
-  paid: boolean;
-  available: boolean;
-}
-
-interface MonthlyContent {
-  videoLessons: MonthlyContentItemType[];
-  pdfNotes: MonthlyContentItemType[];
-  recordings: MonthlyContentItemType[];
-  quizzes: MonthlyContentItemType[];
-  assignments: MonthlyContentItemType[];
-}
-
-interface CourseUIDefinitionExtended extends ExternalCourseDefinition {
-  monthlyPayments: Record<string, MonthlyPaymentStatus>;
-  monthOrder?: string[];
-}
-
-type AllCourseContentData = Record<string, Record<string, MonthlyContent>>;
-
-// Sample Quiz Data
-const sampleScienceQuizAugust: Quiz = {
-  id: 'SCI001-AUG',
-  titleKey: 'lms.courseContent.science.aug.quiz1.title',
-  timeLimitMinutes: 1, // Short for testing
-  questions: [
-    { id: 'q1', text: 'What is the chemical symbol for Water?', type: 'mcq', options: [{id:'o1', text:'O2'}, {id:'o2', text:'H2O', isCorrect:true}, {id:'o3', text:'CO2'}], points: 10 },
-    { id: 'q2', text: 'The Earth is flat.', type: 'tf', correctAnswer: false, points: 5 },
-    { id: 'q3', text: 'What is the largest planet in our solar system?', type: 'mcq', options: [{id:'o1', text:'Earth'}, {id:'o2',text:'Mars'}, {id:'o3',text:'Jupiter', isCorrect:true}, {id:'o4',text:'Saturn'}], points: 10 },
-    { id: 'q4', text: 'Photosynthesis occurs in plants.', type: 'tf', correctAnswer: true, points: 5 },
-  ]
-};
-
-const coursesDataLocal: CourseUIDefinitionExtended[] = [
-  {
-    id: 'science', Icon: Icons.Microscope, imageHint: 'science classroom details',
-    monthOrder: ['August 2024', 'September 2024', 'October 2024'],
-    monthlyPayments: {
-      'August 2024': { paid: true, available: true },
-      'September 2024': { paid: false, available: true },
-      'October 2024': { paid: false, available: false },
-    }
-  },
-  {
-    id: 'mathematics', Icon: Icons.Calculator, imageHint: 'math textbook details',
-    monthOrder: ['August 2024', 'September 2024'],
-    monthlyPayments: {
-      'August 2024': { paid: false, available: true },
-      'September 2024': { paid: false, available: true },
-    }
-  },
-  {
-    id: 'english', Icon: Icons.BookOpenText, imageHint: 'english dictionary details',
-    monthOrder: ['August 2024'],
-    monthlyPayments: {
-      'August 2024': { paid: true, available: true },
-    }
-  },
-  {
-    id: 'ict', Icon: Icons.Laptop2, imageHint: 'coding screen details',
-    monthOrder: ['August 2024', 'September 2024'],
-    monthlyPayments: {
-      'August 2024': { paid: false, available: true },
-      'September 2024': { paid: false, available: false },
-    }
-  },
-];
-
-const allCourseContentDataLocal: AllCourseContentData = {
-  science: {
-    'August 2024': {
-      videoLessons: [ { id: 'sci-aug-vid1', itemType: 'video', titleKey: 'lms.courseContent.science.aug.video1.title', duration: '10:32', descriptionKey: 'lms.courseContent.science.aug.video1.description', videoUrl: placeholderVideoUrl }, ],
-      pdfNotes: [ { id: 'sci-aug-note1', itemType: 'pdf', titleKey: 'lms.courseContent.science.aug.note1.title', fileSize: '2.5MB', link: '#' } ],
-      recordings: [],
-      quizzes: [ { id: 'sci-aug-qz1', itemType: 'quiz', titleKey: 'lms.courseContent.science.aug.quiz1.title', descriptionKey: 'lms.courseContent.science.aug.quiz1.description', quizData: sampleScienceQuizAugust } ],
-      assignments: [ { id: 'sci-aug-as1', itemType: 'assignment', titleKey: 'lms.courseContent.science.aug.assign1.title', descriptionKey: 'lms.courseContent.science.aug.assign1.description', dueDate: '2024-08-31', link: '#' } ]
-    },
-    'September 2024': {
-      videoLessons: [ { id: 'sci-sep-vid1', itemType: 'video', titleKey: 'lms.courseContent.science.sep.video1.title', duration: '15:05', descriptionKey: 'lms.courseContent.science.sep.video1.description', videoUrl: placeholderVideoUrl }, ],
-      pdfNotes: [],
-      recordings: [ { id: 'sci-sep-rec1', itemType: 'recording', titleKey: 'lms.courseContent.science.sep.recording1.title', date: '2024-09-05', duration: '01:30:00', link: '#', videoUrl: placeholderVideoUrl } ],
-      quizzes: [], assignments: []
-    },
-    'October 2024': { videoLessons: [], pdfNotes: [], recordings: [], quizzes: [], assignments: [] }
-  },
-  mathematics: {
-    'August 2024': {
-      videoLessons: [{id: 'math-aug-vid1', itemType: 'video', titleKey: 'lms.courseContent.math.aug.video1.title', duration: '20:00', descriptionKey: 'lms.courseContent.math.aug.video1.description', videoUrl: placeholderVideoUrl}],
-      pdfNotes: [], recordings: [], quizzes: [], assignments: []
-    },
-    'September 2024': {
-      videoLessons: [], pdfNotes: [{id: 'math-sep-note1', itemType: 'pdf', titleKey: 'lms.courseContent.math.sep.note1.title', fileSize: '1.5MB', link: '#'}], recordings: [], quizzes: [], assignments: []
-    }
-  },
-  english: {
-    'August 2024': {
-      videoLessons: [{id: 'eng-aug-vid1', itemType: 'video', titleKey: 'lms.courseContent.english.aug.video1.title', duration: '12:00', descriptionKey: 'lms.courseContent.english.aug.video1.description', videoUrl: placeholderVideoUrl}],
-      pdfNotes: [], recordings: [], quizzes: [], assignments: []
-    }
-  },
-  ict: {
-    'August 2024': {
-      videoLessons: [{id: 'ict-aug-vid1', itemType: 'video', titleKey: 'lms.courseContent.ict.aug.video1.title', duration: '18:30', descriptionKey: 'lms.courseContent.ict.aug.video1.description', videoUrl: placeholderVideoUrl}],
-      pdfNotes: [], recordings: [], quizzes: [], assignments: []
-    },
-     'September 2024': { videoLessons: [], pdfNotes: [], recordings: [], quizzes: [], assignments: [] }
-  }
-};
+// Import data and types from the new centralized file
+import { 
+  coursesDataLocal, 
+  allCourseContentDataLocal,
+  placeholderVideoUrl,
+  type MonthlyPaymentStatus,
+  type MonthlyContent,
+  type CourseUIDefinitionExtended
+} from '@/lib/lms-data';
+import type { QuizQuestion } from '@/types'; // QuizQuestion is still in global types
 
 interface VideoToPlay {
   title: string;
@@ -165,11 +62,6 @@ export default function CourseContentPage() {
 
   const [viewState, setViewState] = useState<'selectingMonth' | 'viewingMonthContent'>('selectingMonth');
   
-  const [runningQuiz, setRunningQuiz] = useState<Quiz | null>(null);
-  const [isQuizRunnerOpen, setIsQuizRunnerOpen] = useState(false);
-  const [lastQuizResults, setLastQuizResults] = useState<{score: number, totalPoints: number, titleKey: string} | null>(null);
-
-
   const courseDetails = useMemo(() => coursesDataLocal.find(c => c.id === courseId), [courseId]);
   const courseContentForCourse = useMemo(() => allCourseContentDataLocal[courseId] || {}, [courseId]);
 
@@ -184,7 +76,7 @@ export default function CourseContentPage() {
       setCourseMonthlyPayments(null);
       setSelectedMonth(null);
     }
-  }, [courseId, courseDetails, viewState]);
+  }, [courseId, courseDetails, viewState, selectedMonth]);
 
 
   const hasAccessForSelectedMonth = useMemo(() => {
@@ -211,13 +103,11 @@ export default function CourseContentPage() {
 
   const handleMonthSelect = (month: string) => {
     setSelectedMonth(month);
-    setLastQuizResults(null); // Reset quiz results when changing month
     setViewState('viewingMonthContent');
   };
 
   const handleBackToMonthNavigator = () => {
     setViewState('selectingMonth');
-    setLastQuizResults(null);
   };
 
   const handleWatchVideo = (titleKey: string, videoUrl?: string) => {
@@ -233,36 +123,6 @@ export default function CourseContentPage() {
     }
   };
   
-  const handleStartQuiz = (quizData?: Quiz) => {
-    if (quizData) {
-      setRunningQuiz(quizData);
-      setIsQuizRunnerOpen(true);
-      setLastQuizResults(null);
-    } else {
-        toast({
-            title: t('lms.courseContent.quiz.notFoundTitle', "Quiz Not Available"),
-            description: t('lms.courseContent.quiz.notFoundDescription', "This quiz could not be loaded."),
-            variant: "destructive",
-        });
-    }
-  };
-
-  const handleQuizCompletion = (score: number, totalPoints: number, results: QuizQuestion[]) => {
-    // This is where you'd typically send results to a backend
-    console.log("Quiz completed!", { score, totalPoints, results });
-    setIsQuizRunnerOpen(false);
-    // setRunningQuiz(null); // Keep runningQuiz set to display its title in results message
-    if (runningQuiz) { 
-      setLastQuizResults({score, totalPoints, titleKey: runningQuiz.titleKey});
-    }
-    toast({
-      title: t('lms.courseContent.quiz.completedTitle', "Quiz Completed!"),
-      description: t('lms.courseContent.quiz.completedScoreDescription', "Your score: {{score}} / {{totalPoints}}", { score, totalPoints }),
-      variant: "default",
-    });
-  };
-
-
   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     if (event.target.files && event.target.files[0]) {
       setSelectedFile(event.target.files[0]);
@@ -322,7 +182,7 @@ export default function CourseContentPage() {
         <div className="text-center py-20">
           <Icons.AlertTriangle className="w-16 h-16 text-destructive mx-auto mb-6" />
           <h1 className="text-3xl font-bold text-destructive mb-4">{t('lms.courseContent.notFound.title', 'Course Content Not Found')}</h1>
-          <p className="text-muted-foreground mb-8 text-lg md:text-xl">{t('lms.courseContent.notFound.message', 'The content for this course is not available or the course ID is invalid.')}</p>
+          <p className="text-muted-foreground mb-8 text-base md:text-lg">{t('lms.courseContent.notFound.message', 'The content for this course is not available or the course ID is invalid.')}</p>
           <Button asChild size="lg">
             <Link href="/lms/courses">
               <Icons.ArrowLeft className="mr-2 h-5 w-5" />
@@ -417,19 +277,6 @@ export default function CourseContentPage() {
               {t('lms.courseContent.month.backToMonthNavigator', "Back to Month Selection")}
             </Button>
           </div>
-           {lastQuizResults && runningQuiz && (
-            <AnimatedSection delay={50} className="mb-8">
-                <Alert variant="default" className="bg-green-50 dark:bg-green-900/30 border-green-300 dark:border-green-700">
-                    <Icons.CheckCircle2 className="h-5 w-5 text-green-600 dark:text-green-400" />
-                    <AlertTitle className="text-green-700 dark:text-green-300">
-                        {t('lms.courseContent.quiz.lastResultTitle', "Last Quiz Result for {{quizTitle}}", {quizTitle: t(lastQuizResults.titleKey, lastQuizResults.titleKey)})}
-                    </AlertTitle>
-                    <AlertDescription className="text-green-600 dark:text-green-200">
-                        {t('lms.courseContent.quiz.lastResultScore', "You scored: {{score}} / {{totalPoints}}", {score: lastQuizResults.score, totalPoints: lastQuizResults.totalPoints})}
-                    </AlertDescription>
-                </Alert>
-            </AnimatedSection>
-          )}
 
           {!isContentAvailableForSelectedMonth ? (
             <Card className="shadow-xl border-none bg-card p-6 md:p-8 text-center">
@@ -609,9 +456,13 @@ export default function CourseContentPage() {
                                         <h4 className="text-base md:text-lg font-semibold text-foreground">{t(quiz.titleKey, quiz.titleKey)}</h4>
                                         {quiz.descriptionKey && <p className="text-xs md:text-sm text-muted-foreground line-clamp-2">{t(quiz.descriptionKey, quiz.descriptionKey)}</p>}
                                         </div>
-                                        <Button size="sm" variant="default" className="mt-3 sm:mt-0 text-xs md:text-sm bg-primary hover:bg-primary/90" onClick={() => handleStartQuiz(quiz.quizData)}>
-                                        <Icons.Play className="mr-1 md:mr-2 h-3 md:h-4 w-3 md:w-4" /> {t('lms.courseContent.sections.quizzes.takeQuizButton', "Take Quiz")}
-                                        </Button>
+                                        {quiz.quizData?.id && (
+                                           <Button asChild size="sm" variant="default" className="mt-3 sm:mt-0 text-xs md:text-sm bg-primary hover:bg-primary/90">
+                                             <Link href={`/lms/courses/${courseId}/quiz/${quiz.quizData.id}`}>
+                                               <Icons.Play className="mr-1 md:mr-2 h-3 md:h-4 w-3 md:w-4" /> {t('lms.courseContent.sections.quizzes.takeQuizButton', "Take Quiz")}
+                                             </Link>
+                                           </Button>
+                                        )}
                                     </div>
                                     </li>
                                 ))}
@@ -716,24 +567,6 @@ export default function CourseContentPage() {
               </DialogFooter>
             </DialogContent>
           </Dialog>
-        )}
-
-        {runningQuiz && (
-            <Dialog open={isQuizRunnerOpen} onOpenChange={(isOpen) => {
-                if (!isOpen) { // If dialog is being closed
-                    setIsQuizRunnerOpen(false);
-                    setRunningQuiz(null); // Clear the quiz data
-                } else {
-                    setIsQuizRunnerOpen(isOpen);
-                }
-            }}>
-                <DialogContent className="p-0 m-0 max-w-none sm:max-w-none w-full h-full sm:h-auto sm:max-h-[95vh] sm:w-[95vw] md:max-w-3xl overflow-y-auto bg-transparent border-0 shadow-none">
-                    <DialogHeader className="sr-only">
-                        <DialogTitle>{t(runningQuiz.titleKey, runningQuiz.titleKey)}</DialogTitle>
-                    </DialogHeader>
-                    <QuizRunner quiz={runningQuiz} onClose={() => { setIsQuizRunnerOpen(false); setRunningQuiz(null); }} onQuizComplete={handleQuizCompletion} />
-                </DialogContent>
-            </Dialog>
         )}
     </div>
   );

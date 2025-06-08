@@ -704,6 +704,16 @@
         "timeLeft": "කාලය: {{minutes}}:{{seconds}}",
         "submitButton": "ප්‍රශ්නාවලිය ඉදිරිපත් කරන්න",
         "nextButton": "ඊළඟ ප්‍රශ්නය"
+    },
+    "quizPage": {
+      "courseNotFound": "පාඨමාලාව හමු නොවීය.",
+      "quizNotFound": "මෙම පාඨමාලාව සඳහා ප්‍රශ්නාවලිය හමු නොවීය.",
+      "errorTitle": "ප්‍රශ්නාවලිය පූරණය කිරීමේ දෝෂයකි",
+      "quizNotFoundTitle": "ප්‍රශ්නාවලිය හමු නොවීය",
+      "quizNotFoundMessage": "ඔබ පිවිසීමට උත්සාහ කරන ප්‍රශ්නාවලිය හමු නොවීය හෝ නොමැත.",
+      "backToContent": "පාඨමාලා අන්තර්ගතය වෙත ආපසු යන්න",
+      "backToContentShort": "{{courseName}} වෙත ආපසු යන්න",
+      "loadingQuiz": "ප්‍රශ්නාවලිය පූරණය වෙමින්..."
     }
   },
   "general": {

@@ -704,6 +704,16 @@
         "timeLeft": "Time: {{minutes}}:{{seconds}}",
         "submitButton": "Submit Quiz",
         "nextButton": "Next Question"
+    },
+    "quizPage": {
+      "courseNotFound": "Course not found.",
+      "quizNotFound": "Quiz not found for this course.",
+      "errorTitle": "Error Loading Quiz",
+      "quizNotFoundTitle": "Quiz Not Found",
+      "quizNotFoundMessage": "The quiz you are trying to access could not be found or is unavailable.",
+      "backToContent": "Back to Course Content",
+      "backToContentShort": "Back to {{courseName}}",
+      "loadingQuiz": "Loading quiz..."
     }
   },
   "general": {

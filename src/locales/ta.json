@@ -704,6 +704,16 @@
         "timeLeft": "நேரம்: {{minutes}}:{{seconds}}",
         "submitButton": "வினாடி வினாவைச் சமர்ப்பி",
         "nextButton": "அடுத்த கேள்வி"
+    },
+    "quizPage": {
+      "courseNotFound": "பாடநெறி கிடைக்கவில்லை.",
+      "quizNotFound": "இந்த பாடநெறிக்கான வினாடி வினா கிடைக்கவில்லை.",
+      "errorTitle": "வினாடி வினாவை ஏற்றும்போது பிழை",
+      "quizNotFoundTitle": "வினாடி வினா கிடைக்கவில்லை",
+      "quizNotFoundMessage": "நீங்கள் அணுக முயற்சிக்கும் வினாடி வினா கிடைக்கவில்லை அல்லது இல்லை.",
+      "backToContent": "பாட உள்ளடக்கத்திற்குத் திரும்பு",
+      "backToContentShort": "{{courseName}}க்குத் திரும்பு",
+      "loadingQuiz": "வினாடி வினா ஏற்றப்படுகிறது..."
     }
   },
   "general": {
