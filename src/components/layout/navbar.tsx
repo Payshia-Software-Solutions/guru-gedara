@@ -85,7 +85,14 @@ export function Navbar() {
       <div className="container mx-auto px-4 h-20 flex items-center justify-between">
         <Link href="/" className="flex items-center space-x-2 group">
           <BookOpenText className="h-8 w-8 text-primary transition-transform group-hover:scale-110" />
-          <span className="font-headline text-2xl font-bold text-primary">ගුරු ගෙදර <span className="text-accent">E-School</span></span>
+          {/* Desktop view: Full name */}
+          <span className="font-headline text-2xl font-bold text-primary hidden md:inline">
+            ගුරු ගෙදර <span className="text-accent">E-School</span>
+          </span>
+          {/* Mobile view: Shorter name */}
+          <span className="font-headline text-2xl font-bold text-primary md:hidden">
+            ගුරු ගෙදර
+          </span>
         </Link>
 
         <div className="flex items-center space-x-1 md:space-x-2">
