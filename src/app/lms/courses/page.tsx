@@ -63,7 +63,7 @@ export default function MyCoursesPage() {
       </AnimatedSection>
 
       {enrolledCoursesData.length > 0 ? (
-        <AnimatedSection delay={200} className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <AnimatedSection delay={200} className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {enrolledCoursesData.map((course, index) => (
             <Card key={course.id} className="bg-card shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out transform hover:-translate-y-1 flex flex-col group">
               <CardHeader className="p-0 relative">
@@ -75,19 +75,19 @@ export default function MyCoursesPage() {
                   className="rounded-t-lg object-cover w-full aspect-[16/9]"
                   data-ai-hint={course.imageHint}
                 />
-                <Badge variant="secondary" className="absolute top-3 right-3 bg-green-500/80 text-white dark:bg-green-600/80 dark:text-white">
+                <Badge variant="secondary" className="absolute top-3 right-3 bg-green-500/80 text-white dark:bg-green-600/80 dark:text-white text-xs px-2 py-1">
                   {t('lms.myCourses.enrolledBadge', "Enrolled")}
                 </Badge>
               </CardHeader>
-              <div className="p-6 flex flex-col flex-grow">
+              <div className="p-4 sm:p-6 flex flex-col flex-grow">
                  <div className="flex items-start space-x-3 mb-4">
                     <div className="p-2.5 bg-primary/10 rounded-full transition-colors group-hover:bg-primary/20">
-                        <course.Icon className="w-8 h-8 text-primary transition-transform group-hover:scale-110" />
+                        <course.Icon className="w-7 h-7 sm:w-8 sm:h-8 text-primary transition-transform group-hover:scale-110" />
                     </div>
                     <div>
-                        <CardTitle className="font-headline text-xl md:text-2xl font-semibold text-primary mb-1">{getCourseName(course.id)}</CardTitle>
+                        <CardTitle className="font-headline text-lg sm:text-xl md:text-2xl font-semibold text-primary mb-1">{getCourseName(course.id)}</CardTitle>
                         {(language === 'si' || language === 'ta') && (
-                            <CardDescription className="text-sm text-muted-foreground">
+                            <CardDescription className="text-xs sm:text-sm text-muted-foreground">
                             {t(`courses.subjects.${course.id}.name`)} {/* English name as secondary info */}
                             </CardDescription>
                         )}
@@ -101,9 +101,9 @@ export default function MyCoursesPage() {
                   </div>
                 </CardContent>
                 <CardFooter className="p-0 mt-auto">
-                  <Button asChild className="w-full bg-primary hover:bg-primary/90 text-primary-foreground py-3 text-base rounded-md transition-transform group-hover:scale-105">
+                  <Button asChild className="w-full bg-primary hover:bg-primary/90 text-primary-foreground py-2.5 sm:py-3 text-sm sm:text-base rounded-md transition-transform group-hover:scale-105">
                     <Link href={`/lms/courses/${course.id}/content`}>
-                      {t('lms.myCourses.viewContentButton', "View Course Content")} <Icons.ArrowRight className="ml-2 h-5 w-5" />
+                      {t('lms.myCourses.viewContentButton', "View Course Content")} <Icons.ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
                     </Link>
                   </Button>
                 </CardFooter>
@@ -113,11 +113,11 @@ export default function MyCoursesPage() {
         </AnimatedSection>
       ) : (
         <AnimatedSection delay={200}>
-          <Card className="text-center p-8 md:p-12 bg-card shadow-lg">
-            <Icons.BookOpenText className="w-16 h-16 text-muted-foreground mx-auto mb-6" />
-            <h2 className="text-2xl font-semibold text-primary mb-3">{t('lms.myCourses.noCourses.title', "No Courses Enrolled Yet")}</h2>
-            <p className="text-muted-foreground mb-6 max-w-md mx-auto">{t('lms.myCourses.noCourses.description', "It looks like you haven't enrolled in any courses. Explore our available courses and start your learning journey!")}</p>
-            <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground">
+          <Card className="text-center p-6 sm:p-8 md:p-12 bg-card shadow-lg">
+            <Icons.BookOpenText className="w-12 h-12 sm:w-16 sm:h-16 text-muted-foreground mx-auto mb-6" />
+            <h2 className="text-xl sm:text-2xl font-semibold text-primary mb-3">{t('lms.myCourses.noCourses.title', "No Courses Enrolled Yet")}</h2>
+            <p className="text-sm sm:text-base text-muted-foreground mb-6 max-w-md mx-auto">{t('lms.myCourses.noCourses.description', "It looks like you haven't enrolled in any courses. Explore our available courses and start your learning journey!")}</p>
+            <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground text-sm sm:text-base px-6 sm:px-8 py-2.5 sm:py-3">
               <Link href="/courses">
                 {t('lms.myCourses.noCourses.exploreButton', "Explore Courses")}
               </Link>
@@ -128,4 +128,3 @@ export default function MyCoursesPage() {
     </div>
   );
 }
-
