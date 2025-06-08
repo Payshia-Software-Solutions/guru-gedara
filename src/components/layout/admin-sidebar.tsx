@@ -3,7 +3,7 @@
 
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
-import React from 'react'; // Import React
+import React from 'react'; 
 import {
   Sidebar,
   SidebarHeader,
@@ -73,31 +73,36 @@ export function AdminSidebar() {
   const { t } = useLanguage();
   const { setOpenMobile, isMobile, open, setOpen } = useSidebar();
 
-  const [openSections, setOpenSections] = React.useState<Set<string>>(new Set());
-
-  React.useEffect(() => {
+  const [openSections, setOpenSections] = React.useState<Set<string>>(() => {
     const activeParentSection = navItems.find(item =>
         item.isCollapsible && item.subItems?.some(sub => sub.href && pathname.startsWith(sub.href))
     );
-    if (activeParentSection) {
+    return activeParentSection ? new Set([activeParentSection.label]) : new Set();
+  });
+
+  React.useEffect(() => {
+    // If navigating to a sub-item, ensure its parent section is open
+    const activeParentSection = navItems.find(item =>
+        item.isCollapsible && item.subItems?.some(sub => sub.href && pathname.startsWith(sub.href))
+    );
+    if (activeParentSection && !openSections.has(activeParentSection.label)) {
         setOpenSections(prev => {
-            if (prev.has(activeParentSection.label)) return prev;
             const newSet = new Set(prev);
             newSet.add(activeParentSection.label);
             return newSet;
         });
     }
-  }, [pathname]);
+  }, [pathname, openSections]);
 
 
   const isActive = (path: string, isParent = false, subItems?: NavItem[]) => {
     if (isParent && subItems) {
-      return subItems.some(subItem => subItem.href && pathname.startsWith(subItem.href));
+      return subItems.some(subItem => subItem.href && (pathname === subItem.href || pathname.startsWith(subItem.href + '/')));
     }
     return path && (pathname === path || pathname.startsWith(path + '/'));
   };
   
-  const handleLinkClick = () => { // Simplified for sub-items and non-collapsible items
+  const handleLinkClick = (isSubItem: boolean = false) => { 
     if (isMobile) {
       setOpenMobile(false);
     }
@@ -130,7 +135,7 @@ export function AdminSidebar() {
                 <>
                   <SidebarMenuButton
                     tooltip={item.label}
-                    isActive={isActive(item.href || '', true, item.subItems)}
+                    isActive={isActive('', true, item.subItems)}
                     onClick={() => {
                       const sectionLabel = item.label;
                       setOpenSections(prevOpenSections => {
@@ -142,14 +147,19 @@ export function AdminSidebar() {
                         }
                         return newOpenSections;
                       });
-                      if (!isMobile && !open) { // If sidebar is collapsed (icon mode)
-                        setOpen(true);         // Expand the sidebar
+                      if (!isMobile && !open) { 
+                        setOpen(true);        
                       }
                     }}
                   >
                     <item.icon />
                     <span>{item.label}</span>
-                    {/* Optional: Add a chevron icon here that rotates based on openSections.has(item.label) */}
+                    <Icons.ChevronDown
+                      className={cn(
+                        'ml-auto h-4 w-4 transition-transform duration-200 group-data-[collapsible=icon]:hidden',
+                        openSections.has(item.label) ? 'rotate-180' : ''
+                      )}
+                    />
                   </SidebarMenuButton>
                   <SidebarMenuSub className="hidden group-data-[state=expanded]:block">
                     {item.subItems.map((subItem) => (
@@ -157,7 +167,7 @@ export function AdminSidebar() {
                         <SidebarMenuSubButton
                           asChild
                           isActive={isActive(subItem.href!)}
-                          onClick={handleLinkClick}
+                          onClick={() => handleLinkClick(true)}
                         >
                           <Link href={subItem.href!}>
                             <subItem.icon className="mr-2 h-4 w-4 group-data-[collapsible=icon]:hidden" />
@@ -173,7 +183,7 @@ export function AdminSidebar() {
                   asChild
                   isActive={isActive(item.href!)}
                   tooltip={item.label}
-                  onClick={handleLinkClick}
+                  onClick={() => handleLinkClick()}
                 >
                   <Link href={item.href!}>
                     <item.icon />

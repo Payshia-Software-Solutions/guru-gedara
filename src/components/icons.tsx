@@ -39,6 +39,7 @@ import {
   Watch,
   AlertTriangle,
   ChevronRight,
+  ChevronDown, // Added ChevronDown
   Loader2,
   KeyRound,
   LogIn,
@@ -54,7 +55,7 @@ import {
   Play,
   Lock,
   UploadCloud,
-  CreditCard, // Already exists, will be used for Student Payments
+  CreditCard,
   ShieldCheck,
   Info,
   CalendarCheck2,
@@ -67,13 +68,13 @@ import {
   Trash2,
   Eye,
   MoreHorizontal,
-  BookCopy, // For Course Management -> Courses
-  ClipboardList, // For Course Management -> Assignments
-  HelpCircle, // For Course Management -> Quizzes
-  FileCheck2, // For Course Management -> Exams
-  BarChart3, // For Reports
-  FileSignature, // For Student Reports
-  Banknote // For Payment Reports
+  BookCopy,
+  ClipboardList,
+  HelpCircle,
+  FileCheck2,
+  BarChart3,
+  FileSignature,
+  Banknote
 } from 'lucide-react';
 
 // Re-exporting icons for easier access
@@ -117,6 +118,7 @@ export const Icons = {
   Watch,
   AlertTriangle,
   ChevronRight,
+  ChevronDown, // Added ChevronDown
   Loader2,
   KeyRound,
   LogIn,
