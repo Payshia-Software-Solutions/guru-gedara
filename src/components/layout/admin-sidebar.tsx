@@ -1,7 +1,9 @@
+
 "use client";
 
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
+import React from 'react'; // Import React
 import {
   Sidebar,
   SidebarHeader,
@@ -19,6 +21,7 @@ import Icons from '@/components/icons';
 import { useLanguage } from '@/contexts/language-context';
 import { ThemeToggleButton } from '@/components/theme-toggle-button';
 import { LanguageSwitcher } from '@/components/language-switcher';
+import { cn } from '@/lib/utils';
 
 interface NavItem {
   href?: string;
@@ -29,46 +32,63 @@ interface NavItem {
   isExternal?: boolean;
 }
 
+const navItems: NavItem[] = [
+  { href: '/admin', label: 'Dashboard', icon: Icons.LayoutDashboard },
+  {
+    label: 'Student Management',
+    icon: Icons.Users,
+    isCollapsible: true,
+    subItems: [
+      { href: '/admin/students', label: 'Students', icon: Icons.Users },
+      { href: '/admin/students/approve', label: 'Approve Students', icon: Icons.UserCheck },
+      { href: '/admin/students/payments', label: 'Payments', icon: Icons.CreditCard },
+      { href: '/admin/students/assignments', label: 'Assignments', icon: Icons.FileText },
+    ],
+  },
+  {
+    label: 'Course Management',
+    icon: Icons.BookCopy,
+    isCollapsible: true,
+    subItems: [
+      { href: '/admin/lms-content', label: 'Courses', icon: Icons.BookOpenText },
+      { href: '/admin/course-management/assignments', label: 'Assignments', icon: Icons.ClipboardList },
+      { href: '/admin/course-management/quizzes', label: 'Quizzes', icon: Icons.HelpCircle },
+      { href: '/admin/course-management/exams', label: 'Exams', icon: Icons.FileCheck2 },
+    ],
+  },
+  {
+    label: 'Reports',
+    icon: Icons.BarChart3,
+    isCollapsible: true,
+    subItems: [
+      { href: '/admin/reports/students', label: 'Student Reports', icon: Icons.FileSignature },
+      { href: '/admin/reports/payments', label: 'Payment Reports', icon: Icons.Banknote },
+    ],
+  },
+];
+
 export function AdminSidebar() {
   const pathname = usePathname();
   const router = useRouter();
-  const { t } = useLanguage(); // Assuming you might want to translate labels later
+  const { t } = useLanguage();
   const { setOpenMobile, isMobile, open, setOpen } = useSidebar();
 
-  const navItems: NavItem[] = [
-    { href: '/admin', label: 'Dashboard', icon: Icons.LayoutDashboard },
-    {
-      label: 'Student Management',
-      icon: Icons.Users,
-      isCollapsible: true,
-      subItems: [
-        { href: '/admin/students', label: 'Students', icon: Icons.Users },
-        { href: '/admin/students/approve', label: 'Approve Students', icon: Icons.UserCheck },
-        { href: '/admin/students/payments', label: 'Payments', icon: Icons.CreditCard },
-        { href: '/admin/students/assignments', label: 'Assignments', icon: Icons.FileText },
-      ],
-    },
-    {
-      label: 'Course Management',
-      icon: Icons.BookCopy,
-      isCollapsible: true,
-      subItems: [
-        { href: '/admin/lms-content', label: 'Courses', icon: Icons.BookOpenText }, // Existing page, re-labeled
-        { href: '/admin/course-management/assignments', label: 'Assignments', icon: Icons.ClipboardList },
-        { href: '/admin/course-management/quizzes', label: 'Quizzes', icon: Icons.HelpCircle },
-        { href: '/admin/course-management/exams', label: 'Exams', icon: Icons.FileCheck2 },
-      ],
-    },
-    {
-      label: 'Reports',
-      icon: Icons.BarChart3,
-      isCollapsible: true,
-      subItems: [
-        { href: '/admin/reports/students', label: 'Student Reports', icon: Icons.FileSignature },
-        { href: '/admin/reports/payments', label: 'Payment Reports', icon: Icons.Banknote },
-      ],
-    },
-  ];
+  const [openSections, setOpenSections] = React.useState<Set<string>>(new Set());
+
+  React.useEffect(() => {
+    const activeParentSection = navItems.find(item =>
+        item.isCollapsible && item.subItems?.some(sub => sub.href && pathname.startsWith(sub.href))
+    );
+    if (activeParentSection) {
+        setOpenSections(prev => {
+            if (prev.has(activeParentSection.label)) return prev;
+            const newSet = new Set(prev);
+            newSet.add(activeParentSection.label);
+            return newSet;
+        });
+    }
+  }, [pathname]);
+
 
   const isActive = (path: string, isParent = false, subItems?: NavItem[]) => {
     if (isParent && subItems) {
@@ -77,17 +97,11 @@ export function AdminSidebar() {
     return path && (pathname === path || pathname.startsWith(path + '/'));
   };
   
-  const handleLinkClick = (isCollapsible?: boolean) => {
+  const handleLinkClick = () => { // Simplified for sub-items and non-collapsible items
     if (isMobile) {
       setOpenMobile(false);
     }
-    if (isCollapsible && !isMobile) {
-        // Keep sidebar open if parent is clicked and not mobile
-    } else if (isCollapsible && isMobile) {
-        // On mobile, let submenu toggle its state, don't close main mobile sidebar yet
-    }
   };
-
 
   const handleLogout = () => {
     console.log("Admin logged out (simulated from Admin sidebar)");
@@ -108,51 +122,64 @@ export function AdminSidebar() {
       <SidebarContent className="p-2">
         <SidebarMenu>
           {navItems.map((item) => (
-            <SidebarMenuItem key={item.label}>
+            <SidebarMenuItem 
+              key={item.label}
+              data-state={item.isCollapsible && openSections.has(item.label) ? 'expanded' : 'closed'}
+            >
               {item.isCollapsible && item.subItems ? (
-                <SidebarMenuButton
-                  tooltip={item.label}
-                  isActive={isActive(item.href || '', true, item.subItems)}
-                  onClick={() => {
-                    if (!isMobile) setOpen(true); // Expand on desktop if collapsed
-                    // Submenu expansion is handled by Radix UI state
-                  }}
-                  data-state={isActive(item.href || '', true, item.subItems) && open ? 'open' : 'closed'}
-                >
-                  <item.icon />
-                  <span>{item.label}</span>
-                </SidebarMenuButton>
+                <>
+                  <SidebarMenuButton
+                    tooltip={item.label}
+                    isActive={isActive(item.href || '', true, item.subItems)}
+                    onClick={() => {
+                      const sectionLabel = item.label;
+                      setOpenSections(prevOpenSections => {
+                        const newOpenSections = new Set(prevOpenSections);
+                        if (newOpenSections.has(sectionLabel)) {
+                          newOpenSections.delete(sectionLabel);
+                        } else {
+                          newOpenSections.add(sectionLabel);
+                        }
+                        return newOpenSections;
+                      });
+                      if (!isMobile && !open) { // If sidebar is collapsed (icon mode)
+                        setOpen(true);         // Expand the sidebar
+                      }
+                    }}
+                  >
+                    <item.icon />
+                    <span>{item.label}</span>
+                    {/* Optional: Add a chevron icon here that rotates based on openSections.has(item.label) */}
+                  </SidebarMenuButton>
+                  <SidebarMenuSub className="hidden group-data-[state=expanded]:block">
+                    {item.subItems.map((subItem) => (
+                      <SidebarMenuItem key={subItem.label}>
+                        <SidebarMenuSubButton
+                          asChild
+                          isActive={isActive(subItem.href!)}
+                          onClick={handleLinkClick}
+                        >
+                          <Link href={subItem.href!}>
+                            <subItem.icon className="mr-2 h-4 w-4 group-data-[collapsible=icon]:hidden" />
+                            <span className="group-data-[collapsible=icon]:hidden">{subItem.label}</span>
+                          </Link>
+                        </SidebarMenuSubButton>
+                      </SidebarMenuItem>
+                    ))}
+                  </SidebarMenuSub>
+                </>
               ) : (
                 <SidebarMenuButton
                   asChild
                   isActive={isActive(item.href!)}
                   tooltip={item.label}
-                  onClick={() => handleLinkClick()}
+                  onClick={handleLinkClick}
                 >
                   <Link href={item.href!}>
                     <item.icon />
                     <span>{item.label}</span>
                   </Link>
                 </SidebarMenuButton>
-              )}
-              {item.isCollapsible && item.subItems && (
-                 <SidebarMenuSub className={isActive(item.href || '', true, item.subItems) || (open && isMobile) ? 'block' : 'hidden group-data-[state=expanded]:block'}>
-                  {item.subItems.map((subItem) => (
-                    <SidebarMenuItem key={subItem.label}>
-                      <SidebarMenuSubButton
-                        asChild
-                        isActive={isActive(subItem.href!)}
-                        onClick={() => handleLinkClick()}
-                      >
-                        <Link href={subItem.href!}>
-                          <subItem.icon className="mr-2 h-4 w-4 group-data-[collapsible=icon]:hidden" />
-                          <span className="group-data-[collapsible=icon]:hidden">{subItem.label}</span>
-                           {/* For collapsed view, parent tooltip is enough. For expanded, sub-item text is visible */}
-                        </Link>
-                      </SidebarMenuSubButton>
-                    </SidebarMenuItem>
-                  ))}
-                </SidebarMenuSub>
               )}
             </SidebarMenuItem>
           ))}
