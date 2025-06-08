@@ -140,23 +140,23 @@ export default function MyProfilePage() {
               </Button>
             </CardHeader>
             <CardContent className="space-y-6 p-4 sm:p-6">
-              <div className="flex flex-col sm:flex-row items-center gap-6">
+              <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6">
                 <Image
-                  src={`https://placehold.co/120x120.png`}
+                  src={`https://placehold.co/128x128.png`} // Slightly larger placeholder for consistency
                   alt={t('lms.profile.details.avatarAlt', "User Avatar")}
-                  width={120}
-                  height={120}
-                  className="rounded-full border-4 border-accent/30 shadow-md"
+                  width={100} // base size for mobile
+                  height={100} // base size for mobile
+                  className="rounded-full border-4 border-accent/30 shadow-md w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 object-cover"
                   data-ai-hint={profile.profileImageHint}
                 />
                 <div className="flex-1 space-y-1 text-center sm:text-left">
                   {isEditingProfile ? (
-                     <Input name="name" value={profile.name} onChange={handleProfileChange} placeholder={t('lms.profile.details.namePlaceholder', "Full Name")} className="text-2xl font-semibold"/>
+                     <Input name="name" value={profile.name} onChange={handleProfileChange} placeholder={t('lms.profile.details.namePlaceholder', "Full Name")} className="text-xl sm:text-2xl font-semibold"/>
                   ) : (
-                    <h2 className="text-2xl font-semibold text-foreground">{profile.name}</h2>
+                    <h2 className="text-xl sm:text-2xl font-semibold text-foreground">{profile.name}</h2>
                   )}
-                  <p className="text-sm text-muted-foreground">{t('lms.profile.details.studentIdLabel', "Student ID:")} {profile.studentId}</p>
-                  <p className="text-sm text-muted-foreground">{t('lms.profile.details.enrolledSinceLabel', "Enrolled Since:")} {profile.enrolledSince}</p>
+                  <p className="text-xs sm:text-sm text-muted-foreground">{t('lms.profile.details.studentIdLabel', "Student ID:")} {profile.studentId}</p>
+                  <p className="text-xs sm:text-sm text-muted-foreground">{t('lms.profile.details.enrolledSinceLabel', "Enrolled Since:")} {profile.enrolledSince}</p>
                 </div>
               </div>
               
@@ -166,7 +166,7 @@ export default function MyProfilePage() {
                   {isEditingProfile ? (
                     <Input type="email" name="email" id="email" value={profile.email} onChange={handleProfileChange} placeholder="your.email@example.com" />
                   ) : (
-                    <p className="text-foreground/90">{profile.email}</p>
+                    <p className="text-foreground/90 text-sm sm:text-base">{profile.email}</p>
                   )}
                 </div>
                 <div>
@@ -174,7 +174,7 @@ export default function MyProfilePage() {
                   {isEditingProfile ? (
                     <Input name="contactNumber" id="contactNumber" value={profile.contactNumber || ''} onChange={handleProfileChange} placeholder="+94 XX XXX XXXX" />
                   ) : (
-                    <p className="text-foreground/90">{profile.contactNumber || t('lms.profile.notSet', 'Not set')}</p>
+                    <p className="text-foreground/90 text-sm sm:text-base">{profile.contactNumber || t('lms.profile.notSet', 'Not set')}</p>
                   )}
                 </div>
                 <div className="sm:col-span-2">
@@ -182,7 +182,7 @@ export default function MyProfilePage() {
                   {isEditingProfile ? (
                      <Input name="address" id="address" value={profile.address || ''} onChange={handleProfileChange} placeholder="Your address" />
                   ) : (
-                    <p className="text-foreground/90">{profile.address || t('lms.profile.notSet', 'Not set')}</p>
+                    <p className="text-foreground/90 text-sm sm:text-base">{profile.address || t('lms.profile.notSet', 'Not set')}</p>
                   )}
                 </div>
               </div>
@@ -207,7 +207,7 @@ export default function MyProfilePage() {
             <CardContent className="space-y-6 p-4 sm:p-6">
               <div className="space-y-4">
                 <div className="flex items-center justify-between">
-                  <Label htmlFor="emailNotifications" className="flex-grow">{t('lms.profile.preferences.emailNotificationsLabel', "Email Notifications")}</Label>
+                  <Label htmlFor="emailNotifications" className="flex-grow text-sm sm:text-base">{t('lms.profile.preferences.emailNotificationsLabel', "Email Notifications")}</Label>
                   <Switch
                     id="emailNotifications"
                     checked={preferences.emailNotifications}
@@ -216,7 +216,7 @@ export default function MyProfilePage() {
                   />
                 </div>
                 <div className="flex items-center justify-between">
-                  <Label htmlFor="smsNotifications" className="flex-grow">{t('lms.profile.preferences.smsNotificationsLabel', "SMS Notifications")}</Label>
+                  <Label htmlFor="smsNotifications" className="flex-grow text-sm sm:text-base">{t('lms.profile.preferences.smsNotificationsLabel', "SMS Notifications")}</Label>
                    <Switch
                     id="smsNotifications"
                     checked={preferences.smsNotifications}
@@ -225,13 +225,13 @@ export default function MyProfilePage() {
                   />
                 </div>
                 <div>
-                  <Label htmlFor="preferredLanguage">{t('lms.profile.preferences.languageLabel', "Preferred Language")}</Label>
+                  <Label htmlFor="preferredLanguage" className="text-sm sm:text-base">{t('lms.profile.preferences.languageLabel', "Preferred Language")}</Label>
                   {isEditingPreferences ? (
                     <select 
                       id="preferredLanguage" 
                       value={preferences.preferredLanguage} 
                       onChange={(e) => handlePreferenceChange('preferredLanguage', e.target.value)}
-                      className="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white focus:outline-none focus:ring-primary focus:border-primary sm:text-sm rounded-md bg-background border"
+                      className="mt-1 block w-full pl-3 pr-10 py-2 text-sm sm:text-base border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white focus:outline-none focus:ring-primary focus:border-primary rounded-md bg-background border"
                       disabled={!isEditingPreferences}
                     >
                       <option value="en">{t('languageSwitcher.en', "English")}</option>
@@ -239,14 +239,13 @@ export default function MyProfilePage() {
                       <option value="ta">{t('languageSwitcher.ta', "Tamil")}</option>
                     </select>
                   ) : (
-                     <p className="text-foreground/90">{t(`languageSwitcher.${preferences.preferredLanguage}`, preferences.preferredLanguage)}</p>
+                     <p className="text-foreground/90 text-sm sm:text-base">{t(`languageSwitcher.${preferences.preferredLanguage}`, preferences.preferredLanguage)}</p>
                   )}
                 </div>
                  <div>
-                  <Label htmlFor="darkMode">{t('lms.profile.preferences.darkModeLabel', "Dark Mode Preference")}</Label>
-                  {/* This is a mock UI, actual theme switching is handled by ThemeProvider */}
+                  <Label htmlFor="darkMode" className="text-sm sm:text-base">{t('lms.profile.preferences.darkModeLabel', "Dark Mode Preference")}</Label>
                    <p className="text-xs text-muted-foreground">{t('lms.profile.preferences.darkModeNote', "Theme settings are managed globally via the theme toggle.")}</p>
-                   <Input value={preferences.darkMode} disabled className="mt-1 bg-muted/50"/>
+                   <Input value={preferences.darkMode} disabled className="mt-1 bg-muted/50 text-sm sm:text-base"/>
                 </div>
               </div>
             </CardContent>
@@ -256,5 +255,4 @@ export default function MyProfilePage() {
     </div>
   );
 }
-
     
