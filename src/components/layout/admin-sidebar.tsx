@@ -22,24 +22,25 @@ import { LanguageSwitcher } from '@/components/language-switcher';
 export function AdminSidebar() {
   const pathname = usePathname();
   const router = useRouter();
-  const { t } = useLanguage(); // Using t for potential future internationalization of admin panel
+  const { t } = useLanguage();
   const { setOpenMobile, isMobile } = useSidebar();
 
   const navItems = [
     { href: '/admin', label: 'Admin Dashboard', icon: Icons.LayoutDashboard },
-    { href: '/admin/students', label: 'Student Management', icon: Icons.Users },
+    { href: '/admin/students', label: 'All Students', icon: Icons.Users },
+    { href: '/admin/students/approve', label: 'Approve Student Forms', icon: Icons.UserCheck },
     { href: '/admin/lms-content', label: 'LMS Content', icon: Icons.BookOpenText },
     // Add more admin links here as features are built
     // { href: '/admin/payments', label: 'Payments', icon: Icons.CreditCard },
     // { href: '/admin/staff', label: 'Staff Management', icon: Icons.Briefcase },
   ];
 
-  const isActive = (path: string) => pathname === path;
+  const isActive = (path: string) => pathname === path || (pathname.startsWith(path) && path !== '/admin');
 
   const handleLogout = () => {
     console.log("Admin logged out (simulated from Admin sidebar)");
     if (isMobile) setOpenMobile(false);
-    router.push('/login'); // Redirect to login or home page
+    router.push('/login');
   };
 
   return (

@@ -27,9 +27,9 @@ import {
   Moon,
   Globe,
   ArrowLeft,
-  ArrowRight, 
+  ArrowRight,
   FileText,
-  ListChecks,
+  ListChecks, // Added ListChecks
   UserCircle,
   Edit3,
   Quote,
@@ -38,12 +38,12 @@ import {
   Briefcase,
   Watch,
   AlertTriangle,
-  ChevronRight, 
+  ChevronRight,
   Loader2,
-  KeyRound, 
-  LogIn, 
-  LogOut, 
-  LayoutDashboard, 
+  KeyRound,
+  LogIn,
+  LogOut,
+  LayoutDashboard,
   BookMarked,
   Megaphone,
   FolderOpen,
@@ -61,7 +61,12 @@ import {
   Link,
   ExternalLink,
   X,
-  ShieldAlert // Added ShieldAlert here
+  ShieldAlert,
+  UserCheck, // Added UserCheck
+  PlusCircle,
+  Trash2,
+  Eye,
+  MoreHorizontal
 } from 'lucide-react';
 
 // Re-exporting icons for easier access
@@ -95,7 +100,7 @@ export const Icons = {
   ArrowLeft,
   ArrowRight,
   FileText,
-  ListChecks,
+  ListChecks, // Added ListChecks
   UserCircle,
   Edit3,
   Quote,
@@ -106,8 +111,8 @@ export const Icons = {
   AlertTriangle,
   ChevronRight,
   Loader2,
-  KeyRound, 
-  LogIn, 
+  KeyRound,
+  LogIn,
   LogOut,
   LayoutDashboard,
   BookMarked,
@@ -127,10 +132,13 @@ export const Icons = {
   Link,
   ExternalLink,
   X,
-  ShieldAlert, // Added ShieldAlert here
+  ShieldAlert,
+  UserCheck, // Added UserCheck
+  PlusCircle, // Added for Add button
+  Trash2, // Added for Delete button
+  Eye, // Added for View button
+  MoreHorizontal, // Added for actions dropdown
 };
 
 export default Icons;
-
-
     
