@@ -494,11 +494,19 @@
           "title": "Class Recordings",
           "empty": "No class recordings available for this course yet."
         },
-        "quizzes": {
+        "quizzesAssignments": {
             "title": "Quizzes & Assignments",
-            "description": "Test your knowledge and complete assignments.",
-            "empty": "Quizzes and assignments will appear here. (Coming Soon)",
-            "sampleQuizButton": "Take Chapter 1 Quiz"
+            "empty": "No quizzes or assignments available for this month yet.",
+            "subTitle": "Quizzes & Assignments"
+        },
+        "quizzes": {
+            "subTitle": "Quizzes",
+            "takeQuizButton": "Take Quiz"
+        },
+        "assignments": {
+            "subTitle": "Assignments",
+            "viewAssignmentButton": "View Assignment",
+            "dueDate": "Due:"
         }
       },
       "month": {
@@ -522,7 +530,9 @@
       "science": {
         "aug": {
           "video1": { "title": "Science - August: Intro to Physics", "description": "Understanding fundamental concepts of mechanics and motion for August." },
-          "note1": { "title": "Science - August: Chapter 1 Notes" }
+          "note1": { "title": "Science - August: Chapter 1 Notes" },
+          "quiz1": { "title": "Science - August: Biology Basics Quiz", "description": "Test your knowledge on fundamental biology concepts from the August lessons." },
+          "assign1": { "title": "Science - August: Lab Report Submission", "description": "Submit your lab report for the experiment conducted on plant cells." }
         },
         "sep": {
           "video1": { "title": "Science - September: Chemistry Basics", "description": "Exploring the building blocks of matter for September." },
@@ -574,6 +584,14 @@
         "payNowSuccessTitle": "Payment Successful (Simulated)",
         "payNowSuccessDescription": "You now have access to the course content.",
         "payNowSuccessSpecificMonthDescription": "You now have access to the content for {{month}}."
+      },
+      "quiz": {
+        "notFoundTitle": "Quiz Not Available",
+        "notFoundDescription": "This quiz could not be loaded.",
+        "completedTitle": "Quiz Completed!",
+        "completedScoreDescription": "Your score: {{score}} / {{totalPoints}}",
+        "lastResultTitle": "Last Quiz Result for {{quizTitle}}",
+        "lastResultScore": "You scored: {{score}} / {{totalPoints}}"
       }
     },
     "announcements": {
@@ -669,6 +687,23 @@
         "title": "No Learning Materials Available",
         "description": "There are no learning materials uploaded yet. Please check back later or contact your instructor."
       }
+    },
+    "quizRunner": {
+        "loadingErrorTitle": "Quiz Error",
+        "loadingErrorMessage": "Could not load quiz questions. Please try again later.",
+        "resultsTitle": "Quiz Results",
+        "resultsFor": "Results for: {{quizTitle}}",
+        "yourScore": "Your Score",
+        "yourAnswer": "Your answer: ",
+        "correctAnswer": "Correct answer: ",
+        "notAnswered": "Not Answered",
+        "true": "True",
+        "false": "False",
+        "closeButton": "Close",
+        "questionProgress": "Question {{current}} of {{total}}",
+        "timeLeft": "Time: {{minutes}}:{{seconds}}",
+        "submitButton": "Submit Quiz",
+        "nextButton": "Next Question"
     }
   },
   "general": {
