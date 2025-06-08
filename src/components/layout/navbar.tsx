@@ -3,7 +3,7 @@
 
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
-import { usePathname } from 'next/navigation'; // Added
+import { usePathname } from 'next/navigation'; 
 import { Menu, X, BookOpenText } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
@@ -24,13 +24,14 @@ export function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
   const { t } = useLanguage();
-  const pathname = usePathname(); // Added
+  const pathname = usePathname(); 
 
   useEffect(() => {
     setIsMounted(true);
   }, []);
 
-  if (pathname?.startsWith('/lms')) { // Added condition
+  // Do not render Navbar if on an admin page or LMS page
+  if (pathname?.startsWith('/admin') || pathname?.startsWith('/lms')) { 
     return null;
   }
 

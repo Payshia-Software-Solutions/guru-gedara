@@ -1,15 +1,16 @@
 
-"use client"; // Added
+"use client"; 
 
 import { Facebook, Twitter, Instagram, Youtube, Send, MapPin, Phone } from 'lucide-react';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation'; // Added
+import { usePathname } from 'next/navigation'; 
 
 export function Footer() {
-  const pathname = usePathname(); // Added
+  const pathname = usePathname(); 
   const currentYear = new Date().getFullYear();
 
-  if (pathname?.startsWith('/lms')) { // Added condition
+  // Do not render Footer if on an admin page or LMS page
+  if (pathname?.startsWith('/admin') || pathname?.startsWith('/lms')) { 
     return null;
   }
 
