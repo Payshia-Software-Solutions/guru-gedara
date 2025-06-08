@@ -564,6 +564,67 @@
         "payNowSuccessDescription": "You now have access to the course content.",
         "payNowSuccessSpecificMonthDescription": "You now have access to the content for {{month}}."
       }
+    },
+    "announcements": {
+      "title": "Announcements",
+      "titleSinhala": "නිවේදන",
+      "titleTamil": "அறிவிப்புகள்",
+      "subtitle": "Stay updated with the latest news and notices.",
+      "unreadBadge": "New",
+      "markAsReadButton": "Mark as Read",
+      "item1": {
+        "title": "Mid-term Exam Schedule Released",
+        "content": "The schedule for the upcoming mid-term exams has been posted. Please check your course pages for details and prepare accordingly.",
+        "courseContext": "All O/L Batches"
+      },
+      "item2": {
+        "title": "New Science Material: Chapter 5 Revision Notes",
+        "content": "Additional study material, including revision notes and practice questions for Chapter 5 of Science, is now available in the Learning Materials section."
+      },
+      "item3": {
+        "title": "Special Mathematics Workshop - Saturday",
+        "content": "Join us for a special workshop on 'Advanced Algebra Techniques' this Saturday at 2 PM. Link will be shared via email.",
+        "courseContext": "Mathematics Students Only"
+      },
+      "noAnnouncements": {
+        "title": "No Announcements",
+        "description": "There are no new announcements at the moment. Please check back later."
+      }
+    },
+    "profile": {
+      "title": "My Profile",
+      "titleSinhala": "මගේ පැතිකඩ",
+      "titleTamil": "என் சுயவிவரம்",
+      "subtitle": "Manage your account details and preferences.",
+      "notSet": "Not set",
+      "buttons": {
+        "edit": "Edit",
+        "save": "Save"
+      },
+      "details": {
+        "title": "My Details",
+        "avatarAlt": "User Avatar",
+        "namePlaceholder": "Full Name",
+        "studentIdLabel": "Student ID:",
+        "enrolledSinceLabel": "Enrolled Since:",
+        "emailLabel": "Email Address",
+        "contactNumberLabel": "Contact Number",
+        "addressLabel": "Address"
+      },
+      "preferences": {
+        "title": "Preferences",
+        "emailNotificationsLabel": "Email Notifications",
+        "smsNotificationsLabel": "SMS Notifications",
+        "languageLabel": "Preferred Language",
+        "darkModeLabel": "Dark Mode Preference",
+        "darkModeNote": "Theme settings are managed globally via the theme toggle."
+      },
+      "toast": {
+        "profileSavedTitle": "Profile Updated",
+        "profileSavedDescription": "Your profile information has been saved.",
+        "preferencesSavedTitle": "Preferences Saved",
+        "preferencesSavedDescription": "Your preferences have been updated."
+      }
     }
   },
   "general": {
